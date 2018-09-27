@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Layout, Menu, Breadcrumb } from 'antd';
 import MenuNav from "../navigations/MenuNav.jsx";
 import CarouselMain from "../carousel.jsx";
+import MultipleItems from '../slickItems/MultipleItems.jsx'
+	
+
 
 
 const { Header, Content, Footer } = Layout;
@@ -19,6 +22,11 @@ const HomePage = () => (
     
       <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
       <CarouselMain/>
+    
+      <MultipleItems/>
+
+
+
 
 
 
