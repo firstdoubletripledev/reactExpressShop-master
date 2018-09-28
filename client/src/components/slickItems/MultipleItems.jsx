@@ -1,8 +1,13 @@
 import React, { Component } from "react";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Row, Col } from 'antd';
+import { Card, Icon, Avatar } from 'antd';
+
+const { Meta } = Card;
+
+
 
 class MultipleItems extends Component {
   constructor(props) {
@@ -18,56 +23,64 @@ class MultipleItems extends Component {
   }
   render() {
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 4,
+      slidesToShow: 3,
       slidesToScroll: 1
     };
-    return (
-      <Row style={{margin:'20px',height:'400px',border:"1px solid black"}}>
-      <Col lg={4} >
-      <div style={{ textAlign: "center",paddingTop:'30px'}}>
-          <button className="button" onClick={this.previous}>
-            Previous
-          </button>
-          <button className="button" onClick={this.next}>
-            Next
-          </button>
-        </div>
-      </Col>
-      <Col lg={20} >
-      <div>
-        
-        <Slider ref={c => (this.slider = c)} {...settings}>
-          <div key={1} >
-          <img alt="example" src="/images/example-slide-1.jpg" style={{height:'400px',border:"1px solid red"}} />
-          </div>
-          <div key={2}>
-          <img alt="example" src="/images/logo.jpg"style={{height:'400px',border:"1px solid red"}} />
-          </div>
-          <div key={3} >
-          <img alt="example" src="/images/krasivyi_korabl_-1024x768.jpg"style={{height:'400px',border:"1px solid red"}} />
-          </div>
-          <div key={4}>
-          <img alt="example" src="/images/example-slide-1.jpg"style={{height:'400px',border:"1px solid red"}} />
-          </div>
-          <div key={5} >
-          <img alt="example" src="/images/krasivyi_korabl_-1024x768.jpg"style={{height:'400px',border:"1px solid red"}} />
-          </div>
-          <div key={6}>
-          <img alt="example" src="/images/example-slide-1.jpg" style={{height:'400px',border:"1px solid red"}} />
-          </div>
-        </Slider>
-       
-      </div>
-      
-      
-      </Col>
-      
-    </Row>
-      
+    var dataItem = [{id:1,imagePath:'images/example-slide-1.jpg'},
+    {id:2,imagePath:'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'},
+    {id:3,imagePath:'images/example-slide-1.jpg'},
+    {id:4,imagePath:'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'}
+  ];
+   var itemsRender = dataItem.map((item,index)=>
+    <div key={index} >
+    <Card
+      style={{ margin:'5px'}}
+      cover={<img alt="example" src={item.imagePath} style={{height:'120px'}} />}
+      actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+    >
+      <Meta
+        avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+        title="Card title"
+        description="This is the description"
+      />
+    </Card>
+  </div>
    
+  );
+  
+    return (
+      <Row style={{ margin: '20px', border: "1px solid #e8e8e8" }}>
+        <Col lg={4} >
+          <div style={{ textAlign: "center", paddingTop: '30px' }}>
+            <button className="button" onClick={this.previous}>
+              Previous
+          </button>
+            <button className="button" onClick={this.next}>
+              Next
+          </button>
+          </div>
+        </Col>
+        <Col lg={20} style={{ padding: '10px' }} >
+          <div>
+
+            <Slider ref={c => (this.slider = c)} {...settings}>
+   
+              {itemsRender}
+
+
+            </Slider>
+
+          </div>
+
+
+        </Col>
+
+      </Row>
+
+
     );
   }
 }
