@@ -52,7 +52,7 @@ class MultipleItems extends Component {
   );
   
     return (
-      <Row style={{ margin: '20px', border: "1px solid #e8e8e8" }}>
+      <Row style={{ margin: '20px 0px 20px 0px', border: "1px solid #e8e8e8" }}>
         <Col lg={4} >
           <div style={{ textAlign: "center", paddingTop: '30px' }}>
             <button className="button" onClick={this.previous}>
