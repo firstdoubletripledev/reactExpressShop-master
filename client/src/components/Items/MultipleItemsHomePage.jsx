@@ -38,7 +38,7 @@ class MultipleItems extends Component {
     <div key={index} >
     <Card
       style={{ margin:'5px'}}
-      cover={<img alt="example" src={item.imagePath} style={{height:'120px'}} />}
+      cover={<img alt="example" src={item.imagePath} style={{height:'150px'}} />}
       actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
     >
       <Meta

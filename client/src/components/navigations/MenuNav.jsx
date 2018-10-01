@@ -25,7 +25,6 @@ class MenuNav extends Component {
             <Menu.Item >
               <Icon type="home" theme="outlined" style={{marginRight:'0px'}}/>HOME
         </Menu.Item>
-
             <SubMenu title={<span className="submenu-title-wrapper"><Icon type="bars" theme="outlined" style={{marginRight:'0px'}}/>CATEGORY</span>}>
               <MenuItemGroup title="Item 1">
                 <Menu.Item >Option 1</Menu.Item>
@@ -66,7 +65,7 @@ class MenuNav extends Component {
               <Menu.Item >Sign up</Menu.Item>
             </SubMenu>
             <Menu.Item >
-            <Icon type="contacts" theme="outlined" /> Contact us 
+            <Icon type="contacts" theme="outlined" /> CONTACT US
            
         </Menu.Item>
           </Menu>
