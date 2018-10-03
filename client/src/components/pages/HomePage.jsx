@@ -5,20 +5,31 @@ import MenuNav from "../navigations/MenuNav.jsx";
 import CarouselMain from "../carousel.jsx";
 import MultipleItemsHomePage from '../Items/MultipleItemsHomePage'
 import { Row, Col } from 'antd';
-import { Card, Icon, Avatar } from 'antd';
 import ListItemsHomePage from '../Items/listItemsHomePage'
-const { Meta } = Card;
+var {Provider} = require('react-redux');
+var store = require('../../reduxx/storeConfig');
+
+
 
 
 const { Header, Content, Footer } = Layout;
+//Home page 
+//cart page
+//cagory page 
+//checkout page 
+//detail product page 
+//dash board page 
 
 
 
-const HomePage = () => (
-
+const HomePage = () => {
+  
+  return (
+  <Provider store={store}>
   <Layout className="layout">
 
-    <MenuNav />
+    <MenuNav  />
+ 
 
     <Content style={{ paddingTop: '10px' }}>
 
@@ -36,7 +47,8 @@ const HomePage = () => (
 
         </Row>
 
-        <MultipleItemsHomePage />
+        <MultipleItemsHomePage  />
+       
 
 
 
@@ -51,8 +63,10 @@ const HomePage = () => (
       Ant Design ©2018 Created by Ant UED
     </Footer>
   </Layout>
+  </Provider>
 
 
-);
+
+);}
 
 export default HomePage;

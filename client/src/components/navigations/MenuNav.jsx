@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Menu, Icon,Form, Input, Button  } from 'antd';
+import {connect} from 'react-redux';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 const FormItem = Form.Item;
@@ -7,21 +8,30 @@ const FormItem = Form.Item;
 class MenuNav extends Component {
   //may cai key xem lai trong antd 
   
+  componentDidMount = () => {
+    
+    
+   
+  };
+
+  
 
   render() {
+    
+    
     return (
       
-          <Menu
-            onClick={this.handleClick}
+          <Menu 
+            onClick={this.handleClick1}
            
             mode="horizontal"
            
 
           >
           <Menu.Item  style={{}} >
-          <img alt="example" src="/images/logo.jpg"  style={{width:'30px'}}/>
+          <img alt="example" src="/images/logo.jpg"  style={{width:'30px'}} />
         </Menu.Item>
-
+       
             <Menu.Item >
               <Icon type="home" theme="outlined" style={{marginRight:'0px'}}/>HOME
         </Menu.Item>
@@ -55,7 +65,7 @@ class MenuNav extends Component {
 
             </Menu.Item>
             <Menu.Item >
-            <Icon type="shopping-cart" theme="outlined" style={{marginRight:'0px'}}/> 3 items in cart
+            <Icon type="shopping-cart" theme="outlined" style={{marginRight:'0px'}}/> {this.props.SLItemCart} items in cart
            
         </Menu.Item>
 
@@ -69,6 +79,7 @@ class MenuNav extends Component {
            
         </Menu.Item>
           </Menu>
+        
 
       
 
@@ -77,5 +88,8 @@ class MenuNav extends Component {
     );
   }
 }
+const MenuNavRedux = connect(function(state){
+  return {SLItemCart: state.SLItemCart,isLogin:state.isLogin}
+})(MenuNav);
 
-export default MenuNav;
+export default MenuNavRedux ;

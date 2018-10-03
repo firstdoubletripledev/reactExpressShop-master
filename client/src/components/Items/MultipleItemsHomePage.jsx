@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Row, Col } from 'antd';
 import { Card, Icon, Avatar } from 'antd';
-
+import ItemCard from "../Items/ItemCard"
 const { Meta } = Card;
 
 
@@ -35,18 +35,9 @@ class MultipleItems extends Component {
     {id:4,imagePath:'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'}
   ];
    var itemsRender = dataItem.map((item,index)=>
-    <div key={index} >
-    <Card
-      style={{ margin:'5px'}}
-      cover={<img alt="example" src={item.imagePath} style={{height:'150px'}} />}
-      actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
-    >
-      <Meta
-        avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-        title="Card title"
-        description="This is the description"
-      />
-    </Card>
+   <div key={index+1} >
+   
+      <ItemCard imgPath = {item.imagePath} />
   </div>
    
   );
