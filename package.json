@@ -4,20 +4,24 @@
   "description": "shopFlowerFront ",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "server": "nodemon index.js",
+    "start": "babel-node server",
+    "server": "nodemon --exec babel-node server",
     "client": "npm start --prefix client ",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "giang",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
     "express": "^4.16.3",
+    "mongoose": "^5.3.1",
     "react-loadable": "^5.5.0",
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "nodemon": "^1.18.4"
   }
 }
