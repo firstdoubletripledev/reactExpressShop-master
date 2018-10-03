@@ -9,6 +9,9 @@ class MenuNav extends Component {
   //may cai key xem lai trong antd 
   
   componentDidMount = () => {
+    var sl = 5; 
+    var {dispatch} = this.props;
+    dispatch({type:'Get_SLItem_In_Session',item:sl});
     
     
    
