@@ -32,7 +32,8 @@ class MenuNav extends Component {
 
           >
           <Menu.Item  style={{}} >
-          <img alt="example" src="/images/logo.jpg"  style={{width:'30px'}} />
+          <a href='/'><img alt="example" src="/images/logo.jpg"  style={{width:'30px'}} /></a>
+          
         </Menu.Item>
        
             <Menu.Item >
@@ -68,14 +69,14 @@ class MenuNav extends Component {
 
             </Menu.Item>
             <Menu.Item >
-            <Icon type="shopping-cart" theme="outlined" style={{marginRight:'0px'}}/> {this.props.SLItemCart} items in cart
+            <a href='/cart'><Icon type="shopping-cart" theme="outlined" style={{marginRight:'0px'}}/> {this.props.SLItemCart} items in cart</a>
            
         </Menu.Item>
 
             <SubMenu title={<span className="submenu-title-wrapper"><Icon type="user" theme="outlined" />USER ACCOUNT</span>}>
 
-              <Menu.Item >Sign in</Menu.Item>
-              <Menu.Item >Sign up</Menu.Item>
+              <Menu.Item ><a href="/login">Sign in</a></Menu.Item>
+              <Menu.Item ><a href="/register">Sign up</a></Menu.Item>
             </SubMenu>
             <Menu.Item >
             <Icon type="contacts" theme="outlined" /> CONTACT US
