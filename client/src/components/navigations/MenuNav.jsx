@@ -39,14 +39,15 @@ class MenuNav extends Component {
             <Menu.Item >
               <Icon type="home" theme="outlined" style={{marginRight:'0px'}}/>HOME
         </Menu.Item>
-            <SubMenu title={<span className="submenu-title-wrapper"><Icon type="bars" theme="outlined" style={{marginRight:'0px'}}/>CATEGORY</span>}>
-              <MenuItemGroup title="Item 1">
-                <Menu.Item >Option 1</Menu.Item>
-                <Menu.Item >Option 2</Menu.Item>
+            <SubMenu title={<span className="submenu-title-wrapper"><a href = "/category"> <Icon type="bars" theme="outlined" style={{marginRight:'0px'}}/>CATEGORY</a></span>}>
+              <MenuItemGroup title="Everyday">
+                <Menu.Item >Favourite Flowers</Menu.Item>
+                <Menu.Item >Flowers</Menu.Item>
               </MenuItemGroup>
-              <MenuItemGroup title="Item 2">
-                <Menu.Item >Option 3</Menu.Item>
-                <Menu.Item >Option 4</Menu.Item>
+              <MenuItemGroup title="Occasions">
+                <Menu.Item >Birthday Flowers</Menu.Item>
+                <Menu.Item >Wedding Flowers</Menu.Item>
+                <Menu.Item >Womens Day Flower</Menu.Item>
               </MenuItemGroup>
             </SubMenu>
             <Menu.Item >

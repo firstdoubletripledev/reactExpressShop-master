@@ -4,6 +4,7 @@ import './App.css';
 import { Route, Switch } from "react-router-dom";
 import Loadable from "react-loadable";
 import LoadingCompoment from "./components/LoadingCompoment";
+import dashboard from './components/pages/DashBoardPage'
 
 const AsyncHome = Loadable({
   loader: () => import("./components/pages/HomePage"),
@@ -23,6 +24,10 @@ const AsyncCartPage = Loadable({
 });
 const AsyncCheckoutPage = Loadable({
   loader: () => import("./components/pages/CheckoutPage"),
+  loading: LoadingCompoment
+});
+const AsyncCategoryPage = Loadable({
+  loader: () => import("./components/pages/CategoryPage"),
   loading: LoadingCompoment
 });
      /* cái này trong app render copy ra  <div className="App">
@@ -45,6 +50,8 @@ class App extends Component {
     <Route location={location} path="/register" exact component={AsyncRegisterPage} />
     <Route location={location} path="/cart" exact component={AsyncCartPage} />
     <Route location={location} path="/checkout" exact component={AsyncCheckoutPage} />
+    <Route location={location} path="/category" exact component={AsyncCategoryPage} />
+    <Route location={location} path="/dashboard" component={dashboard}/>
     </Switch> );
   }
 }
