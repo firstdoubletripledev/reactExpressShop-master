@@ -1,6 +1,7 @@
 import express from 'express';
+import shopController from '../controllers/shopController';
+
 const router = express.Router();
-import shopController from '../controllers/shopController.js';
 
 /*
  * GET

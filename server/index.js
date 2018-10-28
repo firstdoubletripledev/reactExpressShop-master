@@ -1,14 +1,22 @@
-import express from "express";
-import bodyParser from "body-parser";
+import express from 'express';
+import bodyParser from 'body-parser';
+import session from 'express-session';
 
-import { ConnectDatabase } from './Databases/Connect'
-import categoriesRoutes from './routes/categoriesRoutes'
-import ordersRoutes from './routes/ordersRoutes'
-import productsRoutes from './routes/productsRoutes'
-import shopRoutes from './routes/shopRoutes'
-import usersRoutes from './routes/usersRoutes'
+import { ConnectDatabase } from './Databases/Connect';
+import categoriesRoutes from './routes/categoriesRoutes';
+import ordersRoutes from './routes/ordersRoutes';
+import productsRoutes from './routes/productsRoutes';
+import shopRoutes from './routes/shopRoutes';
+import usersRoutes from './routes/usersRoutes';
 
 const app = express();
+app.use(
+  session({
+    secret: 'thien lam ne',
+    resave: false,
+    saveUninitialized: true,
+  }),
+);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
