@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Menu, Icon, Form } from "antd";
 import { connect } from "react-redux";
 
-import LoginBar from "./LoginBar";
+import { LoginBar } from "./LoginBar";
 import { DashboardBar } from "./DashboardBar";
 import { ContactsColumn } from "./ContactsColumn";
 import { SearchColumn } from "./SearchColumn";
@@ -49,7 +49,18 @@ class MenuNav extends Component {
             </span>
           }
         >
-          {!isLogin ? <LoginBar /> : DashboardBar()}
+          {!isLogin ? (
+            <Menu.Item>
+              <a href="/login">Sign in</a>
+            </Menu.Item>
+          ) : (
+            DashboardBar()
+          )}
+          {!isLogin ? (
+            <Menu.Item>
+              <a href="/register">Sign up</a>
+            </Menu.Item>
+          ) : null}
         </SubMenu>
         {ContactsColumn()}
       </Menu>

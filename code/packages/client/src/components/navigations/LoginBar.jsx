@@ -1,7 +1,7 @@
 import React from "react";
 import { Menu } from "antd";
 
-function LoginBar({}) {
+export function LoginBar() {
   return (
     <>
       <Menu.Item>
@@ -13,5 +13,3 @@ function LoginBar({}) {
     </>
   );
 }
-
-export default LoginBar;
