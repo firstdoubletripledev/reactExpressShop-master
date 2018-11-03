@@ -31,7 +31,7 @@ const AsyncCheckoutPage = Loadable({
   loading: LoadingCompoment
 });
 const AsyncCategoryPage = Loadable({
-  loader: () => import("./components/pages/CategoryPage"),
+  loader: () => import("./components/pages/Category/CategoryPage"),
   loading: LoadingCompoment
 });
 /* cái này trong app render copy ra  <div className="App">
