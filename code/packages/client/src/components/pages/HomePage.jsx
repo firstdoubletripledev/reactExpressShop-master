@@ -6,6 +6,7 @@ import CarouselMain from "../carousel.jsx";
 import MultipleItemsHomePage from "../Items/MultipleItemsHomePage";
 import { Row, Col } from "antd";
 import ListItemsHomePage from "../Items/listItemsHomePage";
+import ModelItem from "../Items/ModelItem.jsx";
 
 const { Header, Content, Footer } = Layout;
 //Home page
@@ -19,7 +20,7 @@ const HomePage = () => {
   return (
     <Layout className="layout">
       <MenuNav />
-
+      <ModelItem />
       <Content style={{ paddingTop: "10px" }}>
         <div
           style={{

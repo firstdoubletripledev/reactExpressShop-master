@@ -1,0 +1,144 @@
+/**
+ * Title: Chapps Flaticon Pack
+ * Author: Dmitriy Chuta
+ * Source: http://www.flaticon.com/packs/chapps
+ * License:  CC BY 3.0 (http://creativecommons.org/licenses/by/3.0/)
+ */
+
+@font-face {
+    font-family: "fl-chapps";
+    src: url("/assets/fonts/fl-chapps.eot");
+    src: url("/assets/fonts/fl-chapps.eot#iefix") format("embedded-opentype"), url("/fonts/fl-chapps.woff") format("woff"), url("/fonts/fl-chapps.ttf") format("truetype"), url("/fonts/fl-chapps.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="fl-chapps-"]:before,
+[class*=" fl-chapps-"]:before,
+[class^="fl-chapps-"]:after,
+[class*=" fl-chapps-"]:after {
+    font-family: 'fl-chapps';
+    font-size: inherit;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.fl-chapps-attach5:before {
+    content: "\e000";
+}
+
+.fl-chapps-chat45:before {
+    content: "\e001";
+}
+
+.fl-chapps-compass75:before {
+    content: "\e002";
+}
+
+.fl-chapps-configuration13:before {
+    content: "\e003";
+}
+
+.fl-chapps-contacts9:before {
+    content: "\e004";
+}
+
+.fl-chapps-counterclockwise:before {
+    content: "\e005";
+}
+
+.fl-chapps-dislike9:before {
+    content: "\e006";
+}
+
+.fl-chapps-double93:before {
+    content: "\e007";
+}
+
+.fl-chapps-download122:before {
+    content: "\e008";
+}
+
+.fl-chapps-eye95:before {
+    content: "\e009";
+}
+
+.fl-chapps-hand135:before {
+    content: "\e00a";
+}
+
+.fl-chapps-heart271:before {
+    content: "\e00b";
+}
+
+.fl-chapps-image69:before {
+    content: "\e00c";
+}
+
+.fl-chapps-list58:before {
+    content: "\e00d";
+}
+
+.fl-chapps-music206:before {
+    content: "\e00e";
+}
+
+.fl-chapps-new66:before {
+    content: "\e00f";
+}
+
+.fl-chapps-paper116:before {
+    content: "\e010";
+}
+
+.fl-chapps-pen55:before {
+    content: "\e011";
+}
+
+.fl-chapps-photo162:before {
+    content: "\e012";
+}
+
+.fl-chapps-placeholder16:before {
+    content: "\e013";
+}
+
+.fl-chapps-search70:before {
+    content: "\e014";
+}
+
+.fl-chapps-square144:before {
+    content: "\e015";
+}
+
+.fl-chapps-tag43:before {
+    content: "\e016";
+}
+
+.fl-chapps-text106:before {
+    content: "\e017";
+}
+
+.fl-chapps-thumb40:before {
+    content: "\e018";
+}
+
+.fl-chapps-trash54:before {
+    content: "\e019";
+}
+
+.fl-chapps-two284:before {
+    content: "\e01a";
+}
+
+.fl-chapps-upload79:before {
+    content: "\e01b";
+}
+
+.fl-chapps-user139:before {
+    content: "\e01c";
+}
+
+.fl-chapps-weekly10:before {
+    content: "\e01d";
+}
