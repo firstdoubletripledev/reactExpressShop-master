@@ -27,7 +27,7 @@ const AsyncCartPage = Loadable({
   loading: LoadingCompoment
 });
 const AsyncCheckoutPage = Loadable({
-  loader: () => import("./components/pages/CheckoutPage"),
+  loader: () => import("./components/pages/checkOut/CheckoutPage"),
   loading: LoadingCompoment
 });
 const AsyncCategoryPage = Loadable({
