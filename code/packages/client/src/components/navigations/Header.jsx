@@ -62,7 +62,7 @@ const Header = () => {
             <div className="module ">
               <div id="_desktop_user_info">
                 <div className="header_user_info user-info current">
-                  <a href="#" onClick="return false;">
+                  <a href="#" onClick={() => null}>
                     <i className="fl-chapps-user139" />
                     <span>Sign in</span>
                   </a>

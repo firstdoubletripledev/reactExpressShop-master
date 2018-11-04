@@ -9,6 +9,7 @@ import isLoginAction from "./reduxx/actions/isLoginAction";
 import LoadingCompoment from "./components/LoadingCompoment";
 import getAuth from "./components/getAuth";
 import dashboard from "./components/pages/DashBoardPage";
+import PrivateRoute from "./PrivateRoute";
 
 const AsyncHome = Loadable({
   loader: () => import("./components/pages/HomePage"),
@@ -88,7 +89,7 @@ class App extends Component {
               exact
               component={AsyncCategoryPage}
             />
-            <Route
+            <PrivateRoute
               location={location}
               path="/dashboard"
               component={dashboard}
