@@ -53,8 +53,10 @@ const Header = () => {
                   data-refresh-url="//ld-prestashop.template-help.com/prestashop_13106/index.php?fc=module&module=ps_shoppingcart&controller=ajax&id_lang=1"
                 >
                   <div className="header">
-                    <i className="fl-chapps-hand135 shopping-cart" />
-                    <span className="hidden-sm-down">Cart</span>
+                    <Link to="/cart">
+                      <i className="fl-chapps-hand135 shopping-cart" />
+                      <span className="hidden-sm-down">Cart</span>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -62,9 +64,11 @@ const Header = () => {
             <div className="module ">
               <div id="_desktop_user_info">
                 <div className="header_user_info user-info current">
-                  <a href="#" onClick="return false;">
-                    <i className="fl-chapps-user139" />
-                    <span>Sign in</span>
+                  <a href="#" onClick={() => null}>
+                    <Link to="/login">
+                      <i className="fl-chapps-user139" />
+                      <span>Sign in</span>
+                    </Link>
                   </a>
                 </div>
               </div>
