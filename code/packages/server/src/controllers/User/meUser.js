@@ -16,7 +16,7 @@ async function meUser(req, res) {
       const token = authorization.split(' ')[1];
 
       const legit = jwt.verify(token, secretKey);
-      return res.json({ code: 1, data: legit, msg: 'Not found please login again' });
+      return res.json({ code: 1, data: legit, msg: 'Success' });
     }
 
     return res.json({ code: 0, msg: 'Not found please login again' });

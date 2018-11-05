@@ -1,22 +1,29 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import getAuth from "./components/getAuth";
+
+const auth = {
+  async getAuth() {
+    const res = await getAuth();
+    return res;
+  }
+};
 
 const PrivateRoute = ({ component: Component = null, ...rest }) => {
-  const { isLogin = null } = rest;
-  const isSuccess = isLogin && localStorage.getItem("token");
+  // const { isLogin = null } = rest;
 
   return (
     <Route
       {...rest}
-      render={propsss =>
-        isSuccess ? (
-          <Component {...propsss} />
+      render={props =>
+        auth.getAuth ? (
+          <Component {...props} />
         ) : (
           <Redirect
             to={{
               pathname: "/login",
-              state: { from: propsss.location }
+              state: { from: props.location }
             }}
           />
         )

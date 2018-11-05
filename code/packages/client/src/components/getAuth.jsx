@@ -7,9 +7,11 @@ async function getAuth() {
       authorization: localStorage.getItem("token")
     }
   });
-  const { data: { email = "" } = {} } = res.data;
-  console.log(email);
-  return email;
+  const { data: { email = null } = {} } = res.data;
+  if (!email) {
+    return false;
+  }
+  return true;
 }
 
 export default getAuth;
