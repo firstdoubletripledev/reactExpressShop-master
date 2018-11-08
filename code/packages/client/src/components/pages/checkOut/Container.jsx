@@ -1,5 +1,5 @@
 import React from "react";
-import { LeftColumn } from "./Collumn/LeftColumn";
+import { LeftColumn } from "./Collumn/LeftColumn/LeftColumn";
 import { RightColumn } from "./Collumn/RightColumn";
 
 const Container = () => {

@@ -4,8 +4,9 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Row, Col } from "antd";
 import { Card, Icon, Avatar, Button } from "antd";
-
+import axios from "axios";
 import { connect } from "react-redux";
+//import { Session } from "inspector";
 
 const { Meta } = Card;
 
@@ -13,6 +14,8 @@ class ItemCard extends Component {
   addItemToCart() {
     var { dispatch } = this.props;
     dispatch({ type: "Add_Item_To_Cart" });
+  
+
   }
 
   render() {

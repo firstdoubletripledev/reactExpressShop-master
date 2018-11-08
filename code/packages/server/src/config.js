@@ -1,4 +1,4 @@
-const DatabaseUrl = 'mongodb://admin:adminadmin1@ds111913.mlab.com:11913/doan3';
+const DatabaseUrl = 'mongodb://giang:giang123@ds155203.mlab.com:55203/flowershop1'
 const secretKey = 'secretKey';
 
 export { DatabaseUrl, secretKey };

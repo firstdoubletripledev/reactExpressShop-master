@@ -8,6 +8,7 @@ import ordersRoutes from './routes/ordersRoutes';
 import productsRoutes from './routes/productsRoutes';
 import shopRoutes from './routes/shopRoutes';
 import usersRoutes from './routes/usersRoutes';
+import cartRoutes from './routes/cartRoutes';
 
 const app = express();
 app.use(
@@ -24,11 +25,15 @@ app.use(bodyParser.json());
 ConnectDatabase();
 
 const port = process.env.PORT || 5000;
+//cai nay sau khi viet ham isLoggedIn
+
 
 app.use('/api/categories', categoriesRoutes);
 app.use('/api/orders', ordersRoutes);
 app.use('/api/products', productsRoutes);
 app.use('/api/shop', shopRoutes);
 app.use('/api/users', usersRoutes);
+app.use('/api/cart',cartRoutes);
+
 
 app.listen(port, () => console.log(`server is listening on port ${port}`));

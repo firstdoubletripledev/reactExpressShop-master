@@ -49,6 +49,7 @@ module.exports = {
     const products = new productsModel({
       code: req.body.code,
       name: req.body.name,
+      pathImg:req.body.pathImg,
       price: req.body.price,
       description: req.body.description,
       stock: req.body.stock,
@@ -66,6 +67,7 @@ module.exports = {
       return res.status(201).json(products);
     });
   },
+
 
   /**
    * productsController.update()
@@ -87,6 +89,7 @@ module.exports = {
 
       products.code = req.body.code ? req.body.code : products.code;
       products.name = req.body.name ? req.body.name : products.name;
+      products.pathImg = req.body.pathImg ?req.body.pathImg : products.pathImg;
       products.price = req.body.price ? req.body.price : products.price;
       products.description = req.body.description ? req.body.description : products.description;
       products.stock = req.body.stock ? req.body.stock : products.stock;
