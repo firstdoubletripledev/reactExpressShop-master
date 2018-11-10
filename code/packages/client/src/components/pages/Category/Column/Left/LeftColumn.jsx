@@ -12,7 +12,12 @@ import {
 import { SearchFilterControler } from "./SearchFilterControler";
 
 const LeftColumn = ({
-  category: { categoryColor = [], categoryHeight = [], categoryBrand = [] }
+  category: {
+    categoryColor = [],
+    categoryHeight = [],
+    categoryBrand = [],
+    Availability = {}
+  }
 }) => {
   return (
     <div id="left-column" className="col-12 col-md-3">
@@ -20,11 +25,11 @@ const LeftColumn = ({
         <SearchFilterControler />
         <div id="search_filters">
           <FilterBy />
-          <Filter category={categoryColor} />
-          <Filter category={categoryHeight} />
+          <Filter category={categoryColor} type="Color" />
+          <Filter category={categoryHeight} type="Height" />
           {/* <HeightFilter categoryHeight={categoryHeight} /> */}
-          <AvailabilityFilter />
-          <Filter category={categoryBrand} />
+          <AvailabilityFilter Availability={Availability} />
+          <Filter category={categoryBrand} type="Brand" />
           {/* <BrandFilter categoryBrand={categoryBrand} /> */}
           <PriceFilter />
         </div>

@@ -9,5 +9,11 @@ a {
 }
 
 .js-search-link {
+    border: none;
+    cursor: pointer;
     margin-bottom: 0;
+}
+
+.number-on-page {
+    color: #f44336;
 }
