@@ -10,22 +10,50 @@ module.exports = {
    * categoriesController.list()
    */
   list(req, res) {
-    categoriesModel.find((err, categoriess) => {
-      if (err) {
-        return res.status(500).json({
-          message: 'Error when getting categories.',
-          error: err,
-        });
-      }
-      return res.json(categoriess);
-    });
+    categoriesModel
+      .find()
+      .populate('products')
+      .exec((err, categoriess) => {
+        if (err) {
+          return res.status(500).json({
+            message: 'Error when getting categories.',
+            error: err,
+          });
+        }
+        return res.json(categoriess);
+      });
+  },
+
+  listPage(req, res) {
+    const perPage = 20;
+
+    const { page = 1 } = req.params;
+
+    categoriesModel
+      .find()
+      .populate({
+        path: 'products',
+        options: {
+          skip: perPage * page - perPage,
+          limit: perPage,
+        },
+      })
+      .exec((err, categoriess) => {
+        if (err) {
+          return res.status(500).json({
+            message: 'Error when getting categories.',
+            error: err,
+          });
+        }
+        return res.json(categoriess);
+      });
   },
 
   /**
    * categoriesController.show()
    */
   show(req, res) {
-    const id = req.params.id;
+    const { id } = req.params;
     categoriesModel.findOne({ _id: id }, (err, categories) => {
       if (err) {
         return res.status(500).json({
