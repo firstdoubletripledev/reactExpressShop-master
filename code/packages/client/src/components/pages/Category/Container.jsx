@@ -112,15 +112,30 @@ function MergeDeepByTag(categoryMerge, typeName) {
     }
     return null;
   });
-  const categoryColorNotUndefind = categoryColor.filter(data => data !== null);
+  const categoryColorNotUndefind = categoryColor.filter(
+    data => data !== null && data.name === typeName
+  );
   let Color = [];
   categoryColorNotUndefind.map(data => {
-    if (
-      !Color.find(function(element) {
-        return element === data.value;
-      })
-    ) {
-      Color.push(data.value);
+    let dataColor = {};
+    let findIndexColor = -1;
+
+    if (Color[0]) {
+      findIndexColor = Color.findIndex(function(element) {
+        const ColorSum = categoryColorNotUndefind.filter(
+          data => data.value === element.value
+        );
+
+        dataColor = { value: element.value, lengthData: ColorSum.length };
+        return element.value === data.value;
+      });
+    }
+    console.log(findIndexColor, dataColor);
+
+    if (findIndexColor === -1) {
+      Color.push({ value: data.value, lengthData: 1 });
+    } else {
+      Color[findIndexColor] = dataColor;
     }
   });
   return Color;

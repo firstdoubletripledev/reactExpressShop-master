@@ -22,18 +22,14 @@ export function Filter({ category = [], type = null }) {
         {category.map((data, i) => {
           if (data !== null) {
             return (
-              <li key={`facet_21941-${data}-${i}`}>
+              <li key={`facet_21941-${data.value}-${i}`}>
                 <label className="facet-label" htmlFor="facet_input_21941_0">
                   <span className="custom-checkbox">
-                    <input
-                      id="facet_input_21941_0"
-                      data-search-url="#0"
-                      type="checkbox"
-                    />
+                    <input id="facet_input_21941_0" type="checkbox" />
                     <span
                       className="color"
                       style={{
-                        backgroundColor: data
+                        backgroundColor: data.value
                       }}
                     />
                   </span>
@@ -42,8 +38,8 @@ export function Filter({ category = [], type = null }) {
                     className="_gray-darker search-link js-search-link"
                     rel="nofollow"
                   >
-                    {data}
-                    <span className="magnitude">(7)</span>
+                    {data.value}
+                    <span className="magnitude">({data.lengthData})</span>
                   </a>
                 </label>
               </li>
