@@ -1,11 +1,11 @@
 import React from "react";
 
 export function ProductItem({
-  imageUrl,
-  galleryImage,
-  name,
-  newPrice,
-  regularPrice
+  pathImg: imageUrl = "",
+  galleryImage = [],
+  name = "",
+  discountPrice: newPrice = "",
+  price: regularPrice = ""
 }) {
   return (
     <article

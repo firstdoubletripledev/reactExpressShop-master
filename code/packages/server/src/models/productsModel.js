@@ -9,8 +9,13 @@ const productsSchema = new Schema({
   price: String,
   description: String,
   stock: String,
-  category: String,
+  category: {
+    type: [{ type: Schema.Types.ObjectId, ref: 'categories' }],
+    default: ['5be66519f241d74b4728e2ce'],
+  },
   status: String,
+  galleryImage: [String],
+  discountPrice: String,
 });
 
 module.exports = mongoose.model('products', productsSchema);
