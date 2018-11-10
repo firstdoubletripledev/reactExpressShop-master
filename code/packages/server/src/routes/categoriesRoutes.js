@@ -11,6 +11,11 @@ router.get('/', categoriesController.list);
 /*
  * GET
  */
+router.get('/page/:page', categoriesController.listPage);
+
+/*
+ * GET
+ */
 router.get('/:id', categoriesController.show);
 
 /*

@@ -12,6 +12,7 @@ router.get('/', productsController.list);
  * GET
  */
 router.get('/page/:page', productsController.listPartition);
+// router.get('/page/:page/color/:color', productsController.listByColor);
 
 /*
  * GET

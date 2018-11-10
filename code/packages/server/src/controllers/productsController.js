@@ -57,6 +57,38 @@ module.exports = {
       });
   },
 
+  // async listByColor(req, res) {
+  //   try {
+  //     const perPage = 20;
+  //     const { page = 1, color = null } = req.params;
+  //     if (!color) {
+  //       return res.status(500).json({
+  //         message: 'Not found color in req.',
+  //       });
+  //     }
+
+  //     const productss = await ProductsModel.find()
+  //       .skip(perPage * page - perPage)
+  //       .limit(perPage)
+  //       .populate({
+  //         path: 'category',
+  //       });
+
+  //     const count = await ProductsModel.count();
+
+  //     return res.json({
+  //       data_products: productss,
+  //       current: page,
+  //       pages: Math.ceil(count / perPage),
+  //     });
+  //   } catch (error) {
+  //     return res.status(500).json({
+  //       message: 'Not error when getting products by color.',
+  //       error,
+  //     });
+  //   }
+  // },
+
   /**
    * productsController.show()
    */
@@ -117,13 +149,15 @@ module.exports = {
               error: error3,
             });
           }
+
           if (!categories) {
             const categorySave = new CategoriesModel({
               name: req.body.category.name,
               value: req.body.category.value,
+              products: [productsData._id],
             });
             categorySave.save((error1, dataCategory) => {
-              if (err) {
+              if (error1) {
                 return res.status(501).json({
                   message: 'error when save category',
                   error: error1,
@@ -142,17 +176,27 @@ module.exports = {
                 return res.status(201).json(productsDataNew);
               });
             });
+          } else {
+            categories.products.push(productsData._id);
+            categories.save((error2) => {
+              if (error2) {
+                return res.status(500).json({
+                  message: 'Error when update category products',
+                  error: error2,
+                });
+              }
+            });
+            productsData.category.push(categories._id);
+            productsData.save((error2, productsDataNew) => {
+              if (error2) {
+                return res.status(500).json({
+                  message: 'Error when update category products',
+                  error: error2,
+                });
+              }
+              return res.status(201).json(productsDataNew);
+            });
           }
-          productsData.category.push(categories._id);
-          productsData.save((error2, productsDataNew) => {
-            if (error2) {
-              return res.status(500).json({
-                message: 'Error when update category products',
-                error: error2,
-              });
-            }
-            return res.status(201).json(productsDataNew);
-          });
         },
       );
     });
@@ -218,6 +262,7 @@ module.exports = {
               const categorySave = new CategoriesModel({
                 name: req.body.category.name,
                 value: req.body.category.value,
+                products: [productsData._id],
               });
               categorySave.save((error1, dataCategory) => {
                 if (err) {
@@ -240,6 +285,16 @@ module.exports = {
                 });
               });
             } else {
+              categories.products.push(productsData._id);
+              categories.save((error2) => {
+                if (error2) {
+                  return res.status(500).json({
+                    message: 'Error when update category products',
+                    error: error2,
+                  });
+                }
+              });
+  
               productsData.category.push(categories._id);
               productsData.save((error2, productsDataNew) => {
                 if (error2) {
