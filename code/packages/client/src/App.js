@@ -83,9 +83,16 @@ class App extends Component {
               exact
               component={AsyncCheckoutPage}
             />
+
             <Route
               location={location}
               path="/category"
+              exact
+              component={AsyncCategoryPage}
+            />
+            <Route
+              location={location}
+              path="/category/:page"
               exact
               component={AsyncCategoryPage}
             />

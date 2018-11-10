@@ -64,12 +64,10 @@ const Header = () => {
             <div className="module ">
               <div id="_desktop_user_info">
                 <div className="header_user_info user-info current">
-                  <a href="#" onClick={() => null}>
-                    <Link to="/login">
-                      <i className="fl-chapps-user139" />
-                      <span>Sign in</span>
-                    </Link>
-                  </a>
+                  <Link to="/login">
+                    <i className="fl-chapps-user139" />
+                    <span>Sign in</span>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -5,11 +5,15 @@ import Container from "./Container.jsx";
 import Header from "../../navigations/Header.jsx";
 import Footer from "../../navigations/Footer.jsx";
 
-const CategoryPage = () => {
+const CategoryPage = ({
+  match: {
+    params: { page = 1 }
+  }
+}) => {
   return (
     <>
       <Header />
-      <Container />
+      <Container page={page} />
       <Footer />
     </>
   );

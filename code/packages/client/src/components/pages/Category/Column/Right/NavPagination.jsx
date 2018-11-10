@@ -1,42 +1,67 @@
 import React from "react";
 
-export function NavPagination({}) {
+const render = (current, pages, getData) => {
+  let indents = [];
+
+  for (let i = 1; i <= pages; i++) {
+    console.log(i);
+    if (i === current) {
+      indents.push(
+        <li className="current" key={`js-search-link-${i}`}>
+          <a rel="nofollow" href="#0" className="disabled js-search-link">
+            {i}
+          </a>
+        </li>
+      );
+    } else {
+      indents.push(
+        <li key={`js-search-link-${i}`}>
+          <a
+            rel="nofollow"
+            href="#0"
+            className="js-search-link"
+            onClick={() => {
+              getData(i);
+            }}
+          >
+            {i}
+          </a>
+        </li>
+      );
+    }
+  }
+  return indents;
+};
+
+export function NavPagination({
+  getData = () => null,
+  current = 1,
+  pages = 1
+}) {
   return (
     <nav className="pagination">
       <div>
         <ul className="page-list clearfix text-sm-center">
           <li>
             <a
-              rel="prev"
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&page=1"
-              className="previous disabled js-search-link"
+              refs="previous"
+              className={`previous ${
+                current === 1 ? "disabled" : null
+              } js-search-link`}
+              href={`/category/${current - 1}`}
             >
               &lt;
             </a>
           </li>
-          <li className="current">
-            <a
-              rel="nofollow"
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&page=1"
-              className="disabled js-search-link"
-            >
-              1
-            </a>
-          </li>
+          {render(current, pages, getData)}
+
           <li>
             <a
-              rel="nofollow"
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&page=2"
-              className="js-search-link"
-            >
-              2
-            </a>
-          </li>
-          <li>
-            <a
-              rel="next"
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&page=2"
-              className="next js-search-link"
+              refs="next"
+              className={`next ${
+                current === pages ? "disabled" : null
+              } js-search-link`}
+              href={`/category/${current + 1}`}
             >
               &gt;
             </a>

@@ -11,6 +11,11 @@ router.get('/', productsController.list);
 /*
  * GET
  */
+router.get('/page/:page', productsController.listPartition);
+
+/*
+ * GET
+ */
 router.get('/:id', productsController.show);
 
 /*

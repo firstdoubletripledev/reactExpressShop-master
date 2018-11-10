@@ -1,11 +1,17 @@
 import React from "react";
 
+const l10nUSD = new Intl.NumberFormat("vi-VN", {
+  style: "currency",
+  currency: "VND"
+});
+
 export function ProductItem({
   pathImg: imageUrl = "",
   galleryImage = [],
   name = "",
   discountPrice: newPrice = "",
-  price: regularPrice = ""
+  price: regularPrice = "",
+  _id = null
 }) {
   return (
     <article
@@ -13,19 +19,19 @@ export function ProductItem({
       data-id-product={9}
       data-id-product-attribute={0}
       itemScope
-      itemType="http://schema.org/Product"
     >
       <div className="thumbnail-container">
         <a
-          href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_product=9&id_product_attribute=0&rewrite=autumn-shades-perfect-gift&controller=product&id_lang=1"
+          href={_id === null ? "#0" : `/product/${_id}`}
           className="thumbnail product-thumbnail"
         >
           <img src={imageUrl} alt="Autumn Shades Perfect Gift" />
         </a>
         <div className="gallery-wrapper">
           <ul className="gallery-thumb-list">
-            {galleryImage.map(imageGalleryUrl => (
+            {galleryImage.map((imageGalleryUrl, i) => (
               <li
+                key={`gallery-thumb-list-${i}`}
                 className="gallery-image-thumb active"
                 style={{ width: "20%" }}
                 id={imageGalleryUrl}
@@ -50,17 +56,19 @@ export function ProductItem({
         <div className="product-description">
           <div className="left">
             <h3 className="product-title" itemProp="name">
-              <a href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_product=9&id_product_attribute=0&rewrite=autumn-shades-perfect-gift&controller=product&id_lang=1">
-                {name}
-              </a>
+              <a href={_id === null ? "#0" : `/product/${_id}`}>{name}</a>
             </h3>
             <div className="product-price-and-shipping">
               <span className="sr-only">Price</span>
               <span itemProp="price" className="price new-price">
-                {newPrice}
+                {l10nUSD.format(newPrice)}
               </span>
               <span className="sr-only">Regular price</span>
-              <span className="regular-price" />
+              {!regularPrice ? null : (
+                <span className="regular-price">
+                  {l10nUSD.format(regularPrice)}
+                </span>
+              )}
             </div>
           </div>
           <div className="right" />

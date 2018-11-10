@@ -9,42 +9,58 @@ class Container extends Component {
     data: [],
     categoryColor: [],
     categoryHeight: [],
-    categoryBrand: []
+    categoryBrand: [],
+    current: 1,
+    pages: 1
   };
   componentDidMount = async () => {
     try {
-      const responseProducts = await Axios.get("/api/products");
-      const { data = [] } = responseProducts;
-      const category = data.map(({ category, code }) => {
-        if (category && category.length > 0) {
-          return category;
-        }
-      });
-
-      const categoryMerge = [].concat.apply([], category);
-      const categoryColor = categoryMerge.filter(({ name }) => {
-        return name === "Color";
-      });
-      const categoryHeight = categoryMerge.filter(({ name }) => {
-        return name === "Height";
-      });
-      const categoryBrand = categoryMerge.filter(({ name }) => {
-        return name === "Brand";
-      });
-
-      this.setState({
-        data,
-        categoryColor,
-        categoryHeight,
-        categoryBrand
-      });
+      const { page = 1 } = this.props;
+      await this.getData(page);
     } catch (error) {
       console.log(error);
     }
   };
 
+  getData = async page => {
+    const responseProducts = await Axios.get(`/api/products/page/${page}`);
+    const {
+      data: { data_products = [], current, pages } = []
+    } = responseProducts;
+    const category = data_products.map(({ category, code }) => {
+      if (category && category.length > 0) {
+        return category;
+      }
+    });
+    const categoryMerge = [].concat.apply([], category);
+    const categoryColor = categoryMerge.filter(({ name }) => {
+      return name === "Color";
+    });
+    const categoryHeight = categoryMerge.filter(({ name }) => {
+      return name === "Height";
+    });
+    const categoryBrand = categoryMerge.filter(({ name }) => {
+      return name === "Brand";
+    });
+    this.setState({
+      data: data_products,
+      categoryColor,
+      categoryHeight,
+      categoryBrand,
+      current,
+      pages
+    });
+  };
+
   render() {
-    const { data, categoryColor, categoryHeight, categoryBrand } = this.state;
+    const {
+      data,
+      categoryColor,
+      categoryHeight,
+      categoryBrand,
+      current,
+      pages
+    } = this.state;
 
     return (
       <div className="container">
@@ -52,7 +68,12 @@ class Container extends Component {
           <LeftColumn
             category={{ categoryColor, categoryHeight, categoryBrand }}
           />
-          <RightColumn data={data} />
+          <RightColumn
+            data={data}
+            current={current}
+            pages={pages}
+            getData={this.getData}
+          />
         </div>
       </div>
     );

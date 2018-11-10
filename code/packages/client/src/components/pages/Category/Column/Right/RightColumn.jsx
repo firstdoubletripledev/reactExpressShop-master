@@ -7,7 +7,7 @@ import { Description } from "./Description";
 import { ProductItem } from "./ProductItem";
 // import { data } from "./data";
 
-const RightColumn = ({ data = [] }) => {
+const RightColumn = ({ data = [], current, pages, getData }) => {
   return (
     <div id="content-wrapper" className="left-column col-12 col-md-9">
       <section id="main">
@@ -23,10 +23,14 @@ const RightColumn = ({ data = [] }) => {
             <div id="js-product-list">
               <div className="products row">
                 {data.map(dataItem => (
-                  <ProductItem key={dataItem.name} {...dataItem} />
+                  <ProductItem key={dataItem._id} {...dataItem} />
                 ))}
               </div>
-              <NavPagination />
+              <NavPagination
+                getData={getData}
+                current={current}
+                pages={pages}
+              />
             </div>
           </div>
           <div id="js-product-list-bottom" />
