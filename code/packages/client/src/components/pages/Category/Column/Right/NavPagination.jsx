@@ -4,7 +4,6 @@ const render = (current, pages, getData) => {
   let indents = [];
 
   for (let i = 1; i <= pages; i++) {
-    console.log(i);
     if (i === current) {
       indents.push(
         <li className="current" key={`js-search-link-${i}`}>
