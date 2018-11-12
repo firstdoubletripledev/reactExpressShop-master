@@ -17,21 +17,68 @@ const LeftColumn = ({
     categoryHeight = [],
     categoryBrand = [],
     Availability = {}
-  }
+  },
+  getDataByColor = () => null,
+  filterByClearAll = () => null,
+  filterByClick = () => null,
+  filterBy = ""
 }) => {
   return (
     <div id="left-column" className="col-12 col-md-3">
       <div id="search_filters_wrapper">
         <SearchFilterControler />
         <div id="search_filters">
-          <FilterBy />
-          <Filter category={categoryColor} type="Color" />
-          <Filter category={categoryHeight} type="Height" />
+          <FilterBy filterByClearAll={filterByClearAll} />
+          <div className="filters-by-list make-it-gap">
+            {filterBy.map(data => {
+              if (data.name === "Color") {
+                return (
+                  <div className="filters-by-list">
+                    <span
+                      className="color"
+                      style={{
+                        backgroundColor: data.value
+                      }}
+                    />
+                    <p className="_gray-darker search-link js-search-link">
+                      {data.value}
+                    </p>
+                  </div>
+                );
+              } else {
+                return (
+                  <div>
+                    <p className="_gray-darker search-link js-search-link">
+                      {data.value}
+                    </p>
+                  </div>
+                );
+              }
+            })}
+          </div>
+          <Filter
+            filterByClick={filterByClick}
+            category={categoryColor}
+            type="Color"
+            getDataByColor={getDataByColor}
+          />
+          <Filter
+            filterByClick={filterByClick}
+            category={categoryHeight}
+            type="Height"
+          />
           {/* <HeightFilter categoryHeight={categoryHeight} /> */}
-          <AvailabilityFilter Availability={Availability} />
-          <Filter category={categoryBrand} type="Brand" />
+          <AvailabilityFilter
+            filterByClick={filterByClick}
+            Availability={Availability}
+          />
+          <Filter
+            filterByClick={filterByClick}
+            category={categoryBrand}
+            type="Brand"
+          />
           {/* <BrandFilter categoryBrand={categoryBrand} /> */}
-          <PriceFilter />
+          {/* <PriceFilter /> */}
         </div>
       </div>
     </div>

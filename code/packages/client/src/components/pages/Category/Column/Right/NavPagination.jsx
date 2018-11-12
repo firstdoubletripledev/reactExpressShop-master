@@ -8,7 +8,7 @@ class NavPagination extends Component {
     pages: 1
   };
   componentDidMount = () => {
-    const { current, pages } = this.props;
+    const { current } = this.props;
 
     this.checkPage(Number(current));
   };

@@ -49,6 +49,31 @@ module.exports = {
       });
   },
 
+  listSearchByName(req, res) {
+    const perPage = 20;
+
+    const { value = null, name = null, page = 1 } = req.params;
+    console.log(name, value);
+    categoriesModel
+      .find({ name, value })
+      .populate({
+        path: 'products',
+        options: {
+          skip: perPage * page - perPage,
+          limit: perPage,
+        },
+      })
+      .exec((err, categoriess) => {
+        if (err) {
+          return res.status(500).json({
+            message: 'Error when getting categories.',
+            error: err,
+          });
+        }
+        return res.json(categoriess);
+      });
+  },
+
   /**
    * categoriesController.show()
    */

@@ -1,6 +1,9 @@
 import React from "react";
 
-export function AvailabilityFilter({ notAvl = 0, avl = 0 }) {
+export function AvailabilityFilter({
+  Availability: { notAvl = 0, avl = 0 },
+  filterByClick
+}) {
   return (
     <section className="facet clearfix">
       <h3 className="facet-title hidden-sm-down">Availability</h3>
@@ -28,6 +31,9 @@ export function AvailabilityFilter({ notAvl = 0, avl = 0 }) {
               href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
+              onClick={() => {
+                filterByClick({ name: "Stock", value: "Not available" });
+              }}
             >
               Not available
               <span className="magnitude">({notAvl})</span>
@@ -46,6 +52,9 @@ export function AvailabilityFilter({ notAvl = 0, avl = 0 }) {
               href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
+              onClick={() => {
+                filterByClick({ name: "Stock", value: "In stock" });
+              }}
             >
               In stock
               <span className="magnitude">({avl})</span>

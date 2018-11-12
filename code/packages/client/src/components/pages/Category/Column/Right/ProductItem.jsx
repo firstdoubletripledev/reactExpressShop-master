@@ -1,9 +1,10 @@
 import React from "react";
 
-const l10nUSD = new Intl.NumberFormat("vi-VN", {
+const l10nUSD = new Intl.NumberFormat("en-US", {
   style: "currency",
-  currency: "VND"
+  currency: "USD"
 });
+// var l10nEN = new Intl.NumberFormat("en-US")
 
 export function ProductItem({
   pathImg: imageUrl = "",

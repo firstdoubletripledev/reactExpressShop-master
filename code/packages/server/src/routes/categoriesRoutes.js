@@ -13,6 +13,9 @@ router.get('/', categoriesController.list);
  */
 router.get('/page/:page', categoriesController.listPage);
 
+router.get('/search/:name/:value/:page', categoriesController.listSearchByName);
+router.get('/search/:name/:value', categoriesController.listSearchByName);
+
 /*
  * GET
  */

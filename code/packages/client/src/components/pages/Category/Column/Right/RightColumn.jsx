@@ -12,14 +12,15 @@ const RightColumn = ({
   current,
   pages,
   getData,
-  loading = false
+  loading = false,
+  onClickSortBy = () => null
 }) => {
   return (
     <div id="content-wrapper" className="left-column col-12 col-md-9">
       <section id="main">
         <Description />
         <section id="products">
-          <TopProductNav data={data} />
+          <TopProductNav data={data} onClickSortBy={onClickSortBy} />
           <div className="hidden-sm-down">
             <section id="js-active-search-filters" className="hide">
               <h5 className="hidden-xs-up">Active filters</h5>

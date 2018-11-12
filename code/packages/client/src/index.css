@@ -17,3 +17,13 @@ a {
 .number-on-page {
     color: #f44336;
 }
+
+.filters-by-list {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.make-it-gap>div {
+    margin-right: 10px;
+}

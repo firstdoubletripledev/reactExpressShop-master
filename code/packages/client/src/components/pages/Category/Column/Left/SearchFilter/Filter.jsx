@@ -1,6 +1,11 @@
 import React from "react";
 
-export function Filter({ category = [], type = null }) {
+export function Filter({
+  category = [],
+  type = null,
+  getDataByColor,
+  filterByClick
+}) {
   if (type === null) {
     return null;
   }
@@ -25,18 +30,33 @@ export function Filter({ category = [], type = null }) {
               <li key={`facet_21941-${data.value}-${i}`}>
                 <label className="facet-label" htmlFor="facet_input_21941_0">
                   <span className="custom-checkbox">
-                    <input id="facet_input_21941_0" type="checkbox" />
-                    <span
-                      className="color"
-                      style={{
-                        backgroundColor: data.value
-                      }}
-                    />
+                    {type === "Color" ? (
+                      <>
+                        <input id="facet_input_21941_0" type="checkbox" />
+                        <span
+                          className="color"
+                          style={{
+                            backgroundColor: data.value
+                          }}
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <input id="facet_input_27460_3" type="checkbox" />
+                        <span className="ps-shown-by-js">
+                          <i className="material-icons checkbox-checked"></i>
+                        </span>
+                      </>
+                    )}
                   </span>
                   <a
                     href="#0"
                     className="_gray-darker search-link js-search-link"
                     rel="nofollow"
+                    onClick={() => {
+                      filterByClick({ name: type, value: data.value });
+                      getDataByColor(type, data.value);
+                    }}
                   >
                     {data.value}
                     <span className="magnitude">({data.lengthData})</span>

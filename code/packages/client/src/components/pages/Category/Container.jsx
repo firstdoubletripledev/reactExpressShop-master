@@ -17,7 +17,9 @@ class Container extends Component {
     Availability: {
       notAvl: 0,
       avl: 0
-    }
+    },
+    filterBy: [],
+    typeSort: null
   };
   componentDidMount = async () => {
     try {
@@ -28,11 +30,25 @@ class Container extends Component {
     }
   };
 
+  onClickSortBy = async name => {
+    await this.setTypeSort(name);
+    const { page = 1 } = this.props;
+    await this.getData(page);
+  };
+
+  setTypeSort = async name => {
+    this.setState({
+      typeSort: name
+    });
+  };
+
   getData = async page => {
     if (this.state.loading === false) {
       this.setState({ loading: true });
     }
-    const responseProducts = await Axios.get(`/api/products/page/${page}`);
+    const { typeSort } = this.state;
+    const responseProducts = await getDataByType(typeSort, page);
+    console.log(responseProducts);
     const {
       data: { data_products = [], current, pages } = []
     } = responseProducts;
@@ -68,6 +84,43 @@ class Container extends Component {
     });
   };
 
+  getDataByColor = async (name, value) => {
+    try {
+      const res = await Axios.get(`/api/categories/search/${name}/${value}/1`);
+      console.log(res.data);
+      if (!res.data[0] || !res.data[0].products) {
+        return;
+      }
+      this.setState({
+        data: res.data[0].products
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  filterByClearAll = async event => {
+    this.setState({
+      filterBy: []
+    });
+    await this.componentDidMount();
+  };
+
+  filterByClick = async (data = {}) => {
+    const { filterBy = [] } = this.state;
+    const check = filterBy.findIndex(function(dataFilterBy) {
+      return dataFilterBy.name === data.name;
+    });
+    if (check === -1) {
+      filterBy.push(data);
+    } else {
+      filterBy[check].value = data.value;
+    }
+    await this.setState({
+      filterBy
+    });
+  };
+
   render() {
     const {
       data,
@@ -77,13 +130,18 @@ class Container extends Component {
       current,
       pages,
       loading,
-      Availability
+      Availability,
+      filterBy
     } = this.state;
 
     return (
       <div className="container">
         <div className="row">
           <LeftColumn
+            filterByClearAll={this.filterByClearAll}
+            filterByClick={this.filterByClick}
+            getDataByColor={this.getDataByColor}
+            filterBy={filterBy}
             category={{
               categoryColor,
               categoryHeight,
@@ -97,6 +155,7 @@ class Container extends Component {
             pages={pages}
             getData={this.getData}
             loading={loading}
+            onClickSortBy={this.onClickSortBy}
           />
         </div>
       </div>
@@ -105,6 +164,22 @@ class Container extends Component {
 }
 
 export default Container;
+async function getDataByType(type, page) {
+  console.log(type, page);
+  if (type === null) {
+    return await Axios.get(`/api/products/page/${page}`);
+  } else if (type === "Name, A to Z") {
+    return await Axios.get(`/api/products/sortname/${page}`);
+  } else if (type === "Name, Z to A") {
+    return await Axios.get(`/api/products/sortnamedesc/${page}`);
+  } else if (type === "Price, low to high") {
+    return await Axios.get(`/api/products/price/${page}`);
+  } else if (type === "Price, high to low") {
+    return await Axios.get(`/api/products/pricedesc/${page}`);
+  }
+  return null;
+}
+
 function MergeDeepByTag(categoryMerge, typeName) {
   const categoryColor = categoryMerge.map(({ name, value }) => {
     if (name === typeName) {
@@ -130,7 +205,6 @@ function MergeDeepByTag(categoryMerge, typeName) {
         return element.value === data.value;
       });
     }
-    console.log(findIndexColor, dataColor);
 
     if (findIndexColor === -1) {
       Color.push({ value: data.value, lengthData: 1 });
