@@ -53,9 +53,8 @@ module.exports = {
     const perPage = 20;
 
     const { value = null, name = null, page = 1 } = req.params;
-    console.log(name, value);
     categoriesModel
-      .find({ name, value })
+      .findOne({ name, value })
       .populate({
         path: 'products',
         options: {

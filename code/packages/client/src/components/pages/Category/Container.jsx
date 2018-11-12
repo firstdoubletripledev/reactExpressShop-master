@@ -23,7 +23,10 @@ class Container extends Component {
   };
   componentDidMount = async () => {
     try {
-      const { page = 1 } = this.props;
+      const { page = 1, typeEvent } = this.props;
+      // if (typeEvent !== null) {
+      //   await this.getDataByColor(typeEvent);
+      // }
       await this.getData(page);
     } catch (error) {
       console.log(error);
@@ -48,7 +51,6 @@ class Container extends Component {
     }
     const { typeSort } = this.state;
     const responseProducts = await getDataByType(typeSort, page);
-    console.log(responseProducts);
     const {
       data: { data_products = [], current, pages } = []
     } = responseProducts;
@@ -87,12 +89,11 @@ class Container extends Component {
   getDataByColor = async (name, value) => {
     try {
       const res = await Axios.get(`/api/categories/search/${name}/${value}/1`);
-      console.log(res.data);
-      if (!res.data[0] || !res.data[0].products) {
+      if (!res.data || !res.data.products) {
         return;
       }
       this.setState({
-        data: res.data[0].products
+        data: res.data.products
       });
     } catch (error) {
       console.log(error);

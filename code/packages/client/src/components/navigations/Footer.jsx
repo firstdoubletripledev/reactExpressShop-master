@@ -28,7 +28,7 @@ const Footer = () => {
                           <a
                             id="link-cms-page-1-1"
                             className="cms-page-link"
-                            href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_cms=1&controller=cms&id_lang=1"
+                            href="#0"
                             title="Our terms and conditions of delivery"
                           >
                             Delivery
@@ -38,7 +38,7 @@ const Footer = () => {
                           <a
                             id="link-cms-page-4-1"
                             className="cms-page-link"
-                            href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_cms=4&controller=cms&id_lang=1"
+                            href="#0"
                             title="Learn more about us"
                           >
                             About us
@@ -48,7 +48,7 @@ const Footer = () => {
                           <a
                             id="link-cms-page-5-1"
                             className="cms-page-link"
-                            href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_cms=5&controller=cms&id_lang=1"
+                            href="#0"
                             title="Our secure payment method"
                           >
                             Payment methods
@@ -58,7 +58,7 @@ const Footer = () => {
                           <a
                             id="link-cms-page-6-1"
                             className="cms-page-link"
-                            href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_cms=6&controller=cms&id_lang=1"
+                            href="#0"
                             title="Pages configuration"
                           >
                             Pages configuration
@@ -68,7 +68,7 @@ const Footer = () => {
                           <a
                             id="link-product-page-new-products-1"
                             className="cms-page-link"
-                            href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=new-products"
+                            href="#0"
                             title="Our new products"
                           >
                             New products
@@ -78,7 +78,7 @@ const Footer = () => {
                           <a
                             id="link-product-page-best-sales-1"
                             className="cms-page-link"
-                            href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=best-sales"
+                            href="#0"
                             title="Our best sales"
                           >
                             Best sales
@@ -88,7 +88,7 @@ const Footer = () => {
                           <a
                             id="link-static-page-contact-1"
                             className="cms-page-link"
-                            href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=contact"
+                            href="#0"
                             title="Use our form to contact us"
                           >
                             Contact us
@@ -98,7 +98,7 @@ const Footer = () => {
                           <a
                             id="link-static-page-sitemap-1"
                             className="cms-page-link"
-                            href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=sitemap"
+                            href="#0"
                             title="Lost ? Find what your are looking for"
                           >
                             Sitemap
@@ -113,10 +113,7 @@ const Footer = () => {
                 <div className="module ">
                   <div id="block_myaccount_infos" className="links wrapper">
                     <h3 className="hidden-sm-down">
-                      <a
-                        href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=my-account"
-                        rel="nofollow"
-                      >
+                      <a href="#0" rel="nofollow">
                         Your account
                       </a>
                     </h3>
@@ -136,38 +133,22 @@ const Footer = () => {
                       id="footer_account_list"
                     >
                       <li>
-                        <a
-                          href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=addresses"
-                          title="Addresses"
-                          rel="nofollow"
-                        >
+                        <a href="#0" title="Addresses" rel="nofollow">
                           Addresses
                         </a>
                       </li>
                       <li>
-                        <a
-                          href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=order-slip"
-                          title="Credit slips"
-                          rel="nofollow"
-                        >
+                        <a href="#0" title="Credit slips" rel="nofollow">
                           Credit slips
                         </a>
                       </li>
                       <li>
-                        <a
-                          href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=history"
-                          title="Orders"
-                          rel="nofollow"
-                        >
+                        <a href="#0" title="Orders" rel="nofollow">
                           Orders
                         </a>
                       </li>
                       <li>
-                        <a
-                          href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=identity"
-                          title="Personal info"
-                          rel="nofollow"
-                        >
+                        <a href="#0" title="Personal info" rel="nofollow">
                           Personal info
                         </a>
                       </li>
@@ -180,55 +161,35 @@ const Footer = () => {
                   <div className="block-categories hidden-sm-down">
                     <h3>Categories</h3>
                     <ul className="category-sub-menu">
-                      <li data-depth={0}>
-                        <a href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_category=12&controller=category&id_lang=1">
-                          Occasion{" "}
-                        </a>
+                      <li>
+                        <a href="#0"> Occasion </a>
                       </li>
-                      <li data-depth={0}>
-                        <a href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_category=13&controller=category&id_lang=1">
-                          Chemical fertilizers
-                        </a>
+                      <li>
+                        <a href="#0"> Chemical fertilizers</a>
                       </li>
-                      <li data-depth={0}>
-                        <a href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_category=14&controller=category&id_lang=1">
-                          Flower gallery
-                        </a>
+                      <li>
+                        <a href="#0"> Flower gallery</a>
                       </li>
-                      <li data-depth={0}>
-                        <a href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_category=15&controller=category&id_lang=1">
-                          Color
-                        </a>
+                      <li>
+                        <a href="#0"> Color</a>
                       </li>
-                      <li data-depth={0}>
-                        <a href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_category=16&controller=category&id_lang=1">
-                          Plants
-                        </a>
+                      <li>
+                        <a href="#0"> Plants</a>
                       </li>
-                      <li data-depth={0}>
-                        <a href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_category=17&controller=category&id_lang=1">
-                          Trees
-                        </a>
+                      <li>
+                        <a href="#0"> Trees</a>
                       </li>
-                      <li data-depth={0}>
-                        <a href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_category=18&controller=category&id_lang=1">
-                          Bushes
-                        </a>
+                      <li>
+                        <a href="#0"> Bushes</a>
                       </li>
-                      <li data-depth={0}>
-                        <a href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_category=19&controller=category&id_lang=1">
-                          Unique flowers
-                        </a>
+                      <li>
+                        <a href="#0"> Unique flowers</a>
                       </li>
-                      <li data-depth={0}>
-                        <a href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_category=20&controller=category&id_lang=1">
-                          Window plants
-                        </a>
+                      <li>
+                        <a href="#0"> Window plants</a>
                       </li>
-                      <li data-depth={0}>
-                        <a href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_category=21&controller=category&id_lang=1">
-                          Accessories
-                        </a>
+                      <li>
+                        <a href="#0"> Accessories</a>
                       </li>
                     </ul>
                   </div>
@@ -241,23 +202,18 @@ const Footer = () => {
                     <p>Join the conversation</p>
                     <ul>
                       <li className="facebook">
-                        <a
-                          href="https://www.facebook.com/ZEMEZLab/"
-                          target="_blank"
-                        >
+                        <a href="#0" target="_blank">
                           Facebook
                         </a>
                       </li>
                       <li className="twitter">
-                        <a href="https://twitter.com/zemezlab" target="_blank">
+                        <a href="#0" target="_blank">
+                          {" "}
                           Twitter
                         </a>
                       </li>
                       <li className="youtube">
-                        <a
-                          href="https://www.youtube.com/channel/UCPW43un8VFXHe9LxKpR_2Hg"
-                          target="_blank"
-                        >
+                        <a href="#0" target="_blank">
                           YouTube
                         </a>
                       </li>
@@ -272,10 +228,7 @@ const Footer = () => {
                         </a>
                       </li>
                       <li className="instagram">
-                        <a
-                          href="https://www.instagram.com/zemezlab/"
-                          target="_blank"
-                        >
+                        <a href="#0" target="_blank">
                           Instagram
                         </a>
                       </li>
