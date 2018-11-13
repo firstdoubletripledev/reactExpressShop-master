@@ -22,11 +22,7 @@ export function ColorFilter({ categoryColor = [] }) {
               <li key={_id}>
                 <label className="facet-label" htmlFor="facet_input_21941_0">
                   <span className="custom-checkbox">
-                    <input
-                      id="facet_input_21941_0"
-                      data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Color-Grey"
-                      type="checkbox"
-                    />
+                    <input id="facet_input_21941_0" type="checkbox" />
                     <span
                       className="color"
                       style={{
@@ -35,7 +31,7 @@ export function ColorFilter({ categoryColor = [] }) {
                     />
                   </span>
                   <a
-                    href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Color-Grey"
+                    href="#0"
                     className="_gray-darker search-link js-search-link"
                     rel="nofollow"
                   >

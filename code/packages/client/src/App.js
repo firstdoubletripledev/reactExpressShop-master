@@ -11,8 +11,12 @@ import getAuth from "./components/getAuth";
 import dashboard from "./components/pages/DashBoardPage";
 import PrivateRoute from "./PrivateRoute";
 
+// const AsyncHome = Loadable({
+//   loader: () => import("./components/pages/HomePage"),
+//   loading: LoadingCompoment
+// });
 const AsyncHome = Loadable({
-  loader: () => import("./components/pages/HomePage"),
+  loader: () => import("./components/pages/newHomePage/NewHomePage"),
   loading: LoadingCompoment
 });
 const AsyncLoginPage = Loadable({
@@ -93,6 +97,12 @@ class App extends Component {
             <Route
               location={location}
               path="/category/:page"
+              exact
+              component={AsyncCategoryPage}
+            />
+            <Route
+              location={location}
+              path="/flowers/event/:typeevent/:page"
               exact
               component={AsyncCategoryPage}
             />

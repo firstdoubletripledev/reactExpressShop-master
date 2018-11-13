@@ -57,6 +57,150 @@ module.exports = {
       });
   },
 
+  listPartitionSortByName(req, res) {
+    const perPage = 20;
+    const { page = 1 } = req.params;
+
+    ProductsModel.find()
+      .sort({
+        name: 1,
+      })
+      .skip(perPage * page - perPage)
+      .limit(perPage)
+      .populate('category')
+      .exec((err, productss) => {
+        if (err) {
+          return res.status(500).json({
+            message: 'Error when getting products.',
+            error: err,
+          });
+        }
+
+        ProductsModel.count().exec((errCount, count) => {
+          if (errCount) {
+            return res.status(500).json({
+              message: 'Error when count products.',
+              error: errCount,
+            });
+          }
+
+          return res.json({
+            data_products: productss,
+            current: page,
+            pages: Math.ceil(count / perPage),
+          });
+        });
+      });
+  },
+
+  listPartitionSortByNameDesc(req, res) {
+    const perPage = 20;
+    const { page = 1 } = req.params;
+
+    ProductsModel.find()
+      .sort({
+        name: -1,
+      })
+      .skip(perPage * page - perPage)
+      .limit(perPage)
+      .populate('category')
+      .exec((err, productss) => {
+        if (err) {
+          return res.status(500).json({
+            message: 'Error when getting products.',
+            error: err,
+          });
+        }
+
+        ProductsModel.count().exec((errCount, count) => {
+          if (errCount) {
+            return res.status(500).json({
+              message: 'Error when count products.',
+              error: errCount,
+            });
+          }
+
+          return res.json({
+            data_products: productss,
+            current: page,
+            pages: Math.ceil(count / perPage),
+          });
+        });
+      });
+  },
+
+  listPartitionSortByPrice(req, res) {
+    const perPage = 20;
+    const { page = 1 } = req.params;
+
+    ProductsModel.find()
+      .sort({
+        price: 1,
+      })
+      .skip(perPage * page - perPage)
+      .limit(perPage)
+      .populate('category')
+      .exec((err, productss) => {
+        if (err) {
+          return res.status(500).json({
+            message: 'Error when getting products.',
+            error: err,
+          });
+        }
+
+        ProductsModel.count().exec((errCount, count) => {
+          if (errCount) {
+            return res.status(500).json({
+              message: 'Error when count products.',
+              error: errCount,
+            });
+          }
+
+          return res.json({
+            data_products: productss,
+            current: page,
+            pages: Math.ceil(count / perPage),
+          });
+        });
+      });
+  },
+
+  listPartitionSortByPricedesc(req, res) {
+    const perPage = 20;
+    const { page = 1 } = req.params;
+
+    ProductsModel.find()
+      .sort({
+        price: -1,
+      })
+      .skip(perPage * page - perPage)
+      .limit(perPage)
+      .populate('category')
+      .exec((err, productss) => {
+        if (err) {
+          return res.status(500).json({
+            message: 'Error when getting products.',
+            error: err,
+          });
+        }
+
+        ProductsModel.count().exec((errCount, count) => {
+          if (errCount) {
+            return res.status(500).json({
+              message: 'Error when count products.',
+              error: errCount,
+            });
+          }
+
+          return res.json({
+            data_products: productss,
+            current: page,
+            pages: Math.ceil(count / perPage),
+          });
+        });
+      });
+  },
+
   // async listByColor(req, res) {
   //   try {
   //     const perPage = 20;
@@ -294,7 +438,7 @@ module.exports = {
                   });
                 }
               });
-  
+
               productsData.category.push(categories._id);
               productsData.save((error2, productsDataNew) => {
                 if (error2) {

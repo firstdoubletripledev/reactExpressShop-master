@@ -1,6 +1,6 @@
 import React from "react";
 
-export function FilterBy({}) {
+export function FilterBy({ filterByClearAll }) {
   return (
     <>
       <h2 className="h3 hidden-sm-down">Filter By</h2>
@@ -9,8 +9,10 @@ export function FilterBy({}) {
         className="hidden-sm-down clear-all-wrapper"
       >
         <button
-          data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1"
           className="btn js-search-filters-clear-all"
+          onClick={() => {
+            filterByClearAll();
+          }}
         >
           Clear all
           <i className="material-icons"></i>

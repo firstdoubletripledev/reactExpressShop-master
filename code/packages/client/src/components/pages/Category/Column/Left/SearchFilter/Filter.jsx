@@ -1,49 +1,65 @@
 import React from "react";
 
-export function Filter({ category = [] }) {
-  if (!category[0]) {
+export function Filter({
+  category = [],
+  type = null,
+  getDataByColor,
+  filterByClick
+}) {
+  if (type === null) {
     return null;
   }
   return (
     <section className="facet clearfix">
-      <h3 className="facet-title hidden-sm-down">{category[0].name}</h3>
+      <h3 className="facet-title hidden-sm-down">{type}</h3>
       <div
         className="title hidden-md-up"
         data-target="#facet_21941"
         data-toggle="collapse"
       >
-        <h3 className="facet-title">{category[0].name}</h3>
+        <h3 className="facet-title">{type}</h3>
         <span className="navbar-toggler collapse-icons">
           <i className="material-icons add"></i>
           <i className="material-icons remove"></i>
         </span>
       </div>
       <ul id="facet_21941" className="collapse">
-        {category.map(({ value = null, _id }, i) => {
-          if (value !== null) {
+        {category.map((data, i) => {
+          if (data !== null) {
             return (
-              <li key={`${_id}-${i}`}>
+              <li key={`facet_21941-${data.value}-${i}`}>
                 <label className="facet-label" htmlFor="facet_input_21941_0">
                   <span className="custom-checkbox">
-                    <input
-                      id="facet_input_21941_0"
-                      data-search-url="#0"
-                      type="checkbox"
-                    />
-                    <span
-                      className="color"
-                      style={{
-                        backgroundColor: value
-                      }}
-                    />
+                    {type === "Color" ? (
+                      <>
+                        <input id="facet_input_21941_0" type="checkbox" />
+                        <span
+                          className="color"
+                          style={{
+                            backgroundColor: data.value
+                          }}
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <input id="facet_input_27460_3" type="checkbox" />
+                        <span className="ps-shown-by-js">
+                          <i className="material-icons checkbox-checked"></i>
+                        </span>
+                      </>
+                    )}
                   </span>
                   <a
                     href="#0"
                     className="_gray-darker search-link js-search-link"
                     rel="nofollow"
+                    onClick={() => {
+                      filterByClick({ name: type, value: data.value });
+                      getDataByColor(type, data.value);
+                    }}
                   >
-                    {value}
-                    <span className="magnitude">(7)</span>
+                    {data.value}
+                    <span className="magnitude">({data.lengthData})</span>
                   </a>
                 </label>
               </li>

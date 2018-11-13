@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    overflow-x: hidden;
 }
 
 a {
@@ -9,5 +10,24 @@ a {
 }
 
 .js-search-link {
+    border: none;
+    cursor: pointer;
     margin-bottom: 0;
 }
+
+.number-on-page {
+    color: #f44336;
+}
+
+.filters-by-list {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.make-it-gap>div {
+    margin-right: 10px;
+}
+ /* .category-sub-menu>li::before {
+     content: "" !important; 
+} */

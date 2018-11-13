@@ -7,13 +7,20 @@ import { Description } from "./Description";
 import { ProductItem } from "./ProductItem";
 // import { data } from "./data";
 
-const RightColumn = ({ data = [], current, pages, getData }) => {
+const RightColumn = ({
+  data = [],
+  current,
+  pages,
+  getData,
+  loading = false,
+  onClickSortBy = () => null
+}) => {
   return (
     <div id="content-wrapper" className="left-column col-12 col-md-9">
       <section id="main">
         <Description />
         <section id="products">
-          <TopProductNav data={data} />
+          <TopProductNav data={data} onClickSortBy={onClickSortBy} />
           <div className="hidden-sm-down">
             <section id="js-active-search-filters" className="hide">
               <h5 className="hidden-xs-up">Active filters</h5>
@@ -22,9 +29,11 @@ const RightColumn = ({ data = [], current, pages, getData }) => {
           <div>
             <div id="js-product-list">
               <div className="products row">
-                {data.map(dataItem => (
-                  <ProductItem key={dataItem._id} {...dataItem} />
-                ))}
+                {loading
+                  ? "loading..."
+                  : data.map(dataItem => (
+                      <ProductItem key={dataItem._id} {...dataItem} />
+                    ))}
               </div>
               <NavPagination
                 getData={getData}
