@@ -1,6 +1,6 @@
 import React from "react";
 
-export function PriceFilter({}) {
+export function PriceFilter() {
   return (
     <section className="facet clearfix">
       <h3 className="facet-title hidden-sm-down">Price</h3>

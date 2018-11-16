@@ -218,12 +218,12 @@ const Footer = () => {
                         </a>
                       </li>
                       <li className="googleplus">
-                        <a href="#" target="_blank">
+                        <a href="#0" target="_blank">
                           Google +
                         </a>
                       </li>
                       <li className="pinterest">
-                        <a href="#" target="_blank">
+                        <a href="#0" target="_blank">
                           Pinterest
                         </a>
                       </li>

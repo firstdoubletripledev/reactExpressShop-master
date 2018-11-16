@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { Menu, Dropdown, Icon } from "antd";
+import { Menu, Dropdown } from "antd";
 
 const menu = changeSortName => (
   <Menu>
     <Menu.Item>
       <a
+        href="#0"
         rel="nofollow"
         className="select-list current js-search-link"
         onClick={() => {
@@ -16,6 +17,7 @@ const menu = changeSortName => (
     </Menu.Item>
     <Menu.Item>
       <a
+        href="#0"
         rel="nofollow"
         className="select-list js-search-link"
         onClick={() => {
@@ -27,6 +29,7 @@ const menu = changeSortName => (
     </Menu.Item>
     <Menu.Item>
       <a
+        href="#0"
         rel="nofollow"
         className="select-list js-search-link"
         onClick={() => {
@@ -39,6 +42,7 @@ const menu = changeSortName => (
     <Menu.Item>
       {" "}
       <a
+        href="#0"
         rel="nofollow"
         className="select-list js-search-link"
         onClick={() => {
@@ -51,6 +55,7 @@ const menu = changeSortName => (
     <Menu.Item>
       {" "}
       <a
+        href="#0"
         rel="nofollow"
         className="select-list js-search-link"
         onClick={() => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export function TopLevelMenu({}) {
+export function TopLevelMenu() {
   return (
     <ul className="menu clearfix top-level-menu tmmegamenu_item sf-js-enabled sf-arrows">
       <li className="top-level-menu-li tmmegamenu_item it_30664364">

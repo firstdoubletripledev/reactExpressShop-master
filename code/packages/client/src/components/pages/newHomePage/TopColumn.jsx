@@ -1,6 +1,6 @@
 import React from "react";
 
-export function TopColumn({}) {
+export function TopColumn({ history }) {
   return (
     <section id="top-column">
       <div className="row it_DPULEPFTQQIH ">
@@ -11,20 +11,6 @@ export function TopColumn({}) {
                 className="homeslider slick-initialized slick-slider"
                 data-slick="{&quot;infinite&quot;: true, &quot;autoplaySpeed&quot;: 5000}"
               >
-                <button
-                  type="button"
-                  data-role="none"
-                  className="slick-prev slick-arrow"
-                  aria-label="Previous"
-                  role="button"
-                  style={{
-                    display: "block",
-                    backgroundImage:
-                      'url("https://ld-prestashop.template-help.com/prestashop_13106/modules/ps_imageslider/images/fea5e5201a2af5ad1bb7c3e9ecfc19484207c5ef_slide-3.jpg")'
-                  }}
-                >
-                  Previous
-                </button>
                 <div aria-live="polite" className="slick-list draggable">
                   <div
                     className="slick-track"
@@ -35,58 +21,20 @@ export function TopColumn({}) {
                     }}
                   >
                     <div
-                      className="slide slick-slide slick-current slick-active"
-                      data-slick-index={0}
-                      aria-hidden="false"
-                      tabIndex={-1}
-                      role="option"
-                      aria-describedby="slick-slide00"
-                      style={{
-                        width: 1303,
-                        position: "relative",
-                        left: 0,
-                        top: 0,
-                        zIndex: 999,
-                        opacity: 1
-                      }}
-                    >
-                      <a href="#0" tabIndex={0}>
-                        <img
-                          src="https://ld-prestashop.template-help.com/prestashop_13106/modules/ps_imageslider/images/befc5ec9b4a312ff88f653e95c2e4e936c670108_slide-1.jpg"
-                          alt="sample-1"
-                        />
-                        <div className="caption">
-                          <div>
-                            <div className="inset-1">
-                              <h4>Long Stemmed Flowers!</h4>
-                              <h2>
-                                <span className="big">sale</span>
-                                <br />
-                                <span className="ls0">20%</span>
-                                <span className="lh0">
-                                  <span className="small">off</span>{" "}
-                                  <span className="h3">on New Arrivals</span>
-                                </span>
-                              </h2>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div
                       className="slide slick-slide"
                       data-slick-index={1}
                       aria-hidden="true"
                       tabIndex={-1}
-                      role="option"
+                      // role="option"
                       aria-describedby="slick-slide01"
+                      onClick={() => {
+                        history.push("/category");
+                      }}
                       style={{
-                        width: 1303,
                         position: "relative",
-                        left: "-1303px",
                         top: 0,
                         zIndex: 998,
-                        opacity: 0,
+                        opacity: 1,
                         transition: "opacity 500ms linear 0s"
                       }}
                     >
@@ -114,61 +62,8 @@ export function TopColumn({}) {
                         </div>
                       </a>
                     </div>
-                    <div
-                      className="slide slick-slide"
-                      data-slick-index={2}
-                      aria-hidden="true"
-                      tabIndex={-1}
-                      role="option"
-                      aria-describedby="slick-slide02"
-                      style={{
-                        width: 1303,
-                        position: "relative",
-                        left: "-2606px",
-                        top: 0,
-                        zIndex: 998,
-                        opacity: 0,
-                        transition: "opacity 500ms linear 0s"
-                      }}
-                    >
-                      <a href="#0" tabIndex={-1}>
-                        <img
-                          src="https://ld-prestashop.template-help.com/prestashop_13106/modules/ps_imageslider/images/fea5e5201a2af5ad1bb7c3e9ecfc19484207c5ef_slide-3.jpg"
-                          alt="sample-3"
-                        />
-                        <div className="caption">
-                          <div>
-                            <h4>Holiday Gifts</h4>
-                            <h2>
-                              <span className="big align-top">big</span>{" "}
-                              <span className="space" />{" "}
-                              <span className="big">
-                                SALE{" "}
-                                <span className="h3">
-                                  more 300 perfect items!
-                                </span>
-                              </span>
-                            </h2>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
                   </div>
                 </div>
-                <button
-                  type="button"
-                  data-role="none"
-                  className="slick-next slick-arrow"
-                  aria-label="Next"
-                  role="button"
-                  style={{
-                    display: "block",
-                    backgroundImage:
-                      'url("https://ld-prestashop.template-help.com/prestashop_13106/modules/ps_imageslider/images/cab37099ed646386ddabfb16402e0e89f97602ce_slide-2.jpg")'
-                  }}
-                >
-                  Next
-                </button>
               </div>
             </div>
           </div>
@@ -191,7 +86,7 @@ export function TopColumn({}) {
                         src="https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/7fd2279725df0e252f7a621a780dea60ef67aade_top-banner-1.jpg"
                         className="item-img img-responsive"
                         title
-                        alt
+                        alt=""
                         width={567}
                         height={583}
                       />
@@ -214,7 +109,7 @@ export function TopColumn({}) {
                         src="https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/68cd47e008afd9a9fa1d3024f8bc9780fa513466_top-banner-2.jpg"
                         className="item-img img-responsive"
                         title
-                        alt
+                        alt=""
                         width={567}
                         height={583}
                       />
@@ -237,7 +132,7 @@ export function TopColumn({}) {
                         src="https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/0c1b2755fa48a10764dc2ec243cbd29ec62500e7_top-banner-3.jpg"
                         className="item-img img-responsive"
                         title
-                        alt
+                        alt=""
                         width={567}
                         height={583}
                       />

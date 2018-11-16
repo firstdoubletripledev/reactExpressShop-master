@@ -38,6 +38,8 @@ export function HeightFilter({ categoryHeight = [] }) {
                 </label>
               </li>
             );
+          } else {
+            return null;
           }
         })}
       </ul>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Axios from "axios";
-import { mergeAll, concat, mergeDeepWithKey } from "ramda";
+// import { mergeAll, concat, mergeDeepWithKey } from "ramda";
 
 import { LeftColumn } from "./Column/Left/LeftColumn";
 import { RightColumn } from "./Column/Right/RightColumn";
@@ -23,7 +23,7 @@ class Container extends Component {
   };
   componentDidMount = async () => {
     try {
-      const { page = 1, typeEvent } = this.props;
+      const { page = 1 } = this.props;
       // if (typeEvent !== null) {
       //   await this.getDataByColor(typeEvent);
       // }
@@ -68,22 +68,25 @@ class Container extends Component {
       if (category && category.length > 0) {
         return category;
       }
+      return null;
     });
-    const categoryMerge = [].concat.apply([], category);
-    const Color = MergeDeepByTag(categoryMerge, "Color");
-    const Height = MergeDeepByTag(categoryMerge, "Height");
-    const Brand = MergeDeepByTag(categoryMerge, "Brand");
+    if (category !== null) {
+      const categoryMerge = [].concat.apply([], category);
+      const Color = MergeDeepByTag(categoryMerge, "Color");
+      const Height = MergeDeepByTag(categoryMerge, "Height");
+      const Brand = MergeDeepByTag(categoryMerge, "Brand");
 
-    this.setState({
-      data: data_products,
-      categoryColor: Color,
-      categoryHeight: Height,
-      categoryBrand: Brand,
-      current,
-      pages,
-      loading: false,
-      Availability: stockState
-    });
+      this.setState({
+        data: data_products,
+        categoryColor: Color,
+        categoryHeight: Height,
+        categoryBrand: Brand,
+        current,
+        pages,
+        loading: false,
+        Availability: stockState
+      });
+    }
   };
 
   getDataByColor = async (name, value) => {
@@ -212,6 +215,7 @@ function MergeDeepByTag(categoryMerge, typeName) {
     } else {
       Color[findIndexColor] = dataColor;
     }
+    return null;
   });
   return Color;
 }

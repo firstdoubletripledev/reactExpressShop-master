@@ -41,6 +41,8 @@ export function ColorFilter({ categoryColor = [] }) {
                 </label>
               </li>
             );
+          } else {
+            return null;
           }
         })}
       </ul>

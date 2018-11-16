@@ -6,7 +6,7 @@ import {
   // HeightFilter,
   AvailabilityFilter,
   // BrandFilter,
-  PriceFilter,
+  // PriceFilter,
   Filter
 } from "./SearchFilter";
 import { SearchFilterControler } from "./SearchFilterControler";

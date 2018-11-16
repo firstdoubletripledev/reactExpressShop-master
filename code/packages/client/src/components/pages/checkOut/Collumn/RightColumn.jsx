@@ -1,9 +1,7 @@
-
 import React from "react";
 
-
 export const RightColumn = () => (
-    <div className="col-md-4">
+  <div className="col-md-4">
     <section
       id="js-checkout-summary"
       className="card js-cart"
@@ -14,7 +12,7 @@ export const RightColumn = () => (
           <p>1 item</p>
           <p>
             <a
-              href="#"
+              href="#0"
               data-toggle="collapse"
               data-target="#cart-summary-product-list"
             >
@@ -37,13 +35,9 @@ export const RightColumn = () => (
                   </a>
                 </div>
                 <div className="media-body">
-                  <span className="product-name">
-                    Baby-Boy Perfect Gift
-                  </span>
+                  <span className="product-name">Baby-Boy Perfect Gift</span>
                   <span className="product-quantity">x1</span>
-                  <span className="product-price float-xs-right">
-                    $28.00
-                  </span>
+                  <span className="product-price float-xs-right">$28.00</span>
                 </div>
               </li>
             </ul>
@@ -77,5 +71,4 @@ export const RightColumn = () => (
       </div>
     </section>
   </div>
-  
 );

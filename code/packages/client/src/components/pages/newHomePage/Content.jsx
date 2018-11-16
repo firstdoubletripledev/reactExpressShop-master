@@ -1,4 +1,4 @@
-import { PopularProducts } from "./PopularProducts";
+// import { PopularProducts } from "./PopularProducts";
 import { CustomModule } from "./CustomModule";
 import { UniqueCompoent } from "./UniqueCompoent";
 import { SubmitNews } from "./SubmitNews";
@@ -6,7 +6,7 @@ import { TopColumn } from "./TopColumn";
 import { Breadcrumb } from "./Breadcrumb";
 import React from "react";
 
-export function Content({}) {
+export function Content() {
   return (
     <section id="wrapper">
       <Breadcrumb />

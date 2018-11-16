@@ -1,58 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   Form,
   Input,
-  Tooltip,
-  Icon,
-  Cascader,
-  Select,
-  Row,
-  Col,
+  // Tooltip,
+  // Icon,
+  // Cascader,
+  // Select,
+  // Row,
+  // Col,
   Checkbox,
-  Button,
-  AutoComplete
+  Button
+  // AutoComplete
 } from "antd";
 import Axios from "axios";
 import { withRouter } from "react-router-dom";
 
 const FormItem = Form.Item;
-const Option = Select.Option;
-const AutoCompleteOption = AutoComplete.Option;
-
-const residences = [
-  {
-    value: "zhejiang",
-    label: "Zhejiang",
-    children: [
-      {
-        value: "hangzhou",
-        label: "Hangzhou",
-        children: [
-          {
-            value: "xihu",
-            label: "West Lake"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    value: "jiangsu",
-    label: "Jiangsu",
-    children: [
-      {
-        value: "nanjing",
-        label: "Nanjing",
-        children: [
-          {
-            value: "zhonghuamen",
-            label: "Zhong Hua Men"
-          }
-        ]
-      }
-    ]
-  }
-];
+// const Option = Select.Option;
+// const AutoCompleteOption = AutoComplete.Option;
 
 class RegistrationForm extends React.Component {
   state = {
@@ -77,8 +42,8 @@ class RegistrationForm extends React.Component {
         }
         const {
           code = 0,
-          msg = "error not found please reload page and try again",
-          data = {}
+          msg = "error not found please reload page and try again"
+          // data = {}
         } = res.data;
 
         alert(msg);
@@ -142,7 +107,7 @@ class RegistrationForm extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    const { autoCompleteResult } = this.state;
+    // const { autoCompleteResult } = this.state;
 
     const formItemLayout = {
       labelCol: {
@@ -167,9 +132,9 @@ class RegistrationForm extends React.Component {
       }
     };
 
-    const websiteOptions = autoCompleteResult.map(website => (
-      <AutoCompleteOption key={website}>{website}</AutoCompleteOption>
-    ));
+    // const websiteOptions = autoCompleteResult.map(website => (
+    //   <AutoCompleteOption key={website}>{website}</AutoCompleteOption>
+    // ));
 
     return (
       <Form onSubmit={this.handleSubmit}>

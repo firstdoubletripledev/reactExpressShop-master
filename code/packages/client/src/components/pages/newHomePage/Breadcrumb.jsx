@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Breadcrumb({}) {
+export function Breadcrumb() {
   return (
     <nav data-depth={1} className="breadcrumb container">
       <ol

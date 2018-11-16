@@ -1,6 +1,6 @@
 import React from "react";
 
-export function BrandFilter({}) {
+export function BrandFilter() {
   return (
     <section className="facet clearfix">
       <h3 className="facet-title hidden-sm-down">Brand</h3>

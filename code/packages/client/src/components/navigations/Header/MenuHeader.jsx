@@ -1,7 +1,7 @@
 import React from "react";
 import { TopLevelMenu } from "./TopLevelMenu";
 
-export function MenuHeader({}) {
+export function MenuHeader() {
   return (
     <div className="stickUpTop">
       <div className="stickUpHolder">

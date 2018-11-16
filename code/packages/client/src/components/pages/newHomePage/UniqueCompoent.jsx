@@ -1,6 +1,6 @@
 import React from "react";
 
-export function UniqueCompoent({}) {
+export function UniqueCompoent() {
   return (
     <div
       className="rd-parallax rd-parallax-2"
@@ -8,7 +8,6 @@ export function UniqueCompoent({}) {
         position: "relative",
         overflow: "hidden",
         zIndex: 0,
-        height: 489,
         background: "#a9e7e2 center center"
       }}
     >

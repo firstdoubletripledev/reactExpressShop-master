@@ -1,6 +1,6 @@
 import React from "react";
 
-export function PopularProducts({}) {
+export function PopularProducts() {
   return (
     <div className="wrapper it_KHRBRDKHWIVY container">
       <div className="row it_LYSXLPGKUCSW ">
@@ -14,7 +14,7 @@ export function PopularProducts({}) {
                   data-role="none"
                   className="slick-prev slick-arrow"
                   aria-label="Previous"
-                  role="button"
+                  // role="button"
                   style={{
                     display: "block"
                   }}
@@ -208,11 +208,13 @@ export function PopularProducts({}) {
                                 />
                               </div>
                               <a
-                                href="javascript:void(0);"
+                                href="#0"
                                 className="ajax_add_to_cart_button add-to-cart fl-chapps-hand135"
                                 data-button-action="add-to-cart"
                                 tabIndex={-1}
-                              />
+                              >
+                                {null}
+                              </a>
                             </form>
                           </div>
                         </div>
@@ -222,10 +224,12 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={-1}
-                        />
+                        >
+                          {null}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -405,11 +409,13 @@ export function PopularProducts({}) {
                                 />
                               </div>
                               <a
-                                href="javascript:void(0);"
+                                href="#0"
                                 className="ajax_add_to_cart_button add-to-cart fl-chapps-hand135"
                                 data-button-action="add-to-cart"
                                 tabIndex={-1}
-                              />
+                              >
+                                {null}
+                              </a>
                             </form>
                           </div>
                         </div>
@@ -419,10 +425,12 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={-1}
-                        />
+                        >
+                          {null}{" "}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -602,11 +610,13 @@ export function PopularProducts({}) {
                                 />
                               </div>
                               <a
-                                href="javascript:void(0);"
+                                href="#0"
                                 className="ajax_add_to_cart_button add-to-cart fl-chapps-hand135"
                                 data-button-action="add-to-cart"
                                 tabIndex={-1}
-                              />
+                              >
+                                {null}
+                              </a>
                             </form>
                           </div>
                         </div>
@@ -616,10 +626,12 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={-1}
-                        />
+                        >
+                          {null}{" "}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -799,11 +811,13 @@ export function PopularProducts({}) {
                                 />
                               </div>
                               <a
-                                href="javascript:void(0);"
+                                href="#0"
                                 className="ajax_add_to_cart_button add-to-cart fl-chapps-hand135"
                                 data-button-action="add-to-cart"
                                 tabIndex={-1}
-                              />
+                              >
+                                {null}
+                              </a>
                             </form>
                           </div>
                         </div>
@@ -813,10 +827,12 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={-1}
-                        />
+                        >
+                          {null}{" "}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -831,7 +847,7 @@ export function PopularProducts({}) {
                         width: 314
                       }}
                       tabIndex={-1}
-                      role="option"
+                      // role="option"
                       aria-describedby="slick-slide10"
                     >
                       <div className="thumbnail-container">
@@ -1003,11 +1019,13 @@ export function PopularProducts({}) {
                                 />
                               </div>
                               <a
-                                href="javascript:void(0);"
+                                href="#0"
                                 className="ajax_add_to_cart_button add-to-cart fl-chapps-hand135"
                                 data-button-action="add-to-cart"
                                 tabIndex={0}
-                              />
+                              >
+                                {null}
+                              </a>
                             </form>
                           </div>
                         </div>
@@ -1017,7 +1035,7 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={0}
                         />
@@ -1177,7 +1195,7 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={0}
                         />
@@ -1367,11 +1385,13 @@ export function PopularProducts({}) {
                                 />
                               </div>
                               <a
-                                href="javascript:void(0);"
+                                href="#0"
                                 className="ajax_add_to_cart_button add-to-cart fl-chapps-hand135"
                                 data-button-action="add-to-cart"
                                 tabIndex={0}
-                              />
+                              >
+                                {null}
+                              </a>
                             </form>
                           </div>
                         </div>
@@ -1381,7 +1401,7 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={0}
                         />
@@ -1571,11 +1591,13 @@ export function PopularProducts({}) {
                                 />
                               </div>
                               <a
-                                href="javascript:void(0);"
+                                href="#0"
                                 className="ajax_add_to_cart_button add-to-cart fl-chapps-hand135"
                                 data-button-action="add-to-cart"
                                 tabIndex={0}
-                              />
+                              >
+                                {null}
+                              </a>
                             </form>
                           </div>
                         </div>
@@ -1585,7 +1607,7 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={0}
                         />
@@ -1770,11 +1792,13 @@ export function PopularProducts({}) {
                                 />
                               </div>
                               <a
-                                href="javascript:void(0);"
+                                href="#0"
                                 className="ajax_add_to_cart_button add-to-cart fl-chapps-hand135"
                                 data-button-action="add-to-cart"
                                 tabIndex={-1}
-                              />
+                              >
+                                {null}
+                              </a>
                             </form>
                           </div>
                         </div>
@@ -1784,10 +1808,12 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={-1}
-                        />
+                        >
+                          {null}{" "}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -1969,11 +1995,13 @@ export function PopularProducts({}) {
                                 />
                               </div>
                               <a
-                                href="javascript:void(0);"
+                                href="#0"
                                 className="ajax_add_to_cart_button add-to-cart fl-chapps-hand135"
                                 data-button-action="add-to-cart"
                                 tabIndex={-1}
-                              />
+                              >
+                                {null}
+                              </a>
                             </form>
                           </div>
                         </div>
@@ -1983,10 +2011,12 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={-1}
-                        />
+                        >
+                          {null}{" "}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -2168,11 +2198,13 @@ export function PopularProducts({}) {
                                 />
                               </div>
                               <a
-                                href="javascript:void(0);"
+                                href="#0"
                                 className="ajax_add_to_cart_button add-to-cart fl-chapps-hand135"
                                 data-button-action="add-to-cart"
                                 tabIndex={-1}
-                              />
+                              >
+                                {null}
+                              </a>
                             </form>
                           </div>
                         </div>
@@ -2182,10 +2214,12 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={-1}
-                        />
+                        >
+                          {null}{" "}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -2367,11 +2401,13 @@ export function PopularProducts({}) {
                                 />
                               </div>
                               <a
-                                href="javascript:void(0);"
+                                href="#0"
                                 className="ajax_add_to_cart_button add-to-cart fl-chapps-hand135"
                                 data-button-action="add-to-cart"
                                 tabIndex={-1}
-                              />
+                              >
+                                {null}
+                              </a>
                             </form>
                           </div>
                         </div>
@@ -2381,10 +2417,12 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={-1}
-                        />
+                        >
+                          {null}{" "}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -2569,11 +2607,13 @@ export function PopularProducts({}) {
                                 />
                               </div>
                               <a
-                                href="javascript:void(0);"
+                                href="#0"
                                 className="ajax_add_to_cart_button add-to-cart fl-chapps-hand135"
                                 data-button-action="add-to-cart"
                                 tabIndex={-1}
-                              />
+                              >
+                                {null}
+                              </a>
                             </form>
                           </div>
                         </div>
@@ -2583,10 +2623,12 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={-1}
-                        />
+                        >
+                          {null}{" "}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -2741,10 +2783,12 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={-1}
-                        />
+                        >
+                          {null}{" "}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -2929,11 +2973,13 @@ export function PopularProducts({}) {
                                 />
                               </div>
                               <a
-                                href="javascript:void(0);"
+                                href="#0"
                                 className="ajax_add_to_cart_button add-to-cart fl-chapps-hand135"
                                 data-button-action="add-to-cart"
                                 tabIndex={-1}
-                              />
+                              >
+                                {null}
+                              </a>
                             </form>
                           </div>
                         </div>
@@ -2943,10 +2989,12 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={-1}
-                        />
+                        >
+                          {null}{" "}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -3131,11 +3179,13 @@ export function PopularProducts({}) {
                                 />
                               </div>
                               <a
-                                href="javascript:void(0);"
+                                href="#0"
                                 className="ajax_add_to_cart_button add-to-cart fl-chapps-hand135"
                                 data-button-action="add-to-cart"
                                 tabIndex={-1}
-                              />
+                              >
+                                {null}
+                              </a>
                             </form>
                           </div>
                         </div>
@@ -3145,10 +3195,12 @@ export function PopularProducts({}) {
                         </ul>
                         <a
                           className="quick-view fl-chapps-eye95"
-                          href="#"
+                          href="#0"
                           data-link-action="quickview"
                           tabIndex={-1}
-                        />
+                        >
+                          {null}{" "}
+                        </a>
                       </div>
                     </article>
                   </div>

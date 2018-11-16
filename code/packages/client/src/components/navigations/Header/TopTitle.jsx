@@ -1,6 +1,6 @@
 import React from "react";
 
-export function TopTitle({}) {
+export function TopTitle() {
   return (
     <div className="row it_GQGYNCCMEUBS nav-full-width full-width">
       <div className="it_DVLGIWDOAESQ col-12     container">

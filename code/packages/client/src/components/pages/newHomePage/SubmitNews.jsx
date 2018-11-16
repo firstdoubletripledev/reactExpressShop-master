@@ -1,6 +1,6 @@
 import React from "react";
 
-export function SubmitNews({}) {
+export function SubmitNews() {
   return (
     <div className="wrapper it_ESKBJYFGKYLC container">
       <div className="row it_TJYCOUNMLNBI ">
@@ -16,7 +16,6 @@ export function SubmitNews({}) {
                   name="email"
                   type="text"
                   className="form-control"
-                  defaultValue
                   placeholder="Your email address"
                 />
                 <input

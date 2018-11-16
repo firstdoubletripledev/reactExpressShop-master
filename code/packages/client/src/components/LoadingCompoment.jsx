@@ -1,7 +1,5 @@
 import React from "react";
-{
-  /* import { Spin } from "antd"; */
-}
+/* import { Spin } from "antd"; */
 
 const LoadingCompoment = ({ isLoading, error }) => {
   // Handle the loading state

@@ -64,6 +64,8 @@ export function Filter({
                 </label>
               </li>
             );
+          } else {
+            return null;
           }
         })}
       </ul>

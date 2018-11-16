@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 
 import { Row, Col } from "antd";
-import { Table, Divider, Tag, Button, Input } from "antd";
+import { Table, Button, Input } from "antd";
 
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
 class CartTable extends Component {
-  constructor(props) {
-    super(props);
-  }
   state = {
     itemsInCart: []
   };
@@ -56,13 +53,13 @@ class CartTable extends Component {
         title: "Image",
         dataIndex: "image",
         key: "image",
-        render: text => <a href="javascript:;">{text}</a>
+        render: text => <a href="#0">{text}</a>
       },
       {
         title: "PRODUCT NAME",
         dataIndex: "productName",
         key: "productName",
-        render: text => <a href="javascript:;">{text}</a>
+        render: text => <a href="#0">{text}</a>
       },
       {
         title: "UNIT PRICE",
@@ -95,7 +92,7 @@ class CartTable extends Component {
         key: "action",
         render: (text, record) => (
           <span>
-            <a href="javascript:;">Delete</a>
+            <a href="#0">Delete</a>
           </span>
         )
       }

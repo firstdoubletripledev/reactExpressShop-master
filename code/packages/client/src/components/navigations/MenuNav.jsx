@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Menu, Icon, Form } from "antd";
 import { connect } from "react-redux";
 
-import { LoginBar } from "./LoginBar";
+// import { LoginBar } from "./LoginBar";
 import { DashboardBar } from "./DashboardBar";
 import { ContactsColumn } from "./ContactsColumn";
 import { SearchColumn } from "./SearchColumn";
