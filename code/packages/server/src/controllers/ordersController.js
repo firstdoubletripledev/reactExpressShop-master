@@ -1,4 +1,6 @@
 const ordersModel = require('../models/ordersModel.js');
+var Cart = require('../models/cart.js');
+var uniqid = require('uniqid');
 
 /**
  * ordersController.js
@@ -9,17 +11,28 @@ module.exports = {
   /**
    * ordersController.list()
    */
+
+
   list(req, res) {
-    ordersModel.find((err, orderss) => {
-      if (err) {
-        return res.status(500).json({
-          message: 'Error when getting orders.',
-          error: err,
-        });
-      }
-      return res.json(orderss);
+    ordersModel.find().populate({path:'user',select:'email'}).exec(function(err,orders){
+      if (err) return next(err);
+      res.json(orders);
+      console.log(orders[0].user.email);
     });
   },
+
+  // list(req, res) {
+  //   ordersModel.find((err, orderss) => {
+  //     if (err) {
+  //       return res.status(500).json({
+  //         message: 'Error when getting orders.',
+  //         error: err,
+  //       });
+  //     }
+  //     console.log(orderss);
+  //     return res.json(orderss);
+  //   });
+  // },
 
   /**
    * ordersController.show()
@@ -46,13 +59,34 @@ module.exports = {
    * ordersController.create()
    */
   create(req, res) {
+   
+    var cart = new Cart(req.session.cart)||{};
+    
+     var cart1 = {
+        products: cart.generateArray(), 
+        totalPrice: cart.totalPrice,
+        totalQty: cart.totalQty,
+
+    };
+
+  
+     
+        var date = new Date();
+        var code = uniqid();
+
     const orders = new ordersModel({
-      code: req.body.code,
-      createdate: req.body.createdate,
-      status: req.body.status,
-      price: req.body.price,
-      user: req.body.user,
-      products: req.body.products,
+      code : `${code}`,
+      createdate : `${date}`,
+      status : "noApprove",
+      user : req.body.user, //user ở đây là id user.
+      firstName : req.body.firstName,
+      lastName : req.body.lastName,
+      addressShip  :  req.body.addressShip,
+      phoneNumberShip : req.body.phoneNumberShip,
+      cart:cart1
+     
+     
+
     });
 
     orders.save((err, orders) => {
@@ -83,14 +117,15 @@ module.exports = {
           message: 'No such orders',
         });
       }
-
-      orders.code = req.body.code ? req.body.code : orders.code;
-      orders.createdate = req.body.createdate ? req.body.createdate : orders.createdate;
+      
+   
+       
       orders.status = req.body.status ? req.body.status : orders.status;
-      orders.price = req.body.price ? req.body.price : orders.price;
-      orders.user = req.body.user ? req.body.user : orders.user;
-      orders.products = req.body.products ? req.body.products : orders.products;
-
+     // orders.user = req.body.user ? req.body.user : orders.user;
+      orders.firstName=req.body.firstName?req.body.firstName :orders.firstName;
+      orders.lastName=req.body.lastName? req.body.lastName: orders.lastName;
+      orders.addressShip=req.body.addressShip?req.body.addressShip: orders.addressShip;
+      orders.phoneNumberShip=req.body.phoneNumberShip?req.body.phoneNumberShip : orders.phoneNumberShip;
       orders.save((err, orders) => {
         if (err) {
           return res.status(500).json({

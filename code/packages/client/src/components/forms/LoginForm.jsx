@@ -35,7 +35,7 @@ class NormalLoginForm extends React.Component {
 
         if (code === 1) {
           localStorage.setItem("token", `JWT ${token}`);
-
+          localStorage.setItem("userid",data.userId);
           return this.props.history.push("/");
         }
         return true;

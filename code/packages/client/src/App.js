@@ -9,6 +9,7 @@ import isLoginAction from "./reduxx/actions/isLoginAction";
 import LoadingCompoment from "./components/LoadingCompoment";
 import getAuth from "./components/getAuth";
 import dashboard from "./components/pages/DashBoardPage";
+import CheckoutPage from "./components/pages/checkOut/CheckoutPage";
 import PrivateRoute from "./PrivateRoute";
 
 const AsyncHome = Loadable({
@@ -77,11 +78,11 @@ class App extends Component {
               exact
               component={AsyncCartPage}
             />
-            <Route
+            <PrivateRoute
               location={location}
               path="/checkout"
-              exact
-              component={AsyncCheckoutPage}
+      
+              component={CheckoutPage}
             />
 
             <Route

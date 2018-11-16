@@ -9,12 +9,18 @@ var Product = require("../models/productsModel.js")
 module.exports = {
     shoppingcart:function (req, res) { 
         if (!req.session.cart) {
-          //return res.render('shop/shopping-cart', { products: null });
           return res.json({cart:null});
         }
         var cart = new Cart(req.session.cart);
-       return res.json(cart);
-        //res.render('shop/shopping-cart', { products: cart.generateArray(), totalPrice: cart.totalPrice, successMgs: successMgs, noMessages: !successMgs });
+        var cart1 = {
+            products: cart.generateArray(), 
+            totalPrice: cart.totalPrice,
+            totalQty: cart.totalQty,
+
+        }
+        console.log(cart1);
+       return res.json(cart1);
+       
       },
     addToCart:function(req,res){
         var productId = req.params.id;
@@ -30,8 +36,14 @@ module.exports = {
       
           cart.add(product, productId);
           req.session.cart = cart;
-          console.log(req.session.cart);
-          return res.json(req.session.cart);
+          var cart1 = {
+            products: cart.generateArray(), 
+            totalPrice: cart.totalPrice,
+            totalQty: cart.totalQty,
+
+        }
+        console.log(cart1);
+       return res.json(cart1);
 
           //console.log(product);
           
@@ -45,8 +57,14 @@ module.exports = {
         cart.reduceByOne(productId);
 
         req.session.cart = cart;
-        return res.json(cart);
-        //res.redirect('/shopping-cart');
+        var cart1 = {
+            products: cart.generateArray(), 
+            totalPrice: cart.totalPrice,
+            totalQty: cart.totalQty,
+
+        }
+        console.log(cart1);
+       return res.json(cart1);
     },
 
     remove:function(req,res,next){
@@ -56,8 +74,14 @@ module.exports = {
         cart.removeItem(productId);
       
         req.session.cart = cart;
-        return res.json(cart);
-       // res.redirect('/shopping-cart');
+        var cart1 = {
+            products: cart.generateArray(), 
+            totalPrice: cart.totalPrice,
+            totalQty: cart.totalQty,
+
+        }
+        console.log(cart1);
+       return res.json(cart1);
         }
 
   
