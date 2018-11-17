@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Description({}) {
+export function Description() {
   return (
     <div className="block-category">
       <h2 className="h3">Flower gallery</h2>

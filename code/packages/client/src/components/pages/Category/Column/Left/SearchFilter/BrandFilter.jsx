@@ -1,6 +1,6 @@
 import React from "react";
 
-export function BrandFilter({}) {
+export function BrandFilter() {
   return (
     <section className="facet clearfix">
       <h3 className="facet-title hidden-sm-down">Brand</h3>
@@ -19,17 +19,13 @@ export function BrandFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_27460_0">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_27460_0"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-1--800--flowers.com"
-                type="checkbox"
-              />
+              <input id="facet_input_27460_0" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-1--800--flowers.com"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -41,17 +37,13 @@ export function BrandFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_27460_1">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_27460_1"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-Appleyard+"
-                type="checkbox"
-              />
+              <input id="facet_input_27460_1" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-Appleyard+"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -63,17 +55,13 @@ export function BrandFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_27460_2">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_27460_2"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-fromyouflowers.com"
-                type="checkbox"
-              />
+              <input id="facet_input_27460_2" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-fromyouflowers.com"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -85,17 +73,13 @@ export function BrandFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_27460_3">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_27460_3"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-Gabriela+Wakeham"
-                type="checkbox"
-              />
+              <input id="facet_input_27460_3" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-Gabriela+Wakeham"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -107,17 +91,13 @@ export function BrandFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_27460_4">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_27460_4"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-Interflora"
-                type="checkbox"
-              />
+              <input id="facet_input_27460_4" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-Interflora"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -129,17 +109,13 @@ export function BrandFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_27460_5">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_27460_5"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-Organic+Blooms"
-                type="checkbox"
-              />
+              <input id="facet_input_27460_5" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-Organic+Blooms"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -151,17 +127,13 @@ export function BrandFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_27460_6">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_27460_6"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-Pro+Flowers"
-                type="checkbox"
-              />
+              <input id="facet_input_27460_6" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-Pro+Flowers"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -173,17 +145,13 @@ export function BrandFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_27460_7">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_27460_7"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-serenataflowers.com"
-                type="checkbox"
-              />
+              <input id="facet_input_27460_7" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-serenataflowers.com"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -195,17 +163,13 @@ export function BrandFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_27460_8">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_27460_8"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-Sydney+Flowers"
-                type="checkbox"
-              />
+              <input id="facet_input_27460_8" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-Sydney+Flowers"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -217,17 +181,13 @@ export function BrandFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_27460_9">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_27460_9"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-Teleflora"
-                type="checkbox"
-              />
+              <input id="facet_input_27460_9" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Brand-Teleflora"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >

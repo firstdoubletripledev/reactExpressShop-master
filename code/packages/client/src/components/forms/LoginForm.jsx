@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Form, Icon, Input, Button, Checkbox } from "antd";
 import { Row, Col } from "antd";
 import Axios from "axios";
@@ -73,7 +73,7 @@ class NormalLoginForm extends React.Component {
             valuePropName: "checked",
             initialValue: true
           })(<Checkbox>Remember me</Checkbox>)}
-          <a className="login-form-forgot" href="">
+          <a className="login-form-forgot" href="#0">
             Forgot password
           </a>
           <Row>
@@ -88,7 +88,7 @@ class NormalLoginForm extends React.Component {
               </Button>
             </Col>
           </Row>
-          Or <a href="">register now!</a>
+          Or <a href="#0">register now!</a>
         </FormItem>
       </Form>
     );

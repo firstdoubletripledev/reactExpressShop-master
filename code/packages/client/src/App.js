@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Loadable from "react-loadable";
@@ -12,8 +12,12 @@ import dashboard from "./components/pages/DashBoardPage";
 import CheckoutPage from "./components/pages/checkOut/CheckoutPage";
 import PrivateRoute from "./PrivateRoute";
 
+// const AsyncHome = Loadable({
+//   loader: () => import("./components/pages/HomePage"),
+//   loading: LoadingCompoment
+// });
 const AsyncHome = Loadable({
-  loader: () => import("./components/pages/HomePage"),
+  loader: () => import("./components/pages/newHomePage/NewHomePage"),
   loading: LoadingCompoment
 });
 const AsyncLoginPage = Loadable({
@@ -94,6 +98,12 @@ class App extends Component {
             <Route
               location={location}
               path="/category/:page"
+              exact
+              component={AsyncCategoryPage}
+            />
+            <Route
+              location={location}
+              path="/flowers/event/:typeevent/:page"
               exact
               component={AsyncCategoryPage}
             />

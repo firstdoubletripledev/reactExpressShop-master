@@ -1,6 +1,6 @@
 import React from "react";
 
-export function SearchFilterControler({}) {
+export function SearchFilterControler() {
   return (
     <div id="search_filter_controls" className="hidden-md-up">
       <span id="_mobile_search_filters_clear_all" />

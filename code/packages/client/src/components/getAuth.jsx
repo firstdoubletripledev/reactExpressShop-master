@@ -1,5 +1,5 @@
 import Axios from "axios";
-import { Subscribe } from "unstated";
+// import { Subscribe } from "unstated";
 
 async function getAuth() {
   const res = await Axios.get("/api/users/me", {

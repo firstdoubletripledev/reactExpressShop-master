@@ -12,6 +12,10 @@ router.get('/', productsController.list);
  * GET
  */
 router.get('/page/:page', productsController.listPartition);
+router.get('/sortname/:page', productsController.listPartitionSortByName);
+router.get('/sortnamedesc/:page', productsController.listPartitionSortByNameDesc);
+router.get('/price/:page', productsController.listPartitionSortByPrice);
+router.get('/pricedesc/:page', productsController.listPartitionSortByPrice);
 // router.get('/page/:page/color/:color', productsController.listByColor);
 
 /*

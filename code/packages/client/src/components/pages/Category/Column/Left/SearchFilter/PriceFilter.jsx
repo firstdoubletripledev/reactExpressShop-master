@@ -1,6 +1,6 @@
 import React from "react";
 
-export function PriceFilter({}) {
+export function PriceFilter() {
   return (
     <section className="facet clearfix">
       <h3 className="facet-title hidden-sm-down">Price</h3>
@@ -19,17 +19,13 @@ export function PriceFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_41082_0">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_41082_0"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-19-21"
-                type="checkbox"
-              />
+              <input id="facet_input_41082_0" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-19-21"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -41,17 +37,13 @@ export function PriceFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_41082_1">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_41082_1"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-20-24"
-                type="checkbox"
-              />
+              <input id="facet_input_41082_1" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-20-24"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -63,17 +55,13 @@ export function PriceFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_41082_2">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_41082_2"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-27-28"
-                type="checkbox"
-              />
+              <input id="facet_input_41082_2" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-27-28"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -85,17 +73,13 @@ export function PriceFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_41082_3">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_41082_3"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-30-31"
-                type="checkbox"
-              />
+              <input id="facet_input_41082_3" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-30-31"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -107,17 +91,13 @@ export function PriceFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_41082_4">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_41082_4"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-33-34"
-                type="checkbox"
-              />
+              <input id="facet_input_41082_4" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-33-34"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -129,17 +109,13 @@ export function PriceFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_41082_5">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_41082_5"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-35-36"
-                type="checkbox"
-              />
+              <input id="facet_input_41082_5" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-35-36"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -151,17 +127,13 @@ export function PriceFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_41082_6">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_41082_6"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-40-42"
-                type="checkbox"
-              />
+              <input id="facet_input_41082_6" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-40-42"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -173,17 +145,13 @@ export function PriceFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_41082_7">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_41082_7"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-50-52"
-                type="checkbox"
-              />
+              <input id="facet_input_41082_7" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-50-52"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -195,17 +163,13 @@ export function PriceFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_41082_8">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_41082_8"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-57-59"
-                type="checkbox"
-              />
+              <input id="facet_input_41082_8" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-57-59"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -217,17 +181,13 @@ export function PriceFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_41082_9">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_41082_9"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-80-83"
-                type="checkbox"
-              />
+              <input id="facet_input_41082_9" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-80-83"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -239,17 +199,13 @@ export function PriceFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_41082_10">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_41082_10"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-90-94"
-                type="checkbox"
-              />
+              <input id="facet_input_41082_10" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-90-94"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >
@@ -261,17 +217,13 @@ export function PriceFilter({}) {
         <li>
           <label className="facet-label" htmlFor="facet_input_41082_11">
             <span className="custom-checkbox">
-              <input
-                id="facet_input_41082_11"
-                data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-110-114"
-                type="checkbox"
-              />
+              <input id="facet_input_41082_11" type="checkbox" />
               <span className="ps-shown-by-js">
                 <i className="material-icons checkbox-checked"></i>
               </span>
             </span>
             <a
-              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Price-%24-110-114"
+              href="#0"
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
             >

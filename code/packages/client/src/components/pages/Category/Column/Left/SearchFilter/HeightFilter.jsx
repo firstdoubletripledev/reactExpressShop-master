@@ -22,17 +22,13 @@ export function HeightFilter({ categoryHeight = [] }) {
               <li key={_id}>
                 <label className="facet-label" htmlFor="facet_input_45985_0">
                   <span className="custom-checkbox">
-                    <input
-                      id="facet_input_45985_0"
-                      data-search-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Height-19+inches"
-                      type="checkbox"
-                    />
+                    <input id="facet_input_45985_0" type="checkbox" />
                     <span className="ps-shown-by-js">
                       <i className="material-icons checkbox-checked"></i>
                     </span>
                   </span>
                   <a
-                    href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=category&id_category=14&id_lang=1&q=Height-19+inches"
+                    href="#0"
                     className="_gray-darker search-link js-search-link"
                     rel="nofollow"
                   >
@@ -42,6 +38,8 @@ export function HeightFilter({ categoryHeight = [] }) {
                 </label>
               </li>
             );
+          } else {
+            return null;
           }
         })}
       </ul>

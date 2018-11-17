@@ -1,10 +1,9 @@
-import React, { Component } from "react";
-import { Layout, Menu, Breadcrumb } from "antd";
+import React from "react";
+import { Layout } from "antd";
 import MenuNav from "../navigations/MenuNav.jsx";
-import { Row, Col } from "antd";
 import CartTable from "../tables/CartTable";
 
-const { Header, Content, Footer } = Layout;
+const { Content, Footer } = Layout;
 //Home page
 //cart page
 //cagory page
