@@ -56,6 +56,7 @@ const ContentImage = ({
                     aria-hidden="false"
                     tabIndex={-1}
                     role="option"
+                    aria-selected="true"
                     aria-describedby="slick-slide00"
                     style={{ width: 90 }}
                   >
@@ -91,6 +92,7 @@ const SocialSharing = ({ product = {} }) => {
             className="text-hide"
             title="Share"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Share
           </a>
@@ -103,6 +105,7 @@ const SocialSharing = ({ product = {} }) => {
             className="text-hide"
             title="Tweet"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Tweet
           </a>
@@ -115,6 +118,7 @@ const SocialSharing = ({ product = {} }) => {
             className="text-hide"
             title="Google+"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Google+
           </a>
@@ -128,6 +132,7 @@ const SocialSharing = ({ product = {} }) => {
             title="Pinterest"
             target="_blank"
             data-pin-custom="true"
+            rel="noopener noreferrer"
           >
             Pinterest
           </a>

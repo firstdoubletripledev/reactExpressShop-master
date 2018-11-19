@@ -19,12 +19,12 @@ async function loginUser(req, res) {
     res.json({ code: 0, msg: 'Error Password' });
     throw new Error('Error Password');
   }
-  const emailJwt = { email: user.email };
+  const emailJwt = { email: user.email, role: user.role };
   const token = jwt.sign(emailJwt, secretKey);
   req.session.userId = user._id;
   res.json({
     code: 1,
-    data: { email: user.email,userId: user._id },// giang them khi dang nhap thì tra ve userid nua
+    data: { email: user.email, userId: user._id }, // giang them khi dang nhap thì tra ve userid nua
     token,
     msg: 'Success',
   });

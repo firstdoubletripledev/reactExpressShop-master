@@ -14,6 +14,7 @@ import {
 } from "antd";
 import Axios from "axios";
 import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 const FormItem = Form.Item;
 // const Option = Select.Option;
@@ -23,6 +24,14 @@ class RegistrationForm extends React.Component {
   state = {
     confirmDirty: false,
     autoCompleteResult: []
+  };
+
+  componentDidMount = () => {
+    const { isLogin = false } = this.props;
+    if (isLogin !== false) {
+      const { history } = this.props;
+      history.push("/");
+    }
   };
 
   handleSubmit = e => {
@@ -213,4 +222,8 @@ class RegistrationForm extends React.Component {
 
 const WrappedRegistrationForm = Form.create()(RegistrationForm);
 
-export default withRouter(WrappedRegistrationForm);
+const mapStateToProps = ({ isLogin }) => ({
+  isLogin
+});
+
+export default withRouter(connect(mapStateToProps)(WrappedRegistrationForm));

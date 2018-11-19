@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-export function HeaderNav({ themeLogo }) {
+function HeaderNavContent({ themeLogo, isLogin, LoginData = {} }) {
   return (
     <div className="wrapper it_TUJDRTYXJALO header-nav container">
       <div className="row it_RBDJREZNOFAC ">
@@ -42,10 +43,17 @@ export function HeaderNav({ themeLogo }) {
           <div className="module ">
             <div id="_desktop_user_info">
               <div className="header_user_info user-info current">
-                <Link to="/login">
-                  <i className="fl-chapps-user139" />
-                  <span>Sign in</span>
-                </Link>
+                {isLogin ? (
+                  <Link to="/account">
+                    <i className="fl-chapps-user139" />
+                    <span>Hi. {LoginData.email}</span>
+                  </Link>
+                ) : (
+                  <Link to="/login">
+                    <i className="fl-chapps-user139" />
+                    <span>Sign in</span>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -54,3 +62,11 @@ export function HeaderNav({ themeLogo }) {
     </div>
   );
 }
+
+const mapStateToProps = ({ isLogin, LoginData }) => ({
+  isLogin,
+  LoginData
+});
+const HeaderNav = connect(mapStateToProps)(HeaderNavContent);
+
+export { HeaderNav };

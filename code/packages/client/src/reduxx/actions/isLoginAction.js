@@ -1,4 +1,4 @@
-import { LOGIN_CHANCE } from "./types";
+import { LOGIN_CHANCE, LOGIN_DATA } from "./types";
 
 const ChanceLogin = isLogin => ({
   type: LOGIN_CHANCE,
@@ -13,4 +13,14 @@ const isLoginAction = email => async (dispatch, getState) => {
   dispatch(ChanceLogin(isLogin));
 };
 
+const ChanceLoginData = data => ({
+  type: LOGIN_DATA,
+  data
+});
+
+const saveLoginDataAction = data => (dispatch, getState) => {
+  dispatch(ChanceLoginData(data));
+};
+
 export default isLoginAction;
+export { saveLoginDataAction };

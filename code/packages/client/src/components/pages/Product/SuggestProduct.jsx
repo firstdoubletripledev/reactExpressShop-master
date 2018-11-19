@@ -11,7 +11,7 @@ const SuggestProduct = ({ productSuggest = [] }) => {
           data-role="none"
           className="slick-prev slick-arrow"
           aria-label="Previous"
-          role="button"
+          // role="button"
           style={{ display: "block" }}
         >
           Previous
@@ -24,7 +24,7 @@ const SuggestProduct = ({ productSuggest = [] }) => {
           data-role="none"
           className="slick-next slick-arrow"
           aria-label="Next"
-          role="button"
+          // role="button"
           style={{ display: "block" }}
         >
           Next

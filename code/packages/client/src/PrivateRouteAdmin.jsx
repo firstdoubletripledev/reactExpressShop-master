@@ -18,15 +18,20 @@ const PrivateRouteAdmin = ({ component: Component = null, ...rest }) => {
     <Route
       {...rest}
       render={props =>
-        auth.getAuth === 1 && isLogin === true ? (
+        auth.getAuth === 2 && isLogin === true ? (
           <Component {...props} />
         ) : (
-          <Redirect
-            to={{
-              pathname: "/",
-              state: { from: props.location }
-            }}
-          />
+          <>
+            {alert(
+              "Sorry this is for admin if you want to access this please contact to Admin"
+            )}
+            <Redirect
+              to={{
+                pathname: "/",
+                state: { from: props.location }
+              }}
+            />
+          </>
         )
       }
     />
