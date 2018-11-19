@@ -1,10 +1,10 @@
-import { Get_SLItem_In_Session, Add_Item_To_Cart } from "../actions/types";
+import { GET_SL_ITEM_CART, ADD_ITEM_CART } from "../actions/types";
 
 const SLItemCartReducer = (SLItemCart = 0, action) => {
   switch (action.type) {
-    case Get_SLItem_In_Session:
+    case GET_SL_ITEM_CART:
       return action.item;
-    case Add_Item_To_Cart:
+    case ADD_ITEM_CART:
       return SLItemCart + 1;
     default:
       return SLItemCart;
