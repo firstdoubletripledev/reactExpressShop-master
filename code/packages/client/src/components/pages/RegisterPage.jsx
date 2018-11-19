@@ -3,6 +3,9 @@ import { Layout } from "antd";
 import MenuNav from "../navigations/MenuNav.jsx";
 import { Row, Col } from "antd";
 import RegisterForm from "../forms/RegisterForm";
+import { TopTitle } from "../navigations/Header/TopTitle.jsx";
+import { HeaderNav } from "../navigations/Header/HeaderNav.jsx";
+import themeLogo from "../navigations/theme-logo.jpg";
 
 const { Content, Footer } = Layout;
 //Home page
@@ -15,8 +18,10 @@ const { Content, Footer } = Layout;
 const RegisterPage = () => {
   return (
     <Layout className="layout">
-      <MenuNav />
-
+      <header id="header">
+        <TopTitle />
+        <HeaderNav themeLogo={themeLogo} />
+      </header>
       <Content style={{ paddingTop: "10px" }}>
         <Row style={{ paddingTop: "50px" }}>
           <Col xs={{ span: 4 }} lg={{ span: 4 }} />
@@ -26,9 +31,9 @@ const RegisterPage = () => {
           <Col xs={{ span: 6 }} lg={{ span: 6 }} />
         </Row>
       </Content>
-      <Footer style={{ textAlign: "center" }}>
-        Ant Design ©2018 Created by Ant UED
-      </Footer>
+      <Footer style={{ background: "none", textAlign: "center" }}>
+        @2018 made by T&G
+      </Footer>{" "}
     </Layout>
   );
 };

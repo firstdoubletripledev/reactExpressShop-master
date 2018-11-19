@@ -37,11 +37,7 @@ const ModelItem = () => {
               </div>
               <div className="js-qv-mask mask">
                 <div className="product-images js-qv-product-images slick-initialized slick-slider slick-vertical">
-                  <div
-                    aria-live="polite"
-                    className="slick-list"
-                    style={{ height: "524.531px" }}
-                  >
+                  <div aria-live="polite" className="slick-list">
                     <div
                       className="slick-track"
                       role="listbox"
@@ -62,8 +58,6 @@ const ModelItem = () => {
                       >
                         <img
                           className="thumb js-thumb  selected "
-                          data-image-medium-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/3/73-medium_default.jpg"
-                          data-image-large-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/3/73-large_default.jpg"
                           src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/3/73-home_default.jpg"
                           alt="Little Duckling Watering Can Cream with Bailey Bear"
                           title="Little Duckling Watering Can Cream with Bailey Bear"
@@ -81,8 +75,6 @@ const ModelItem = () => {
                       >
                         <img
                           className="thumb js-thumb "
-                          data-image-medium-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/4/74-medium_default.jpg"
-                          data-image-large-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/4/74-large_default.jpg"
                           src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/4/74-home_default.jpg"
                           alt="Little Duckling Watering Can Cream with Bailey Bear"
                           title="Little Duckling Watering Can Cream with Bailey Bear"
@@ -100,8 +92,6 @@ const ModelItem = () => {
                       >
                         <img
                           className="thumb js-thumb "
-                          data-image-medium-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/5/75-medium_default.jpg"
-                          data-image-large-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/5/75-large_default.jpg"
                           src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/5/75-home_default.jpg"
                           alt="Little Duckling Watering Can Cream with Bailey Bear"
                           title="Little Duckling Watering Can Cream with Bailey Bear"
@@ -119,8 +109,6 @@ const ModelItem = () => {
                       >
                         <img
                           className="thumb js-thumb "
-                          data-image-medium-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/6/76-medium_default.jpg"
-                          data-image-large-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/6/76-large_default.jpg"
                           src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/6/76-home_default.jpg"
                           alt="Little Duckling Watering Can Cream with Bailey Bear"
                           title="Little Duckling Watering Can Cream with Bailey Bear"
@@ -138,8 +126,6 @@ const ModelItem = () => {
                       >
                         <img
                           className="thumb js-thumb "
-                          data-image-medium-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/7/77-medium_default.jpg"
-                          data-image-large-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/7/77-large_default.jpg"
                           src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/7/77-home_default.jpg"
                           alt="Little Duckling Watering Can Cream with Bailey Bear"
                           title="Little Duckling Watering Can Cream with Bailey Bear"
@@ -157,8 +143,6 @@ const ModelItem = () => {
                       >
                         <img
                           className="thumb js-thumb "
-                          data-image-medium-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/8/78-medium_default.jpg"
-                          data-image-large-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/8/78-large_default.jpg"
                           src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/8/78-home_default.jpg"
                           alt="Little Duckling Watering Can Cream with Bailey Bear"
                           title="Little Duckling Watering Can Cream with Bailey Bear"
@@ -174,7 +158,7 @@ const ModelItem = () => {
               <ul>
                 <li className="facebook">
                   <a
-                    href="http://www.facebook.com/sharer.php?u=https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_product=17&id_product_attribute=0&rewrite=little-duckling-watering-can-cream-with-bailey-bear&controller=product&id_lang=1"
+                    href="http://www.facebook.com/sharer.php?u=http://localhost:3000/category&rewrite=little-duckling-watering-can-cream-with-bailey-bear&controller=product&id_lang=1"
                     className="text-hide"
                     title="Share"
                     target="_blank"
@@ -184,7 +168,7 @@ const ModelItem = () => {
                 </li>
                 <li className="twitter">
                   <a
-                    href="https://twitter.com/intent/tweet?text=Little Duckling Watering Can Cream with Bailey Bear https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_product=17&id_product_attribute=0&rewrite=little-duckling-watering-can-cream-with-bailey-bear&controller=product&id_lang=1"
+                    href="https://twitter.com/intent/tweet?text=Little Duckling Watering Can Cream with Bailey Bear http://localhost:3000/category?id_product=17&id_product_attribute=0&rewrite=little-duckling-watering-can-cream-with-bailey-bear&controller=product&id_lang=1"
                     className="text-hide"
                     title="Tweet"
                     target="_blank"
@@ -194,7 +178,7 @@ const ModelItem = () => {
                 </li>
                 <li className="googleplus">
                   <a
-                    href="https://plus.google.com/share?url=https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_product=17&id_product_attribute=0&rewrite=little-duckling-watering-can-cream-with-bailey-bear&controller=product&id_lang=1"
+                    href="https://plus.google.com/share?url=http://localhost:3000/category?id_product=17&id_product_attribute=0&rewrite=little-duckling-watering-can-cream-with-bailey-bear&controller=product&id_lang=1"
                     className="text-hide"
                     title="Google+"
                     target="_blank"
@@ -204,7 +188,7 @@ const ModelItem = () => {
                 </li>
                 <li className="pinterest">
                   <a
-                    href="http://www.pinterest.com/pin/create/button/?media=https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/3/73.jpg&url=https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_product=17&id_product_attribute=0&rewrite=little-duckling-watering-can-cream-with-bailey-bear&controller=product&id_lang=1"
+                    href="http://www.pinterest.com/pin/create/button/?media=https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/3/73.jpg&url=http://localhost:3000/category"
                     className="text-hide"
                     title="Pinterest"
                     target="_blank"
@@ -251,7 +235,7 @@ const ModelItem = () => {
             <div className="product-information">
               <div className="product-actions">
                 <form
-                  action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+                  action="http://localhost:3000/category/#0"
                   method="post"
                   id="add-to-cart-or-refresh"
                 >

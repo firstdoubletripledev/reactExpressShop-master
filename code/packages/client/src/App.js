@@ -63,7 +63,6 @@ class App extends Component {
   async componentDidMount() {
     const email = await getAuth();
     const { dispatch } = this.props;
-
     await dispatch(isLoginAction(email));
   }
 

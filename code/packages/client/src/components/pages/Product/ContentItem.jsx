@@ -45,7 +45,7 @@ const ContentItem = ({ product: { category = [] } = {}, product = {} }) => {
         </div>
         <div className="product-actions">
           <form
-            action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+            action="http://localhost:3000"
             method="post"
             id="add-to-cart-or-refresh"
           >

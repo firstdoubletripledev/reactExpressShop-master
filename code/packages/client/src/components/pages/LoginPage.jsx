@@ -21,6 +21,7 @@ const LoginPage = () => {
         <TopTitle />
         <HeaderNav themeLogo={themeLogo} />
       </header>
+
       <Content style={{ paddingTop: "10px" }}>
         <Row style={{ paddingTop: "50px" }}>
           <Col xs={{ span: 8 }} lg={{ span: 8 }} />
@@ -30,6 +31,7 @@ const LoginPage = () => {
           <Col xs={{ span: 8 }} lg={{ span: 8 }} />
         </Row>
       </Content>
+
       <Footer style={{ background: "none", textAlign: "center" }}>
         @2018 made by T&G
       </Footer>

@@ -53,7 +53,6 @@ export function PopularProducts() {
                           <img
                             src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/4/5/45-home_default.jpg"
                             alt="Happy Birthday Autumn Brights Globe"
-                            data-full-size-image-url="https://ld-prestashop.template-help.com/prestashop_13106/img/p/4/5/45-large_default.jpg"
                           />
                         </a>
                         <div className="gallery-wrapper">
@@ -171,7 +170,7 @@ export function PopularProducts() {
                           </div>
                           <div className="right">
                             <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+                              action="http://localhost:3000"
                               method="post"
                             >
                               <div
@@ -371,10 +370,7 @@ export function PopularProducts() {
                             </div>
                           </div>
                           <div className="right">
-                            <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
-                              method="post"
-                            >
+                            <form action="http://localhost:3000" method="post">
                               <div
                                 className="product-quantity"
                                 style={{
@@ -573,7 +569,7 @@ export function PopularProducts() {
                           </div>
                           <div className="right">
                             <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+                              action="http://localhost:3000"
                               method="post"
                             >
                               <div
@@ -774,7 +770,7 @@ export function PopularProducts() {
                           </div>
                           <div className="right">
                             <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+                              action="http://localhost:3000"
                               method="post"
                             >
                               <div
@@ -982,7 +978,7 @@ export function PopularProducts() {
                           </div>
                           <div className="right">
                             <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+                              action="http://localhost:3000"
                               method="post"
                             >
                               <div
@@ -1348,7 +1344,7 @@ export function PopularProducts() {
                           </div>
                           <div className="right">
                             <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+                              action="http://localhost:3000"
                               method="post"
                             >
                               <div
@@ -1554,7 +1550,7 @@ export function PopularProducts() {
                           </div>
                           <div className="right">
                             <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+                              action="http://localhost:3000"
                               method="post"
                             >
                               <div
@@ -1755,7 +1751,7 @@ export function PopularProducts() {
                           </div>
                           <div className="right">
                             <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+                              action="http://localhost:3000"
                               method="post"
                             >
                               <div
@@ -1958,7 +1954,7 @@ export function PopularProducts() {
                           </div>
                           <div className="right">
                             <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+                              action="http://localhost:3000"
                               method="post"
                             >
                               <div
@@ -2161,7 +2157,7 @@ export function PopularProducts() {
                           </div>
                           <div className="right">
                             <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+                              action="http://localhost:3000"
                               method="post"
                             >
                               <div
@@ -2364,7 +2360,7 @@ export function PopularProducts() {
                           </div>
                           <div className="right">
                             <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+                              action="http://localhost:3000"
                               method="post"
                             >
                               <div
@@ -2570,7 +2566,7 @@ export function PopularProducts() {
                           </div>
                           <div className="right">
                             <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+                              action="http://localhost:3000"
                               method="post"
                             >
                               <div
@@ -2936,7 +2932,7 @@ export function PopularProducts() {
                           </div>
                           <div className="right">
                             <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+                              action="http://localhost:3000"
                               method="post"
                             >
                               <div
@@ -3142,7 +3138,7 @@ export function PopularProducts() {
                           </div>
                           <div className="right">
                             <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+                              action="http://localhost:3000"
                               method="post"
                             >
                               <div

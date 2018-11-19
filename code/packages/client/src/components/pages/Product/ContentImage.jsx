@@ -34,11 +34,7 @@ const ContentImage = ({
         </div>
         <div className="js-qv-mask mask">
           <div className="product-images js-qv-product-images slick-initialized slick-slider slick-vertical">
-            <div
-              aria-live="polite"
-              className="slick-list"
-              style={{ height: "547.344px" }}
-            >
+            <div aria-live="polite" className="slick-list">
               <div
                 className="slick-track"
                 style={{

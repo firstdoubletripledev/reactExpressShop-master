@@ -36,3 +36,7 @@ a {
 .layout {
     background: none;
 }
+
+.slick-list {
+    margin-top: 100px;
+}
