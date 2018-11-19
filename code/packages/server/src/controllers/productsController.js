@@ -25,9 +25,8 @@ module.exports = {
   },
 
   listPartition(req, res) {
-    const perPage = 20;
-    const page = req.params.page || 1;
-
+    const { perpage = 20, page = 1 } = req.params;
+    const perPage = Number(perpage);
     ProductsModel.find()
       .skip(perPage * page - perPage)
       .limit(perPage)

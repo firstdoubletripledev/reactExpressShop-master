@@ -7,6 +7,7 @@ const categoriesController = require('../controllers/categoriesController.js');
  * GET
  */
 router.get('/', categoriesController.list);
+router.get('/topthree', categoriesController.topThree);
 
 /*
  * GET

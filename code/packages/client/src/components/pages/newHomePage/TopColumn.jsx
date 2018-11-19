@@ -1,4 +1,5 @@
 import React from "react";
+import { TopThreeCategory } from "./TopThreeCategory";
 
 export function TopColumn({ history }) {
   return (
@@ -16,8 +17,7 @@ export function TopColumn({ history }) {
                     className="slick-track"
                     role="listbox"
                     style={{
-                      opacity: 1,
-                      width: 3909
+                      opacity: 1
                     }}
                   >
                     <div
@@ -69,88 +69,7 @@ export function TopColumn({ history }) {
           </div>
         </div>
       </div>
-      <div className="wrapper it_YZMTHKOFREBE container">
-        <div className="row it_QZOWDVFIGJLN ">
-          <div className="it_QVIPIXAXPCPH col-12     ">
-            <div className="module ">
-              {" "}
-              <div id="tmhtmlcontent_topColumn">
-                <ul className="tmhtmlcontent-topColumn row">
-                  <li className="tmhtmlcontent-item-1 col-12 col-sm-4 ">
-                    <a
-                      href="index.php?id_category=13&controller=category"
-                      className="item-link"
-                      title
-                    >
-                      <img
-                        src="https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/7fd2279725df0e252f7a621a780dea60ef67aade_top-banner-1.jpg"
-                        className="item-img img-responsive"
-                        title
-                        alt=""
-                        width={567}
-                        height={583}
-                      />
-                      <div className="item-html">
-                        <h6>New collection</h6>
-                        <h3>Valentine's Day</h3>
-                        <span className="btn btn-md btn-primary">
-                          Shop now!
-                        </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="tmhtmlcontent-item-2 col-12 col-sm-4 ">
-                    <a
-                      href="index.php?id_category=39&controller=category"
-                      className="item-link"
-                      title
-                    >
-                      <img
-                        src="https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/68cd47e008afd9a9fa1d3024f8bc9780fa513466_top-banner-2.jpg"
-                        className="item-img img-responsive"
-                        title
-                        alt=""
-                        width={567}
-                        height={583}
-                      />
-                      <div className="item-html">
-                        <h6>New collection</h6>
-                        <h3>New Baby</h3>
-                        <span className="btn btn-md btn-primary">
-                          Shop now!
-                        </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="tmhtmlcontent-item-3 col-12 col-sm-4 ">
-                    <a
-                      href="index.php?id_category=18&controller=category"
-                      className="item-link"
-                      title
-                    >
-                      <img
-                        src="https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/0c1b2755fa48a10764dc2ec243cbd29ec62500e7_top-banner-3.jpg"
-                        className="item-img img-responsive"
-                        title
-                        alt=""
-                        width={567}
-                        height={583}
-                      />
-                      <div className="item-html">
-                        <h6>New collection</h6>
-                        <h3>Get Well</h3>
-                        <span className="btn btn-md btn-primary">
-                          Shop now!
-                        </span>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <TopThreeCategory />
     </section>
   );
 }

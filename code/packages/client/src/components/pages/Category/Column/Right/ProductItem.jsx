@@ -1,9 +1,6 @@
 import React from "react";
+import { l10nUSD } from "../../../../../l10nUSD";
 
-const l10nUSD = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD"
-});
 // var l10nEN = new Intl.NumberFormat("en-US")
 
 export function ProductItem({

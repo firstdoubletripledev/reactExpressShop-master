@@ -24,6 +24,22 @@ module.exports = {
       });
   },
 
+  topThree(req, res) {
+    categoriesModel
+      .find()
+      .limit(3)
+      .populate('products')
+      .exec((err, categoriess) => {
+        if (err) {
+          return res.status(500).json({
+            message: 'Error when getting categories.',
+            error: err,
+          });
+        }
+        return res.json(categoriess);
+      });
+  },
+
   listPage(req, res) {
     const perPage = 20;
 
@@ -65,7 +81,7 @@ module.exports = {
       .exec((err, categoriess) => {
         if (err) {
           return res.status(500).json({
-            message: 'Error when getting categories.',
+            message: 'Error when getting products in categories.',
             error: err,
           });
         }

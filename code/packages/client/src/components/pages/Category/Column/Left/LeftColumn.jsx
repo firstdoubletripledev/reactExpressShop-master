@@ -33,7 +33,7 @@ const LeftColumn = ({
             {filterBy.map(data => {
               if (data.name === "Color") {
                 return (
-                  <div className="filters-by-list">
+                  <div className="filters-by-list" key={`filters-by-list${data._id}`}>
                     <span
                       className="color"
                       style={{
@@ -47,7 +47,7 @@ const LeftColumn = ({
                 );
               } else {
                 return (
-                  <div>
+                  <div key={`filters-by-list${data._id}`}>
                     <p className="_gray-darker search-link js-search-link">
                       {data.value}
                     </p>

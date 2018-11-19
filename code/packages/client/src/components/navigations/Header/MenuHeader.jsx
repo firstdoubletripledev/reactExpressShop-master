@@ -1,5 +1,9 @@
 import React from "react";
+import { createBrowserHistory } from "history";
+
 import { TopLevelMenu } from "./TopLevelMenu";
+
+const history = createBrowserHistory();
 
 export function MenuHeader() {
   return (
@@ -22,7 +26,11 @@ export function MenuHeader() {
                     <span className="search-toggle" data-toggle="dropdown">
                       <i className="fl-chapps-search70" />
                     </span>
-                    <form id="tmsearchbox" method="get" action="#0">
+                    <form
+                      onSubmit={e => {
+                        history.push(`/category`);
+                      }}
+                    >
                       <input
                         className="tm_search_query form-control"
                         type="text"
