@@ -20,6 +20,12 @@ const AsyncHome = Loadable({
   loader: () => import("./components/pages/newHomePage/NewHomePage"),
   loading: LoadingCompoment
 });
+
+const AsyncProduct = Loadable({
+  loader: () => import("./components/pages/Product/Product"),
+  loading: LoadingCompoment
+});
+
 const AsyncLoginPage = Loadable({
   loader: () => import("./components/pages/LoginPage"),
   loading: LoadingCompoment
@@ -63,7 +69,6 @@ class App extends Component {
       <Router>
         <>
           <Switch>
-            <Route location={location} path="/" exact component={AsyncHome} />
             <Route
               location={location}
               path="/login"
@@ -85,7 +90,6 @@ class App extends Component {
             <PrivateRoute
               location={location}
               path="/checkout"
-      
               component={CheckoutPage}
             />
 
@@ -107,11 +111,19 @@ class App extends Component {
               exact
               component={AsyncCategoryPage}
             />
+            <Route
+              location={location}
+              path="/product/:id"
+              component={AsyncProduct}
+            />
             <PrivateRoute
               location={location}
               path="/dashboard"
               component={dashboard}
             />
+
+            <Route location={location} path="/" exact component={AsyncHome} />
+            <Route location={location} component={AsyncHome} />
           </Switch>
         </>
       </Router>

@@ -6,13 +6,13 @@ import { TopColumn } from "./TopColumn";
 import { Breadcrumb } from "./Breadcrumb";
 import React from "react";
 
-export function Content() {
+export function Content({history}) {
   return (
     <section id="wrapper">
       <Breadcrumb />
       <div id="content-wrapper">
         <section id="main">
-          <TopColumn />
+          <TopColumn history={history} />
           <section id="content" className="page-home">
             {/* <PopularProducts /> */}
             <CustomModule />

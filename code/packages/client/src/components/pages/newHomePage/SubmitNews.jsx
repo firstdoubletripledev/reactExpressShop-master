@@ -1,4 +1,6 @@
 import React from "react";
+import { Formik } from 'formik';
+import Axios from 'axios';
 
 export function SubmitNews() {
   return (
@@ -8,24 +10,41 @@ export function SubmitNews() {
           <div className="module ">
             <div className="block_newsletter">
               <h2 className="products-section-title">Join Our Newsletter</h2>
+              <Formik
+              initialValues={{ email: '' }}
+              onSubmit={ async ({ email }, { setSubmitting }) => {
+                    const res = await Axios.get(`/api/submitnews/${email}`).catch(e => {
+                      alert("Req False")
+                    });
+                    alert(res.data.msg);
+                    
+                    setSubmitting(false);
+                }}
+              >
+              {({handleSubmit, errors, values, handleChange, isSubmitting}) => (
               <form
-                action="https://ld-prestashop.template-help.com/prestashop_13106/index.php#footer"
-                method="post"
+                onSubmit={handleSubmit}
               >
                 <input
-                  name="email"
-                  type="text"
-                  className="form-control"
-                  placeholder="Your email address"
-                />
-                <input
-                  className="btn btn-md btn-primary"
-                  name="submitNewsletter"
-                  type="submit"
-                  defaultValue="Subscribe"
-                />
-                <input type="hidden" name="action" defaultValue={0} />
-              </form>
+                          name="email"
+                          type="email"
+                          className="form-control"
+                          placeholder="Your email address"
+                          id="email"
+                          value={values.email}
+                          onChange={handleChange}
+                        />
+                        {errors.email}
+                        <input
+                          className="btn btn-md btn-primary"
+                          name="submitNewsletter"
+                          defaultValue="Subscribe"
+                          type="submit"
+                          disabled={isSubmitting}
+                        />
+                      </form>
+              )}
+              </Formik>
             </div>
           </div>
         </div>

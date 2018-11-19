@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 export function CustomModule() {
   return (
@@ -25,12 +26,9 @@ export function CustomModule() {
                     celebration we are ready to deliver your message in floral.
                     We also deliver daily.
                   </p>
-                  <a
-                    href="index.php?id_category=3&controller=category"
-                    className="link"
-                  >
+                  <Link to="/blog/1" className="link">
                     View look
-                  </a>
+                  </Link>
                 </div>
               </li>
               <li className="tmhtmlcontent-item-2 right-background">
@@ -52,12 +50,9 @@ export function CustomModule() {
                     a stylish rustic flower shop where creativity flourishes.
                     Let us use flowers to convey your message.
                   </p>
-                  <a
-                    href="index.php?id_category=17&controller=category"
-                    className="link"
-                  >
+                  <Link to="/blog/2" className="link">
                     View look
-                  </a>
+                  </Link>
                 </div>
               </li>
             </ul>
