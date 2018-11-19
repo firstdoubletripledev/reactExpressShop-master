@@ -3,10 +3,20 @@ import { Form, Icon, Input, Button, Checkbox } from "antd";
 import { Row, Col } from "antd";
 import Axios from "axios";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 const FormItem = Form.Item;
 
 class NormalLoginForm extends React.Component {
+  componentDidMount = () => {
+    const { isLogin = false } = this.props;
+    if (isLogin !== false) {
+      const { history } = this.props;
+      history.push("/");
+    }
+  };
+
   handleSubmit = async e => {
     e.preventDefault();
     this.props.form.validateFields(async (err, values) => {
@@ -35,7 +45,7 @@ class NormalLoginForm extends React.Component {
 
         if (code === 1) {
           localStorage.setItem("token", `JWT ${token}`);
-          localStorage.setItem("userid",data.userId);
+          localStorage.setItem("userid", data.userId);
           return this.props.history.push("/");
         }
         return true;
@@ -88,7 +98,10 @@ class NormalLoginForm extends React.Component {
               </Button>
             </Col>
           </Row>
-          Or <a href="#0">register now!</a>
+          Or{" "}
+          <Link to="/register" style={{ color: "blue" }}>
+            Register now!
+          </Link>
         </FormItem>
       </Form>
     );
@@ -97,4 +110,8 @@ class NormalLoginForm extends React.Component {
 
 const WrappedNormalLoginForm = Form.create()(NormalLoginForm);
 
-export default withRouter(WrappedNormalLoginForm);
+const mapStateToProps = ({ isLogin }) => ({
+  isLogin
+});
+
+export default withRouter(connect(mapStateToProps)(WrappedNormalLoginForm));

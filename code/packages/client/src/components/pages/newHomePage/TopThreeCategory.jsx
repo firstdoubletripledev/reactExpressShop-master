@@ -36,7 +36,10 @@ class TopThreeCategory extends Component {
               <div id="tmhtmlcontent_topColumn">
                 <ul className="tmhtmlcontent-topColumn row">
                   {category.map((data, i) => (
-                    <li className="tmhtmlcontent-item-1 col-12 col-sm-4 ">
+                    <li
+                      key={`tmhtmlcontent_topColumn-${data._id}-${i}`}
+                      className="tmhtmlcontent-item-1 col-12 col-sm-4 "
+                    >
                       <Link to="/category" className="item-link">
                         <img
                           src={linkImage[i]}

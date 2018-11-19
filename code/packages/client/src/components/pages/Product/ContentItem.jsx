@@ -6,7 +6,7 @@ const ContentItem = ({ product: { category = [] } = {}, product = {} }) => {
   return (
     <>
       <h2 className="h4" itemProp="name">
-        Autumn Basket
+        {product.name}
       </h2>
       <div className="product-quantities">
         <label className="label">In stock:</label>
@@ -94,6 +94,8 @@ const ContentItem = ({ product: { category = [] } = {}, product = {} }) => {
                           </label>
                         </li>
                       );
+                    } else {
+                      return null;
                     }
                   })}
                 </ul>

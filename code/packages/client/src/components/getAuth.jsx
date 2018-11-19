@@ -1,5 +1,7 @@
 import Axios from "axios";
 // import { Subscribe } from "unstated";
+import store from "../reduxx/storeConfig";
+import { saveLoginDataAction } from "../reduxx/actions/isLoginAction";
 
 async function getAuth() {
   const res = await Axios.get("/api/users/me", {
@@ -7,11 +9,15 @@ async function getAuth() {
       authorization: localStorage.getItem("token")
     }
   });
-  const { data: { email = null } = {} } = res.data;
-  if (!email) {
-    return false;
+  const { data: { role = null } = {}, code = 0 } = res.data;
+
+  if (code === 1) {
+    store.dispatch(saveLoginDataAction(res.data.data));
+    if (role === "admin") {
+      return 2;
+    }
   }
-  return true;
+  return code;
 }
 
 export default getAuth;

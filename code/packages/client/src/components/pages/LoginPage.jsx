@@ -1,8 +1,10 @@
 import React from "react";
 import { Layout } from "antd";
-import MenuNav from "../navigations/MenuNav.jsx";
 import { Row, Col } from "antd";
 import LoginForm from "../forms/LoginForm";
+import { TopTitle } from "../navigations/Header/TopTitle.jsx";
+import { HeaderNav } from "../navigations/Header/HeaderNav.jsx";
+import themeLogo from "../navigations/theme-logo.jpg";
 
 const { Content, Footer } = Layout;
 //Home page
@@ -15,8 +17,10 @@ const { Content, Footer } = Layout;
 const LoginPage = () => {
   return (
     <Layout className="layout">
-      <MenuNav />
-
+      <header id="header">
+        <TopTitle />
+        <HeaderNav themeLogo={themeLogo} />
+      </header>
       <Content style={{ paddingTop: "10px" }}>
         <Row style={{ paddingTop: "50px" }}>
           <Col xs={{ span: 8 }} lg={{ span: 8 }} />
@@ -26,8 +30,8 @@ const LoginPage = () => {
           <Col xs={{ span: 8 }} lg={{ span: 8 }} />
         </Row>
       </Content>
-      <Footer style={{ textAlign: "center" }}>
-        Ant Design ©2018 Created by Ant UED
+      <Footer style={{ background: "none", textAlign: "center" }}>
+        @2018 made by T&G
       </Footer>
     </Layout>
   );

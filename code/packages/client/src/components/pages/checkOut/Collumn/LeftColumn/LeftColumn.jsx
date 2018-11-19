@@ -47,19 +47,12 @@ class LeftColumn extends Component {
       })
       .then(result => {
         alert("đặt hàng thành công");
-      // return this.props.history.push('/')
-        
+        // return this.props.history.push('/')
       });
   };
 
   render() {
-    const {
-    user,
-      firstName,
-      lastName,
-      addressShip,
-      phoneNumberShip
-    } = this.state;
+    const { firstName, lastName, addressShip, phoneNumberShip } = this.state;
     return (
       <div className="col-md-8">
         <section
@@ -90,7 +83,6 @@ class LeftColumn extends Component {
                   method="post"
                 >
                   <section>
-                  
                     <div className="form-group row ">
                       <label className="col-md-3 form-control-label required">
                         First name
@@ -133,7 +125,6 @@ class LeftColumn extends Component {
                           className="form-control"
                           name="lastname"
                           type="text"
-                          
                           required
                           name="addressShip"
                           value={addressShip}
@@ -150,7 +141,6 @@ class LeftColumn extends Component {
                         <input
                           className="form-control"
                           type="text"
-                         
                           required
                           name="phoneNumberShip"
                           value={phoneNumberShip}

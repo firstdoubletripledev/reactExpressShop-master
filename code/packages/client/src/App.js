@@ -8,9 +8,8 @@ import isLoginAction from "./reduxx/actions/isLoginAction";
 
 import LoadingCompoment from "./components/LoadingCompoment";
 import getAuth from "./components/getAuth";
-import dashboard from "./components/pages/DashBoardPage";
-import CheckoutPage from "./components/pages/checkOut/CheckoutPage";
 import PrivateRoute from "./PrivateRoute";
+import PrivateRouteAdmin from "./PrivateRouteAdmin";
 
 // const AsyncHome = Loadable({
 //   loader: () => import("./components/pages/HomePage"),
@@ -44,6 +43,10 @@ const AsyncCheckoutPage = Loadable({
 });
 const AsyncCategoryPage = Loadable({
   loader: () => import("./components/pages/Category/CategoryPage"),
+  loading: LoadingCompoment
+});
+const AsyncDashBoardPage = Loadable({
+  loader: () => import("./components/pages/DashBoardPage"),
   loading: LoadingCompoment
 });
 /* cái này trong app render copy ra  <div className="App">
@@ -90,12 +93,18 @@ class App extends Component {
             <PrivateRoute
               location={location}
               path="/checkout"
-              component={CheckoutPage}
+              component={AsyncCheckoutPage}
             />
 
             <Route
               location={location}
               path="/category"
+              exact
+              component={AsyncCategoryPage}
+            />
+            <Route
+              location={location}
+              path="/category/search/:searchvalue"
               exact
               component={AsyncCategoryPage}
             />
@@ -116,10 +125,10 @@ class App extends Component {
               path="/product/:id"
               component={AsyncProduct}
             />
-            <PrivateRoute
+            <PrivateRouteAdmin
               location={location}
               path="/dashboard"
-              component={dashboard}
+              component={AsyncDashBoardPage}
             />
 
             <Route location={location} path="/" exact component={AsyncHome} />

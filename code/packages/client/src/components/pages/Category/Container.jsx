@@ -50,7 +50,13 @@ class Container extends Component {
       this.setState({ loading: true });
     }
     const { typeSort } = this.state;
-    const responseProducts = await getDataByType(typeSort, page);
+    const { searchvalue } = this.props;
+    let responseProducts = [];
+    if (searchvalue !== null) {
+      responseProducts = await Axios.get(`/api/products/search/${searchvalue}`);
+    } else {
+      responseProducts = await getDataByType(typeSort, page);
+    }
     const {
       data: { data_products = [], current, pages } = []
     } = responseProducts;
