@@ -21,15 +21,15 @@ class RightColumn extends Component {
                 className="cart-summary-line"
                 id="cart-subtotal-products"
               >
-                <span className="label js-subtotal">${this.props.Cart.totalQty} items</span>
-                <span className="value">$104.80</span>
+                <span className="label js-subtotal">{this.props.Cart.totalQty} items</span>
+                <span className="value">${this.props.Cart.totalPrice}</span>
               </div>
               <div
                 className="cart-summary-line"
                 id="cart-subtotal-shipping"
               >
                 <span className="label">Shipping</span>
-                <span className="value">$7.00</span>
+                <span className="value">$0.00</span>
                 <div>
                   <small className="value" />
                 </div>
@@ -39,7 +39,7 @@ class RightColumn extends Component {
             <div className="card-block">
               <div className="cart-summary-line cart-total">
                 <span className="label">Total (tax excl.)</span>
-                <span className="value">$111.80</span>
+                <span className="value">${this.props.Cart.totalPrice}</span>
               </div>
               <div className="cart-summary-line">
                 <small className="label">Taxes</small>
@@ -51,7 +51,7 @@ class RightColumn extends Component {
           <div className="checkout cart-detailed-actions card-block">
             <div className="text-sm-center">
               <a
-                href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=order"
+                href="/checkout"
                 className="btn btn-primary"
               >
                 Proceed to checkout
@@ -64,7 +64,7 @@ class RightColumn extends Component {
   }
 }
 const RightColumnRedux = connect(function(state) {
-  return { Cart: state.Cart || {totalQty:"1"}};
+  return { Cart: state.Cart || {products:[],totalQty:"",totalPrice:""}};
 })(RightColumn);
 
 export default RightColumnRedux;

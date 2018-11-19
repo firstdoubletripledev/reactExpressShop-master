@@ -18,7 +18,7 @@ class LeftColumn extends Component {
         {/* cart products detailed */}
         <div className="card cart-container">
           <div className="card-block">
-            <h1 className="h3">Shopping Cart ${this.props.Cart.totalQty}</h1>
+            <h1 className="h3">Shopping Cart ||  {this.props.Cart.totalQty} items</h1>
           </div>
           <hr className="separator" />
           <div
@@ -33,7 +33,7 @@ class LeftColumn extends Component {
         </div>
         <a
           className="label"
-          href="https://ld-prestashop.template-help.com/prestashop_13106/index.php"
+          href="/"
         >
           <i className="material-icons">chevron_left</i>Continue shopping
         </a>
