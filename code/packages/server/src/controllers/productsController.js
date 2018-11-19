@@ -24,6 +24,46 @@ module.exports = {
       });
   },
 
+  listSearchByName(req, res) {
+    const { searchvalue = null } = req.params;
+    if (searchvalue !== null) {
+      const { perpage = 20, page = 1 } = req.params;
+
+      const perPage = Number(perpage);
+
+      ProductsModel.find({ $text: { $search: searchvalue } })
+        .skip(perPage * page - perPage)
+        .limit(perPage)
+        .populate('category')
+        .exec((err, productss) => {
+          if (err) {
+            return res.status(500).json({
+              message: 'Error when getting products.',
+              error: err,
+            });
+          }
+
+          ProductsModel.count().exec((errCount, count) => {
+            if (errCount) {
+              return res.status(500).json({
+                message: 'Error when count products.',
+                error: errCount,
+              });
+            }
+
+            return res.json({
+              data_products: productss,
+              current: page,
+              pages: Math.ceil(count / perPage),
+            });
+          });
+        });
+    } else {
+      return res.json([]);
+    }
+    return null;
+  },
+
   listPartition(req, res) {
     const { perpage = 20, page = 1 } = req.params;
     const perPage = Number(perpage);

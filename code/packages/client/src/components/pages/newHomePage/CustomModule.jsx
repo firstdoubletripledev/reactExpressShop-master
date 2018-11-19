@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export function CustomModule() {
   return (
@@ -11,8 +11,8 @@ export function CustomModule() {
               <li className="tmhtmlcontent-item-1 left-background">
                 <img
                   src="https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/95122fb2dcccc7caec9cac5258e0240b98490b39_home-banner-1.jpg"
-                  className="item-img "
-                  title
+                  className="item-img"
+                  title="item-img-tmhtmlcontent"
                   alt=""
                   width={763}
                   height={925}
@@ -35,7 +35,7 @@ export function CustomModule() {
                 <img
                   src="https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/3899dd7d853e6a8de209c62f4a1e01f4ebc5a623_home-banner-2.jpg"
                   className="item-img "
-                  title
+                  title="true"
                   alt=""
                   width={763}
                   height={925}

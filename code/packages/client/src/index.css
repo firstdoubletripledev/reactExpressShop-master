@@ -28,6 +28,11 @@ a {
 .make-it-gap>div {
     margin-right: 10px;
 }
- /* .category-sub-menu>li::before {
+
+/* .category-sub-menu>li::before {
      content: "" !important; 
 } */
+
+.layout {
+    background: none;
+}

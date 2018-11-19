@@ -17,5 +17,6 @@ const productsSchema = new Schema({
   galleryImage: [String],
   discountPrice: String,
 });
+productsSchema.index({ name: 'text', code: 'text' });
 
 module.exports = mongoose.model('products', productsSchema);

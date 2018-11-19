@@ -7,13 +7,13 @@ import Footer from "../../navigations/Footer.jsx";
 
 const CategoryPage = ({
   match: {
-    params: { page = 1, typeevent: typeEvent = null }
+    params: { page = 1, typeevent: typeEvent = null, searchvalue = null }
   }
 }) => {
   return (
     <>
       <Header />
-      <Container page={page} typeEvent={typeEvent} />
+      <Container page={page} typeEvent={typeEvent} searchvalue={searchvalue} />
       <Footer />
     </>
   );
