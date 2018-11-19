@@ -21,15 +21,22 @@ class ProductsInCart extends Component {
   };
 
 
-  addItemCart = async () =>{
+  addItemCart = async (productId) =>{
     const { dispatch } = this.props;
 
-    await dispatch(CartAction.addItemCartAction("5be3ee66e5daac145c1b437b"));
+    await dispatch(CartAction.addItemCartAction(productId));
     
   }
-  decreaseItemCart =  async ()=>{
+ removeItemCart = async (productId) =>{
+  const { dispatch } = this.props;
+
+  await dispatch(CartAction.removeItemCartAction(productId));
+  
+}
+
+  decreaseItemCart =  async (productId)=>{
     const { dispatch } = this.props;
-    await dispatch(CartAction.decreaseItemCartAction("5be3ee66e5daac145c1b437b"));
+    await dispatch(CartAction.decreaseItemCartAction(productId));
     
   }
 
@@ -38,6 +45,7 @@ class ProductsInCart extends Component {
      return ( 
      
            this.props.products.map((data,index)=>{
+             var productHref = "/product/"+data.item._id;
                 return(
                 <li key = {index} className="cart-item">
                 <div className="product-line-grid row">
@@ -45,7 +53,7 @@ class ProductsInCart extends Component {
                   <div className="product-line-grid-left col-md-2 col-4">
                     <span className="product-image media-middle">
                       <img
-                        src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/2/4/24-cart_default.jpg"
+                        src= {data.item.pathImg}
                         alt="Autumn Basket"
                       />
                     </span>
@@ -55,36 +63,29 @@ class ProductsInCart extends Component {
                     <div className="product-line-info">
                       <a
                         className="label"
-                        href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_product=8&id_product_attribute=54&rewrite=autumn-basket&controller=product&id_lang=1#/10,color,red/25,size,standard/28,type,roses"
+                        href = {productHref}
                         data-id_customization={0}
                       >
-                        Autumn Basket
+                        {data.item.name}
                       </a>
+                      
                     </div>
                     <div className="product-line-info product-price h5 has-discount">
                       <div className="current-price">
-                        <span className="price">$19.20</span>
-                        <div className="unit-price-cart">$15.36 </div>
+                       
+                        <div className="unit-price-cart">{data.item.discountPrice}</div>
                       </div>
                       <div className="product-discount">
-                        <span className="regular-price">$24.00</span>
+                        <span className="regular-price">{data.item.price}</span>
                         <span className="discount discount-percentage">
-                          -20%
+                          
                         </span>
                       </div>
                     </div>
                     <br />
                     <div className="product-line-info">
                       <span className="label">Color:</span>
-                      <span className="value">Red</span>
-                    </div>
-                    <div className="product-line-info">
-                      <span className="label">Size:</span>
-                      <span className="value">Standard</span>
-                    </div>
-                    <div className="product-line-info">
-                      <span className="label">Type:</span>
-                      <span className="value">Roses</span>
+                      <span className="value"></span>
                     </div>
                   </div>
                   {/*  product left body: description */}
@@ -96,27 +97,13 @@ class ProductsInCart extends Component {
                           <div className="col-md-7 col-12 qty">
                             <div className="product-quantity clearfix">
                               <div className="qty">
-                                <span className="control-label">Quantity</span>
+                                <span className="control-label">{data.qty} items </span> 
                                 <div className="input-group bootstrap-touchspin">
                                   <span
                                     className="input-group-addon bootstrap-touchspin-prefix"
                                     style={{ display: "none" }}
                                   />
-                                  <input
-                                    className="js-cart-line-product-quantity form-control"
-                                    data-down-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart&update=1&id_product=8&id_product_attribute=54&token=ff0806b313935b447701a7e4ec498a3e&op=down"
-                                    data-up-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart&update=1&id_product=8&id_product_attribute=54&token=ff0806b313935b447701a7e4ec498a3e&op=up"
-                                    data-update-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart&update=1&id_product=8&id_product_attribute=54&token=ff0806b313935b447701a7e4ec498a3e"
-                                    data-product-id={8}
-                                    type="text"
-                                    defaultValue={4}
-                                    name="product-quantity-spin"
-                                    min={1}
-                                    style={{
-                                      display: "block",
-                                      width: 16
-                                    }}
-                                  />
+                                 
                                   <span
                                     className="input-group-addon bootstrap-touchspin-postfix"
                                     style={{ display: "none" }}
@@ -124,14 +111,14 @@ class ProductsInCart extends Component {
                                   <span className="input-group-btn-vertical">
                                     <button
 
-                                      onClick={this.addItemCart.bind(this)}
+                                      onClick={()=> this.addItemCart(data.item._id)}
                                       className="btn btn-touchspin js-touchspin js-increase-product-quantity bootstrap-touchspin-up"
                                       type="button"
                                     >
                                       <i className="touchspin-up" />
                                     </button>
                                     <button
-                                    onClick={this.decreaseItemCart.bind(this)}
+                                    onClick={()=> this.decreaseItemCart(data.item._id)}
                                       className="btn btn-touchspin js-touchspin js-decrease-product-quantity bootstrap-touchspin-down"
                                       type="button"
                                     >
@@ -144,7 +131,7 @@ class ProductsInCart extends Component {
                           </div>
                           <div className="col-md-5 col-12 price">
                             <span className="product-price">
-                              <strong>$76.80</strong>
+                              <strong>{data.price}</strong>
                             </span>
                           </div>
                         </div>
@@ -154,11 +141,9 @@ class ProductsInCart extends Component {
                           <a
                             className="remove-from-cart"
                             rel="nofollow"
-                            href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart&delete=1&id_product=8&id_product_attribute=54&token=ff0806b313935b447701a7e4ec498a3e"
-                            data-link-action="delete-from-cart"
-                            data-id-product={8}
-                            data-id-product-attribute={54}
-                            data-id-customization
+                            onClick = {()=> this.removeItemCart(data.item._id)}
+                          
+                           
                           >
                             <i className="material-icons float-xs-left">
                               delete

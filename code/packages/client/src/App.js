@@ -90,7 +90,7 @@ class App extends Component {
               exact
               component={AsyncCartPage}
             />
-            <PrivateRoute
+            <Route
               location={location}
               path="/checkout"
               component={AsyncCheckoutPage}

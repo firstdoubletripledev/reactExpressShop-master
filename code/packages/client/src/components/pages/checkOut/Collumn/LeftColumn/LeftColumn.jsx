@@ -47,7 +47,6 @@ class LeftColumn extends Component {
       })
       .then(result => {
         alert("đặt hàng thành công");
-        // return this.props.history.push('/')
       });
   };
 
