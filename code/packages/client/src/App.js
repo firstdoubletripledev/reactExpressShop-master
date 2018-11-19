@@ -29,7 +29,7 @@ const AsyncRegisterPage = Loadable({
   loading: LoadingCompoment
 });
 const AsyncCartPage = Loadable({
-  loader: () => import("./components/pages/CartPage"),
+  loader: () => import("./components/pages/CartPage/CartPage"),
   loading: LoadingCompoment
 });
 const AsyncCheckoutPage = Loadable({

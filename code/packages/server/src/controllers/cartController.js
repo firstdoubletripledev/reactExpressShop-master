@@ -13,9 +13,9 @@ module.exports = {
         }
         var cart = new Cart(req.session.cart);
         var cart1 = {
-            products: cart.generateArray(), 
-            totalPrice: cart.totalPrice,
-            totalQty: cart.totalQty,
+            products: cart.generateArray() || [], 
+            totalPrice: cart.totalPrice || "",
+            totalQty: cart.totalQty || "",
 
         }
         console.log(cart1);
@@ -37,9 +37,9 @@ module.exports = {
           cart.add(product, productId);
           req.session.cart = cart;
           var cart1 = {
-            products: cart.generateArray(), 
-            totalPrice: cart.totalPrice,
-            totalQty: cart.totalQty,
+            products: cart.generateArray() || [], 
+            totalPrice: cart.totalPrice || "",
+            totalQty: cart.totalQty || "",
 
         }
         console.log(cart1);
@@ -58,9 +58,9 @@ module.exports = {
 
         req.session.cart = cart;
         var cart1 = {
-            products: cart.generateArray(), 
-            totalPrice: cart.totalPrice,
-            totalQty: cart.totalQty,
+            products: cart.generateArray() || [], 
+            totalPrice: cart.totalPrice || "",
+            totalQty: cart.totalQty || "",
 
         }
         console.log(cart1);
@@ -75,9 +75,9 @@ module.exports = {
       
         req.session.cart = cart;
         var cart1 = {
-            products: cart.generateArray(), 
-            totalPrice: cart.totalPrice,
-            totalQty: cart.totalQty,
+            products: cart.generateArray() || [], 
+            totalPrice: cart.totalPrice || "",
+            totalQty: cart.totalQty || "",
 
         }
         console.log(cart1);
