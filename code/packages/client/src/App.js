@@ -1,53 +1,53 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 // import logo from "./logo.svg";
-import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Loadable from "react-loadable";
-import { connect } from "react-redux";
-import isLoginAction from "./reduxx/actions/isLoginAction";
+import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Loadable from 'react-loadable';
+import { connect } from 'react-redux';
+import isLoginAction from './reduxx/actions/isLoginAction';
 
-import LoadingCompoment from "./components/LoadingCompoment";
-import getAuth from "./components/getAuth";
-import PrivateRoute from "./PrivateRoute";
-import PrivateRouteAdmin from "./PrivateRouteAdmin";
+import LoadingCompoment from './components/LoadingCompoment';
+import getAuth from './components/getAuth';
+// import PrivateRoute from './PrivateRoute';
+import PrivateRouteAdmin from './PrivateRouteAdmin';
 
 // const AsyncHome = Loadable({
 //   loader: () => import("./components/pages/HomePage"),
 //   loading: LoadingCompoment
 // });
 const AsyncHome = Loadable({
-  loader: () => import("./components/pages/newHomePage/NewHomePage"),
-  loading: LoadingCompoment
+  loader: () => import('./components/pages/newHomePage/NewHomePage'),
+  loading: LoadingCompoment,
 });
 
 const AsyncProduct = Loadable({
-  loader: () => import("./components/pages/Product/Product"),
-  loading: LoadingCompoment
+  loader: () => import('./components/pages/Product/Product'),
+  loading: LoadingCompoment,
 });
 
 const AsyncLoginPage = Loadable({
-  loader: () => import("./components/pages/LoginPage"),
-  loading: LoadingCompoment
+  loader: () => import('./components/pages/LoginPage'),
+  loading: LoadingCompoment,
 });
 const AsyncRegisterPage = Loadable({
-  loader: () => import("./components/pages/RegisterPage"),
-  loading: LoadingCompoment
+  loader: () => import('./components/pages/RegisterPage'),
+  loading: LoadingCompoment,
 });
 const AsyncCartPage = Loadable({
-  loader: () => import("./components/pages/CartPage/CartPage"),
-  loading: LoadingCompoment
+  loader: () => import('./components/pages/CartPage/CartPage'),
+  loading: LoadingCompoment,
 });
 const AsyncCheckoutPage = Loadable({
-  loader: () => import("./components/pages/checkOut/CheckoutPage"),
-  loading: LoadingCompoment
+  loader: () => import('./components/pages/checkOut/CheckoutPage'),
+  loading: LoadingCompoment,
 });
 const AsyncCategoryPage = Loadable({
-  loader: () => import("./components/pages/Category/CategoryPage"),
-  loading: LoadingCompoment
+  loader: () => import('./components/pages/Category/CategoryPage'),
+  loading: LoadingCompoment,
 });
 const AsyncDashBoardPage = Loadable({
-  loader: () => import("./components/pages/DashBoardPage"),
-  loading: LoadingCompoment
+  loader: () => import('./components/pages/Dashboard/DashBoardPage'),
+  loading: LoadingCompoment,
 });
 /* cái này trong app render copy ra  <div className="App">
         <header className="App-header">
@@ -139,8 +139,8 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = ({ isLogin = "" }) => ({
-  isLogin
+const mapStateToProps = ({ isLogin = '' }) => ({
+  isLogin,
 });
 
 export default connect(mapStateToProps)(App);

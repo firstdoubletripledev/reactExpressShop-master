@@ -40,3 +40,16 @@ a {
 .slick-list {
     margin-top: 100px;
 }
+
+.logo-dashboard {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.Sider-dashboard>.ant-layout-sider-children {
+    border-right: 1px solid #e8e8e8;
+}
+
+.Sider-dashboard>.ant-layout-sider-children>.ant-menu-inline {
+    border: none;
+}
