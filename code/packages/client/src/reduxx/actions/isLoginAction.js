@@ -1,8 +1,8 @@
-import { LOGIN_CHANCE, LOGIN_DATA } from "./types";
+import { LOGIN_CHANCE, LOGIN_DATA } from './types';
 
 const ChanceLogin = isLogin => ({
   type: LOGIN_CHANCE,
-  isLogin
+  isLogin,
 });
 
 const isLoginAction = code => async (dispatch, getState) => {
@@ -15,7 +15,7 @@ const isLoginAction = code => async (dispatch, getState) => {
 
 const ChanceLoginData = data => ({
   type: LOGIN_DATA,
-  data
+  data,
 });
 
 const saveLoginDataAction = data => (dispatch, getState) => {

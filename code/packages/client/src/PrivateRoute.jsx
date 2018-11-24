@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { Route, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
-import getAuth from "./components/getAuth";
+import React, { Component } from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import getAuth from './components/getAuth';
 
 class PrivateRoute extends Component {
   state = {
     loading: true,
-    isAuth: false
+    isAuth: false,
   };
 
   componentDidMount() {
     getAuth().then(data => {
       this.setState({
         loading: false,
-        isAuth: data
+        isAuth: data,
       });
     });
   }
@@ -33,8 +33,8 @@ class PrivateRoute extends Component {
             ) : (
               <Redirect
                 to={{
-                  pathname: "/login",
-                  state: { from: props.location }
+                  pathname: '/login',
+                  state: { from: props.location },
                 }}
               />
             )
@@ -46,7 +46,7 @@ class PrivateRoute extends Component {
 }
 
 const mapStateToProps = ({ isLogin }) => ({
-  isLogin
+  isLogin,
 });
 
 export default connect(mapStateToProps)(PrivateRoute);

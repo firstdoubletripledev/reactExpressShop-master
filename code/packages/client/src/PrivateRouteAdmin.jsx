@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { Route, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
-import getAuth from "./components/getAuth";
+import React, { Component } from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import getAuth from './components/getAuth';
 
 class PrivateRouteAdmin extends Component {
   state = {
     loading: true,
-    isAuth: false
+    isAuth: false,
   };
 
   componentDidMount() {
     getAuth().then(data => {
       this.setState({
         loading: false,
-        isAuth: data
+        isAuth: data,
       });
     });
   }
@@ -33,12 +33,12 @@ class PrivateRouteAdmin extends Component {
             ) : (
               <>
                 {alert(
-                  "Sorry this is for admin if you want to access this please contact to Admin"
+                  'Sorry this is for admin if you want to access this please contact to Admin'
                 )}
                 <Redirect
                   to={{
-                    pathname: "/",
-                    state: { from: props.location }
+                    pathname: '/',
+                    state: { from: props.location },
                   }}
                 />
               </>
@@ -51,7 +51,7 @@ class PrivateRouteAdmin extends Component {
 }
 
 const mapStateToProps = ({ isLogin }) => ({
-  isLogin
+  isLogin,
 });
 
 export default connect(mapStateToProps)(PrivateRouteAdmin);

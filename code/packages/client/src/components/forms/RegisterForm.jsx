@@ -13,7 +13,7 @@ import {
   // AutoComplete
 } from 'antd';
 import Axios from 'axios';
-import { withRouter } from 'react-router-dom' ;
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const FormItem = Form.Item;
