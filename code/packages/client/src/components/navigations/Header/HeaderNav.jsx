@@ -67,10 +67,17 @@ function HeaderNavContent({ themeLogo, isLogin, LoginData = {} }) {
             <div id="_desktop_user_info">
               <div className="header_user_info user-info current">
                 {isLogin ? (
-                  <Link to="/account">
-                    <i className="fl-chapps-user139" />
-                    <span>Hi. {LoginData.email} </span>
-                  </Link>
+                  LoginData.role !== "admin" ? (
+                    <Link to="/account">
+                      <i className="fl-chapps-user139" />
+                      <span>Hi. {LoginData.email} </span>
+                    </Link>
+                  ) : (
+                    <Link to="/dashboard">
+                      <i className="fl-chapps-user139" />
+                      <span>Hi. {LoginData.email} </span>
+                    </Link>
+                  )
                 ) : (
                   <Link to="/login">
                     <i className="fl-chapps-user139" />

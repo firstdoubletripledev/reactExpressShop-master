@@ -10,7 +10,6 @@ async function getAuth() {
     }
   });
   const { data: { role = null } = {}, code = 0 } = res.data;
-
   if (code === 1) {
     store.dispatch(saveLoginDataAction(res.data.data));
     if (role === "admin") {

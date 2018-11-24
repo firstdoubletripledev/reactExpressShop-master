@@ -6,7 +6,6 @@ import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import getAuth from "../getAuth";
 import isLoginAction from "../../reduxx/actions/isLoginAction";
 
 const FormItem = Form.Item;
@@ -43,17 +42,18 @@ class NormalLoginForm extends React.Component {
           data = {},
           token
         } = res.data;
-
-        alert(msg);
+        console.log(data);
 
         if (code === 1) {
           localStorage.setItem("token", `JWT ${token}`);
           localStorage.setItem("userid", data.userId);
-          const email = await getAuth();
           const { dispatch } = this.props;
-          await dispatch(isLoginAction(email));
-
-          return this.props.history.push("/");
+          await dispatch(isLoginAction(code));
+          if (data.role === "admin") {
+            return this.props.history.push("/dashboard");
+          } else {
+            return this.props.history.push("/");
+          }
         }
         return true;
       }

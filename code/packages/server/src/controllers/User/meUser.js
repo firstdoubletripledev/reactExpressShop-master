@@ -27,7 +27,7 @@ async function meUser(req, res) {
   if (!user) {
     return res.json({ code: 0, msg: 'No User found' });
   }
-  return res.json({ code: 1, data: { email: user.email }, msg: 'Success' });
+  return res.json({ code: 1, data: { email: user.email, role: user.role }, msg: 'Success' });
 }
 
 export { meUser };

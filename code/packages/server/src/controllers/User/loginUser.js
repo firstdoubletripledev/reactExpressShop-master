@@ -24,7 +24,7 @@ async function loginUser(req, res) {
   req.session.userId = user._id;
   res.json({
     code: 1,
-    data: { email: user.email, userId: user._id }, // giang them khi dang nhap thì tra ve userid nua
+    data: { email: user.email, userId: user._id, role: user.role }, // giang them khi dang nhap thì tra ve userid nua
     token,
     msg: 'Success',
   });

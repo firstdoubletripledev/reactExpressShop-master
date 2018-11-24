@@ -5,9 +5,9 @@ const ChanceLogin = isLogin => ({
   isLogin
 });
 
-const isLoginAction = email => async (dispatch, getState) => {
+const isLoginAction = code => async (dispatch, getState) => {
   let isLogin = false;
-  if (email) {
+  if (code) {
     isLogin = true;
   }
   dispatch(ChanceLogin(isLogin));
