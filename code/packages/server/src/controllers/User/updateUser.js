@@ -1,27 +1,43 @@
 const usersModel = require('../../models/usersModel.js');
+import { verify } from 'argon2';
+import { hash } from 'argon2';
 
-function updateUser(req, res) {
-  const { id } = req.params;
-  usersModel.findOne({ _id: id }, (err, users) => {
-    if (err) {
-      return res.status(500).json({
-        message: 'Error when getting users',
-        error: err,
-      });
-    }
-    if (!users) {
-      return res.status(404).json({
-        message: 'No such users',
-      });
-    }
+ async function updateUser(req, res) {
+    // console.log(req.body.userid);
+  //const id  = req.body.userid;
+  
+  const users = await usersModel.findOne({ _id: req.body.userid ||"" }).catch((error) => {
+   return  res.json({ code: 0, msg: 'Error when get user in database' });
+  //  throw new Error(error);
+    
+  });
+  //console.log(users);
+  
+  if (!users) {
+   return  res.json({ code: 0, msg: 'Not found user' });
+   // throw new Error('Not found user');
+  }
+     const valid = await verify(users.password, req.body.password || "");
+    // console.log(valid);
+  if (!valid) {
+    return res.json({ code: 0, msg: 'Error old Password' });
+   //throw new Error('Error Password');
+  };
+    
+     const hashedPassword = await hash(req.body.newPassword || "chungtadeptrai");
+    
     users.email = req.body.email ? req.body.email : users.email;
-    users.password = req.body.password ? req.body.password : users.password;
+    users.password = hashedPassword ? hashedPassword : users.password;
     users.address = req.body.address ? req.body.address : users.address;
     users.phonenumber = req.body.phonenumber ? req.body.phonenumber : users.phonenumber;
     users.role = req.body.role ? req.body.role : users.role;
     users.token = req.body.token ? req.body.token : users.token;
+    users.firstName = req.body.firstName ? req.body.firstName : users.firstName;
+    users.lastName = req.body.lastName ? req.body.lastName : users.lastName;
+    users.birthday = req.body.birthday ? req.body.birthday : users.birthday;
+
     users.save((errSave, usersData) => {
-      if (err) {
+      if (errSave) {
         return res.status(500).json({
           message: 'Error when updating users.',
           error: errSave,
@@ -29,7 +45,7 @@ function updateUser(req, res) {
       }
       return res.json(usersData);
     });
-    return users;
-  });
+
 }
-exports.updateUser = updateUser;
+//exports.updateUser = updateUser;
+export { updateUser };  
