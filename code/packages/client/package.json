@@ -24,12 +24,20 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier --write 'src/**/*.(js|jsx)'",
+    "precommit": "pretty-quick --staged"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^1.2.0",
+    "prettier": "1.15.2",
+    "pretty-quick": "^1.8.0"
+  }
 }
