@@ -3,7 +3,13 @@ import { Layout, Menu, Icon } from 'antd';
 import { Redirect } from 'react-router-dom';
 
 import themeLogo from '../../navigations/theme-logo.jpg';
-import { DashboardOverView } from './DashboardOverView';
+import {
+  DashboardOverView,
+  UserContent,
+  ItemContent,
+  OrderContent,
+  ShopContent,
+} from './Content';
 
 const { Header, Sider, Content } = Layout;
 
@@ -98,10 +104,10 @@ class DashBoardPage extends Component {
             }}
           >
             {menu === 1 ? <DashboardOverView /> : ''}
-            {menu === 2 ? <div>User</div> : ''}
-            {menu === 3 ? <div>Item</div> : ''}
-            {menu === 4 ? <div>Order</div> : ''}
-            {menu === 5 ? <div>Shop</div> : ''}
+            {menu === 2 ? <UserContent /> : ''}
+            {menu === 3 ? <ItemContent /> : ''}
+            {menu === 4 ? <OrderContent /> : ''}
+            {menu === 5 ? <ShopContent /> : ''}
           </Content>
         </Layout>
       </Layout>
