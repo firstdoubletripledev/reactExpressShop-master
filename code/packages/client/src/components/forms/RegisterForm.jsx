@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Form,
   Input,
@@ -9,12 +9,12 @@ import {
   // Row,
   // Col,
   Checkbox,
-  Button
+  Button,
   // AutoComplete
-} from "antd";
-import Axios from "axios";
-import { withRouter } from "react-router-dom";
-import { connect } from "react-redux";
+} from 'antd';
+import Axios from 'axios';
+import { withRouter } from 'react-router-dom' ;
+import { connect } from 'react-redux';
 
 const FormItem = Form.Item;
 // const Option = Select.Option;
@@ -23,14 +23,14 @@ const FormItem = Form.Item;
 class RegistrationForm extends React.Component {
   state = {
     confirmDirty: false,
-    autoCompleteResult: []
+    autoCompleteResult: [],
   };
 
   componentDidMount = () => {
     const { isLogin = false } = this.props;
     if (isLogin !== false) {
       const { history } = this.props;
-      history.push("/");
+      history.push('/');
     }
   };
 
@@ -38,12 +38,12 @@ class RegistrationForm extends React.Component {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll(async (err, values) => {
       if (!err) {
-        console.log("Received values of form: ", values);
+        console.log('Received values of form: ', values);
         const bodyReq = {
           email: values.email,
-          password: values.password
+          password: values.password,
         };
-        const res = await Axios.post("api/users", bodyReq).catch(error => {
+        const res = await Axios.post('api/users', bodyReq).catch(error => {
           return console.log(error.response);
         });
         if (res.status === 504) {
@@ -51,13 +51,13 @@ class RegistrationForm extends React.Component {
         }
         const {
           code = 0,
-          msg = "error not found please reload page and try again"
+          msg = 'error not found please reload page and try again',
           // data = {}
         } = res.data;
 
         alert(msg);
         if (code === 1) {
-          return this.props.history.push("/login");
+          return this.props.history.push('/login');
         }
         return true;
       }
@@ -71,8 +71,8 @@ class RegistrationForm extends React.Component {
 
   compareToFirstPassword = (rule, value, callback) => {
     const form = this.props.form;
-    if (value && value !== form.getFieldValue("password")) {
-      callback("Two passwords that you enter is inconsistent!");
+    if (value && value !== form.getFieldValue('password')) {
+      callback('Two passwords that you enter is inconsistent!');
     } else {
       callback();
     }
@@ -81,7 +81,7 @@ class RegistrationForm extends React.Component {
   validateToNextPassword = (rule, value, callback) => {
     const form = this.props.form;
     if (value && this.state.confirmDirty) {
-      form.validateFields(["confirm"], { force: true });
+      form.validateFields(['confirm'], { force: true });
     }
 
     if (value) {
@@ -94,7 +94,7 @@ class RegistrationForm extends React.Component {
         return callback();
       } else {
         return callback(
-          "Password must have minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!"
+          'Password must have minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!'
         );
       }
     }
@@ -107,7 +107,7 @@ class RegistrationForm extends React.Component {
     if (!value) {
       autoCompleteResult = [];
     } else {
-      autoCompleteResult = [".com", ".org", ".net"].map(
+      autoCompleteResult = ['.com', '.org', '.net'].map(
         domain => `${value}${domain}`
       );
     }
@@ -121,24 +121,24 @@ class RegistrationForm extends React.Component {
     const formItemLayout = {
       labelCol: {
         xs: { span: 24 },
-        sm: { span: 8 }
+        sm: { span: 8 },
       },
       wrapperCol: {
         xs: { span: 24 },
-        sm: { span: 16 }
-      }
+        sm: { span: 16 },
+      },
     };
     const tailFormItemLayout = {
       wrapperCol: {
         xs: {
           span: 24,
-          offset: 0
+          offset: 0,
         },
         sm: {
           span: 16,
-          offset: 8
-        }
-      }
+          offset: 8,
+        },
+      },
     };
 
     // const websiteOptions = autoCompleteResult.map(website => (
@@ -148,58 +148,58 @@ class RegistrationForm extends React.Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <FormItem {...formItemLayout} label="E-mail">
-          {getFieldDecorator("email", {
+          {getFieldDecorator('email', {
             rules: [
               {
-                type: "email",
-                message: "The input is not valid E-mail!"
+                type: 'email',
+                message: 'The input is not valid E-mail!',
               },
               {
                 required: true,
-                message: "Please input your E-mail!"
-              }
-            ]
+                message: 'Please input your E-mail!',
+              },
+            ],
           })(<Input />)}
         </FormItem>
         <FormItem {...formItemLayout} label="Password">
-          {getFieldDecorator("password", {
+          {getFieldDecorator('password', {
             rules: [
               {
                 required: true,
-                message: "Please input your password!"
+                message: 'Please input your password!',
               },
               {
-                validator: this.validateToNextPassword
-              }
-            ]
+                validator: this.validateToNextPassword,
+              },
+            ],
           })(<Input type="password" />)}
         </FormItem>
         <FormItem {...formItemLayout} label="Confirm Password">
-          {getFieldDecorator("confirm", {
+          {getFieldDecorator('confirm', {
             rules: [
               {
                 required: true,
-                message: "Please confirm your password!"
+                message: 'Please confirm your password!',
               },
               {
-                validator: this.compareToFirstPassword
-              }
-            ]
+                validator: this.compareToFirstPassword,
+              },
+            ],
           })(<Input type="password" onBlur={this.handleConfirmBlur} />)}
         </FormItem>
 
         <FormItem {...tailFormItemLayout}>
-          {getFieldDecorator("agreement", {
+          {getFieldDecorator('agreement', {
             rules: [
               {
                 required: true,
-                message: "Please agree agreement!"
-              }
+                message: 'Please agree agreement!',
+              },
             ],
-            valuePropName: "checked"
+            valuePropName: 'checked',
           })(
             <Checkbox>
-              I have read the{" "}
+              I have read the{' '}
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -223,7 +223,7 @@ class RegistrationForm extends React.Component {
 const WrappedRegistrationForm = Form.create()(RegistrationForm);
 
 const mapStateToProps = ({ isLogin }) => ({
-  isLogin
+  isLogin,
 });
 
 export default withRouter(connect(mapStateToProps)(WrappedRegistrationForm));
