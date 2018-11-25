@@ -18,7 +18,12 @@ class Container extends Component {
   };
 
   getData = async () => {
-    var cartData = await Axios.get(`/api/cart/`);
+    var cartData = await Axios.get(`/api/cart/`).catch(error => {
+      return console.log(error.response);
+    });
+    if (!cartData) {
+      return null;
+    }
 
     this.setState({
       cart: cartData.data,

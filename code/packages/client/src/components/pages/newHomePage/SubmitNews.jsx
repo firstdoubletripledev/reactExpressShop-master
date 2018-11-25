@@ -14,12 +14,16 @@ export function SubmitNews() {
                 initialValues={{ email: '' }}
                 onSubmit={async ({ email }, { setSubmitting }) => {
                   const res = await Axios.get(`/api/submitnews/${email}`).catch(
-                    e => {
-                      alert('Req False');
+                    error => {
+                      console.log(error);
+                      alert(error);
                     }
                   );
+                  if (!res) {
+                    setSubmitting(false);
+                    return null;
+                  }
                   alert(res.data.msg);
-
                   setSubmitting(false);
                 }}
               >

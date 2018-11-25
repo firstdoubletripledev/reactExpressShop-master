@@ -47,6 +47,9 @@ class LeftColumn extends Component {
       })
       .then(result => {
         alert('đặt hàng thành công');
+      })
+      .catch(error => {
+        return console.log(error.response);
       });
   };
 

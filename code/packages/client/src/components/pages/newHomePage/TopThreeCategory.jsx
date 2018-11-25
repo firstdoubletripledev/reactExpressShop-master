@@ -14,7 +14,11 @@ class TopThreeCategory extends Component {
   };
   async componentDidMount() {
     try {
-      const { data = null } = await Axios.get('/api/categories/topthree');
+      const { data = null } = await Axios.get('/api/categories/topthree').catch(
+        error => {
+          return console.log(error.response);
+        }
+      );
       if (data !== null) {
         this.setState({
           category: data,

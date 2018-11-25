@@ -23,7 +23,11 @@ class Product extends Component {
     const request1 = Axios.get(`/api/products/${id}`);
     const request2 = Axios.get(`/api/products/perpage/4`);
 
-    const [res1, res2] = await Promise.all([request1, request2]);
+    const [res1, res2] = await Promise.all([request1, request2]).catch(
+      error => {
+        return console.log(error.response);
+      }
+    );
     const { data = null } = res1;
     const { data: dataSuggest = null } = res2;
 

@@ -1,8 +1,9 @@
-import './index.css';
-import './theme.css';
+import 'antd/dist/antd.css';
+
 import './theme/fl-chapps.css';
 import './theme/fl-outicons.css';
-import 'antd/dist/antd.css';
+import './theme.css';
+import './index.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

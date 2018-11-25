@@ -11,7 +11,6 @@ class CartTable extends Component {
     //const res = await Axios.get("/api/books");
     /* const datasave =res.data.map(item => {
         const dataItem = {
-         
         };
         return dataItem;
       });

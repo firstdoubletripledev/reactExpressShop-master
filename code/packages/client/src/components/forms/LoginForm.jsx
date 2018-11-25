@@ -31,6 +31,9 @@ class NormalLoginForm extends React.Component {
             return console.log(error.response);
           }
         );
+        if (!res) {
+          return null;
+        }
         if (res.status === 504) {
           alert("Can't connect to server");
         }

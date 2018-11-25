@@ -34,6 +34,10 @@ class RegistrationForm extends React.Component {
         const res = await Axios.post('api/users', bodyReq).catch(error => {
           return console.log(error.response);
         });
+        if (!res) {
+          return null;
+        }
+
         if (res.status === 504) {
           alert("Can't connect to server");
         }
