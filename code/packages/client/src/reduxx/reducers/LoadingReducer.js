@@ -1,4 +1,4 @@
-import { LOADING_CHANGE } from "../actions/types";
+import { LOADING_CHANGE } from '../actions/types';
 
 const LoadingReducer = (state = false, action) => {
   switch (action.type) {

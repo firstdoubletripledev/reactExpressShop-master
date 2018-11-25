@@ -1,4 +1,5 @@
 import React from 'react';
+
 /* import { Spin } from "antd"; */
 
 const LoadingCompoment = ({ isLoading, error }) => {

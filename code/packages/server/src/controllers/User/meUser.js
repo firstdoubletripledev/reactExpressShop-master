@@ -8,9 +8,9 @@ async function meUser(req, res) {
   const { userId } = req.session;
   if (!userId) {
     if (
-      req.headers
-      && req.headers.authorization
-      && req.headers.authorization.split(' ')[0] === 'JWT'
+      req.headers &&
+      req.headers.authorization &&
+      req.headers.authorization.split(' ')[0] === 'JWT'
     ) {
       const { authorization } = req.headers;
       const token = authorization.split(' ')[1];
@@ -23,7 +23,9 @@ async function meUser(req, res) {
   }
   const user = await usersModel
     .findOne({ _id: userId })
-    .catch(error => res.json({ code: 0, data: error, msg: 'Error when get user in database' }));
+    .catch(error =>
+      res.json({ code: 0, data: error, msg: 'Error when get user in database' })
+    );
   if (!user) {
     return res.json({ code: 0, msg: 'No User found' });
   }

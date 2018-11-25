@@ -1,9 +1,9 @@
+import { Col, Layout, Row } from 'antd';
 import React from 'react';
-import { Layout } from 'antd';
-import { Row, Col } from 'antd';
+
 import LoginForm from '../forms/LoginForm';
-import { TopTitle } from '../navigations/Header/TopTitle.jsx';
 import { HeaderNav } from '../navigations/Header/HeaderNav.jsx';
+import { TopTitle } from '../navigations/Header/TopTitle.jsx';
 import themeLogo from '../navigations/theme-logo.jpg';
 
 const { Content, Footer } = Layout;

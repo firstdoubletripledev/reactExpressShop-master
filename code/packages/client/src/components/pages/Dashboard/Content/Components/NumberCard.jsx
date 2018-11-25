@@ -1,5 +1,5 @@
+import { Card, Icon } from 'antd';
 import React from 'react';
-import { Icon, Card } from 'antd';
 import CountUp from 'react-countup';
 
 function NumberCard({ icon, color, title, number, countUp }) {

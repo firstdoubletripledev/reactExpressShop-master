@@ -1,12 +1,12 @@
+import { Col, Layout, Row } from 'antd';
 import React from 'react';
-import { Layout } from 'antd';
-// import MenuNav from '../navigations/MenuNav.jsx';
-import { Row, Col } from 'antd';
+
 import RegisterForm from '../forms/RegisterForm';
-import { TopTitle } from '../navigations/Header/TopTitle.jsx';
 import { HeaderNav } from '../navigations/Header/HeaderNav.jsx';
+import { TopTitle } from '../navigations/Header/TopTitle.jsx';
 import themeLogo from '../navigations/theme-logo.jpg';
 
+// import MenuNav from '../navigations/MenuNav.jsx';
 const { Content, Footer } = Layout;
 //Home page
 //cart page

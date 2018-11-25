@@ -16,7 +16,6 @@ module.exports = {
       products: cart.generateArray() || [],
       totalPrice: cart.totalPrice || '',
       totalQty: cart.totalQty || '',
-
     };
     console.log(cart1);
     return res.json(cart1);
@@ -39,7 +38,6 @@ module.exports = {
         products: cart.generateArray() || [],
         totalPrice: cart.totalPrice || '',
         totalQty: cart.totalQty || '',
-
       };
       console.log(cart1);
       return res.json(cart1);
@@ -59,7 +57,6 @@ module.exports = {
       products: cart.generateArray() || [],
       totalPrice: cart.totalPrice || '',
       totalQty: cart.totalQty || '',
-
     };
     console.log(cart1);
     return res.json(cart1);
@@ -76,11 +73,8 @@ module.exports = {
       products: cart.generateArray() || [],
       totalPrice: cart.totalPrice || '',
       totalQty: cart.totalQty || '',
-
     };
     console.log(cart1);
     return res.json(cart1);
   },
-
-
 };

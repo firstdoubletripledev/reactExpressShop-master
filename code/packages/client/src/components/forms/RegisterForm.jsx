@@ -1,20 +1,8 @@
-import React from 'react';
-import {
-  Form,
-  Input,
-  // Tooltip,
-  // Icon,
-  // Cascader,
-  // Select,
-  // Row,
-  // Col,
-  Checkbox,
-  Button,
-  // AutoComplete
-} from 'antd';
+import { Button, Checkbox, Form, Input } from 'antd';
 import Axios from 'axios';
-import { withRouter } from 'react-router-dom';
+import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 const FormItem = Form.Item;
 // const Option = Select.Option;

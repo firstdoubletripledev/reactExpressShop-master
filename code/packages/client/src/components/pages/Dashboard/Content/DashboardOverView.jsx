@@ -1,9 +1,10 @@
+import { Card, Col, Row } from 'antd';
 import React from 'react';
-import { Row, Col, Card } from 'antd';
-import SaleChart from './Components/SaleChart';
+
 import NumberCard from './Components/NumberCard';
-import SimpleRadialBarChart from './Components/SimpleRadialBarChart';
 import Quote from './Components/Quote';
+import SaleChart from './Components/SaleChart';
+import SimpleRadialBarChart from './Components/SimpleRadialBarChart';
 
 const item1 = {
   icon: 'dollar',

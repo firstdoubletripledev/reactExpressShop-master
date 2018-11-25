@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
+import { Redirect, Route } from 'react-router-dom';
+
 import getAuth from './components/getAuth';
 
 class PrivateRoute extends Component {
@@ -20,7 +21,7 @@ class PrivateRoute extends Component {
 
   render() {
     const { component: Component = null, ...rest } = this.props;
-    const { isLogin = null } = rest;
+    // const { isLogin = null } = rest;
     if (this.state.loading) {
       return <div>Loading...</div>;
     } else {
@@ -45,8 +46,8 @@ class PrivateRoute extends Component {
   }
 }
 
-const mapStateToProps = ({ isLogin }) => ({
-  isLogin,
-});
+// const mapStateToProps = ({ isLogin }) => ({
+//   isLogin,
+// });
 
-export default connect(mapStateToProps)(PrivateRoute);
+export default PrivateRoute;

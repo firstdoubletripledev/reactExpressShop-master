@@ -1,23 +1,23 @@
-import React, { Component } from "react";
-import Axios from "axios";
-import { Link } from "react-router-dom";
+import Axios from 'axios';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 const linkImage = [
-  "https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/7fd2279725df0e252f7a621a780dea60ef67aade_top-banner-1.jpg",
-  "https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/68cd47e008afd9a9fa1d3024f8bc9780fa513466_top-banner-2.jpg",
-  "https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/0c1b2755fa48a10764dc2ec243cbd29ec62500e7_top-banner-3.jpg"
+  'https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/7fd2279725df0e252f7a621a780dea60ef67aade_top-banner-1.jpg',
+  'https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/68cd47e008afd9a9fa1d3024f8bc9780fa513466_top-banner-2.jpg',
+  'https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/0c1b2755fa48a10764dc2ec243cbd29ec62500e7_top-banner-3.jpg',
 ];
 
 class TopThreeCategory extends Component {
   state = {
-    category: []
+    category: [],
   };
   async componentDidMount() {
     try {
-      const { data = null } = await Axios.get("/api/categories/topthree");
+      const { data = null } = await Axios.get('/api/categories/topthree');
       if (data !== null) {
         this.setState({
-          category: data
+          category: data,
         });
       }
     } catch (error) {
@@ -32,7 +32,7 @@ class TopThreeCategory extends Component {
         <div className="row it_QZOWDVFIGJLN ">
           <div className="it_QVIPIXAXPCPH col-12     ">
             <div className="module ">
-              {" "}
+              {' '}
               <div id="tmhtmlcontent_topColumn">
                 <ul className="tmhtmlcontent-topColumn row">
                   {category.map((data, i) => (

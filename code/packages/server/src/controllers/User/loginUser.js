@@ -6,7 +6,7 @@ const usersModel = require('../../models/usersModel.js');
 
 async function loginUser(req, res) {
   const { email = '', password = '' } = req.body;
-  const user = await usersModel.findOne({ email }).catch((error) => {
+  const user = await usersModel.findOne({ email }).catch(error => {
     res.json({ code: 0, msg: 'Error when get user in database' });
     throw new Error(error);
   });

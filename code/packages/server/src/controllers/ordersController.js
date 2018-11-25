@@ -115,9 +115,13 @@ module.exports = {
 
       orders.status = req.body.status ? req.body.status : orders.status;
       // orders.user = req.body.user ? req.body.user : orders.user;
-      orders.firstName = req.body.firstName ? req.body.firstName : orders.firstName;
+      orders.firstName = req.body.firstName
+        ? req.body.firstName
+        : orders.firstName;
       orders.lastName = req.body.lastName ? req.body.lastName : orders.lastName;
-      orders.addressShip = req.body.addressShip ? req.body.addressShip : orders.addressShip;
+      orders.addressShip = req.body.addressShip
+        ? req.body.addressShip
+        : orders.addressShip;
       orders.phoneNumberShip = req.body.phoneNumberShip
         ? req.body.phoneNumberShip
         : orders.phoneNumberShip;

@@ -1,14 +1,14 @@
+import { Icon, Layout, Menu } from 'antd';
 import React, { Component } from 'react';
-import { Layout, Menu, Icon } from 'antd';
 import { Redirect } from 'react-router-dom';
 
 import themeLogo from '../../navigations/theme-logo.jpg';
 import {
   DashboardOverView,
-  UserContent,
   ItemContent,
   OrderContent,
   ShopContent,
+  UserContent,
 } from './Content';
 
 const { Header, Sider, Content } = Layout;

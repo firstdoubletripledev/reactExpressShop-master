@@ -1,16 +1,16 @@
-import React from 'react';
 import {
-  Form,
-  Select,
-  InputNumber,
-  Switch,
-  Radio,
-  Slider,
   Button,
-  Upload,
+  Form,
   Icon,
+  InputNumber,
+  Radio,
   Rate,
+  Select,
+  Slider,
+  Switch,
+  Upload,
 } from 'antd';
+import React from 'react';
 
 const FormItem = Form.Item;
 const Option = Select.Option;

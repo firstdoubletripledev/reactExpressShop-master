@@ -12,8 +12,6 @@ const ordersSchema = new Schema({
   addressShip: String,
   phoneNumberShip: String,
   cart: Object,
-
-
 });
 
 module.exports = mongoose.model('orders', ordersSchema);

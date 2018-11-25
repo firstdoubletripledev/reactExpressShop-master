@@ -1,17 +1,17 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-import isLogin from "./isLoginReducer";
-import SLItemCart from "./SLItemCartReducer";
-import Loading from "./LoadingReducer";
-import LoginData from "./saveLoginDataReducer";
-import Cart from "./CartReducer";
+import Cart from './CartReducer';
+import isLogin from './isLoginReducer';
+import Loading from './LoadingReducer';
+import LoginData from './saveLoginDataReducer';
+import SLItemCart from './SLItemCartReducer';
 
 const appReducer = combineReducers({
   isLogin,
   SLItemCart,
   Loading,
   LoginData,
-  Cart
+  Cart,
 });
 
 export default appReducer;

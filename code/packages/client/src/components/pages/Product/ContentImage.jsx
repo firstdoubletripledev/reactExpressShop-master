@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const ContentImage = ({
   product: { galleryImage = [] } = {},
-  product = {}
+  product = {},
 }) => {
   return (
     <section className="page-content" id="content">
@@ -18,7 +18,7 @@ const ContentImage = ({
             alt="Autumn Basket"
             title="Autumn Basket"
             style={{
-              width: "100%"
+              width: '100%',
             }}
             itemProp="image"
           />
@@ -40,7 +40,7 @@ const ContentImage = ({
                 style={{
                   opacity: 1,
                   height: 548,
-                  transform: "translate3d(0px, 0px, 0px)"
+                  transform: 'translate3d(0px, 0px, 0px)',
                 }}
                 role="listbox"
               >

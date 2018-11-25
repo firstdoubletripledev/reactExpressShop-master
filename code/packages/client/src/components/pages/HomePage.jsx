@@ -1,11 +1,11 @@
+import { Col, Layout, Row } from 'antd';
 import React from 'react';
-import { Layout } from 'antd';
-import MenuNav from '../navigations/MenuNav.jsx';
+
 import CarouselMain from '../carousel.jsx';
-import MultipleItemsHomePage from '../Items/MultipleItemsHomePage';
-import { Row, Col } from 'antd';
 import ListItemsHomePage from '../Items/listItemsHomePage';
 import ModelItem from '../Items/ModelItem.jsx';
+import MultipleItemsHomePage from '../Items/MultipleItemsHomePage';
+import MenuNav from '../navigations/MenuNav.jsx';
 
 const { Content, Footer } = Layout;
 //Home page

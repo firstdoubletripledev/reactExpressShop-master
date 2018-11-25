@@ -1,11 +1,11 @@
-import React from 'react';
 import { Button } from 'antd';
+import React from 'react';
 
 import { TableUser } from './Components/Table';
 import {
-  onChangeItem,
-  dataItem,
   columnsItem,
+  dataItem,
+  onChangeItem,
 } from './Components/table/columnsItem';
 
 export const ItemContent = () => (

@@ -1,10 +1,8 @@
-import React from 'react';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import { Row, Col } from 'antd';
+import { Button, Checkbox, Col, Form, Icon, Input, Row } from 'antd';
 import Axios from 'axios';
-import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import { connect } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom';
 
 import isLoginAction from '../../reduxx/actions/isLoginAction';
 

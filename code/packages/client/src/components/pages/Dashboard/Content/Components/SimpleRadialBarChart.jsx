@@ -1,9 +1,8 @@
 import React from 'react';
-
 import {
-  RadialBarChart,
-  RadialBar,
   Legend,
+  RadialBar,
+  RadialBarChart,
   ResponsiveContainer,
 } from 'recharts';
 

@@ -1,21 +1,21 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class AddToCard extends Component {
   state = {
-    quantity: 1
+    quantity: 1,
   };
 
   plusOne = () => {
     const { quantity: preQuantity } = this.state;
     this.setState({
-      quantity: preQuantity + 1
+      quantity: preQuantity + 1,
     });
   };
   minusOne = () => {
     const { quantity: preQuantity } = this.state;
     if (preQuantity > 1) {
       this.setState({
-        quantity: preQuantity - 1
+        quantity: preQuantity - 1,
       });
     }
   };
@@ -32,7 +32,7 @@ class AddToCard extends Component {
               <span
                 className="input-group-addon bootstrap-touchspin-prefix"
                 style={{
-                  display: "none"
+                  display: 'none',
                 }}
               />
               <input
@@ -45,13 +45,13 @@ class AddToCard extends Component {
                 min={1}
                 aria-label="Quantity"
                 style={{
-                  display: "block"
+                  display: 'block',
                 }}
               />
               <span
                 className="input-group-addon bootstrap-touchspin-postfix"
                 style={{
-                  display: "none"
+                  display: 'none',
                 }}
               />
               <span className="input-group-btn-vertical">
@@ -76,7 +76,7 @@ class AddToCard extends Component {
         <div
           className="btn btn-md btn-primary add-to-cart"
           onClick={() => {
-            console.log("add to card");
+            console.log('add to card');
             console.log(this.state);
             console.log(this.props);
           }}

@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { NavPagination } from "./NavPagination";
-import { TopProductNav } from "./TopProductNav";
-import { Description } from "./Description";
-import { ProductItem } from "./ProductItem";
+import { NavPagination } from './NavPagination';
+import { TopProductNav } from './TopProductNav';
+import { Description } from './Description';
+import { ProductItem } from './ProductItem';
 // import { data } from "./data";
 
 const RightColumn = ({
@@ -12,7 +12,7 @@ const RightColumn = ({
   pages,
   getData,
   loading = false,
-  onClickSortBy = () => null
+  onClickSortBy = () => null,
 }) => {
   return (
     <div id="content-wrapper" className="left-column col-12 col-md-9">
@@ -29,7 +29,7 @@ const RightColumn = ({
             <div id="js-product-list">
               <div className="products row">
                 {loading
-                  ? "loading..."
+                  ? 'loading...'
                   : data.map(dataItem => (
                       <ProductItem key={dataItem._id} {...dataItem} />
                     ))}

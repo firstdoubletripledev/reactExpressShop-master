@@ -1,5 +1,6 @@
-import React from 'react';
 import { Table } from 'antd';
+import React from 'react';
+
 import { columnsUser, dataUser, onChangeUser } from './table/columnsUser';
 
 const TableUser = ({
