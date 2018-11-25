@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import Axios from "axios";
+import React, { Component } from 'react';
+import Axios from 'axios';
 // import { mergeAll, concat, mergeDeepWithKey } from "ramda";
 
-import { LeftColumn } from "./Column/Left/LeftColumn";
-import { RightColumn } from "./Column/Right/RightColumn";
+import { LeftColumn } from './Column/Left/LeftColumn';
+import { RightColumn } from './Column/Right/RightColumn';
 
 class Container extends Component {
   state = {
@@ -16,10 +16,10 @@ class Container extends Component {
     loading: false,
     Availability: {
       notAvl: 0,
-      avl: 0
+      avl: 0,
     },
     filterBy: [],
-    typeSort: null
+    typeSort: null,
   };
   componentDidMount = async () => {
     try {
@@ -41,7 +41,7 @@ class Container extends Component {
 
   setTypeSort = async name => {
     this.setState({
-      typeSort: name
+      typeSort: name,
     });
   };
 
@@ -58,11 +58,11 @@ class Container extends Component {
       responseProducts = await getDataByType(typeSort, page);
     }
     const {
-      data: { data_products = [], current, pages } = []
+      data: { data_products = [], current, pages } = [],
     } = responseProducts;
     const stockState = {
       notAvl: 0,
-      avl: 0
+      avl: 0,
     };
     const category = data_products.map(({ category, stock }) => {
       if (Number(stock) > 0) {
@@ -78,9 +78,9 @@ class Container extends Component {
     });
     if (category !== null) {
       const categoryMerge = [].concat.apply([], category);
-      const Color = MergeDeepByTag(categoryMerge, "Color");
-      const Height = MergeDeepByTag(categoryMerge, "Height");
-      const Brand = MergeDeepByTag(categoryMerge, "Brand");
+      const Color = MergeDeepByTag(categoryMerge, 'Color');
+      const Height = MergeDeepByTag(categoryMerge, 'Height');
+      const Brand = MergeDeepByTag(categoryMerge, 'Brand');
 
       this.setState({
         data: data_products,
@@ -90,7 +90,7 @@ class Container extends Component {
         current,
         pages,
         loading: false,
-        Availability: stockState
+        Availability: stockState,
       });
     }
   };
@@ -102,7 +102,7 @@ class Container extends Component {
         return;
       }
       this.setState({
-        data: res.data.products
+        data: res.data.products,
       });
     } catch (error) {
       console.log(error);
@@ -111,7 +111,7 @@ class Container extends Component {
 
   filterByClearAll = async event => {
     this.setState({
-      filterBy: []
+      filterBy: [],
     });
     await this.componentDidMount();
   };
@@ -127,7 +127,7 @@ class Container extends Component {
       filterBy[check].value = data.value;
     }
     await this.setState({
-      filterBy
+      filterBy,
     });
   };
 
@@ -141,7 +141,7 @@ class Container extends Component {
       pages,
       loading,
       Availability,
-      filterBy
+      filterBy,
     } = this.state;
 
     return (
@@ -156,7 +156,7 @@ class Container extends Component {
               categoryColor,
               categoryHeight,
               categoryBrand,
-              Availability
+              Availability,
             }}
           />
           <RightColumn
@@ -178,13 +178,13 @@ async function getDataByType(type, page) {
   console.log(type, page);
   if (type === null) {
     return await Axios.get(`/api/products/page/${page}`);
-  } else if (type === "Name, A to Z") {
+  } else if (type === 'Name, A to Z') {
     return await Axios.get(`/api/products/sortname/${page}`);
-  } else if (type === "Name, Z to A") {
+  } else if (type === 'Name, Z to A') {
     return await Axios.get(`/api/products/sortnamedesc/${page}`);
-  } else if (type === "Price, low to high") {
+  } else if (type === 'Price, low to high') {
     return await Axios.get(`/api/products/price/${page}`);
-  } else if (type === "Price, high to low") {
+  } else if (type === 'Price, high to low') {
     return await Axios.get(`/api/products/pricedesc/${page}`);
   }
   return null;

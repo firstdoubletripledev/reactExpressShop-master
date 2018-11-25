@@ -1,5 +1,6 @@
-import React from "react";
-import { ProductItem } from "../Category/Column/Right/ProductItem";
+import React from 'react';
+
+import { ProductItem } from '../Category/Column/Right/ProductItem';
 
 const SuggestProduct = ({ productSuggest = [] }) => {
   return (
@@ -12,7 +13,7 @@ const SuggestProduct = ({ productSuggest = [] }) => {
           className="slick-prev slick-arrow"
           aria-label="Previous"
           // role="button"
-          style={{ display: "block" }}
+          style={{ display: 'block' }}
         >
           Previous
         </button>
@@ -25,7 +26,7 @@ const SuggestProduct = ({ productSuggest = [] }) => {
           className="slick-next slick-arrow"
           aria-label="Next"
           // role="button"
-          style={{ display: "block" }}
+          style={{ display: 'block' }}
         >
           Next
         </button>

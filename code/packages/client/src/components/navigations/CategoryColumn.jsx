@@ -1,15 +1,16 @@
-import React from "react";
+import { Icon, Menu } from 'antd';
+import React from 'react';
 
-import { Menu, Icon } from "antd";
-import { SubMenu, MenuItemGroup } from "./MenuNav";
+import { MenuItemGroup, SubMenu } from './MenuNav';
+
 export function CategoryColumn() {
   return (
     <SubMenu
       title={
         <span className="submenu-title-wrapper">
           <a href="/category">
-            {" "}
-            <Icon type="bars" theme="outlined" style={{ marginRight: "0px" }} />
+            {' '}
+            <Icon type="bars" theme="outlined" style={{ marginRight: '0px' }} />
             CATEGORY
           </a>
         </span>

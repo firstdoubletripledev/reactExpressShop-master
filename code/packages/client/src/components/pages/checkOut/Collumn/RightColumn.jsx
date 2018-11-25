@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const RightColumn = () => (
   <div className="col-md-4">

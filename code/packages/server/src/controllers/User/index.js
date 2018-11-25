@@ -1,18 +1,11 @@
-import { removeUser } from './removeUser';
-
-import { updateUser } from './updateUser';
-
-import { showUser } from './showUser';
-
-import { listUser } from './listUser';
-
-import { loginUser } from './loginUser';
-
-import { logoutUser } from './logoutUser';
-
-import { meUser } from './meUser';
-
 import { createNewUser } from './createNewUser';
+import { listUser } from './listUser';
+import { loginUser } from './loginUser';
+import { logoutUser } from './logoutUser';
+import { meUser } from './meUser';
+import { removeUser } from './removeUser';
+import { showUser } from './showUser';
+import { updateUser } from './updateUser';
 
 /**
  * usersController.js

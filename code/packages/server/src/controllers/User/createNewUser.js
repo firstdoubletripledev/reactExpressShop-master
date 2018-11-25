@@ -1,5 +1,5 @@
-import { isEmpty } from 'ramda';
 import { hash } from 'argon2';
+import { isEmpty } from 'ramda';
 
 const UsersModel = require('../../models/usersModel.js');
 

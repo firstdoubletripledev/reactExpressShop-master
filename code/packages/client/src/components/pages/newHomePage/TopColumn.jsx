@@ -1,5 +1,6 @@
-import React from "react";
-import { TopThreeCategory } from "./TopThreeCategory";
+import React from 'react';
+
+import { TopThreeCategory } from './TopThreeCategory';
 
 export function TopColumn({ history }) {
   return (
@@ -10,14 +11,14 @@ export function TopColumn({ history }) {
             <div className="homeslider-container">
               <div
                 className="homeslider slick-initialized slick-slider"
-                data-slick="{&quot;infinite&quot;: true, &quot;autoplaySpeed&quot;: 5000}"
+                data-slick='{"infinite": true, "autoplaySpeed": 5000}'
               >
                 <div aria-live="polite" className="slick-list draggable">
                   <div
                     className="slick-track"
                     role="listbox"
                     style={{
-                      opacity: 1
+                      opacity: 1,
                     }}
                   >
                     <div
@@ -28,14 +29,14 @@ export function TopColumn({ history }) {
                       // role="option"
                       aria-describedby="slick-slide01"
                       onClick={() => {
-                        history.push("/category");
+                        history.push('/category');
                       }}
                       style={{
-                        position: "relative",
+                        position: 'relative',
                         top: 0,
                         zIndex: 998,
                         opacity: 1,
-                        transition: "opacity 500ms linear 0s"
+                        transition: 'opacity 500ms linear 0s',
                       }}
                     >
                       <a href="#0" tabIndex={-1}>
@@ -51,7 +52,7 @@ export function TopColumn({ history }) {
                                 <h2>
                                   <span className="big">Best</span>
                                   <br />
-                                  <span>Gifts</span>{" "}
+                                  <span>Gifts</span>{' '}
                                   <span className="h3">
                                     Exclusive Designs by Best Florists
                                   </span>

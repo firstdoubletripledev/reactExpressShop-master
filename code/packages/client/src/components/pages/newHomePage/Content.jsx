@@ -1,12 +1,13 @@
 // import { PopularProducts } from "./PopularProducts";
-import { CustomModule } from "./CustomModule";
-import { UniqueCompoent } from "./UniqueCompoent";
-import { SubmitNews } from "./SubmitNews";
-import { TopColumn } from "./TopColumn";
-import { Breadcrumb } from "./Breadcrumb";
-import React from "react";
+import React from 'react';
 
-export function Content({history}) {
+import { Breadcrumb } from './Breadcrumb';
+import { CustomModule } from './CustomModule';
+import { SubmitNews } from './SubmitNews';
+import { TopColumn } from './TopColumn';
+import { UniqueCompoent } from './UniqueCompoent';
+
+export function Content({ history }) {
   return (
     <section id="wrapper">
       <Breadcrumb />

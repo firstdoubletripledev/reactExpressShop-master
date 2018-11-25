@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+
 /* import { Spin } from "antd"; */
 
 const LoadingCompoment = ({ isLoading, error }) => {
@@ -7,12 +8,12 @@ const LoadingCompoment = ({ isLoading, error }) => {
     return (
       <div
         style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%"
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
         }}
       >
-        {" "}
+        {' '}
         Đang load ...
         {/*<Spin
           style={{

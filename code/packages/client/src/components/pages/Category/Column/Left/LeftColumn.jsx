@@ -1,27 +1,19 @@
-import React from "react";
+import React from 'react';
 
-import {
-  FilterBy,
-  // ColorFilter,
-  // HeightFilter,
-  AvailabilityFilter,
-  // BrandFilter,
-  // PriceFilter,
-  Filter
-} from "./SearchFilter";
-import { SearchFilterControler } from "./SearchFilterControler";
+import { AvailabilityFilter, Filter, FilterBy } from './SearchFilter';
+import { SearchFilterControler } from './SearchFilterControler';
 
 const LeftColumn = ({
   category: {
     categoryColor = [],
     categoryHeight = [],
     categoryBrand = [],
-    Availability = {}
+    Availability = {},
   },
   getDataByColor = () => null,
   filterByClearAll = () => null,
   filterByClick = () => null,
-  filterBy = ""
+  filterBy = '',
 }) => {
   return (
     <div id="left-column" className="col-12 col-md-3">
@@ -31,13 +23,16 @@ const LeftColumn = ({
           <FilterBy filterByClearAll={filterByClearAll} />
           <div className="filters-by-list make-it-gap">
             {filterBy.map(data => {
-              if (data.name === "Color") {
+              if (data.name === 'Color') {
                 return (
-                  <div className="filters-by-list" key={`filters-by-list${data._id}`}>
+                  <div
+                    className="filters-by-list"
+                    key={`filters-by-list${data._id}`}
+                  >
                     <span
                       className="color"
                       style={{
-                        backgroundColor: data.value
+                        backgroundColor: data.value,
                       }}
                     />
                     <p className="_gray-darker search-link js-search-link">

@@ -15,9 +15,9 @@
     margin-left: -1px;
     position: relative
 }
-.showdetailCheckout{
-    display: block;
 
+.showdetailCheckout {
+    display: block;
 }
 
 .bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-up {
@@ -16820,6 +16820,7 @@ body#checkout #gift_message {
     text-transform: uppercase;
     cursor: pointer;
     position: relative;
+    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden
@@ -16861,6 +16862,7 @@ body#checkout #gift_message {
     border-width: 0 5.5px 6px;
     border-color: transparent transparent #141414;
     transition: all .3s ease;
+    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
@@ -16903,6 +16905,7 @@ body#checkout #gift_message {
         z-index: 99;
         background: #fff;
         border: 1px solid #141414;
+        backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
         -moz-backface-visibility: hidden;
         -ms-backface-visibility: hidden

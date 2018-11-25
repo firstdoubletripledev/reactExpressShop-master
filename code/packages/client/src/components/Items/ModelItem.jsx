@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const ModelItem = () => {
   return (
@@ -22,7 +22,7 @@ const ModelItem = () => {
                   src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/3/73-large_default.jpg"
                   alt="Little Duckling Watering Can Cream with Bailey Bear"
                   title="Little Duckling Watering Can Cream with Bailey Bear"
-                  style={{ width: "100%" }}
+                  style={{ width: '100%' }}
                   itemProp="image"
                 />
                 <div
@@ -44,7 +44,7 @@ const ModelItem = () => {
                       style={{
                         opacity: 1,
                         height: 630,
-                        transform: "translate3d(0px, 0px, 0px)"
+                        transform: 'translate3d(0px, 0px, 0px)',
                       }}
                     >
                       <div
@@ -53,6 +53,7 @@ const ModelItem = () => {
                         aria-hidden="false"
                         tabIndex={-1}
                         role="option"
+                        aria-selected="false"
                         aria-describedby="slick-slide00"
                         style={{ width: 86 }}
                       >
@@ -70,6 +71,7 @@ const ModelItem = () => {
                         aria-hidden="false"
                         tabIndex={-1}
                         role="option"
+                        aria-selected="false"
                         aria-describedby="slick-slide01"
                         style={{ width: 86 }}
                       >
@@ -87,6 +89,7 @@ const ModelItem = () => {
                         aria-hidden="false"
                         tabIndex={-1}
                         role="option"
+                        aria-selected="false"
                         aria-describedby="slick-slide02"
                         style={{ width: 86 }}
                       >
@@ -104,6 +107,7 @@ const ModelItem = () => {
                         aria-hidden="false"
                         tabIndex={-1}
                         role="option"
+                        aria-selected="false"
                         aria-describedby="slick-slide03"
                         style={{ width: 86 }}
                       >
@@ -121,6 +125,7 @@ const ModelItem = () => {
                         aria-hidden="false"
                         tabIndex={-1}
                         role="option"
+                        aria-selected="false"
                         aria-describedby="slick-slide04"
                         style={{ width: 86 }}
                       >
@@ -138,6 +143,7 @@ const ModelItem = () => {
                         aria-hidden="true"
                         tabIndex={-1}
                         role="option"
+                        aria-selected="false"
                         aria-describedby="slick-slide05"
                         style={{ width: 86 }}
                       >
@@ -162,6 +168,7 @@ const ModelItem = () => {
                     className="text-hide"
                     title="Share"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Share
                   </a>
@@ -172,6 +179,7 @@ const ModelItem = () => {
                     className="text-hide"
                     title="Tweet"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Tweet
                   </a>
@@ -182,6 +190,7 @@ const ModelItem = () => {
                     className="text-hide"
                     title="Google+"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Google+
                   </a>
@@ -192,6 +201,7 @@ const ModelItem = () => {
                     className="text-hide"
                     title="Pinterest"
                     target="_blank"
+                    rel="noopener noreferrer"
                     data-pin-custom="true"
                   >
                     Pinterest
@@ -272,7 +282,7 @@ const ModelItem = () => {
                             />
                             <span
                               className="color"
-                              style={{ backgroundColor: "#f5f5dc" }}
+                              style={{ backgroundColor: '#f5f5dc' }}
                             >
                               <span className="sr-only">Beige</span>
                             </span>
@@ -289,7 +299,7 @@ const ModelItem = () => {
                             />
                             <span
                               className="color"
-                              style={{ backgroundColor: "#ffffff" }}
+                              style={{ backgroundColor: '#ffffff' }}
                             >
                               <span className="sr-only">White</span>
                             </span>
@@ -366,7 +376,7 @@ const ModelItem = () => {
                         <div className="input-group bootstrap-touchspin">
                           <span
                             className="input-group-addon bootstrap-touchspin-prefix"
-                            style={{ display: "none" }}
+                            style={{ display: 'none' }}
                           />
                           <input
                             type="text"
@@ -376,11 +386,11 @@ const ModelItem = () => {
                             className="input-group form-control"
                             min={1}
                             aria-label="Quantity"
-                            style={{ display: "block" }}
+                            style={{ display: 'block' }}
                           />
                           <span
                             className="input-group-addon bootstrap-touchspin-postfix"
-                            style={{ display: "none" }}
+                            style={{ display: 'none' }}
                           />
                           <span className="input-group-btn-vertical">
                             <button

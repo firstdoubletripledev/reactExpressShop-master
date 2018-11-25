@@ -1,44 +1,59 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
-import getAuth from "./components/getAuth";
+import React, { Component } from 'react';
+import { Redirect, Route } from 'react-router-dom';
 
-const auth = {
-  async getAuth() {
-    const res = await getAuth();
-    console.log(res);
-    return res;
+import getAuth from './components/getAuth';
+
+// import { connect } from 'react-redux';
+class PrivateRouteAdmin extends Component {
+  state = {
+    loading: true,
+    isAuth: false,
+  };
+
+  componentDidMount() {
+    getAuth().then(data => {
+      this.setState({
+        loading: false,
+        isAuth: data,
+      });
+    });
   }
-};
 
-const PrivateRouteAdmin = ({ component: Component = null, ...rest }) => {
-  const { isLogin = null } = rest;
+  render() {
+    const { component: Component = null, ...rest } = this.props;
+    // const { isLogin = null } = rest;
+    if (this.state.loading) {
+      return <div>Loading...</div>;
+    } else {
+      return (
+        <Route
+          {...rest}
+          render={props =>
+            this.state.isAuth === 2 ? (
+              <Component {...props} />
+            ) : (
+              <>
+                {alert(
+                  'Sorry this is for admin if you want to access this please contact to Admin'
+                )}
+                <Redirect
+                  to={{
+                    pathname: '/',
+                    state: { from: props.location },
+                  }}
+                />
+              </>
+            )
+          }
+        />
+      );
+    }
+  }
+}
 
-  return (
-    <Route
-      {...rest}
-      render={props =>
-        auth.getAuth === 2 && isLogin === true ? (
-          <Component {...props} />
-        ) : (
-          <>
-            {alert(
-              "Sorry this is for admin if you want to access this please contact to Admin"
-            )}
-            <Redirect
-              to={{
-                pathname: "/",
-                state: { from: props.location }
-              }}
-            />
-          </>
-        )
-      }
-    />
-  );
-};
-const mapStateToProps = ({ isLogin }) => ({
-  isLogin
-});
+// const mapStateToProps = ({ isLogin }) => ({
+//   isLogin,
+// });
 
-export default connect(mapStateToProps)(PrivateRouteAdmin);
+// export default connect(mapStateToProps)(PrivateRouteAdmin);
+export default PrivateRouteAdmin;

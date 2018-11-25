@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export function ColorFilter({ categoryColor = [] }) {
   return (
@@ -26,7 +26,7 @@ export function ColorFilter({ categoryColor = [] }) {
                     <span
                       className="color"
                       style={{
-                        backgroundColor: "#AAB2BD"
+                        backgroundColor: '#AAB2BD',
                       }}
                     />
                   </span>

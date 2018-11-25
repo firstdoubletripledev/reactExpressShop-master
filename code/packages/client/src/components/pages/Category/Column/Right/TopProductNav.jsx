@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Menu, Dropdown } from "antd";
+import { Dropdown, Menu } from 'antd';
+import React, { Component } from 'react';
 
 const menu = changeSortName => (
   <Menu>
@@ -9,11 +9,11 @@ const menu = changeSortName => (
         rel="nofollow"
         className="select-list current js-search-link"
         onClick={() => {
-          changeSortName("Relevance");
+          changeSortName('Relevance');
         }}
       >
         Relevance
-      </a>{" "}
+      </a>{' '}
     </Menu.Item>
     <Menu.Item>
       <a
@@ -21,7 +21,7 @@ const menu = changeSortName => (
         rel="nofollow"
         className="select-list js-search-link"
         onClick={() => {
-          changeSortName("Name, A to Z");
+          changeSortName('Name, A to Z');
         }}
       >
         Name, A to Z
@@ -33,49 +33,49 @@ const menu = changeSortName => (
         rel="nofollow"
         className="select-list js-search-link"
         onClick={() => {
-          changeSortName("Name, Z to A");
+          changeSortName('Name, Z to A');
         }}
       >
         Name, Z to A
-      </a>{" "}
+      </a>{' '}
     </Menu.Item>
     <Menu.Item>
-      {" "}
+      {' '}
       <a
         href="#0"
         rel="nofollow"
         className="select-list js-search-link"
         onClick={() => {
-          changeSortName("Price, low to high");
+          changeSortName('Price, low to high');
         }}
       >
         Price, low to high
-      </a>{" "}
+      </a>{' '}
     </Menu.Item>
     <Menu.Item>
-      {" "}
+      {' '}
       <a
         href="#0"
         rel="nofollow"
         className="select-list js-search-link"
         onClick={() => {
-          changeSortName("Price, high to low");
+          changeSortName('Price, high to low');
         }}
       >
         Price, high to low
-      </a>{" "}
+      </a>{' '}
     </Menu.Item>
   </Menu>
 );
 
 export class TopProductNav extends Component {
   state = {
-    sortName: "Relevance"
+    sortName: 'Relevance',
   };
 
   changeSortName = name => {
     this.setState({
-      sortName: name
+      sortName: name,
     });
     const { onClickSortBy } = this.props;
     onClickSortBy(name);
@@ -104,7 +104,7 @@ export class TopProductNav extends Component {
               <div className="products-sort-order dropdown">
                 <Dropdown overlay={menu(this.changeSortName)}>
                   <a className="ant-dropdown-link" href="#0">
-                    {sortName}{" "}
+                    {sortName}{' '}
                     <i className="material-icons float-xs-right"></i>
                   </a>
                 </Dropdown>

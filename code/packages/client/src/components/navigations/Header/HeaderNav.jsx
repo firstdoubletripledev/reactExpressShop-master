@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { Icon } from "antd";
-import Axios from "axios";
+import { Icon } from 'antd';
+import Axios from 'axios';
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function HeaderNavContent({ themeLogo, isLogin, LoginData = {} }) {
   return (
@@ -45,14 +45,14 @@ function HeaderNavContent({ themeLogo, isLogin, LoginData = {} }) {
 
           {isLogin ? (
             <div className="module ">
-              <div id="_desktop_user_info" style={{ marginLeft: "30px" }}>
+              <div id="_desktop_user_info" style={{ marginLeft: '30px' }}>
                 <div className="header_user_info user-info current">
                   <a
-                    to="/#0"
+                    href="/#0"
                     onClick={async () => {
-                      await Axios.get("/api/users/logout");
-                      localStorage.removeItem("token");
-                      window.location.href = "/";
+                      await Axios.get('/api/users/logout');
+                      localStorage.removeItem('token');
+                      window.location.href = '/';
                     }}
                   >
                     <Icon type="logout" />
@@ -67,10 +67,17 @@ function HeaderNavContent({ themeLogo, isLogin, LoginData = {} }) {
             <div id="_desktop_user_info">
               <div className="header_user_info user-info current">
                 {isLogin ? (
-                  <Link to="/account">
-                    <i className="fl-chapps-user139" />
-                    <span>Hi. {LoginData.email} </span>
-                  </Link>
+                  LoginData.role !== 'admin' ? (
+                    <Link to="/account">
+                      <i className="fl-chapps-user139" />
+                      <span>Hi. {LoginData.email} </span>
+                    </Link>
+                  ) : (
+                    <Link to="/dashboard">
+                      <i className="fl-chapps-user139" />
+                      <span>Hi. {LoginData.email} </span>
+                    </Link>
+                  )
                 ) : (
                   <Link to="/login">
                     <i className="fl-chapps-user139" />
@@ -88,7 +95,7 @@ function HeaderNavContent({ themeLogo, isLogin, LoginData = {} }) {
 
 const mapStateToProps = ({ isLogin, LoginData }) => ({
   isLogin,
-  LoginData
+  LoginData,
 });
 const HeaderNav = connect(mapStateToProps)(HeaderNavContent);
 

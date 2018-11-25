@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export function TopLevelMenu() {
   return (
@@ -7,21 +7,21 @@ export function TopLevelMenu() {
       <li className="top-level-menu-li tmmegamenu_item it_30664364">
         <Link to="/category">
           <p className="it_30664364 top-level-menu-li-a tmmegamenu_item sf-with-ul">
-            FLOWERS{" "}
+            FLOWERS{' '}
           </p>
         </Link>
       </li>
       <li className="top-level-menu-li tmmegamenu_item it_30664364">
         <Link to="/category">
           <p className="it_30664364 top-level-menu-li-a tmmegamenu_item sf-with-ul">
-            WEDDINGS{" "}
+            WEDDINGS{' '}
           </p>
         </Link>
       </li>
       <li className="top-level-menu-li tmmegamenu_item it_30664364">
         <Link to="/category">
           <p className="it_30664364 top-level-menu-li-a tmmegamenu_item sf-with-ul">
-            GIFTS{" "}
+            GIFTS{' '}
           </p>
         </Link>
       </li>

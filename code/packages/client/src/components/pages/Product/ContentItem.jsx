@@ -1,6 +1,7 @@
-import React from "react";
-import { l10nUSD } from "../../../l10nUSD";
-import { AddToCard } from "./AddToCard";
+import React from 'react';
+
+import { l10nUSD } from '../../../l10nUSD';
+import { AddToCard } from './AddToCard';
 
 const ContentItem = ({ product: { category = [] } = {}, product = {} }) => {
   return (
@@ -71,7 +72,7 @@ const ContentItem = ({ product: { category = [] } = {}, product = {} }) => {
                 <span className="control-label">Color</span>
                 <ul id="group_3">
                   {category.map(data => {
-                    if (data.name === "Color") {
+                    if (data.name === 'Color') {
                       return (
                         <li
                           key={`product-variants-${data._id}`}
@@ -108,7 +109,7 @@ const ContentItem = ({ product: { category = [] } = {}, product = {} }) => {
               name="refresh"
               type="submit"
               defaultValue="Refresh"
-              style={{ display: "none" }}
+              style={{ display: 'none' }}
             />
           </form>
         </div>
