@@ -1,15 +1,15 @@
-import express from 'express';
 import bodyParser from 'body-parser';
+import express from 'express';
 import session from 'express-session';
 
 import { ConnectDatabase } from './Databases/Connect';
+import cartRoutes from './routes/cartRoutes';
 import categoriesRoutes from './routes/categoriesRoutes';
 import ordersRoutes from './routes/ordersRoutes';
 import productsRoutes from './routes/productsRoutes';
 import shopRoutes from './routes/shopRoutes';
-import usersRoutes from './routes/usersRoutes';
-import cartRoutes from './routes/cartRoutes';
 import submitNewRoutes from './routes/submitNewRoutes';
+import usersRoutes from './routes/usersRoutes';
 
 const app = express();
 app.use(

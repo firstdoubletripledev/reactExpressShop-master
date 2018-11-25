@@ -1,5 +1,5 @@
+import { Dropdown, Menu } from 'antd';
 import React, { Component } from 'react';
-import { Menu, Dropdown } from 'antd';
 
 const menu = changeSortName => (
   <Menu>

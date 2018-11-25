@@ -40,7 +40,7 @@ class NormalLoginForm extends React.Component {
           data = {},
           token,
         } = res.data;
-        console.log(data);
+        console.log(msg, data);
 
         if (code === 1) {
           localStorage.setItem('token', `JWT ${token}`);

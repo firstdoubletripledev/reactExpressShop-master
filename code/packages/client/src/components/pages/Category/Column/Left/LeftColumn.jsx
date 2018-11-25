@@ -1,14 +1,6 @@
 import React from 'react';
 
-import {
-  FilterBy,
-  // ColorFilter,
-  // HeightFilter,
-  AvailabilityFilter,
-  // BrandFilter,
-  // PriceFilter,
-  Filter,
-} from './SearchFilter';
+import { AvailabilityFilter, Filter, FilterBy } from './SearchFilter';
 import { SearchFilterControler } from './SearchFilterControler';
 
 const LeftColumn = ({

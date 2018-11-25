@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { NavPagination } from './NavPagination';
-import { TopProductNav } from './TopProductNav';
 import { Description } from './Description';
+import { NavPagination } from './NavPagination';
 import { ProductItem } from './ProductItem';
+import { TopProductNav } from './TopProductNav';
+
 // import { data } from "./data";
 
 const RightColumn = ({

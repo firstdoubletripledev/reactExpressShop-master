@@ -1022,7 +1022,9 @@ export function PopularProducts() {
                           href="#0"
                           data-link-action="quickview"
                           tabIndex={0}
-                        />
+                        >
+                          {}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -1038,6 +1040,7 @@ export function PopularProducts() {
                       }}
                       tabIndex={-1}
                       role="option"
+                      aria-selected="false"
                       aria-describedby="slick-slide11"
                     >
                       <div className="thumbnail-container">
@@ -1182,7 +1185,9 @@ export function PopularProducts() {
                           href="#0"
                           data-link-action="quickview"
                           tabIndex={0}
-                        />
+                        >
+                          {}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -1198,6 +1203,7 @@ export function PopularProducts() {
                       }}
                       tabIndex={-1}
                       role="option"
+                      aria-selected="false"
                       aria-describedby="slick-slide12"
                     >
                       <div className="thumbnail-container">
@@ -1385,7 +1391,9 @@ export function PopularProducts() {
                           href="#0"
                           data-link-action="quickview"
                           tabIndex={0}
-                        />
+                        >
+                          {}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -1401,6 +1409,7 @@ export function PopularProducts() {
                       }}
                       tabIndex={-1}
                       role="option"
+                      aria-selected="false"
                       aria-describedby="slick-slide13"
                     >
                       <div className="thumbnail-container">
@@ -1588,7 +1597,9 @@ export function PopularProducts() {
                           href="#0"
                           data-link-action="quickview"
                           tabIndex={0}
-                        />
+                        >
+                          {}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -1604,6 +1615,7 @@ export function PopularProducts() {
                       }}
                       tabIndex={-1}
                       role="option"
+                      aria-selected="false"
                       aria-describedby="slick-slide14"
                     >
                       <div className="thumbnail-container">
@@ -1804,6 +1816,7 @@ export function PopularProducts() {
                       }}
                       tabIndex={-1}
                       role="option"
+                      aria-selected="false"
                       aria-describedby="slick-slide15"
                     >
                       <div className="thumbnail-container">
@@ -2004,6 +2017,7 @@ export function PopularProducts() {
                       }}
                       tabIndex={-1}
                       role="option"
+                      aria-selected="false"
                       aria-describedby="slick-slide16"
                     >
                       <div className="thumbnail-container">
@@ -2204,6 +2218,7 @@ export function PopularProducts() {
                       }}
                       tabIndex={-1}
                       role="option"
+                      aria-selected="false"
                       aria-describedby="slick-slide17"
                     >
                       <div className="thumbnail-container">
@@ -3167,7 +3182,6 @@ export function PopularProducts() {
                   data-role="none"
                   className="slick-next slick-arrow"
                   aria-label="Next"
-                  role="button"
                   style={{
                     display: 'block',
                   }}

@@ -1,4 +1,5 @@
 import express from 'express';
+
 import shopController from '../controllers/shopController';
 
 const router = express.Router();

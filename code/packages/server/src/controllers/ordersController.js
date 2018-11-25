@@ -1,5 +1,5 @@
 const uniqid = require('uniqid');
-const ordersModel = require('../models/ordersModel.js');
+const OrdersModel = require('../models/ordersModel.js');
 const Cart = require('../models/cart.js');
 
 /**
@@ -13,8 +13,7 @@ module.exports = {
    */
 
   list(req, res, next) {
-    ordersModel
-      .find()
+    OrdersModel.find()
       .populate({ path: 'user', select: 'email' })
       .exec((err, orders) => {
         if (err) return next(err);
@@ -24,7 +23,7 @@ module.exports = {
   },
 
   // list(req, res) {
-  //   ordersModel.find((err, orderss) => {
+  //   OrdersModel.find((err, orderss) => {
   //     if (err) {
   //       return res.status(500).json({
   //         message: 'Error when getting orders.',
@@ -41,7 +40,7 @@ module.exports = {
    */
   show(req, res) {
     const { id = null } = req.params;
-    ordersModel.findOne({ _id: id }, (err, orders) => {
+    OrdersModel.findOne({ _id: id }, (err, orders) => {
       if (err) {
         return res.status(500).json({
           message: 'Error when getting orders.',
@@ -72,7 +71,7 @@ module.exports = {
     const date = new Date();
     const code = uniqid();
 
-    const orders = new ordersModel({
+    const orders = new OrdersModel({
       code: `${code}`,
       createdate: `${date}`,
       status: 'noApprove',
@@ -100,7 +99,7 @@ module.exports = {
    */
   update(req, res) {
     const { id } = req.params;
-    ordersModel.findOne({ _id: id }, (err, orders) => {
+    OrdersModel.findOne({ _id: id }, (err, orders) => {
       if (err) {
         return res.status(500).json({
           message: 'Error when getting orders',
@@ -115,13 +114,9 @@ module.exports = {
 
       orders.status = req.body.status ? req.body.status : orders.status;
       // orders.user = req.body.user ? req.body.user : orders.user;
-      orders.firstName = req.body.firstName
-        ? req.body.firstName
-        : orders.firstName;
+      orders.firstName = req.body.firstName ? req.body.firstName : orders.firstName;
       orders.lastName = req.body.lastName ? req.body.lastName : orders.lastName;
-      orders.addressShip = req.body.addressShip
-        ? req.body.addressShip
-        : orders.addressShip;
+      orders.addressShip = req.body.addressShip ? req.body.addressShip : orders.addressShip;
       orders.phoneNumberShip = req.body.phoneNumberShip
         ? req.body.phoneNumberShip
         : orders.phoneNumberShip;
@@ -143,7 +138,7 @@ module.exports = {
    */
   remove(req, res) {
     const { id } = req.params;
-    ordersModel.findByIdAndRemove(id, (err, orders) => {
+    OrdersModel.findByIdAndRemove(id, (err) => {
       if (err) {
         return res.status(500).json({
           message: 'Error when deleting the orders.',

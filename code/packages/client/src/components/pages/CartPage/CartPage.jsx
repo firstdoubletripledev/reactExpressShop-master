@@ -1,9 +1,8 @@
-import React from "react";
+import React from 'react';
 
-
-import Header from "../../navigations/Header.jsx";
-import Footer from "../../navigations/Footer.jsx";
-import Container from "./Container.jsx";
+import Footer from '../../navigations/Footer.jsx';
+import Header from '../../navigations/Header.jsx';
+import Container from './Container.jsx';
 
 const CheckoutPage = () => {
   return (

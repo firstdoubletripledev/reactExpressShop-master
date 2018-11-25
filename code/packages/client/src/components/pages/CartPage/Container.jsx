@@ -1,11 +1,12 @@
-import React, { Component } from "react";
-import LeftColumn  from "./Column/LeftColumn/LeftColumn";
-import  RightColumn  from "./Column/RightColumn/RightColumn";
-import Axios from "axios";
+import Axios from 'axios';
+import React, { Component } from 'react';
+
+import LeftColumn from './Column/LeftColumn/LeftColumn';
+import RightColumn from './Column/RightColumn/RightColumn';
 
 class Container extends Component {
   state = {
-    cart: {}
+    cart: {},
   };
   componentDidMount = async () => {
     try {
@@ -20,23 +21,21 @@ class Container extends Component {
     var cartData = await Axios.get(`/api/cart/`);
 
     this.setState({
-      cart: cartData.data
+      cart: cartData.data,
     });
   };
 
   render() {
-    const { cart } = this.state;
+    // const { cart } = this.state;
 
     return (
       <div className="container">
         <div className="cart-grid row">
           {/* Left Block: cart product informations & shpping */}
-          <LeftColumn/>
+          <LeftColumn />
 
-          
           {/* Right Block: cart subtotal & cart total */}
-          <RightColumn/>
-         
+          <RightColumn />
         </div>
       </div>
     );

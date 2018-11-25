@@ -1,4 +1,4 @@
-const categoriesModel = require('../models/categoriesModel.js');
+const CategoriesModel = require('../models/categoriesModel.js');
 
 /**
  * categoriesController.js
@@ -10,8 +10,7 @@ module.exports = {
    * categoriesController.list()
    */
   list(req, res) {
-    categoriesModel
-      .find()
+    CategoriesModel.find()
       .populate('products')
       .exec((err, categoriess) => {
         if (err) {
@@ -25,8 +24,7 @@ module.exports = {
   },
 
   topThree(req, res) {
-    categoriesModel
-      .find()
+    CategoriesModel.find()
       .limit(3)
       .populate('products')
       .exec((err, categoriess) => {
@@ -45,8 +43,7 @@ module.exports = {
 
     const { page = 1 } = req.params;
 
-    categoriesModel
-      .find()
+    CategoriesModel.find()
       .populate({
         path: 'products',
         options: {
@@ -69,8 +66,7 @@ module.exports = {
     const perPage = 20;
 
     const { value = null, name = null, page = 1 } = req.params;
-    categoriesModel
-      .findOne({ name, value })
+    CategoriesModel.findOne({ name, value })
       .populate({
         path: 'products',
         options: {
@@ -94,7 +90,7 @@ module.exports = {
    */
   show(req, res) {
     const { id } = req.params;
-    categoriesModel.findOne({ _id: id }, (err, categories) => {
+    CategoriesModel.findOne({ _id: id }, (err, categories) => {
       if (err) {
         return res.status(500).json({
           message: 'Error when getting categories.',
@@ -114,19 +110,19 @@ module.exports = {
    * categoriesController.create()
    */
   create(req, res) {
-    const categories = new categoriesModel({
+    const categories = new CategoriesModel({
       name: req.body.name,
       value: req.body.value,
     });
 
-    categories.save((err, categories) => {
+    categories.save((err, categoriesCreate) => {
       if (err) {
         return res.status(500).json({
           message: 'Error when creating categories',
           error: err,
         });
       }
-      return res.status(201).json(categories);
+      return res.status(201).json(categoriesCreate);
     });
   },
 
@@ -134,8 +130,8 @@ module.exports = {
    * categoriesController.update()
    */
   update(req, res) {
-    const id = req.params.id;
-    categoriesModel.findOne({ _id: id }, (err, categories) => {
+    const { id = null } = req.params;
+    CategoriesModel.findOne({ _id: id }, (err, categories) => {
       if (err) {
         return res.status(500).json({
           message: 'Error when getting categories',
@@ -151,15 +147,15 @@ module.exports = {
       categories.name = req.body.name ? req.body.name : categories.name;
       categories.value = req.body.value ? req.body.value : categories.value;
 
-      categories.save((err, categories) => {
-        if (err) {
+      categories.save((error, categoriesUpdate) => {
+        if (error) {
           return res.status(500).json({
             message: 'Error when updating categories.',
-            error: err,
+            error,
           });
         }
 
-        return res.json(categories);
+        return res.json(categoriesUpdate);
       });
     });
   },
@@ -168,8 +164,8 @@ module.exports = {
    * categoriesController.remove()
    */
   remove(req, res) {
-    const id = req.params.id;
-    categoriesModel.findByIdAndRemove(id, (err, categories) => {
+    const { id = null } = req.params;
+    CategoriesModel.findByIdAndRemove(id, (err) => {
       if (err) {
         return res.status(500).json({
           message: 'Error when deleting the categories.',

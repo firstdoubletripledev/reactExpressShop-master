@@ -22,7 +22,8 @@ module.exports = {
   },
   addToCart(req, res) {
     const productId = req.params.id;
-    const cart = new Cart(req.session.cart ? req.session.cart : {}); // xem thử trong session có cart chwua nếu chưa thì cho cái cart đó là
+    // xem thử trong session có cart chwua nếu chưa thì cho cái cart đó là
+    const cart = new Cart(req.session.cart ? req.session.cart : {});
     Product.findById(productId, (err, product) => {
       if (err) {
         return res.status(500).json({
@@ -62,7 +63,7 @@ module.exports = {
     return res.json(cart1);
   },
 
-  remove(req, res, next) {
+  remove(req, res) {
     const productId = req.params.id;
     const cart = new Cart(req.session.cart ? req.session.cart : {});
 

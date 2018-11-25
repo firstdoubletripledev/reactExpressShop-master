@@ -1,21 +1,21 @@
-import React, { Component } from "react";
-import Axios from "axios";
-import { ProductsInCart } from "./ProductsInCart.jsx";
-import $ from "jquery";
+import $ from 'jquery';
+import React, { Component } from 'react';
+
+import { ProductsInCart } from './ProductsInCart.jsx';
 
 class RightColumn extends Component {
   state = {};
   componentDidMount = async () => {
-    $("#showDetail").click(function() {
-      $("#cart-summary-product-list").toggleClass(function() {
+    $('#showDetail').click(function() {
+      $('#cart-summary-product-list').toggleClass(function() {
         if (
-          $("#cart-summary-product-list")
+          $('#cart-summary-product-list')
             .parent()
-            .is(".collapse")
+            .is('.collapse')
         ) {
-          return "showdetailCheckout";
+          return 'showdetailCheckout';
         } else {
-          return "collapse";
+          return 'collapse';
         }
       });
     });
@@ -33,7 +33,9 @@ class RightColumn extends Component {
             <div className="cart-summary-products">
               <p>{this.props.cart.totalQty} items</p>
               <p>
-                <a id="showDetail">show details</a>
+                <a href="#0" id="showDetail">
+                  show details
+                </a>
               </p>
               <div id="cart-summary-product-list" className="collapse">
                 <ul className="media-list">

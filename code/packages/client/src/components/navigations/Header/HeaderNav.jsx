@@ -48,7 +48,7 @@ function HeaderNavContent({ themeLogo, isLogin, LoginData = {} }) {
               <div id="_desktop_user_info" style={{ marginLeft: '30px' }}>
                 <div className="header_user_info user-info current">
                   <a
-                    to="/#0"
+                    href="/#0"
                     onClick={async () => {
                       await Axios.get('/api/users/logout');
                       localStorage.removeItem('token');
