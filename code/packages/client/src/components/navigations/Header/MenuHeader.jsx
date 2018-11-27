@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import { TopLevelMenu } from './TopLevelMenu';
 
-export class MenuHeader extends Component {
+export class MenuHeader extends PureComponent {
   state = {
     searchValue: '',
   };

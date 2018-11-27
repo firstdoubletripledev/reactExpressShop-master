@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 
 const linkImage = [
@@ -8,7 +8,7 @@ const linkImage = [
   'https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/0c1b2755fa48a10764dc2ec243cbd29ec62500e7_top-banner-3.jpg',
 ];
 
-class TopThreeCategory extends Component {
+class TopThreeCategory extends PureComponent {
   state = {
     category: [],
   };

@@ -7,7 +7,7 @@ function NumberCard({ icon, color, title, number, countUp }) {
     <Card
       bordered={false}
       bodyStyle={{
-        padding: '32px',
+        padding: '16px',
         marginBottom: '24px',
         cursor: 'pointer',
       }}

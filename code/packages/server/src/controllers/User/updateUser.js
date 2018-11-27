@@ -1,8 +1,10 @@
+import { hash } from 'argon2';
+
 const usersModel = require('../../models/usersModel.js');
 
 function updateUser(req, res) {
   const { id } = req.params;
-  usersModel.findOne({ _id: id }, (err, users) => {
+  usersModel.findOne({ _id: id }, async (err, users) => {
     if (err) {
       return res.status(500).json({
         message: 'Error when getting users',
@@ -14,8 +16,10 @@ function updateUser(req, res) {
         message: 'No such users',
       });
     }
+    const hashedPassword = await hash(req.body.password ? req.body.password : users.password);
+
     users.email = req.body.email ? req.body.email : users.email;
-    users.password = req.body.password ? req.body.password : users.password;
+    users.password = hashedPassword;
     users.address = req.body.address ? req.body.address : users.address;
     users.phonenumber = req.body.phonenumber ? req.body.phonenumber : users.phonenumber;
     users.role = req.body.role ? req.body.role : users.role;

@@ -1,5 +1,5 @@
 import { Form, Icon, Menu } from 'antd';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
 import { CategoryColumn } from './CategoryColumn';
@@ -14,7 +14,7 @@ export const SubMenu = Menu.SubMenu;
 export const MenuItemGroup = Menu.ItemGroup;
 export const FormItem = Form.Item;
 
-class MenuNav extends Component {
+class MenuNav extends PureComponent {
   //may cai key xem lai trong antd
 
   componentDidMount = () => {

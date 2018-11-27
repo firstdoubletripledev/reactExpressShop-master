@@ -3,12 +3,13 @@ import Axios from 'axios';
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { errorMessage, successMessage } from '../pages/utils/Message';
 
 const FormItem = Form.Item;
 // const Option = Select.Option;
 // const AutoCompleteOption = AutoComplete.Option;
 
-class RegistrationForm extends React.Component {
+class RegistrationForm extends React.PureComponent {
   state = {
     confirmDirty: false,
     autoCompleteResult: [],
@@ -39,7 +40,7 @@ class RegistrationForm extends React.Component {
         }
 
         if (res.status === 504) {
-          alert("Can't connect to server");
+          errorMessage("Can't connect to server");
         }
         const {
           code = 0,
@@ -47,7 +48,7 @@ class RegistrationForm extends React.Component {
           // data = {}
         } = res.data;
 
-        alert(msg);
+        successMessage(msg);
         if (code === 1) {
           return this.props.history.push('/login');
         }

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class AddToCard extends Component {
+class AddToCard extends PureComponent {
   state = {
     quantity: 1,
   };

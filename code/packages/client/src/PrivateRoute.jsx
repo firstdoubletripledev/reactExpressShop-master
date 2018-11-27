@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 
 import getAuth from './components/getAuth';
+import LoadingCompoment from './components/LoadingCompoment';
 
 // import { connect } from 'react-redux';
-class PrivateRoute extends Component {
+class PrivateRoute extends PureComponent {
   state = {
     loading: true,
     isAuth: false,
@@ -23,7 +24,7 @@ class PrivateRoute extends Component {
     const { component: Component = null, ...rest } = this.props;
     // const { isLogin = null } = rest;
     if (this.state.loading) {
-      return <div>Loading...</div>;
+      return <LoadingCompoment />;
     } else {
       return (
         <Route

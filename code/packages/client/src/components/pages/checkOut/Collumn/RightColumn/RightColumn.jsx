@@ -1,9 +1,9 @@
 import $ from 'jquery';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import { ProductsInCart } from './ProductsInCart.jsx';
 
-class RightColumn extends Component {
+class RightColumn extends PureComponent {
   state = {};
   componentDidMount = async () => {
     $('#showDetail').click(function() {

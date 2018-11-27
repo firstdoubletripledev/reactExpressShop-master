@@ -2,14 +2,14 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 
 import { Col, Row } from 'antd';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 
 import ItemCard from '../Items/ItemCard';
 
 // const { Meta } = Card;
 
-class MultipleItems extends Component {
+class MultipleItems extends PureComponent {
   constructor(props) {
     super(props);
     this.next = this.next.bind(this);

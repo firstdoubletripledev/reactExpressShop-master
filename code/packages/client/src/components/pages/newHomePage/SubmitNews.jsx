@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import { Formik } from 'formik';
 import React from 'react';
+import { errorMessage, successMessage } from '../utils/Message';
 
 export function SubmitNews() {
   return (
@@ -16,15 +17,16 @@ export function SubmitNews() {
                   const res = await Axios.get(`/api/submitnews/${email}`).catch(
                     error => {
                       console.log(error);
-                      alert(error);
+                      errorMessage(error);
                     }
                   );
-                  if (!res) {
-                    setSubmitting(false);
-                    return null;
-                  }
-                  alert(res.data.msg);
                   setSubmitting(false);
+
+                  if (!res) {
+                    return null;
+                  } else {
+                    successMessage(res.data.msg);
+                  }
                 }}
               >
                 {({

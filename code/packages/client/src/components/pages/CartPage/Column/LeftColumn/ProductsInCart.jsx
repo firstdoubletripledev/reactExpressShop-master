@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
 import CartAction from '../../../../../reduxx/actions/CartAction';
 
 //import axios from "axios";
-class ProductsInCart extends Component {
+class ProductsInCart extends PureComponent {
   constructor() {
     super();
 

@@ -1,10 +1,10 @@
 import Axios from 'axios';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import LeftColumn from './Column/LeftColumn/LeftColumn';
 import RightColumn from './Column/RightColumn/RightColumn';
 
-class Container extends Component {
+class Container extends PureComponent {
   state = {
     cart: {},
   };

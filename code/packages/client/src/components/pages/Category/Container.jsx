@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Axios from 'axios';
 // import { mergeAll, concat, mergeDeepWithKey } from "ramda";
 
 import { LeftColumn } from './Column/Left/LeftColumn';
 import { RightColumn } from './Column/Right/RightColumn';
 
-class Container extends Component {
+class Container extends PureComponent {
   state = {
     data: [],
     categoryColor: [],

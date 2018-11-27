@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import Footer from '../../navigations/Footer';
 import Header from '../../navigations/Header';
@@ -8,7 +8,7 @@ import { ContentItem } from './ContentItem';
 import { Description } from './Description';
 import { SuggestProduct } from './SuggestProduct';
 
-class Product extends Component {
+class Product extends PureComponent {
   state = {
     product: {},
     productSuggest: [],
