@@ -319,7 +319,6 @@ module.exports = {
           error,
         });
       }
-      console.log(req.body.category.name, req.body.category.value);
       if (!req.body || !req.body.category || !req.body.category.name || !req.body.category.value) {
         return res.status(201).json(productsData);
       }

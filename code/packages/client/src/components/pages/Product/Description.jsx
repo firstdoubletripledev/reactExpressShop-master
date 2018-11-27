@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-export class Description extends Component {
+export class Description extends PureComponent {
   state = {
     tabActive: 0,
   };

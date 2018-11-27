@@ -1,10 +1,10 @@
 import Axios from 'axios';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import LeftColumn from './Column/LeftColumn/LeftColumn';
 import RightColumn from './Column/RightColumn/RightColumn';
 
-class Container extends Component {
+class Container extends PureComponent {
   state = {
     cart: {},
   };
@@ -18,7 +18,12 @@ class Container extends Component {
   };
 
   getData = async () => {
-    var cartData = await Axios.get(`/api/cart/`);
+    var cartData = await Axios.get(`/api/cart/`).catch(error => {
+      return console.log(error.response);
+    });
+    if (!cartData) {
+      return null;
+    }
 
     this.setState({
       cart: cartData.data,

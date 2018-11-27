@@ -4,7 +4,9 @@ import { isEmpty } from 'ramda';
 const UsersModel = require('../../models/usersModel.js');
 
 async function createNewUser(req, res) {
-  const { email = '', password = '' } = req.body;
+  const {
+    email = '', password = '', address = '', phonenumber = '', role = 'user',
+  } = req.body;
 
   if (isEmpty(req.body)) {
     res.status(201).json({ code: 0, msg: 'Body empty' });
@@ -20,6 +22,9 @@ async function createNewUser(req, res) {
   const users = new UsersModel({
     email,
     password: hashedPassword,
+    address,
+    phonenumber,
+    role,
   });
   await users.save((err, usersData) => {
     if (err) {

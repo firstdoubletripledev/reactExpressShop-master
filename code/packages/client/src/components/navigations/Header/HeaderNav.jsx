@@ -50,7 +50,9 @@ function HeaderNavContent({ themeLogo, isLogin, LoginData = {} }) {
                   <a
                     href="/#0"
                     onClick={async () => {
-                      await Axios.get('/api/users/logout');
+                      await Axios.get('/api/users/logout').catch(error => {
+                        return console.log(error.response);
+                      });
                       localStorage.removeItem('token');
                       window.location.href = '/';
                     }}

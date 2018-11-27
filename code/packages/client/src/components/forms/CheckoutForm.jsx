@@ -1,9 +1,9 @@
 import { Button, Form, Input } from 'antd';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 const FormItem = Form.Item;
 
-class CheckoutForm extends Component {
+class CheckoutForm extends PureComponent {
   state = {};
 
   handleSubmit = e => {

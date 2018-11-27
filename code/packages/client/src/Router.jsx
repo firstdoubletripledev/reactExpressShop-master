@@ -135,6 +135,27 @@ class AppRoutes extends PureComponent {
           path="/product/:id"
           component={AsyncProduct}
         />
+
+        {/* <PrivateRouteAdmin
+          location={location}
+          path="/dashboard/user/edit/:_id"
+          exact
+          component={() => <h1>hi</h1>}
+        />
+
+        <PrivateRouteAdmin
+          location={location}
+          path="/dashboard/products/edit/:_id"
+          exact
+          component={() => <h1>hi</h1>}
+        />
+
+        <PrivateRouteAdmin
+          location={location}
+          path="/dashboard/order/edit/:_id"
+          exact
+          component={() => <h1>hi</h1>}
+        /> */}
         <PrivateRouteAdmin
           location={location}
           path="/dashboard"

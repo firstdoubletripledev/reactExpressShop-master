@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import Footer from '../../navigations/Footer';
 import Header from '../../navigations/Header';
@@ -8,7 +8,7 @@ import { ContentItem } from './ContentItem';
 import { Description } from './Description';
 import { SuggestProduct } from './SuggestProduct';
 
-class Product extends Component {
+class Product extends PureComponent {
   state = {
     product: {},
     productSuggest: [],
@@ -23,7 +23,11 @@ class Product extends Component {
     const request1 = Axios.get(`/api/products/${id}`);
     const request2 = Axios.get(`/api/products/perpage/4`);
 
-    const [res1, res2] = await Promise.all([request1, request2]);
+    const [res1, res2] = await Promise.all([request1, request2]).catch(
+      error => {
+        return console.log(error.response);
+      }
+    );
     const { data = null } = res1;
     const { data: dataSuggest = null } = res2;
 

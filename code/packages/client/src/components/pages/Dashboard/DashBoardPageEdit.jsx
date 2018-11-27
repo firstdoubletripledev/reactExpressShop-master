@@ -1,6 +1,6 @@
 import { Icon, Layout, Menu } from 'antd';
 import React, { PureComponent } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import themeLogo from '../../navigations/theme-logo.jpg';
 import {
@@ -33,7 +33,6 @@ class DashBoardPage extends PureComponent {
       return <Redirect push to="/" />;
     }
     const { menu } = this.state;
-    const { location } = this.props;
 
     return (
       <Layout style={{ minHeight: '100vh' }}>
@@ -59,49 +58,29 @@ class DashBoardPage extends PureComponent {
             </Menu.Item> */}
             <Menu.Item key="1">
               <div onClick={this.onClickMenuItem.bind(this, 1)}>
-                <Link to="/dashboard">
-                  <div>
-                    <Icon type="dashboard" />
-                    <span>Dashboard</span>
-                  </div>
-                </Link>
+                <Icon type="dashboard" />
+                <span>Dashboard</span>
               </div>
             </Menu.Item>
             <Menu.Item key="2">
               <div onClick={this.onClickMenuItem.bind(this, 2)}>
-                <Link to="/dashboard">
-                  <div>
-                    <Icon type="user" /> <span>User</span>
-                  </div>
-                </Link>
+                <Icon type="user" /> <span>User</span>
               </div>
             </Menu.Item>
             <Menu.Item key="3">
               <div onClick={this.onClickMenuItem.bind(this, 3)}>
-                <Link to="/dashboard">
-                  <div>
-                    <Icon type="barcode" /> <span>Products</span>
-                  </div>
-                </Link>
+                <Icon type="barcode" /> <span>Products</span>
               </div>
             </Menu.Item>
             <Menu.Item key="4">
               <div onClick={this.onClickMenuItem.bind(this, 4)}>
-                <Link to="/dashboard">
-                  <div>
-                    <Icon type="shopping-cart" /> <span>Order</span>
-                  </div>
-                </Link>
+                <Icon type="shopping-cart" /> <span>Order</span>
               </div>
             </Menu.Item>
 
             <Menu.Item key="5">
               <div onClick={this.onClickMenuItem.bind(this, 5)}>
-                <Link to="/dashboard">
-                  <div>
-                    <Icon type="shop" /> <span>Shop</span>
-                  </div>
-                </Link>
+                <Icon type="shop" /> <span>Shop</span>
               </div>
             </Menu.Item>
           </Menu>
@@ -124,9 +103,9 @@ class DashBoardPage extends PureComponent {
             }}
           >
             {menu === 1 ? <DashboardOverView /> : ''}
-            {menu === 2 ? <UserContent location={location} /> : ''}
-            {menu === 3 ? <ItemContent location={location} /> : ''}
-            {menu === 4 ? <OrderContent location={location} /> : ''}
+            {menu === 2 ? <UserContent /> : ''}
+            {menu === 3 ? <ItemContent /> : ''}
+            {menu === 4 ? <OrderContent /> : ''}
             {menu === 5 ? <ShopContent /> : ''}
           </Content>
         </Layout>

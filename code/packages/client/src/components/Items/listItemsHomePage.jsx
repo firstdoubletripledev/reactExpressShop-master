@@ -2,13 +2,13 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 
 import { Col, Row } from 'antd';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import ItemCard from '../Items/ItemCard';
 
 // const { Meta } = Card;
 
-class MultipleItems extends Component {
+class MultipleItems extends PureComponent {
   render() {
     var dataItem = [
       { id: 1, imagePath: 'images/example-slide-1.jpg' },

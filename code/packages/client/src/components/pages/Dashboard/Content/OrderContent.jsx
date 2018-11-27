@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { TableUser } from './Components/Table';
+import { TableDashboard } from './Components/TableDashboard';
 
 export const OrderContent = () => (
   <div>
-    <TableUser />
+    '<TableDashboard typeTable="Order" />'
   </div>
 );

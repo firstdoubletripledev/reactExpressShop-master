@@ -5,10 +5,11 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 
 import isLoginAction from '../../reduxx/actions/isLoginAction';
+import { errorMessage } from '../pages/utils/Message';
 
 const FormItem = Form.Item;
 
-class NormalLoginForm extends React.Component {
+class NormalLoginForm extends React.PureComponent {
   componentDidMount = () => {
     const { isLogin = false } = this.props;
     if (isLogin !== false) {
@@ -31,8 +32,11 @@ class NormalLoginForm extends React.Component {
             return console.log(error.response);
           }
         );
+        if (!res) {
+          return null;
+        }
         if (res.status === 504) {
-          alert("Can't connect to server");
+          errorMessage("Can't connect to server");
         }
         const {
           code = 0,

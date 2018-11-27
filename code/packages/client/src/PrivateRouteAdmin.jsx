@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 
 import getAuth from './components/getAuth';
+import LoadingCompoment from './components/LoadingCompoment';
+import { warningMessage } from './components/pages/utils/Message';
 
 // import { connect } from 'react-redux';
-class PrivateRouteAdmin extends Component {
+class PrivateRouteAdmin extends PureComponent {
   state = {
     loading: true,
     isAuth: false,
@@ -23,7 +25,7 @@ class PrivateRouteAdmin extends Component {
     const { component: Component = null, ...rest } = this.props;
     // const { isLogin = null } = rest;
     if (this.state.loading) {
-      return <div>Loading...</div>;
+      return <LoadingCompoment />;
     } else {
       return (
         <Route
@@ -33,7 +35,7 @@ class PrivateRouteAdmin extends Component {
               <Component {...props} />
             ) : (
               <>
-                {alert(
+                {warningMessage(
                   'Sorry this is for admin if you want to access this please contact to Admin'
                 )}
                 <Redirect

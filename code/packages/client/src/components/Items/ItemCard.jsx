@@ -2,14 +2,14 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 
 import { Button, Card } from 'antd';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
 //import { Session } from "inspector";
 
 const { Meta } = Card;
 
-class ItemCard extends Component {
+class ItemCard extends PureComponent {
   addItemToCart() {
     var { dispatch } = this.props;
     dispatch({ type: 'Add_Item_To_Cart' });

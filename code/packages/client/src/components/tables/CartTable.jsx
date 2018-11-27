@@ -1,9 +1,9 @@
 import { Button, Col, Input, Row, Table } from 'antd';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 // import { connect } from "react-redux";
 
-class CartTable extends Component {
+class CartTable extends PureComponent {
   state = {
     itemsInCart: [],
   };
@@ -11,7 +11,6 @@ class CartTable extends Component {
     //const res = await Axios.get("/api/books");
     /* const datasave =res.data.map(item => {
         const dataItem = {
-         
         };
         return dataItem;
       });

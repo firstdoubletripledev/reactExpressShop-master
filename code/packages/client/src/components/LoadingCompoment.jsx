@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from 'antd';
 
 /* import { Spin } from "antd"; */
 
@@ -13,8 +14,7 @@ const LoadingCompoment = ({ isLoading, error }) => {
           left: '50%',
         }}
       >
-        {' '}
-        Đang load ...
+        <Icon type="loading" style={{ fontSize: 48, color: '#85e9e2' }} spin />
         {/*<Spin
           style={{
             margin: 0

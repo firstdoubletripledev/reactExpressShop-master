@@ -1,7 +1,8 @@
 import axios from 'axios';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import { successMessage } from '../../../utils/Message';
 
-class LeftColumn extends Component {
+class LeftColumn extends PureComponent {
   constructor() {
     super();
     this.state = {
@@ -46,7 +47,10 @@ class LeftColumn extends Component {
         phoneNumberShip,
       })
       .then(result => {
-        alert('đặt hàng thành công');
+        successMessage('đặt hàng thành công');
+      })
+      .catch(error => {
+        return console.log(error.response);
       });
   };
 

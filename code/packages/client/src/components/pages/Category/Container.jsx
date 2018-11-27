@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Axios from 'axios';
 // import { mergeAll, concat, mergeDeepWithKey } from "ramda";
 
 import { LeftColumn } from './Column/Left/LeftColumn';
 import { RightColumn } from './Column/Right/RightColumn';
 
-class Container extends Component {
+class Container extends PureComponent {
   state = {
     data: [],
     categoryColor: [],
@@ -53,9 +53,19 @@ class Container extends Component {
     const { searchvalue } = this.props;
     let responseProducts = [];
     if (searchvalue !== null) {
-      responseProducts = await Axios.get(`/api/products/search/${searchvalue}`);
+      responseProducts = await Axios.get(
+        `/api/products/search/${searchvalue}`
+      ).catch(error => {
+        return console.log(error.response);
+      });
+      if (!responseProducts) {
+        return null;
+      }
     } else {
       responseProducts = await getDataByType(typeSort, page);
+      if (!responseProducts) {
+        return null;
+      }
     }
     const {
       data: { data_products = [], current, pages } = [],
@@ -97,7 +107,15 @@ class Container extends Component {
 
   getDataByColor = async (name, value) => {
     try {
-      const res = await Axios.get(`/api/categories/search/${name}/${value}/1`);
+      const res = await Axios.get(
+        `/api/categories/search/${name}/${value}/1`
+      ).catch(error => {
+        return console.log(error.response);
+      });
+      if (!res) {
+        return null;
+      }
+
       if (!res.data || !res.data.products) {
         return;
       }
@@ -176,18 +194,22 @@ class Container extends Component {
 export default Container;
 async function getDataByType(type, page) {
   console.log(type, page);
-  if (type === null) {
-    return await Axios.get(`/api/products/page/${page}`);
-  } else if (type === 'Name, A to Z') {
-    return await Axios.get(`/api/products/sortname/${page}`);
-  } else if (type === 'Name, Z to A') {
-    return await Axios.get(`/api/products/sortnamedesc/${page}`);
-  } else if (type === 'Price, low to high') {
-    return await Axios.get(`/api/products/price/${page}`);
-  } else if (type === 'Price, high to low') {
-    return await Axios.get(`/api/products/pricedesc/${page}`);
+  try {
+    if (type === null) {
+      return await Axios.get(`/api/products/page/${page}`);
+    } else if (type === 'Name, A to Z') {
+      return await Axios.get(`/api/products/sortname/${page}`);
+    } else if (type === 'Name, Z to A') {
+      return await Axios.get(`/api/products/sortnamedesc/${page}`);
+    } else if (type === 'Price, low to high') {
+      return await Axios.get(`/api/products/price/${page}`);
+    } else if (type === 'Price, high to low') {
+      return await Axios.get(`/api/products/pricedesc/${page}`);
+    }
+    return null;
+  } catch (error) {
+    console.log(error);
   }
-  return null;
 }
 
 function MergeDeepByTag(categoryMerge, typeName) {

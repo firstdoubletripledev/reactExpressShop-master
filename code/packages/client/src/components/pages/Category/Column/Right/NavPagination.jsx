@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class NavPagination extends Component {
+class NavPagination extends PureComponent {
   state = {
     isFist: true,
     isLast: true,

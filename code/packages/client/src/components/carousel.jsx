@@ -1,9 +1,9 @@
 import '../carousel.css';
 
 import { Carousel } from 'antd';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class CaroselMain extends Component {
+class CaroselMain extends PureComponent {
   render() {
     return (
       <Carousel autoplay speed="800" style={{ border: '1px solid #e8e8e8' }}>

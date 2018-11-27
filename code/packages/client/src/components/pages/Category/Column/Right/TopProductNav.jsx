@@ -1,5 +1,5 @@
 import { Dropdown, Menu } from 'antd';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 const menu = changeSortName => (
   <Menu>
@@ -68,7 +68,7 @@ const menu = changeSortName => (
   </Menu>
 );
 
-export class TopProductNav extends Component {
+export class TopProductNav extends PureComponent {
   state = {
     sortName: 'Relevance',
   };
