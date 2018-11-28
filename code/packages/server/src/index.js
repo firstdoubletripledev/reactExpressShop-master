@@ -1,6 +1,9 @@
+import '@babel/polyfill';
+
 import bodyParser from 'body-parser';
 import express from 'express';
 import session from 'express-session';
+import path from 'path';
 
 import { ConnectDatabase } from './Databases/Connect';
 import cartRoutes from './routes/cartRoutes';
@@ -35,5 +38,14 @@ app.use('/api/shop', shopRoutes);
 app.use('/api/users', usersRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/submitnews', submitNewRoutes);
+
+app.use('/images', express.static(path.resolve(__dirname, '../', 'build', 'images')));
+app.use(express.static('public'));
+
+app.use(express.static(path.resolve(__dirname, '../', 'build')));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../', 'build', 'index.html'));
+});
 
 app.listen(port, () => console.log(`server is listening on port ${port}`));

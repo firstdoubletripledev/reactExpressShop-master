@@ -26,28 +26,30 @@ export function ProductItem({
         </Link>
         <div className="gallery-wrapper">
           <ul className="gallery-thumb-list">
-            {galleryImage.map((imageGalleryUrl, i) => (
-              <li
-                key={`gallery-thumb-list-${i}`}
-                className="gallery-image-thumb active"
-                style={{ width: '20%' }}
-                id={imageGalleryUrl}
-              >
-                <span
-                  data-href={imageGalleryUrl}
-                  data-title="Autumn Shades Perfect Gift"
-                  data-alt="Autumn Shades Perfect Gift"
-                >
-                  <img
-                    className="img-fluid"
-                    src={imageGalleryUrl}
-                    alt="Autumn Shades Perfect Gift"
-                    title="Autumn Shades Perfect Gift"
-                    itemProp="image"
-                  />
-                </span>
-              </li>
-            ))}
+            {galleryImage !== null
+              ? galleryImage.map((imageGalleryUrl, i) => (
+                  <li
+                    key={`gallery-thumb-list-${i}`}
+                    className="gallery-image-thumb active"
+                    style={{ width: '20%' }}
+                    id={imageGalleryUrl}
+                  >
+                    <span
+                      data-href={imageGalleryUrl}
+                      data-title="Autumn Shades Perfect Gift"
+                      data-alt="Autumn Shades Perfect Gift"
+                    >
+                      <img
+                        className="img-fluid"
+                        src={imageGalleryUrl}
+                        alt="Autumn Shades Perfect Gift"
+                        title="Autumn Shades Perfect Gift"
+                        itemProp="image"
+                      />
+                    </span>
+                  </li>
+                ))
+              : null}
           </ul>
         </div>
         <div className="product-description">

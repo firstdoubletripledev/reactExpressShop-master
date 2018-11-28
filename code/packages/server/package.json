@@ -11,6 +11,7 @@
   "author": "giang",
   "license": "MIT",
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "argon2": "^0.19.3",
     "bluebird": "^3.5.2",
     "body-parser": "^1.18.3",
