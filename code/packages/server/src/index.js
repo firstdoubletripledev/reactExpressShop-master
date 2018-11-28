@@ -1,6 +1,7 @@
 import '@babel/polyfill';
 
 import bodyParser from 'body-parser';
+import compression from 'compression';
 import express from 'express';
 import session from 'express-session';
 import path from 'path';
@@ -15,6 +16,7 @@ import submitNewRoutes from './routes/submitNewRoutes';
 import usersRoutes from './routes/usersRoutes';
 
 const app = express();
+app.use(compression());
 app.use(
   session({
     secret: 'thien lam ne',

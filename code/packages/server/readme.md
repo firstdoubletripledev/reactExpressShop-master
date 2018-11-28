@@ -1,3 +1,3 @@
 comment
 
-now alias reactexpress-njshrcyuob.now.sh shopbanhoa.now.sh
+now alias reactexpress-fstyzownnc.now.sh shopbanhoa.now.sh

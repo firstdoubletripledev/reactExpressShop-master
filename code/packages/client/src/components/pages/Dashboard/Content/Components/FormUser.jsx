@@ -47,7 +47,13 @@ class FormAdd extends PureComponent {
           console.log('Received values of form: ', values);
           const { typeInput, typeTable } = this.props;
           if (typeInput === 'edit') {
-            const { dataInput: { _id = '' } = {} } = this.props;
+            const {
+              dataInput: { _id = '', galleryImage = null } = {},
+              dataInput = {},
+            } = this.props;
+            if (galleryImage !== null) {
+              dataInput.galleryImage = JSON.parse(galleryImage);
+            }
             let res = {};
             if (typeTable === 'User') {
               res = await Axios.put(`/api/users/${_id}`, values);
