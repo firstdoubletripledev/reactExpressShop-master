@@ -9,6 +9,9 @@ const usersSchema = new Schema({
   phonenumber: String,
   role: { type: String, default: 'user' },
   token: String,
+  firstName: String,
+  lastName: String,
+  birthday: String,
 });
 
 module.exports = mongoose.model('users', usersSchema);

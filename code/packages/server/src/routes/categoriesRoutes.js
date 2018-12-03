@@ -1,25 +1,18 @@
-const express = require('express');
+// import express module
+import express from 'express';
+
+import categoriesController from '../controllers/categoriesController';
 
 const router = express.Router();
-const categoriesController = require('../controllers/categoriesController.js');
 
 /*
  * GET
  */
 router.get('/', categoriesController.list);
 router.get('/topthree', categoriesController.topThree);
-
-/*
- * GET
- */
 router.get('/page/:page', categoriesController.listPage);
-
 router.get('/search/:name/:value/:page', categoriesController.listSearchByName);
 router.get('/search/:name/:value', categoriesController.listSearchByName);
-
-/*
- * GET
- */
 router.get('/:id', categoriesController.show);
 
 /*

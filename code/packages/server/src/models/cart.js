@@ -1,4 +1,4 @@
-module.exports = function Cart(oldCart) {
+function Cart(oldCart) {
   // oldCart là cái cart cũ
   // items là một đối tượng có nhiều item , đối tượng này gồm nhiều cặp key:value ,
   // với key là id của item(có nhiều id khác nhau) ,còn value là một đối tượng chứa đối tượng item,
@@ -55,4 +55,6 @@ module.exports = function Cart(oldCart) {
     // }
     return arr;
   };
-};
+}
+
+module.exports = Cart;

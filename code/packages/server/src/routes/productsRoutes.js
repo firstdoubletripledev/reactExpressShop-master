@@ -1,7 +1,8 @@
-const express = require('express');
+// import express module
+import express from 'express';
+import productsController from '../controllers/productsController';
 
 const router = express.Router();
-const productsController = require('../controllers/productsController.js');
 
 /*
  * GET
@@ -18,7 +19,6 @@ router.get('/sortname/:page', productsController.listPartitionSortByName);
 router.get('/sortnamedesc/:page', productsController.listPartitionSortByNameDesc);
 router.get('/price/:page', productsController.listPartitionSortByPrice);
 router.get('/pricedesc/:page', productsController.listPartitionSortByPrice);
-// router.get('/page/:page/color/:color', productsController.listByColor);
 
 /*
  * GET
