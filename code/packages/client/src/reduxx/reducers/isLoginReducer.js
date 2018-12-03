@@ -1,4 +1,4 @@
-import { LOGIN_CHANCE } from "../actions/types";
+import { LOGIN_CHANCE } from '../actions/types';
 
 const isLoginReducer = (state = false, action) => {
   switch (action.type) {

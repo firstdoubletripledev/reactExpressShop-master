@@ -1,27 +1,22 @@
+import { hash } from 'argon2';
+
 const usersModel = require('../../models/usersModel.js');
 import { verify } from 'argon2';
 import { hash } from 'argon2';
 
  async function updateUser(req, res) {
-    // console.log(req.body.userid);
-  //const id  = req.body.userid;
+  const { userid }  = req.body.userid;
   
-  const users = await usersModel.findOne({ _id: req.body.userid ||"" }).catch((error) => {
-   return  res.json({ code: 0, msg: 'Error when get user in database' });
-  //  throw new Error(error);
-    
+  const users = await usersModel.findOne({ _id: userid ||"" }).catch((error) => {
+   return  res.json({ code: 0, msg: 'Error when get user in database' });    
   });
-  //console.log(users);
   
   if (!users) {
    return  res.json({ code: 0, msg: 'Not found user' });
-   // throw new Error('Not found user');
   }
      const valid = await verify(users.password, req.body.password || "");
-    // console.log(valid);
   if (!valid) {
     return res.json({ code: 0, msg: 'Error old Password' });
-   //throw new Error('Error Password');
   };
     
      const hashedPassword = await hash(req.body.newPassword || "chungtadeptrai");
@@ -47,5 +42,5 @@ import { hash } from 'argon2';
     });
 
 }
-//exports.updateUser = updateUser;
+
 export { updateUser };  

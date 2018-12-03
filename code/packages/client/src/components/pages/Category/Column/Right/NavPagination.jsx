@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { PureComponent } from 'react';
 
-class NavPagination extends Component {
+class NavPagination extends PureComponent {
   state = {
     isFist: true,
     isLast: true,
     current: 1,
-    pages: 1
+    pages: 1,
   };
   componentDidMount = () => {
     const { current } = this.props;
@@ -38,7 +38,7 @@ class NavPagination extends Component {
 
     this.setState({
       isFist,
-      isLast
+      isLast,
     });
   };
 
@@ -63,7 +63,7 @@ class NavPagination extends Component {
             <button
               className="js-search-link"
               onClick={() => {
-                document.getElementById("content-wrapper").scrollIntoView();
+                document.getElementById('content-wrapper').scrollIntoView();
                 getData(i);
               }}
             >
@@ -88,12 +88,12 @@ class NavPagination extends Component {
               <button
                 refs="previous"
                 className={`previous ${
-                  isFist ? "disabled" : ""
+                  isFist ? 'disabled' : ''
                 } js-search-link`}
                 disabled={isFist}
                 // href={`/category/${Number(current) - 1}`}
                 onClick={() => {
-                  document.getElementById("content-wrapper").scrollIntoView();
+                  document.getElementById('content-wrapper').scrollIntoView();
 
                   this.checkPage(Number(current) - 1);
                   getData(Number(current) - 1);
@@ -107,11 +107,11 @@ class NavPagination extends Component {
             <li>
               <button
                 refs="next"
-                className={`next ${isLast ? "disabled" : ""} js-search-link`}
+                className={`next ${isLast ? 'disabled' : ''} js-search-link`}
                 // href={`/category/${Number(current) + 1}`}
                 disabled={isLast}
                 onClick={() => {
-                  document.getElementById("content-wrapper").scrollIntoView();
+                  document.getElementById('content-wrapper').scrollIntoView();
 
                   this.checkPage(Number(current) + 1);
 

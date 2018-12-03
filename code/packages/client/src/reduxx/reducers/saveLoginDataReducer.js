@@ -1,4 +1,4 @@
-import { LOGIN_DATA } from "../actions/types";
+import { LOGIN_DATA } from '../actions/types';
 
 const LoadingReducer = (state = {}, action) => {
   switch (action.type) {

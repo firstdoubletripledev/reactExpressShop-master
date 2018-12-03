@@ -1,29 +1,12 @@
-import React, { Component } from "react";
-// import logo from "./logo.svg";
-import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Loadable from "react-loadable";
-import { connect } from "react-redux";
-import isLoginAction from "./reduxx/actions/isLoginAction";
+import './App.css';
 
-import LoadingCompoment from "./components/LoadingCompoment";
-import getAuth from "./components/getAuth";
-import PrivateRoute from "./PrivateRoute";
-import PrivateRouteAdmin from "./PrivateRouteAdmin";
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-// const AsyncHome = Loadable({
-//   loader: () => import("./components/pages/HomePage"),
-//   loading: LoadingCompoment
-// });
-const AsyncHome = Loadable({
-  loader: () => import("./components/pages/newHomePage/NewHomePage"),
-  loading: LoadingCompoment
-});
-
-const AsyncProduct = Loadable({
-  loader: () => import("./components/pages/Product/Product"),
-  loading: LoadingCompoment
-});
+import getAuth from './components/getAuth';
+import isLoginAction from './reduxx/actions/isLoginAction';
+import AppRoutes from './Router';
 
 const AsyncLoginPage = Loadable({
   loader: () => import("./components/pages/LoginPage"),
@@ -75,7 +58,6 @@ class App extends Component {
   async componentDidMount() {
     const email = await getAuth();
     const { dispatch } = this.props;
-
     await dispatch(isLoginAction(email));
   }
 
@@ -167,8 +149,8 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = ({ isLogin = "" }) => ({
-  isLogin
+const mapStateToProps = ({ isLogin = '' }) => ({
+  isLogin,
 });
 
 export default connect(mapStateToProps)(App);

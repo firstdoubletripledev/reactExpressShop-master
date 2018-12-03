@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { PureComponent } from 'react';
 
-import { TopLevelMenu } from "./TopLevelMenu";
+import { TopLevelMenu } from './TopLevelMenu';
 
-export class MenuHeader extends Component {
+export class MenuHeader extends PureComponent {
   state = {
-    searchValue: ""
+    searchValue: '',
   };
 
   handleChange = event => {
@@ -33,7 +33,7 @@ export class MenuHeader extends Component {
                     <div id="tmsearchblock">
                       <span
                         className="search-toggle"
-                        style={{ display: "none" }}
+                        style={{ display: 'none' }}
                         data-toggle="dropdown"
                       >
                         <i className="fl-chapps-search70" />
@@ -44,7 +44,7 @@ export class MenuHeader extends Component {
                         // id="tm_search_query"
                         // name="search_query"
                         onChange={this.handleChange}
-                        value={searchValue ? searchValue : ""}
+                        value={searchValue ? searchValue : ''}
                         placeholder="Search"
                         autoComplete="off"
                       />
@@ -52,8 +52,8 @@ export class MenuHeader extends Component {
                         href={`/category/search/${searchValue}`}
                         type="submit"
                         style={{
-                          background: "#fff",
-                          color: "#141414"
+                          background: '#fff',
+                          color: '#141414',
                         }}
                         // name="tm_submit_search"
                         className="btn btn-default button-search"

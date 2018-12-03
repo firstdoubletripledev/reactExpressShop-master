@@ -1,24 +1,23 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Provider } from "react-redux";
+import 'antd/dist/antd.css';
 
-import "./theme.css";
-import "./theme/fl-chapps.css";
-import "./theme/fl-outicons.css";
-import "antd/dist/antd.css";
-import "./index.css";
-import App from "./App";
-import registerServiceWorker from "./registerServiceWorker";
-import store from "./reduxx/storeConfig";
+import './theme/fl-chapps.css';
+import './theme/fl-outicons.css';
+import './theme.css';
+import './index.css';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+
+import App from './App';
+import store from './reduxx/storeConfig';
+import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
+    <App />
   </Provider>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 registerServiceWorker();

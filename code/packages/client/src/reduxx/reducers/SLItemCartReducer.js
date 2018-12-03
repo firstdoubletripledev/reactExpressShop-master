@@ -1,4 +1,4 @@
-import { GET_SL_ITEM_CART, ADD_ITEM_CART } from "../actions/types";
+import { ADD_ITEM_CART, GET_SL_ITEM_CART } from '../actions/types';
 
 const SLItemCartReducer = (SLItemCart = 0, action) => {
   switch (action.type) {

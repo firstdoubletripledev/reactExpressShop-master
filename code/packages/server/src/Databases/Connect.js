@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
-import Promise from 'bluebird';
 import { hash } from 'argon2';
+import Promise from 'bluebird';
+import mongoose from 'mongoose';
 
 import { DatabaseUrl } from '../config';
 import UsersModel from '../models/usersModel';
@@ -32,7 +32,7 @@ function ConnectDatabase() {
       userFind.email = email;
       userFind.password = hashedPassword;
       userFind.role = 'admin';
-      await userFind.save((err, usersData) => {
+      await userFind.save((err) => {
         if (err) {
           return console.log(err);
         }
@@ -44,7 +44,7 @@ function ConnectDatabase() {
         password: hashedPassword,
         role: 'admin',
       });
-      await users.save((err, usersData) => {
+      await users.save((err) => {
         if (err) {
           return console.log(err);
         }

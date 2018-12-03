@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const ContentImage = ({
   product: { galleryImage = [] } = {},
-  product = {}
+  product = {},
 }) => {
   return (
     <section className="page-content" id="content">
@@ -18,7 +18,7 @@ const ContentImage = ({
             alt="Autumn Basket"
             title="Autumn Basket"
             style={{
-              width: "100%"
+              width: '100%',
             }}
             itemProp="image"
           />
@@ -34,17 +34,13 @@ const ContentImage = ({
         </div>
         <div className="js-qv-mask mask">
           <div className="product-images js-qv-product-images slick-initialized slick-slider slick-vertical">
-            <div
-              aria-live="polite"
-              className="slick-list"
-              style={{ height: "547.344px" }}
-            >
+            <div aria-live="polite" className="slick-list">
               <div
                 className="slick-track"
                 style={{
                   opacity: 1,
                   height: 548,
-                  transform: "translate3d(0px, 0px, 0px)"
+                  transform: 'translate3d(0px, 0px, 0px)',
                 }}
                 role="listbox"
               >

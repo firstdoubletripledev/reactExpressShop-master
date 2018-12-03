@@ -1,5 +1,6 @@
-import React from "react";
-import { Menu, Icon } from "antd";
+import { Icon, Menu } from 'antd';
+import React from 'react';
+
 export function ContactsColumn() {
   return (
     <Menu.Item>

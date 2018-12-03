@@ -1,19 +1,20 @@
-import React from "react";
-import { Form, Icon, Input, Button, Checkbox } from "antd";
-import { Row, Col } from "antd";
-import Axios from "axios";
-import { withRouter } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import { Button, Checkbox, Col, Form, Icon, Input, Row } from 'antd';
+import Axios from 'axios';
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom';
+
+import isLoginAction from '../../reduxx/actions/isLoginAction';
+import { errorMessage } from '../pages/utils/Message';
 
 const FormItem = Form.Item;
 
-class NormalLoginForm extends React.Component {
+class NormalLoginForm extends React.PureComponent {
   componentDidMount = () => {
     const { isLogin = false } = this.props;
     if (isLogin !== false) {
       const { history } = this.props;
-      history.push("/");
+      history.push('/');
     }
   };
 
@@ -21,32 +22,40 @@ class NormalLoginForm extends React.Component {
     e.preventDefault();
     this.props.form.validateFields(async (err, values) => {
       if (!err) {
-        console.log("Received values of form: ", values);
+        console.log('Received values of form: ', values);
         const bodyRes = {
           email: values.userName,
-          password: values.password
+          password: values.password,
         };
-        const res = await Axios.post("api/users/login", bodyRes).catch(
+        const res = await Axios.post('api/users/login', bodyRes).catch(
           error => {
             return console.log(error.response);
           }
         );
+        if (!res) {
+          return null;
+        }
         if (res.status === 504) {
-          alert("Can't connect to server");
+          errorMessage("Can't connect to server");
         }
         const {
           code = 0,
-          msg = "error not found please reload page and try again",
+          msg = 'error not found please reload page and try again',
           data = {},
-          token
+          token,
         } = res.data;
-
-        alert(msg);
+        console.log(msg, data);
 
         if (code === 1) {
-          localStorage.setItem("token", `JWT ${token}`);
-          localStorage.setItem("userid", data.userId);
-          return this.props.history.push("/");
+          localStorage.setItem('token', `JWT ${token}`);
+          localStorage.setItem('userid', data.userId);
+          const { dispatch } = this.props;
+          await dispatch(isLoginAction(code));
+          if (data.role === 'admin') {
+            return this.props.history.push('/dashboard');
+          } else {
+            return this.props.history.push('/');
+          }
         }
         return true;
       }
@@ -58,30 +67,30 @@ class NormalLoginForm extends React.Component {
     return (
       <Form onSubmit={this.handleSubmit} className="login-form">
         <FormItem>
-          {getFieldDecorator("userName", {
-            rules: [{ required: true, message: "Please input your username!" }]
+          {getFieldDecorator('userName', {
+            rules: [{ required: true, message: 'Please input your username!' }],
           })(
             <Input
-              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+              prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
               placeholder="Username/Email"
             />
           )}
         </FormItem>
         <FormItem>
-          {getFieldDecorator("password", {
-            rules: [{ required: true, message: "Please input your Password!" }]
+          {getFieldDecorator('password', {
+            rules: [{ required: true, message: 'Please input your Password!' }],
           })(
             <Input
-              prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
+              prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
               type="password"
               placeholder="Password"
             />
           )}
         </FormItem>
         <FormItem>
-          {getFieldDecorator("remember", {
-            valuePropName: "checked",
-            initialValue: true
+          {getFieldDecorator('remember', {
+            valuePropName: 'checked',
+            initialValue: true,
           })(<Checkbox>Remember me</Checkbox>)}
           <a className="login-form-forgot" href="#0">
             Forgot password
@@ -92,14 +101,14 @@ class NormalLoginForm extends React.Component {
                 type="primary"
                 htmlType="submit"
                 className="login-form-button"
-                style={{ width: "-webkit-fill-available" }}
+                style={{ width: '-webkit-fill-available' }}
               >
                 Log in
               </Button>
             </Col>
           </Row>
-          Or{" "}
-          <Link to="/register" style={{ color: "blue" }}>
+          Or{' '}
+          <Link to="/register" style={{ color: 'blue' }}>
             Register now!
           </Link>
         </FormItem>
@@ -111,7 +120,7 @@ class NormalLoginForm extends React.Component {
 const WrappedNormalLoginForm = Form.create()(NormalLoginForm);
 
 const mapStateToProps = ({ isLogin }) => ({
-  isLogin
+  isLogin,
 });
 
 export default withRouter(connect(mapStateToProps)(WrappedNormalLoginForm));

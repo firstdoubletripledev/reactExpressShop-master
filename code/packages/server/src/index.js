@@ -1,19 +1,17 @@
-import express from 'express';
-var cookieParser = require('cookie-parser');
 import bodyParser from 'body-parser';
-
+import cookieParser from 'cookie-parser';
+import express from 'express';
 import session from 'express-session';
 
-var MongoStore = require('connect-mongo')(session);
-import { ConnectDatabase,db } from './Databases/Connect';
+import { ConnectDatabase, db } from './Databases/Connect';
 import categoriesRoutes from './routes/categoriesRoutes';
 import ordersRoutes from './routes/ordersRoutes';
 import productsRoutes from './routes/productsRoutes';
 import shopRoutes from './routes/shopRoutes';
-import usersRoutes from './routes/usersRoutes';
-import cartRoutes from './routes/cartRoutes';
 import submitNewRoutes from './routes/submitNewRoutes';
+import usersRoutes from './routes/usersRoutes';
 
+var MongoStore = require('connect-mongo')(session);
 const app = express();
 app.use(cookieParser());
 // app.use(

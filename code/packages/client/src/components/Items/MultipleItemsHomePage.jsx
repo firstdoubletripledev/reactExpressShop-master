@@ -1,13 +1,15 @@
-import React, { Component } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import { Row, Col } from "antd";
-import { Card, Icon, Avatar } from "antd";
-import ItemCard from "../Items/ItemCard";
-const { Meta } = Card;
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 
-class MultipleItems extends Component {
+import { Col, Row } from 'antd';
+import React, { PureComponent } from 'react';
+import Slider from 'react-slick';
+
+import ItemCard from '../Items/ItemCard';
+
+// const { Meta } = Card;
+
+class MultipleItems extends PureComponent {
   constructor(props) {
     super(props);
     this.next = this.next.bind(this);
@@ -25,21 +27,21 @@ class MultipleItems extends Component {
       infinite: true,
       speed: 500,
       slidesToShow: 3,
-      slidesToScroll: 1
+      slidesToScroll: 1,
     };
     var dataItem = [
-      { id: 1, imagePath: "images/example-slide-1.jpg" },
+      { id: 1, imagePath: 'images/example-slide-1.jpg' },
       {
         id: 2,
         imagePath:
-          "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+          'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png',
       },
-      { id: 3, imagePath: "images/example-slide-1.jpg" },
+      { id: 3, imagePath: 'images/example-slide-1.jpg' },
       {
         id: 4,
         imagePath:
-          "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-      }
+          'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png',
+      },
     ];
     var itemsRender = dataItem.map((item, index) => (
       <div key={index + 1}>
@@ -48,9 +50,9 @@ class MultipleItems extends Component {
     ));
 
     return (
-      <Row style={{ margin: "20px 0px 20px 0px", border: "1px solid #e8e8e8" }}>
+      <Row style={{ margin: '20px 0px 20px 0px', border: '1px solid #e8e8e8' }}>
         <Col lg={4}>
-          <div style={{ textAlign: "center", paddingTop: "30px" }}>
+          <div style={{ textAlign: 'center', paddingTop: '30px' }}>
             <button className="button" onClick={this.previous}>
               Previous
             </button>
@@ -59,7 +61,7 @@ class MultipleItems extends Component {
             </button>
           </div>
         </Col>
-        <Col lg={20} style={{ padding: "10px" }}>
+        <Col lg={20} style={{ padding: '10px' }}>
           <div>
             <Slider ref={c => (this.slider = c)} {...settings}>
               {itemsRender}

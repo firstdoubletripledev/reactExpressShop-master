@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 export function AvailabilityFilter({
   Availability: { notAvl = 0, avl = 0 },
-  filterByClick
+  filterByClick,
 }) {
   return (
     <section className="facet clearfix">
@@ -32,7 +32,7 @@ export function AvailabilityFilter({
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
               onClick={() => {
-                filterByClick({ name: "Stock", value: "Not available" });
+                filterByClick({ name: 'Stock', value: 'Not available' });
               }}
             >
               Not available
@@ -53,7 +53,7 @@ export function AvailabilityFilter({
               className="_gray-darker search-link js-search-link"
               rel="nofollow"
               onClick={() => {
-                filterByClick({ name: "Stock", value: "In stock" });
+                filterByClick({ name: 'Stock', value: 'In stock' });
               }}
             >
               In stock

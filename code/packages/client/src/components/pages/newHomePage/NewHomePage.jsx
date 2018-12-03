@@ -1,7 +1,8 @@
-import { Content } from "./Content";
-import React from "react";
-import Header from "../../navigations/Header";
-import Footer from "../../navigations/Footer";
+import React from 'react';
+
+import Footer from '../../navigations/Footer';
+import Header from '../../navigations/Header';
+import { Content } from './Content';
 
 const NewHomePage = ({ history }) => {
   return (

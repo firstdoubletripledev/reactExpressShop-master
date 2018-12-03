@@ -1,7 +1,8 @@
-import React from "react";
-import { Layout } from "antd";
-import MenuNav from "../navigations/MenuNav.jsx";
-import CartTable from "../tables/CartTable";
+import { Layout } from 'antd';
+import React from 'react';
+
+import MenuNav from '../navigations/MenuNav.jsx';
+import CartTable from '../tables/CartTable';
 
 const { Content, Footer } = Layout;
 //Home page
@@ -16,10 +17,10 @@ const CartPage = () => {
     <Layout className="layout">
       <MenuNav />
 
-      <Content style={{ paddingTop: "10px" }}>
+      <Content style={{ paddingTop: '10px' }}>
         <CartTable />
       </Content>
-      <Footer style={{ textAlign: "center" }}>
+      <Footer style={{ textAlign: 'center' }}>
         Ant Design ©2018 Created by Ant UED
       </Footer>
     </Layout>

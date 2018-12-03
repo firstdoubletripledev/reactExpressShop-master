@@ -1,33 +1,24 @@
-import React, { Component } from "react";
-import Axios from "axios";
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+
 //import { ProductsInCart } from "./ProductsInCart.jsx";
-import $ from "jquery";
-import { connect } from "react-redux";
-
-
-class RightColumn extends Component {
+class RightColumn extends PureComponent {
   state = {};
-  componentDidMount = async () => {
-   
-  };
+  componentDidMount = async () => {};
 
   render() {
     return (
-        <div className="cart-grid-right col-12 col-lg-4">
+      <div className="cart-grid-right col-12 col-lg-4">
         <div className="card cart-summary">
           <div className="cart-detailed-totals">
             <div className="card-block">
-              <div
-                className="cart-summary-line"
-                id="cart-subtotal-products"
-              >
-                <span className="label js-subtotal">{this.props.Cart.totalQty} items</span>
+              <div className="cart-summary-line" id="cart-subtotal-products">
+                <span className="label js-subtotal">
+                  {this.props.Cart.totalQty} items
+                </span>
                 <span className="value">${this.props.Cart.totalPrice}</span>
               </div>
-              <div
-                className="cart-summary-line"
-                id="cart-subtotal-shipping"
-              >
+              <div className="cart-summary-line" id="cart-subtotal-shipping">
                 <span className="label">Shipping</span>
                 <span className="value">$0.00</span>
                 <div>
@@ -50,10 +41,7 @@ class RightColumn extends Component {
           </div>
           <div className="checkout cart-detailed-actions card-block">
             <div className="text-sm-center">
-              <a
-                href="/checkout"
-                className="btn btn-primary"
-              >
+              <a href="/checkout" className="btn btn-primary">
                 Proceed to checkout
               </a>
             </div>
@@ -64,10 +52,7 @@ class RightColumn extends Component {
   }
 }
 const RightColumnRedux = connect(function(state) {
-  return { Cart: state.Cart || {products:[],totalQty:"",totalPrice:""}};
+  return { Cart: state.Cart || { products: [], totalQty: '', totalPrice: '' } };
 })(RightColumn);
 
 export default RightColumnRedux;
-
-
-

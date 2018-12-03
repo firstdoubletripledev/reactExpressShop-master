@@ -1,15 +1,16 @@
-import React, { Component } from "react";
-import axios from "axios";
+import axios from 'axios';
+import React, { PureComponent } from 'react';
+import { successMessage } from '../../../utils/Message';
 
-class LeftColumn extends Component {
+class LeftColumn extends PureComponent {
   constructor() {
     super();
     this.state = {
-      user: localStorage.getItem("userid"),
-      firstName: "",
-      lastName: "",
-      addressShip: "",
-      phoneNumberShip: ""
+      user: localStorage.getItem('userid'),
+      firstName: '',
+      lastName: '',
+      addressShip: '',
+      phoneNumberShip: '',
     };
   }
   // state = {
@@ -34,19 +35,22 @@ class LeftColumn extends Component {
       firstName,
       lastName,
       addressShip,
-      phoneNumberShip
+      phoneNumberShip,
     } = this.state;
 
     axios
-      .post("/api/orders", {
+      .post('/api/orders', {
         user,
         firstName,
         lastName,
         addressShip,
-        phoneNumberShip
+        phoneNumberShip,
       })
       .then(result => {
-        alert("đặt hàng thành công");
+        successMessage('đặt hàng thành công');
+      })
+      .catch(error => {
+        return console.log(error.response);
       });
   };
 
@@ -58,8 +62,8 @@ class LeftColumn extends Component {
           id="checkout-personal-information-step"
           className="checkout-step -reachable -complete -current js-current-step"
           style={{
-            border: "1px solid #a3a3a3",
-            padding: "15px"
+            border: '1px solid #a3a3a3',
+            padding: '15px',
           }}
         >
           <h1 className="step-title h3">
@@ -122,7 +126,6 @@ class LeftColumn extends Component {
                       <div className="col-md-6">
                         <input
                           className="form-control"
-                          name="lastname"
                           type="text"
                           required
                           name="addressShip"
@@ -151,14 +154,14 @@ class LeftColumn extends Component {
                   </section>
                   <footer
                     className="form-footer clearfix"
-                    style={{ textAlign: "center" }}
+                    style={{ textAlign: 'center' }}
                   >
                     <button
                       className="continue btn btn-primary float-xs-right"
                       name="submit"
                       type="submit"
                     >
-                      Checkout{" "}
+                      Checkout{' '}
                     </button>
                   </footer>
                 </form>

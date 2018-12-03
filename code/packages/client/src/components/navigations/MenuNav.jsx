@@ -1,26 +1,26 @@
-import React, { Component } from "react";
-import { Menu, Icon, Form } from "antd";
-import { connect } from "react-redux";
+import { Form, Icon, Menu } from 'antd';
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+
+import { CategoryColumn } from './CategoryColumn';
+import { ContactsColumn } from './ContactsColumn';
+import { DashboardBar } from './DashboardBar';
+import { HomeColumn } from './HomeColumn';
+import { LogoColumn } from './LogoColumn';
+import { SearchColumn } from './SearchColumn';
 
 // import { LoginBar } from "./LoginBar";
-import { DashboardBar } from "./DashboardBar";
-import { ContactsColumn } from "./ContactsColumn";
-import { SearchColumn } from "./SearchColumn";
-import { CategoryColumn } from "./CategoryColumn";
-import { HomeColumn } from "./HomeColumn";
-import { LogoColumn } from "./LogoColumn";
-
 export const SubMenu = Menu.SubMenu;
 export const MenuItemGroup = Menu.ItemGroup;
 export const FormItem = Form.Item;
 
-class MenuNav extends Component {
+class MenuNav extends PureComponent {
   //may cai key xem lai trong antd
 
   componentDidMount = () => {
     var sl = 5;
     var { dispatch } = this.props;
-    dispatch({ type: "Get_SLItem_In_Session", item: sl });
+    dispatch({ type: 'Get_SLItem_In_Session', item: sl });
   };
 
   render() {
@@ -36,8 +36,8 @@ class MenuNav extends Component {
             <Icon
               type="shopping-cart"
               theme="outlined"
-              style={{ marginRight: "0px" }}
-            />{" "}
+              style={{ marginRight: '0px' }}
+            />{' '}
             {this.props.SLItemCart} items in cart
           </a>
         </Menu.Item>

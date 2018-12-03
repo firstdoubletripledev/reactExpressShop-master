@@ -1,36 +1,40 @@
-import React, { Component } from "react";
-import Axios from "axios";
+import Axios from 'axios';
+import React, { PureComponent } from 'react';
 
-import Header from "../../navigations/Header";
-import Footer from "../../navigations/Footer";
-import { ContentImage } from "./ContentImage";
-import { ContentItem } from "./ContentItem";
-import { Description } from "./Description";
-import { SuggestProduct } from "./SuggestProduct";
+import Footer from '../../navigations/Footer';
+import Header from '../../navigations/Header';
+import { ContentImage } from './ContentImage';
+import { ContentItem } from './ContentItem';
+import { Description } from './Description';
+import { SuggestProduct } from './SuggestProduct';
 
-class Product extends Component {
+class Product extends PureComponent {
   state = {
     product: {},
-    productSuggest: []
+    productSuggest: [],
   };
 
   async componentDidMount() {
     const {
       match: {
-        params: { id }
-      }
+        params: { id },
+      },
     } = this.props;
     const request1 = Axios.get(`/api/products/${id}`);
     const request2 = Axios.get(`/api/products/perpage/4`);
 
-    const [res1, res2] = await Promise.all([request1, request2]);
+    const [res1, res2] = await Promise.all([request1, request2]).catch(
+      error => {
+        return console.log(error.response);
+      }
+    );
     const { data = null } = res1;
     const { data: dataSuggest = null } = res2;
 
     if (data !== null && dataSuggest !== null) {
       this.setState({
         product: data,
-        productSuggest: dataSuggest.data_products
+        productSuggest: dataSuggest.data_products,
       });
     }
   }

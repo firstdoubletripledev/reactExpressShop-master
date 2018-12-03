@@ -1,17 +1,16 @@
-import React from "react";
-import { Container } from "unstated";
+import { Container } from 'unstated';
 
 class StateContainer extends Container {
   state = {
-    email: ""
+    email: '',
   };
 
-  setEmail = async (email = "") => {
+  setEmail = async (email = '') => {
     return await this.setState({ email: email });
   };
 }
 class CounterContainer extends Container {
-  state = { email: "" };
+  state = { email: '' };
   setEmail(email) {
     this.setState({ email });
   }
