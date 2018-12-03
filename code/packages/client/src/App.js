@@ -37,6 +37,10 @@ const AsyncUserInfoPage = Loadable({
   loader: () => import("./components/pages/User/UserInformation/UserInfoPage"),
   loading: LoadingCompoment
 });
+const AsyncUserOrdersPage = Loadable({
+  loader: () => import("./components/pages/User/UserOrder/UserOrders"),
+  loading: LoadingCompoment
+});
 const AsyncRegisterPage = Loadable({
   loader: () => import("./components/pages/RegisterPage"),
   loading: LoadingCompoment
@@ -142,6 +146,11 @@ class App extends Component {
               location={location}
               path="/userinfo"
               component={AsyncUserInfoPage}
+            />
+            <Route
+              location={location}
+              path="/userorders"
+              component={AsyncUserOrdersPage}
             />
             <PrivateRouteAdmin
               location={location}

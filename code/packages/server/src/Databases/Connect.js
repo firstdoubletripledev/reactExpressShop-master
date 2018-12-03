@@ -5,6 +5,8 @@ import { hash } from 'argon2';
 import { DatabaseUrl } from '../config';
 import UsersModel from '../models/usersModel';
 
+
+var db ;
 function ConnectDatabase() {
   mongoose.connect(
     DatabaseUrl,
@@ -12,7 +14,7 @@ function ConnectDatabase() {
   );
   mongoose.Promise = Promise;
 
-  const db = mongoose.connection;
+   db = mongoose.connection;
 
   db.on('error', console.error.bind(console, 'connection error:'));
   db.once('open', async () => {
@@ -54,4 +56,4 @@ function ConnectDatabase() {
 
 const bluebird = Promise;
 
-export { ConnectDatabase, bluebird };
+export { ConnectDatabase, bluebird,db};
