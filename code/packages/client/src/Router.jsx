@@ -1,4 +1,3 @@
-// import { Elastic, TweenMax } from 'gsap';
 import React, { PureComponent } from 'react';
 import Loadable from 'react-loadable';
 import { Route, Switch } from 'react-router-dom';
@@ -6,9 +5,6 @@ import { Route, Switch } from 'react-router-dom';
 import LoadingCompoment from './components/LoadingCompoment';
 import PrivateRouteAdmin from './PrivateRouteAdmin';
 
-// import { Transition, TransitionGroup } from 'react-transition-group';
-
-// import PrivateRoute from './PrivateRoute';
 const AsyncHome = Loadable({
   loader: () => import('./components/pages/newHomePage/NewHomePage'),
   loading: LoadingCompoment,
@@ -23,6 +19,20 @@ const AsyncLoginPage = Loadable({
   loader: () => import('./components/pages/LoginPage'),
   loading: LoadingCompoment,
 });
+
+const AsyncAccountPage = Loadable({
+  loader: () => import('./components/pages/User/AccountPage/AccountPage'),
+  loading: LoadingCompoment,
+});
+const AsyncUserInfoPage = Loadable({
+  loader: () => import('./components/pages/User/UserInformation/UserInfoPage'),
+  loading: LoadingCompoment,
+});
+const AsyncUserOrdersPage = Loadable({
+  loader: () => import('./components/pages/User/UserOrder/UserOrders'),
+  loading: LoadingCompoment,
+});
+
 const AsyncRegisterPage = Loadable({
   loader: () => import('./components/pages/RegisterPage'),
   loading: LoadingCompoment,
@@ -44,43 +54,11 @@ const AsyncDashBoardPage = Loadable({
   loading: LoadingCompoment,
 });
 
-// const duration = 100;
-
-// const animation = {
-//   show(target, isAppearing) {
-//     return TweenMax.from(target, duration, {
-//       opacity: 1,
-//       ease: Elastic.easeOut.config(0.25, 1),
-//     });
-//   },
-
-//   hide(target) {
-//     return TweenMax.to(target, duration, {
-//       opacity: 0,
-//       ease: Elastic.easeOut.config(0.25, 1),
-//     });
-//   },
-// };
-
 class AppRoutes extends PureComponent {
-  // onEnter = (node, isAppearing) => {
-  //   animation.show(node, isAppearing);
-  // };
-
-  // onExit = node => {
-  //   animation.hide(node);
-  // };
   render() {
     const { location } = this.props;
 
     return (
-      // <TransitionGroup>
-      //   <Transition
-      //     key={location.key}
-      //     timeout={400}
-      //     onEnter={this.onEnter}
-      //     onExit={this.onExit}
-      //   >
       <Switch location={location}>
         <Route
           location={location}
@@ -135,27 +113,22 @@ class AppRoutes extends PureComponent {
           path="/product/:id"
           component={AsyncProduct}
         />
-
-        {/* <PrivateRouteAdmin
+        <Route
           location={location}
-          path="/dashboard/user/edit/:_id"
-          exact
-          component={() => <h1>hi</h1>}
+          path="/account"
+          component={AsyncAccountPage}
+        />
+        <Route
+          location={location}
+          path="/userinfo"
+          component={AsyncUserInfoPage}
+        />
+        <Route
+          location={location}
+          path="/userorders"
+          component={AsyncUserOrdersPage}
         />
 
-        <PrivateRouteAdmin
-          location={location}
-          path="/dashboard/products/edit/:_id"
-          exact
-          component={() => <h1>hi</h1>}
-        />
-
-        <PrivateRouteAdmin
-          location={location}
-          path="/dashboard/order/edit/:_id"
-          exact
-          component={() => <h1>hi</h1>}
-        /> */}
         <PrivateRouteAdmin
           location={location}
           path="/dashboard"
@@ -165,8 +138,6 @@ class AppRoutes extends PureComponent {
         <Route location={location} path="/" exact component={AsyncHome} />
         <Route location={location} component={AsyncHome} />
       </Switch>
-      //   </Transition>
-      // </TransitionGroup>
     );
   }
 }

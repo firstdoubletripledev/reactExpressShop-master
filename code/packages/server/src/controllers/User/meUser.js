@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-import { secretKey } from '../../config';
+const { SECRET_KEY: secretKey } = process.env;
 
 const usersModel = require('../../models/usersModel.js');
 

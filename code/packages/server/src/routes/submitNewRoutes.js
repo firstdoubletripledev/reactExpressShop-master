@@ -1,5 +1,7 @@
-const express = require('express');
-const SubmitNewsModel = require('../models/submitNewsModel.js');
+// import express module
+import express from 'express';
+
+import SubmitNewsModel from '../models/submitNewsModel';
 
 const router = express.Router();
 
@@ -27,4 +29,5 @@ router.get('/:email', (req, res) => {
     return res.status(201).json({ code: 1, msg: 'Success', data: submitNewsSave });
   });
 });
+
 module.exports = router;

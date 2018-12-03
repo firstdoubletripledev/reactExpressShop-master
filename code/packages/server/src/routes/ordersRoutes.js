@@ -1,24 +1,16 @@
-const express = require('express');
+// import express module
+import express from 'express';
+
+import ordersController from '../controllers/ordersController';
 
 const router = express.Router();
-const ordersController = require('../controllers/ordersController.js');
 
 /*
  * GET
  */
 router.get('/userorders', ordersController.showuserorders); // chỗ này để dưới get "/" thì k chạy
 router.get('/', ordersController.list);
-
-/*
- * GET
- */
 router.get('/:id', ordersController.show);
-
-
-/*
- * GET
- */
-
 
 /*
  * POST

@@ -2,19 +2,18 @@ import { hash } from 'argon2';
 import Promise from 'bluebird';
 import mongoose from 'mongoose';
 
-import { DatabaseUrl } from '../config';
 import UsersModel from '../models/usersModel';
 
+const { DATABASE_URL: DatabaseUrl } = process.env;
 
-var db ;
+const db = mongoose.connection;
+
 function ConnectDatabase() {
   mongoose.connect(
     DatabaseUrl,
     { useNewUrlParser: true },
   );
   mongoose.Promise = Promise;
-
-   db = mongoose.connection;
 
   db.on('error', console.error.bind(console, 'connection error:'));
   db.once('open', async () => {
@@ -56,4 +55,4 @@ function ConnectDatabase() {
 
 const bluebird = Promise;
 
-export { ConnectDatabase, bluebird,db};
+export { ConnectDatabase, bluebird, db };
