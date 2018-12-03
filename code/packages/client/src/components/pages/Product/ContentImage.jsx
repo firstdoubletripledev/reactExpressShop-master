@@ -44,27 +44,29 @@ const ContentImage = ({
                 }}
                 role="listbox"
               >
-                {galleryImage.map((data, i) => (
-                  <div
-                    key={`product-thumb-images-${data}-${i}`}
-                    className="thumb-container slick-slide slick-current slick-active"
-                    data-slick-index={0}
-                    aria-hidden="false"
-                    tabIndex={-1}
-                    role="option"
-                    aria-selected="true"
-                    aria-describedby="slick-slide00"
-                    style={{ width: 90 }}
-                  >
-                    <img
-                      className="thumb js-thumb  selected  fancy"
-                      src={data}
-                      alt="Autumn Basket"
-                      title="Autumn Basket"
-                      itemProp="image"
-                    />
-                  </div>
-                ))}
+                {galleryImage !== null
+                  ? galleryImage.map((data, i) => (
+                      <div
+                        key={`product-thumb-images-${data}-${i}`}
+                        className="thumb-container slick-slide slick-current slick-active"
+                        data-slick-index={0}
+                        aria-hidden="false"
+                        tabIndex={-1}
+                        role="option"
+                        aria-selected="true"
+                        aria-describedby="slick-slide00"
+                        style={{ width: 90 }}
+                      >
+                        <img
+                          className="thumb js-thumb  selected  fancy"
+                          src={data}
+                          alt="Autumn Basket"
+                          title="Autumn Basket"
+                          itemProp="image"
+                        />
+                      </div>
+                    ))
+                  : null}
               </div>
             </div>
           </div>

@@ -45,11 +45,23 @@ class FormAdd extends PureComponent {
       this.props.form.validateFields(async (err, values) => {
         if (!err) {
           console.log('Received values of form: ', values);
-          const { typeInput } = this.props;
+          const { typeInput, typeTable } = this.props;
           if (typeInput === 'edit') {
-            const { dataInput: { _id = '' } = {} } = this.props;
+            const {
+              dataInput: { _id = '', galleryImage = null } = {},
+              dataInput = {},
+            } = this.props;
+            if (galleryImage !== null) {
+              dataInput.galleryImage = JSON.parse(galleryImage);
+            }
+            let res = {};
+            if (typeTable === 'User') {
+              res = await Axios.put(`/api/users/${_id}`, values);
+            }
+            if (typeTable === 'Item') {
+              res = await Axios.put(`/api/products/${_id}`, values);
+            }
 
-            const res = await Axios.put(`/api/users/${_id}`, values);
             const { data: { _id: _idRes = null } = {} } = res;
             if (_idRes !== null) {
               successMessage('success');
@@ -126,7 +138,7 @@ class FormAdd extends PureComponent {
                 ],
                 initialValue:
                   typeInput === 'edit'
-                    ? data.value === 'category'
+                    ? data.value === 'category' || data.value === 'galleryImage'
                       ? JSON.stringify(dataInput[data.value])
                       : data.value === 'password'
                       ? ''

@@ -1,5 +1,11 @@
+// import babel polyfill module
+import '@babel/polyfill';
+
 // import bodyParser module
 import bodyParser from 'body-parser';
+
+// import compression module
+import compression from 'compression';
 
 // import cookieParser module
 import cookieParser from 'cookie-parser';
@@ -9,6 +15,7 @@ import express from 'express';
 
 // import express-session module
 import session from 'express-session';
+import path from 'path';
 
 // import ConnectDatabase and db from folder Databases->Connect
 import { ConnectDatabase, db } from './Databases/Connect';
@@ -49,6 +56,9 @@ const startApp = () => {
 
   // create new app
   const app = express();
+
+  // Enable compression ( gzip ) for app
+  app.use(compression());
 
   // Enable cookieParser for app
   app.use(cookieParser());
@@ -92,6 +102,16 @@ const startApp = () => {
 
   // User submitNewRoutes for router /api/submitnews
   app.use('/api/submitnews', submitNewRoutes);
+  
+  app.use('/images', express.static(path.resolve(__dirname, '../', 'build', 'images')));
+  
+  app.use(express.static('public'));
+
+  app.use(express.static(path.resolve(__dirname, '../', 'build')));
+
+  app.get('/*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../', 'build', 'index.html'));
+  });
 
   // Start app on port 5000 or PORT in .env and print it to console log
   app.listen(port, () => console.log(`server is listening on port ${port}`));

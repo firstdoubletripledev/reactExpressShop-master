@@ -6,14 +6,16 @@
   "scripts": {
     "start": "node dist",
     "dev": " nodemon --exec babel-node src",
-    "build": "babel src --out-dir dist"
+    "build": "rm -rf dist && babel src --out-dir dist"
   },
   "author": "giang",
   "license": "MIT",
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "argon2": "^0.19.3",
     "bluebird": "^3.5.2",
     "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
     "concurrently": "^4.0.1",
     "connect-mongo": "^2.0.2",
     "cookie-parser": "^1.4.3",
