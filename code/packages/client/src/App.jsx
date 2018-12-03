@@ -31,6 +31,7 @@ class App extends PureComponent {
     return (
       <Router>
         <>
+          {/* list of all router in web app */}
           <AppRoutes location={location} />
         </>
       </Router>
@@ -40,7 +41,7 @@ class App extends PureComponent {
 
 /**
  *
- *
+ * Connect props to redux state
  * @param {*} { isLogin = '' }
  */
 const mapStateToProps = ({ isLogin = '' }) => ({

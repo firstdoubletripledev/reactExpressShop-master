@@ -35,9 +35,12 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render(
   // create new redux store
   <Provider store={store}>
+    {/* render app component */}
     <App />
   </Provider>,
+  // add script to div have id root
   document.getElementById('root')
 );
 
+// create Service Worker
 registerServiceWorker();
