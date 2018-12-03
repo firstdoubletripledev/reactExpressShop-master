@@ -1,7 +1,10 @@
+// import mongoose module
 const mongoose = require('mongoose');
 
+// get Schema from  mongoose module
 const { Schema } = mongoose;
 
+// create new schema
 const usersSchema = new Schema({
   email: { type: String, unique: true },
   password: String,
@@ -14,4 +17,5 @@ const usersSchema = new Schema({
   birthday: String,
 });
 
-module.exports = mongoose.model('users', usersSchema);
+// export model
+export default mongoose.model('users', usersSchema);

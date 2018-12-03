@@ -7,7 +7,9 @@ import ShopModel from '../models/shopModel';
  */
 export default {
   /**
-   * shopController.list()
+   * shopController.list() find all shop info
+   * @param {*} req
+   * @param {*} res
    */
   list(req, res) {
     ShopModel.find((err, shops) => {
@@ -22,7 +24,9 @@ export default {
   },
 
   /**
-   * shopController.show()
+   * shopController.show() get shop by id
+   * @param {*} req
+   * @param {*} res
    */
   show(req, res) {
     const { id } = req.params;
@@ -43,7 +47,9 @@ export default {
   },
 
   /**
-   * shopController.create()
+   * shopController.create() create new shop
+   * @param {*} req
+   * @param {*} res
    */
   create(req, res) {
     const shop = new ShopModel({
@@ -68,7 +74,9 @@ export default {
   },
 
   /**
-   * shopController.update()
+   * shopController.update() update exit shop
+   * @param {*} req
+   * @param {*} res
    */
   update(req, res) {
     const { id } = req.params;
@@ -108,7 +116,9 @@ export default {
   },
 
   /**
-   * shopController.remove()
+   * shopController.remove() delete shop by id
+   * @param {*} req
+   * @param {*} res
    */
   remove(req, res) {
     const { id } = req.params;

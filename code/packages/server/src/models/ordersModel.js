@@ -1,7 +1,10 @@
+// import mongoose module
 const mongoose = require('mongoose');
 
+// get Schema from  mongoose module
 const { Schema } = mongoose;
 
+// create new schema
 const ordersSchema = new Schema({
   code: String,
   createdate: String,
@@ -14,4 +17,5 @@ const ordersSchema = new Schema({
   cart: Object,
 });
 
-module.exports = mongoose.model('orders', ordersSchema);
+// export model
+export default mongoose.model('orders', ordersSchema);

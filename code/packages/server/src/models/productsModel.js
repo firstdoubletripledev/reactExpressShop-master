@@ -1,7 +1,10 @@
+// import mongoose module
 const mongoose = require('mongoose');
 
+// get Schema from  mongoose module
 const { Schema } = mongoose;
 
+// create new schema
 const productsSchema = new Schema({
   code: String,
   name: String,
@@ -19,4 +22,5 @@ const productsSchema = new Schema({
 });
 productsSchema.index({ name: 'text', code: 'text' });
 
-module.exports = mongoose.model('products', productsSchema);
+// export model
+export default mongoose.model('products', productsSchema);

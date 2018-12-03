@@ -1,7 +1,16 @@
+// import hash, verify module from argon2
 import { hash, verify } from 'argon2';
 
-const usersModel = require('../../models/usersModel.js');
+// import usersModel from model file
+import usersModel from '../../models/usersModel';
 
+/**
+ *
+ * updateUser() update User data by id
+ * @param {*} req
+ * @param {*} res
+ * @returns
+ */
 async function updateUser(req, res) {
   const { userid } = req.body.userid;
 

@@ -1,5 +1,12 @@
-const usersModel = require('../../models/usersModel.js');
+// import usersModel from model file
+import usersModel from '../../models/usersModel';
 
+/**
+ *
+ * showUser() get User data by id
+ * @param {*} req
+ * @param {*} res
+ */
 function showUser(req, res) {
   const { id } = req.params;
   usersModel.findOne({ _id: id }, (err, users) => {

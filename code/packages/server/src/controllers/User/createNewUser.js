@@ -1,8 +1,19 @@
+// import hash module from argon2
 import { hash } from 'argon2';
+
+// import isEmpty module from ramda
 import { isEmpty } from 'ramda';
 
-const UsersModel = require('../../models/usersModel.js');
+// import usersModel from model file
+import UsersModel from '../../models/usersModel';
 
+/**
+ *
+ * createNewUser() create new User
+ * @param {*} req
+ * @param {*} res
+ * @returns
+ */
 async function createNewUser(req, res) {
   const {
     email = '', password = '', address = '', phonenumber = '', role = 'user',

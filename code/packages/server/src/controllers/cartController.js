@@ -6,7 +6,14 @@ const Product = require('../models/productsModel.js');
  *
  * @description :: Server-side logic for managing carts.
  */
-module.exports = {
+export default {
+  /**
+   *
+   * cartController.shoppingcart() get Cart by session
+   * @param {*} req
+   * @param {*} res
+   * @returns
+   */
   shoppingcart(req, res) {
     if (!req.session.cart) {
       return res.json({ cart: null });
@@ -20,6 +27,13 @@ module.exports = {
     console.log(cart1);
     return res.json(cart1);
   },
+
+  /**
+   *
+   * cartController.addToCart() add new Cart
+   * @param {*} req
+   * @param {*} res
+   */
   addToCart(req, res) {
     const productId = req.params.id;
     // xem thử trong session có cart chwua nếu chưa thì cho cái cart đó là
@@ -47,6 +61,13 @@ module.exports = {
     });
   },
 
+  /**
+   *
+   * cartController.reduce() reduce Cart
+   * @param {*} req
+   * @param {*} res
+   * @returns
+   */
   reduce(req, res) {
     const productId = req.params.id;
     const cart = new Cart(req.session.cart ? req.session.cart : {});
@@ -63,6 +84,13 @@ module.exports = {
     return res.json(cart1);
   },
 
+  /**
+   *
+   * cartController.remove() remove Cart
+   * @param {*} req
+   * @param {*} res
+   * @returns
+   */
   remove(req, res) {
     const productId = req.params.id;
     const cart = new Cart(req.session.cart ? req.session.cart : {});

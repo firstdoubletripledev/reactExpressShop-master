@@ -15,6 +15,8 @@ import express from 'express';
 
 // import express-session module
 import session from 'express-session';
+
+// import path module
 import path from 'path';
 
 // import ConnectDatabase and db from folder Databases->Connect
@@ -40,6 +42,9 @@ import usersRoutes from './routes/usersRoutes';
 
 // import cartRoutes for api
 import cartRoutes from './routes/cartRoutes';
+
+// Config dotenv for get data from .env file
+require('dotenv').config();
 
 // Create new MongoStore for session
 const MongoStore = require('connect-mongo')(session);
@@ -76,39 +81,41 @@ const startApp = () => {
 
   // Enable bodyParser-urlencoded for app
   app.use(bodyParser.urlencoded({ extended: false }));
+
   // Enable bodyParser-json for app
   app.use(bodyParser.json());
 
   // Get port from .env
   const port = process.env.PORT || 5000;
 
-  // User categoriesRoutes for router /api/categories
+  // Use categoriesRoutes for router /api/categories
   app.use('/api/categories', categoriesRoutes);
 
-  // User ordersRoutes for router /api/orders
+  // Use ordersRoutes for router /api/orders
   app.use('/api/orders', ordersRoutes);
 
-  // User productsRoutes for router /api/products
+  // Use productsRoutes for router /api/products
   app.use('/api/products', productsRoutes);
 
-  // User shopRoutes for router /api/shop
+  // Use shopRoutes for router /api/shop
   app.use('/api/shop', shopRoutes);
 
-  // User usersRoutes for router /api/users
+  // Use usersRoutes for router /api/users
   app.use('/api/users', usersRoutes);
 
-  // User cartRoutes for router /api/cart
+  // Use cartRoutes for router /api/cart
   app.use('/api/cart', cartRoutes);
 
-  // User submitNewRoutes for router /api/submitnews
+  // Use submitNewRoutes for router /api/submitnews
   app.use('/api/submitnews', submitNewRoutes);
-  
-  app.use('/images', express.static(path.resolve(__dirname, '../', 'build', 'images')));
-  
-  app.use(express.static('public'));
 
+  // Use /images router for static image in folder packages/server/src
+  app.use('/images', express.static(path.resolve(__dirname, '../', 'build', 'images')));
+
+  // Use static folder build for react web app
   app.use(express.static(path.resolve(__dirname, '../', 'build')));
 
+  // Use /* for catch all router to react app
   app.get('/*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../', 'build', 'index.html'));
   });

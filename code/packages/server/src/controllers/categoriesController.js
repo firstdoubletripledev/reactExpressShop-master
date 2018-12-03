@@ -5,9 +5,12 @@ const CategoriesModel = require('../models/categoriesModel.js');
  *
  * @description :: Server-side logic for managing categoriess.
  */
-module.exports = {
+export default {
   /**
-   * categoriesController.list()
+   *
+   * categoriesController.list() get all category
+   * @param {*} req
+   * @param {*} res
    */
   list(req, res) {
     CategoriesModel.find()
@@ -23,6 +26,12 @@ module.exports = {
       });
   },
 
+  /**
+   *
+   * categoriesController.topThree() get top three hot category
+   * @param {*} req
+   * @param {*} res
+   */
   topThree(req, res) {
     CategoriesModel.find()
       .limit(3)
@@ -38,6 +47,12 @@ module.exports = {
       });
   },
 
+  /**
+   *
+   * categoriesController.listPage() get list category by page
+   * @param {*} req
+   * @param {*} res
+   */
   listPage(req, res) {
     const perPage = 20;
 
@@ -62,6 +77,12 @@ module.exports = {
       });
   },
 
+  /**
+   *
+   * categoriesController.listSearchByName() get list category by page and name
+   * @param {*} req
+   * @param {*} res
+   */
   listSearchByName(req, res) {
     const perPage = 20;
 
@@ -86,7 +107,10 @@ module.exports = {
   },
 
   /**
-   * categoriesController.show()
+   *
+   * categoriesController.show() get category by id
+   * @param {*} req
+   * @param {*} res
    */
   show(req, res) {
     const { id } = req.params;
@@ -107,7 +131,10 @@ module.exports = {
   },
 
   /**
-   * categoriesController.create()
+   *
+   * categoriesController.create() create new category
+   * @param {*} req
+   * @param {*} res
    */
   create(req, res) {
     const categories = new CategoriesModel({
@@ -127,7 +154,10 @@ module.exports = {
   },
 
   /**
-   * categoriesController.update()
+   *
+   * categoriesController.update() update exit category
+   * @param {*} req
+   * @param {*} res
    */
   update(req, res) {
     const { id = null } = req.params;
@@ -161,7 +191,10 @@ module.exports = {
   },
 
   /**
-   * categoriesController.remove()
+   *
+   * categoriesController.remove() remove exit category
+   * @param {*} req
+   * @param {*} res
    */
   remove(req, res) {
     const { id = null } = req.params;

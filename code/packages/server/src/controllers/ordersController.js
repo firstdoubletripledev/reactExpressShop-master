@@ -7,11 +7,14 @@ const Cart = require('../models/cart.js');
  *
  * @description :: Server-side logic for managing orderss.
  */
-module.exports = {
+export default {
   /**
-   * ordersController.list()
+   *
+   * ordersController.list() get list all order
+   * @param {*} req
+   * @param {*} res
+   * @param {*} next
    */
-
   list(req, res, next) {
     OrdersModel.find()
       .populate({ path: 'user', select: 'email' })
@@ -22,6 +25,13 @@ module.exports = {
       });
   },
 
+  /**
+   *
+   * ordersController.showuserorders() get order by user
+   * @param {*} req
+   * @param {*} res
+   * @param {*} next
+   */
   showuserorders(req, res, next) {
     const userid = req.session.userId;
     console.log(userid);
@@ -33,21 +43,12 @@ module.exports = {
         // console.log(orders[0].user.email);
       });
   },
-  // list(req, res) {
-  //   OrdersModel.find((err, orderss) => {
-  //     if (err) {
-  //       return res.status(500).json({
-  //         message: 'Error when getting orders.',
-  //         error: err,
-  //       });
-  //     }
-  //     console.log(orderss);
-  //     return res.json(orderss);
-  //   });
-  // },
 
   /**
-   * ordersController.show()
+   *
+   * ordersController.show() get order by id
+   * @param {*} req
+   * @param {*} res
    */
   show(req, res) {
     const { id = null } = req.params;
@@ -68,7 +69,10 @@ module.exports = {
   },
 
   /**
-   * ordersController.create()
+   *
+   * ordersController.create() create new order
+   * @param {*} req
+   * @param {*} res
    */
   create(req, res) {
     const cart = new Cart(req.session.cart) || {};
@@ -106,7 +110,10 @@ module.exports = {
   },
 
   /**
-   * ordersController.update()
+   *
+   * ordersController.update() update exit order
+   * @param {*} req
+   * @param {*} res
    */
   update(req, res) {
     const { id } = req.params;
@@ -145,7 +152,10 @@ module.exports = {
   },
 
   /**
-   * ordersController.remove()
+   *
+   * ordersController.remove() remove exit order by id
+   * @param {*} req
+   * @param {*} res
    */
   remove(req, res) {
     const { id } = req.params;

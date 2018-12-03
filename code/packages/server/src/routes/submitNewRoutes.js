@@ -1,13 +1,16 @@
 // import express module
 import express from 'express';
 
+// import cartController for cartController
 import SubmitNewsModel from '../models/submitNewsModel';
 
+// Create new express Router
 const router = express.Router();
 
 /*
  * GET
  */
+// Router get /:email to save submit info
 router.get('/:email', (req, res) => {
   const { email = null } = req.params;
   const ip = req.headers['x-forwarded-for'];
@@ -30,4 +33,5 @@ router.get('/:email', (req, res) => {
   });
 });
 
-module.exports = router;
+// export router
+export default router;

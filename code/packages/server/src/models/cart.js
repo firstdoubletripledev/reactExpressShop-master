@@ -57,4 +57,4 @@ function Cart(oldCart) {
   };
 }
 
-module.exports = Cart;
+export default Cart;

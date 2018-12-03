@@ -6,9 +6,11 @@ const CategoriesModel = require('../models/categoriesModel.js');
  *
  * @description :: Server-side logic for managing productss.
  */
-module.exports = {
+export default {
   /**
-   * productsController.list()
+   * productsController.list() get list all product
+   * @param {*} req
+   * @param {*} res
    */
   list(req, res) {
     ProductsModel.find()
@@ -24,6 +26,13 @@ module.exports = {
       });
   },
 
+  /**
+   *
+   * productsController.listSearchByName() get list product search by name
+   * @param {*} req
+   * @param {*} res
+   * @returns
+   */
   listSearchByName(req, res) {
     const { searchvalue = null } = req.params;
     if (searchvalue !== null) {
@@ -64,6 +73,12 @@ module.exports = {
     return null;
   },
 
+  /**
+   *
+   * productsController.listPartition() get list product by page
+   * @param {*} req
+   * @param {*} res
+   */
   listPartition(req, res) {
     const { perpage = 20, page = 1 } = req.params;
     const perPage = Number(perpage);
@@ -96,6 +111,12 @@ module.exports = {
       });
   },
 
+  /**
+   *
+   * productsController.listPartitionSortByName() get list product by name
+   * @param {*} req
+   * @param {*} res
+   */
   listPartitionSortByName(req, res) {
     const perPage = 20;
     const { page = 1 } = req.params;
@@ -132,6 +153,12 @@ module.exports = {
       });
   },
 
+  /**
+   *
+   * productsController.listPartitionSortByNameDesc() get list product by name DESC
+   * @param {*} req
+   * @param {*} res
+   */
   listPartitionSortByNameDesc(req, res) {
     const perPage = 20;
     const { page = 1 } = req.params;
@@ -168,6 +195,12 @@ module.exports = {
       });
   },
 
+  /**
+   *
+   * productsController.listPartitionSortByPrice() get list product by price
+   * @param {*} req
+   * @param {*} res
+   */
   listPartitionSortByPrice(req, res) {
     const perPage = 20;
     const { page = 1 } = req.params;
@@ -204,6 +237,12 @@ module.exports = {
       });
   },
 
+  /**
+   *
+   * productsController.listPartitionSortByPricedesc() get list product by price Desc
+   * @param {*} req
+   * @param {*} res
+   */
   listPartitionSortByPricedesc(req, res) {
     const perPage = 20;
     const { page = 1 } = req.params;
@@ -240,40 +279,11 @@ module.exports = {
       });
   },
 
-  // async listByColor(req, res) {
-  //   try {
-  //     const perPage = 20;
-  //     const { page = 1, color = null } = req.params;
-  //     if (!color) {
-  //       return res.status(500).json({
-  //         message: 'Not found color in req.',
-  //       });
-  //     }
-
-  //     const productss = await ProductsModel.find()
-  //       .skip(perPage * page - perPage)
-  //       .limit(perPage)
-  //       .populate({
-  //         path: 'category',
-  //       });
-
-  //     const count = await ProductsModel.count();
-
-  //     return res.json({
-  //       data_products: productss,
-  //       current: page,
-  //       pages: Math.ceil(count / perPage),
-  //     });
-  //   } catch (error) {
-  //     return res.status(500).json({
-  //       message: 'Not error when getting products by color.',
-  //       error,
-  //     });
-  //   }
-  // },
-
   /**
+   *
    * productsController.show()
+   * @param {*} req
+   * @param {*} res
    */
   show(req, res) {
     const { id } = req.params;
@@ -296,7 +306,10 @@ module.exports = {
   },
 
   /**
-   * productsController.create()
+   *
+   * productsController.create() create new product
+   * @param {*} req
+   * @param {*} res
    */
   create(req, res) {
     const products = new ProductsModel({
@@ -385,7 +398,10 @@ module.exports = {
   },
 
   /**
-   * productsController.update()
+   *
+   * productsController.update() update product by id
+   * @param {*} req
+   * @param {*} res
    */
   update(req, res) {
     const { id } = req.params;
@@ -495,7 +511,10 @@ module.exports = {
   },
 
   /**
-   * productsController.remove()
+   *
+   * productsController.remove() remove product by id
+   * @param {*} req
+   * @param {*} res
    */
   remove(req, res) {
     const { id } = req.params;

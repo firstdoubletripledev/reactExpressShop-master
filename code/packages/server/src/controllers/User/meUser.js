@@ -1,9 +1,18 @@
+// import jwt module from jsonwebtoken
 import jwt from 'jsonwebtoken';
+
+// import usersModel from model file
+import usersModel from '../../models/usersModel';
 
 const { SECRET_KEY: secretKey } = process.env;
 
-const usersModel = require('../../models/usersModel.js');
-
+/**
+ *
+ * meUser() get User by session
+ * @param {*} req
+ * @param {*} res
+ * @returns
+ */
 async function meUser(req, res) {
   const { userId } = req.session;
   if (!userId) {

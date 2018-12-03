@@ -1,5 +1,12 @@
-const usersModel = require('../../models/usersModel.js');
+// import usersModel from model file
+import usersModel from '../../models/usersModel';
 
+/**
+ *
+ * removeUser() remove User by id
+ * @param {*} req
+ * @param {*} res
+ */
 function removeUser(req, res) {
   const { id } = req.params;
   usersModel.findByIdAndRemove(id, (err, usersData) => {

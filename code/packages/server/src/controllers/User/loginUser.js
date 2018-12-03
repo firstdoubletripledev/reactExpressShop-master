@@ -1,10 +1,21 @@
+// import verify module from argon2
 import { verify } from 'argon2';
+
+// import jwt module from jsonwebtoken
 import jwt from 'jsonwebtoken';
+
+// import usersModel from model file
+import usersModel from '../../models/usersModel';
 
 const { SECRET_KEY: secretKey } = process.env;
 
-const usersModel = require('../../models/usersModel.js');
-
+/**
+ *
+ * loginUser() find user in database and add to session and send token
+ * @param {*} req
+ * @param {*} res
+ * @returns
+ */
 async function loginUser(req, res) {
   const { email = '', password = '' } = req.body;
   const user = await usersModel.findOne({ email }).catch((error) => {
