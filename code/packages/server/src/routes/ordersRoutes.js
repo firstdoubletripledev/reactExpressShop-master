@@ -6,12 +6,19 @@ const ordersController = require('../controllers/ordersController.js');
 /*
  * GET
  */
+router.get('/userorders', ordersController.showuserorders); // chỗ này để dưới get "/" thì k chạy
 router.get('/', ordersController.list);
 
 /*
  * GET
  */
 router.get('/:id', ordersController.show);
+
+
+/*
+ * GET
+ */
+
 
 /*
  * POST

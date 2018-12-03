@@ -22,6 +22,16 @@ module.exports = {
       });
   },
 
+  showuserorders(req, res) {
+    const userid = req.session.userId;
+    console.log(userid);
+    ordersModel.find({user:userid}).populate({path:'user',select:'email'}).exec(function(err,orders){
+      if (err) return next(err);
+      res.json(orders);
+      //console.log(orders[0].user.email);
+    });
+
+  },
   // list(req, res) {
   //   OrdersModel.find((err, orderss) => {
   //     if (err) {
@@ -55,6 +65,7 @@ module.exports = {
       return res.json(orders);
     });
   },
+
 
   /**
    * ordersController.create()

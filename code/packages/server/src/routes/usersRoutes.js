@@ -20,11 +20,11 @@ router.get('/:id', usersController.show);
  */
 router.post('/', usersController.create);
 router.post('/login', usersController.login);
-
+router.post('/update', usersController.update);
 /*
  * PUT
  */
-router.put('/:id', usersController.update);
+
 
 /*
  * DELETE
