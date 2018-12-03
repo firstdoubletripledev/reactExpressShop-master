@@ -1,6 +1,12 @@
+// import React module from react for JSX
 import React from 'react';
 
-export function UniqueCompoent() {
+/**
+ *
+ *
+ * @returns
+ */
+function UniqueCompoent() {
   return (
     <div
       className="rd-parallax rd-parallax-2"
@@ -33,3 +39,6 @@ export function UniqueCompoent() {
     </div>
   );
 }
+
+// export component
+export { UniqueCompoent };

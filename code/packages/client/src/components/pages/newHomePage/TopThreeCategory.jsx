@@ -1,5 +1,10 @@
+// import Axios module from axios for Promise based HTTP request
 import Axios from 'axios';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
+
+// import Route module from react-router-dom for router in react
 import { Link } from 'react-router-dom';
 
 const linkImage = [
@@ -8,10 +13,26 @@ const linkImage = [
   'https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/0c1b2755fa48a10764dc2ec243cbd29ec62500e7_top-banner-3.jpg',
 ];
 
+/**
+ *
+ *
+ * @class TopThreeCategory
+ * @extends {PureComponent}
+ */
 class TopThreeCategory extends PureComponent {
+  /**
+   *
+   *
+   * @memberof TopThreeCategory
+   */
   state = {
     category: [],
   };
+  /**
+   *
+   *
+   * @memberof TopThreeCategory
+   */
   async componentDidMount() {
     try {
       const { data = null } = await Axios.get('/api/categories/topthree').catch(
@@ -29,6 +50,12 @@ class TopThreeCategory extends PureComponent {
     }
   }
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof TopThreeCategory
+   */
   render() {
     const { category } = this.state;
     return (
@@ -75,4 +102,5 @@ class TopThreeCategory extends PureComponent {
   }
 }
 
+// export component
 export { TopThreeCategory };

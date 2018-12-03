@@ -1,6 +1,12 @@
+// import React module from react for JSX
 import React from 'react';
 
-export function Breadcrumb() {
+/**
+ *
+ *
+ * @returns
+ */
+function Breadcrumb() {
   return (
     <nav data-depth={1} className="breadcrumb container">
       <ol
@@ -22,3 +28,6 @@ export function Breadcrumb() {
     </nav>
   );
 }
+
+// export component
+export { Breadcrumb };

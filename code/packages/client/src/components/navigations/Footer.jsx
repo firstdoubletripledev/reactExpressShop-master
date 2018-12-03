@@ -1,5 +1,11 @@
+// import React module from react for JSX
 import React from 'react';
 
+/**
+ *
+ *
+ * @returns
+ */
 const Footer = () => {
   return (
     <footer id="footer">
@@ -256,4 +262,5 @@ const Footer = () => {
   );
 };
 
+// export component
 export default Footer;

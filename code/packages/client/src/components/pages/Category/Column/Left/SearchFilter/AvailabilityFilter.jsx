@@ -1,5 +1,16 @@
+// import React module from react for JSX
 import React from 'react';
 
+/**
+ *
+ *
+ * @export
+ * @param {*} {
+ *   Availability: { notAvl = 0, avl = 0 },
+ *   filterByClick,
+ * }
+ * @returns
+ */
 export function AvailabilityFilter({
   Availability: { notAvl = 0, avl = 0 },
   filterByClick,

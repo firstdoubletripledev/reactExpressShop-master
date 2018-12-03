@@ -1,20 +1,32 @@
+// import Col, Layout, Row component from antd
 import { Col, Layout, Row } from 'antd';
+
+// import React module from react for JSX
 import React from 'react';
 
+// import CarouselMain component
 import CarouselMain from '../carousel.jsx';
+
+// import ListItemsHomePage component
 import ListItemsHomePage from '../Items/listItemsHomePage';
+
+// import ModelItem component
 import ModelItem from '../Items/ModelItem.jsx';
+
+// import MultipleItemsHomePage component
 import MultipleItemsHomePage from '../Items/MultipleItemsHomePage';
+
+// import MenuNav component
 import MenuNav from '../navigations/MenuNav.jsx';
 
+// create Content, Footer from Layout
 const { Content, Footer } = Layout;
-//Home page
-//cart page
-//cagory page
-//checkout page
-//detail product page
-//dash board page
 
+/**
+ *
+ *
+ * @returns
+ */
 const HomePage = () => {
   return (
     <Layout className="layout">
@@ -67,11 +79,10 @@ const HomePage = () => {
           <MultipleItemsHomePage />
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>
-        Ant Design ©2018 Created by Ant UED
-      </Footer>
+      <Footer style={{ textAlign: 'center' }}>©2018 Created by T&G</Footer>
     </Layout>
   );
 };
 
+// export component
 export default HomePage;

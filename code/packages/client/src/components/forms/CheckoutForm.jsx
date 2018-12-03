@@ -1,11 +1,31 @@
+// import Button, Form, Input component from antd
 import { Button, Form, Input } from 'antd';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
 
+// create FormItem
 const FormItem = Form.Item;
 
+/**
+ *
+ *
+ * @class CheckoutForm
+ * @extends {PureComponent}
+ */
 class CheckoutForm extends PureComponent {
+  /**
+   *
+   *
+   * @memberof CheckoutForm
+   */
   state = {};
 
+  /**
+   *
+   *
+   * @memberof CheckoutForm
+   */
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
@@ -15,6 +35,12 @@ class CheckoutForm extends PureComponent {
     });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof CheckoutForm
+   */
   render() {
     const { getFieldDecorator } = this.props.form;
 
@@ -114,4 +140,5 @@ class CheckoutForm extends PureComponent {
 
 const WrappedCheckoutForm = Form.create()(CheckoutForm);
 
+// export component
 export default WrappedCheckoutForm;

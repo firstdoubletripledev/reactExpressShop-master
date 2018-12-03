@@ -1,9 +1,27 @@
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
 
-export class Description extends PureComponent {
+/**
+ *
+ *
+ * @class Description
+ * @extends {PureComponent}
+ */
+class Description extends PureComponent {
+  /**
+   *
+   *
+   * @memberof Description
+   */
   state = {
     tabActive: 0,
   };
+  /**
+   *
+   *
+   * @returns
+   * @memberof Description
+   */
   render() {
     const { tabActive } = this.state;
     const { product = {}, product: { category = [] } = {} } = this.props;
@@ -89,3 +107,6 @@ export class Description extends PureComponent {
     );
   }
 }
+
+// export component
+export { Description };

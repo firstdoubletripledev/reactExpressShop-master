@@ -1,6 +1,12 @@
+// import React module from react for JSX
 import React from 'react';
 
-export function TopTitle() {
+/**
+ *
+ *
+ * @returns
+ */
+function TopTitle() {
   return (
     <div className="row it_GQGYNCCMEUBS nav-full-width full-width">
       <div className="it_DVLGIWDOAESQ col-12     container">
@@ -21,3 +27,6 @@ export function TopTitle() {
     </div>
   );
 }
+
+// export component
+export { TopTitle };

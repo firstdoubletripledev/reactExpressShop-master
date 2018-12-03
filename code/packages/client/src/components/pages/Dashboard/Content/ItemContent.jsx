@@ -1,17 +1,40 @@
+// import Axios module from axios for Promise based HTTP request
 import Axios from 'axios';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
 
+// import columnsItem, onChangeItem component
 import { columnsItem, onChangeItem } from './Components/table/columnsItem';
+
+// import TableDashboard component
 import { TableDashboard } from './Components/TableDashboard';
+
+// import errorMessage component
 import { errorMessage } from '../../utils/Message';
 
+/**
+ *
+ *
+ * @class ItemContent
+ * @extends {PureComponent}
+ */
 class ItemContent extends PureComponent {
+  /**
+   *
+   *
+   * @memberof ItemContent
+   */
   state = {
     dataItem: [],
     loading: false,
     isActiveFormEdit: false,
     dataInput: {},
   };
+  /**
+   *
+   *
+   */
   componentDidMount = async () => {
     try {
       this.setState({
@@ -44,6 +67,12 @@ class ItemContent extends PureComponent {
       errorMessage(error);
     }
   };
+  /**
+   *
+   *
+   * @param {*} _id
+   * @param {*} name
+   */
   onClickLink = async (_id, name) => {
     this.setState({
       loading: true,
@@ -63,6 +92,11 @@ class ItemContent extends PureComponent {
       loading: false,
     });
   };
+  /**
+   *
+   *
+   * @returns
+   */
   checkLinkEdit = async () => {
     const { location: { pathname = '' } = {} } = this.props;
     const listPath = pathname.split('/');
@@ -100,6 +134,12 @@ class ItemContent extends PureComponent {
     return false;
   };
 
+  /**
+   *
+   *
+   * @param {*} _id
+   * @returns
+   */
   handleDelete = async _id => {
     await Axios.delete(`/api/products/${_id}`);
     const { dataItem } = this.state;
@@ -108,6 +148,12 @@ class ItemContent extends PureComponent {
     });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof ItemContent
+   */
   render() {
     const { dataItem, loading, dataInput, isActiveFormEdit } = this.state;
     return (
@@ -130,4 +176,5 @@ class ItemContent extends PureComponent {
   }
 }
 
+// export component
 export { ItemContent };

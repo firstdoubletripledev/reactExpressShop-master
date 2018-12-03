@@ -1,9 +1,21 @@
+// import Axios module from axios for Promise based HTTP request
 import Axios from 'axios';
+
+// import Formik module from formik
 import { Formik } from 'formik';
+
+// import React module from react for JSX
 import React from 'react';
+
+// import errorMessage, successMessage module
 import { errorMessage, successMessage } from '../utils/Message';
 
-export function SubmitNews() {
+/**
+ *
+ *
+ * @returns
+ */
+function SubmitNews() {
   return (
     <div className="wrapper it_ESKBJYFGKYLC container">
       <div className="row it_TJYCOUNMLNBI ">
@@ -64,3 +76,6 @@ export function SubmitNews() {
     </div>
   );
 }
+
+// export component
+export { SubmitNews };

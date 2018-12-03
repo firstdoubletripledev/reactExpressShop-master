@@ -1,7 +1,15 @@
+// import React module from react for JSX
 import React from 'react';
 
+// import ProductItem component
 import { ProductItem } from '../Category/Column/Right/ProductItem';
 
+/**
+ *
+ *
+ * @param {*} { productSuggest = [] }
+ * @returns
+ */
 const SuggestProduct = ({ productSuggest = [] }) => {
   return (
     <section className="featured-products products-carousel clearfix">
@@ -35,4 +43,5 @@ const SuggestProduct = ({ productSuggest = [] }) => {
   );
 };
 
+// export component
 export { SuggestProduct };

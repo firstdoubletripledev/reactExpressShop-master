@@ -1,15 +1,34 @@
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
+
+// import connect function from react-redux for connect redux state
 import { connect } from 'react-redux';
 
+// import ProductsInCart component
 import ProductsInCart from './ProductsInCart';
 
-//import axios from "axios";
+/**
+ *
+ *
+ * @class LeftColumn
+ * @extends {PureComponent}
+ */
 class LeftColumn extends PureComponent {
+  /**
+   *Creates an instance of LeftColumn.
+   * @memberof LeftColumn
+   */
   constructor() {
     super();
     this.state = {};
   }
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof LeftColumn
+   */
   render() {
     return (
       <div className="cart-grid-body col-12 col-lg-8">
@@ -38,8 +57,16 @@ class LeftColumn extends PureComponent {
     );
   }
 }
+
+/**
+ *
+ *
+ * @param {*} state
+ * @returns
+ */
 const LeftColumnRedux = connect(function(state) {
   return { Cart: state.Cart || { totalQty: '1' } };
 })(LeftColumn);
 
+// export component
 export default LeftColumnRedux;

@@ -1,5 +1,17 @@
+// import React module from react for JSX
 import React from 'react';
 
+/**
+ *
+ *
+ * @param {*} {
+ *   name = 'Joho Doe',
+ *   content = "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.",
+ *   title = 'Graphic Designer',
+ *   avatar = 'http://img.hb.aicdn.com/bc442cf0cc6f7940dcc567e465048d1a8d634493198c4-sPx5BR_fw236',
+ * }
+ * @returns
+ */
 const Quote = ({
   name = 'Joho Doe',
   content = "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.",
@@ -23,4 +35,5 @@ const Quote = ({
   );
 };
 
+// export function
 export default Quote;

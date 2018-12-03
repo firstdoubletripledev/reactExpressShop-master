@@ -1,16 +1,37 @@
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
+
+// import Route module from react-router-dom for router in react
 import { Redirect, Route } from 'react-router-dom';
 
+// import get Auth function
 import getAuth from './components/getAuth';
+
+// import Loading Compoment
 import LoadingCompoment from './components/LoadingCompoment';
 
-// import { connect } from 'react-redux';
+/**
+ *
+ *
+ * @class PrivateRoute
+ * @extends {PureComponent}
+ */
 class PrivateRoute extends PureComponent {
+  /**
+   *
+   *
+   * @memberof PrivateRoute
+   */
   state = {
     loading: true,
     isAuth: false,
   };
 
+  /**
+   *
+   *
+   * @memberof PrivateRoute
+   */
   componentDidMount() {
     getAuth().then(data => {
       this.setState({
@@ -20,6 +41,12 @@ class PrivateRoute extends PureComponent {
     });
   }
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof PrivateRoute
+   */
   render() {
     const { component: Component = null, ...rest } = this.props;
     // const { isLogin = null } = rest;
@@ -47,8 +74,5 @@ class PrivateRoute extends PureComponent {
   }
 }
 
-// const mapStateToProps = ({ isLogin }) => ({
-//   isLogin,
-// });
-
+// Export Component
 export default PrivateRoute;

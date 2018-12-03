@@ -1,4 +1,7 @@
+// import React module from react for JSX
 import React from 'react';
+
+// import Legend, RadialBar, RadialBarChart, ResponsiveContainer, component from recharts
 import {
   Legend,
   RadialBar,
@@ -22,6 +25,10 @@ const style = {
   lineHeight: '24px',
 };
 
+/**
+ *
+ *
+ */
 const SimpleRadialBarChart = () => (
   <ResponsiveContainer>
     <RadialBarChart
@@ -50,4 +57,6 @@ const SimpleRadialBarChart = () => (
     </RadialBarChart>
   </ResponsiveContainer>
 );
+
+// export component
 export default SimpleRadialBarChart;

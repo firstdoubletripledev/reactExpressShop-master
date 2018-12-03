@@ -1,6 +1,14 @@
+// import Dropdown, Menu component from antd
 import { Dropdown, Menu } from 'antd';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
 
+/**
+ *
+ *
+ * @param {*} changeSortName
+ */
 const menu = changeSortName => (
   <Menu>
     <Menu.Item>
@@ -68,11 +76,28 @@ const menu = changeSortName => (
   </Menu>
 );
 
+/**
+ *
+ *
+ * @export
+ * @class TopProductNav
+ * @extends {PureComponent}
+ */
 export class TopProductNav extends PureComponent {
+  /**
+   *
+   *
+   * @memberof TopProductNav
+   */
   state = {
     sortName: 'Relevance',
   };
 
+  /**
+   *
+   *
+   * @param {*} name
+   */
   changeSortName = name => {
     this.setState({
       sortName: name,
@@ -81,6 +106,12 @@ export class TopProductNav extends PureComponent {
     onClickSortBy(name);
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof TopProductNav
+   */
   render() {
     const { sortName } = this.state;
     const { data = [] } = this.props;

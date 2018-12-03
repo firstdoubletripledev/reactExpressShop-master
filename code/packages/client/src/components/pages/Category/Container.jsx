@@ -1,11 +1,27 @@
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
-import Axios from 'axios';
-// import { mergeAll, concat, mergeDeepWithKey } from "ramda";
 
+// import Axios module from axios for Promise based HTTP request
+import Axios from 'axios';
+
+// import LeftColumn component
 import { LeftColumn } from './Column/Left/LeftColumn';
+
+// import RightColumn component
 import { RightColumn } from './Column/Right/RightColumn';
 
+/**
+ *
+ *
+ * @class Container
+ * @extends {PureComponent}
+ */
 class Container extends PureComponent {
+  /**
+   *
+   *
+   * @memberof Container
+   */
   state = {
     data: [],
     categoryColor: [],
@@ -21,6 +37,11 @@ class Container extends PureComponent {
     filterBy: [],
     typeSort: null,
   };
+
+  /**
+   *
+   *
+   */
   componentDidMount = async () => {
     try {
       const { page = 1 } = this.props;
@@ -33,18 +54,34 @@ class Container extends PureComponent {
     }
   };
 
+  /**
+   *
+   *
+   * @param {*} name
+   */
   onClickSortBy = async name => {
     await this.setTypeSort(name);
     const { page = 1 } = this.props;
     await this.getData(page);
   };
 
+  /**
+   *
+   *
+   * @param {*} name
+   */
   setTypeSort = async name => {
     this.setState({
       typeSort: name,
     });
   };
 
+  /**
+   *
+   *
+   * @param {*} page
+   * @returns
+   */
   getData = async page => {
     if (this.state.loading === false) {
       this.setState({ loading: true });
@@ -105,6 +142,13 @@ class Container extends PureComponent {
     }
   };
 
+  /**
+   *
+   *
+   * @param {*} name
+   * @param {*} value
+   * @returns
+   */
   getDataByColor = async (name, value) => {
     try {
       const res = await Axios.get(
@@ -127,6 +171,11 @@ class Container extends PureComponent {
     }
   };
 
+  /**
+   *
+   *
+   * @param {*} event
+   */
   filterByClearAll = async event => {
     this.setState({
       filterBy: [],
@@ -134,6 +183,11 @@ class Container extends PureComponent {
     await this.componentDidMount();
   };
 
+  /**
+   *
+   *
+   * @param {*} [data={}]
+   */
   filterByClick = async (data = {}) => {
     const { filterBy = [] } = this.state;
     const check = filterBy.findIndex(function(dataFilterBy) {
@@ -149,6 +203,12 @@ class Container extends PureComponent {
     });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof Container
+   */
   render() {
     const {
       data,
@@ -192,6 +252,14 @@ class Container extends PureComponent {
 }
 
 export default Container;
+
+/**
+ *
+ *
+ * @param {*} type
+ * @param {*} page
+ * @returns
+ */
 async function getDataByType(type, page) {
   console.log(type, page);
   try {
@@ -212,6 +280,13 @@ async function getDataByType(type, page) {
   }
 }
 
+/**
+ *
+ *
+ * @param {*} categoryMerge
+ * @param {*} typeName
+ * @returns
+ */
 function MergeDeepByTag(categoryMerge, typeName) {
   const categoryColor = categoryMerge.map(({ name, value }) => {
     if (name === typeName) {

@@ -1,19 +1,49 @@
+// import Axios module from axios for Promise based HTTP request
 import Axios from 'axios';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
 
+// import Footer component
 import Footer from '../../navigations/Footer';
+
+// import Header component
 import Header from '../../navigations/Header';
+
+// import ContentImage component
 import { ContentImage } from './ContentImage';
+
+// import ContentItem component
 import { ContentItem } from './ContentItem';
+
+// import Description component
 import { Description } from './Description';
+
+// import SuggestProduct component
 import { SuggestProduct } from './SuggestProduct';
 
+/**
+ *
+ *
+ * @class Product
+ * @extends {PureComponent}
+ */
 class Product extends PureComponent {
+  /**
+   *
+   *
+   * @memberof Product
+   */
   state = {
     product: {},
     productSuggest: [],
   };
 
+  /**
+   *
+   *
+   * @memberof Product
+   */
   async componentDidMount() {
     const {
       match: {
@@ -39,6 +69,12 @@ class Product extends PureComponent {
     }
   }
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof Product
+   */
   render() {
     const { product, productSuggest } = this.state;
     return (
@@ -72,4 +108,5 @@ class Product extends PureComponent {
   }
 }
 
+// export component
 export default Product;

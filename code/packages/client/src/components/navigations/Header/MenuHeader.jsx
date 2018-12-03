@@ -1,16 +1,41 @@
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
 
+// import TopLevelMenu component
 import { TopLevelMenu } from './TopLevelMenu';
 
-export class MenuHeader extends PureComponent {
+/**
+ *
+ *
+ * @export
+ * @class MenuHeader
+ * @extends {PureComponent}
+ */
+class MenuHeader extends PureComponent {
+  /**
+   *
+   *
+   * @memberof MenuHeader
+   */
   state = {
     searchValue: '',
   };
 
+  /**
+   *
+   *
+   * @param {*} event
+   */
   handleChange = event => {
     this.setState({ searchValue: event.target.value });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof MenuHeader
+   */
   render() {
     const { searchValue } = this.state;
 
@@ -71,3 +96,6 @@ export class MenuHeader extends PureComponent {
     );
   }
 }
+
+// export component
+export { MenuHeader };

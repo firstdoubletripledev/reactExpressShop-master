@@ -1,81 +1,105 @@
-import React, { Component } from "react";
-import axios from "axios";
-import $ from "jquery";
+// import React module from react for JSX
+import React, { Component } from 'react';
 
+// import Axios module from axios for Promise based HTTP request
+import Axios from 'axios';
+
+// import $ module from jquery for jquery style
+import $ from 'jquery';
+
+/**
+ *
+ *
+ * @class Container
+ * @extends {Component}
+ */
 class Container extends Component {
+  /**
+   *
+   *
+   * @memberof Container
+   */
   state = {
-    userDataShow:{
-     
-      email:"",
-      address:"",
-      phonenumber:"",
-      firstName:"",
-      lastName:"",
-      birthday:"",
-    
+    userDataShow: {
+      email: '',
+      address: '',
+      phonenumber: '',
+      firstName: '',
+      lastName: '',
+      birthday: '',
     },
-    userid:localStorage.getItem('userid'),
-    email:"",
-    address:"",
-    phonenumber:"",
-    firstName:"",
-    lastName:"",
-    birthday:"",
-    password:"",
-    newPassword:"",
-    
+    userid: localStorage.getItem('userid'),
+    email: '',
+    address: '',
+    phonenumber: '',
+    firstName: '',
+    lastName: '',
+    birthday: '',
+    password: '',
+    newPassword: '',
   };
+  /**
+   *
+   *
+   */
   componentDidMount = async () => {
     try {
       await this.getData();
-     
     } catch (error) {
       console.log(error);
     }
     var showP = false;
-    $("#btnShow1").click(function(){
-      
-      if(showP===false){
-
-        $("#password").attr('type', 'text');
-        showP=true;
-        }
-        else{
-          $("#password").attr('type', 'password');
-          showP=false;
-
-        }
+    $('#btnShow1').click(function() {
+      if (showP === false) {
+        $('#password').attr('type', 'text');
+        showP = true;
+      } else {
+        $('#password').attr('type', 'password');
+        showP = false;
+      }
     });
     var showP2 = false;
-    $("#btnShow2").click(function(){
-      if(showP2===false){
-
-        $("#newPassword").attr('type', 'text');
-        showP2=true;
-        }
-        else{
-          $("#newPassword").attr('type', 'password');
-          showP2=false;
-
-        }
+    $('#btnShow2').click(function() {
+      if (showP2 === false) {
+        $('#newPassword').attr('type', 'text');
+        showP2 = true;
+      } else {
+        $('#newPassword').attr('type', 'password');
+        showP2 = false;
+      }
     });
-
   };
 
+  /**
+   *
+   *
+   */
   getData = async () => {
-    var userData = await axios.get(`/api/users/${localStorage.getItem('userid')}`);
+    var userData = await Axios.get(
+      `/api/users/${localStorage.getItem('userid')}`
+    );
 
     this.setState({
-      userDataShow: userData.data
+      userDataShow: userData.data,
     });
   };
 
+  /**
+   *
+   *
+   * @param {*} e
+   */
   onChange = e => {
     const state = this.state;
     state[e.target.name] = e.target.value;
     this.setState(state);
   };
 
+  /**
+   *
+   *
+   * @param {*} e
+   */
   onSubmit = e => {
     e.preventDefault();
 
@@ -88,41 +112,47 @@ class Container extends Component {
       lastName,
       birthday,
       password,
-      newPassword
-    
+      newPassword,
     } = this.state;
 
-    axios.post("/api/users/update", {
-        userid,
-        email,
-        address,
-        phonenumber,
-        firstName,
-        lastName,
-        birthday,
-        password,
-        newPassword
-      })
-      .then(result => {
-        if(result.data.code ===0)
-        {
-          return alert("old Password is wrong");
-        }
-        alert("complete change ")
-      });
+    Axios.post('/api/users/update', {
+      userid,
+      email,
+      address,
+      phonenumber,
+      firstName,
+      lastName,
+      birthday,
+      password,
+      newPassword,
+    }).then(result => {
+      if (result.data.code === 0) {
+        return alert('old Password is wrong');
+      }
+      alert('complete change ');
+    });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof Container
+   */
   render() {
-   const {userDataShow,
-    email,
-    address,
-    phonenumber,
-    firstName,
-    lastName,
-    birthday,password,newPassword
-  } = this.state ;
+    const {
+      userDataShow,
+      // email,
+      // address,
+      // phonenumber,
+      // firstName,
+      // lastName,
+      // birthday,
+      password,
+      newPassword,
+    } = this.state;
     return (
-        <div id="content-wrapper" className="container">
+      <div id="content-wrapper" className="container">
         <section id="main">
           <header className="page-header">
             <h1>Your personal information</h1>
@@ -138,8 +168,6 @@ class Container extends Component {
               method="post"
             >
               <section>
-                
-
                 <div className="form-group row ">
                   <label className="col-md-3 form-control-label required">
                     First name
@@ -164,12 +192,10 @@ class Container extends Component {
                   <div className="col-md-6">
                     <input
                       className="form-control"
-                   
                       type="text"
-                  
                       name="lastName"
                       defaultValue={userDataShow.lastName}
-                     // value={lastName}
+                      // value={lastName}
                       onChange={this.onChange}
                       required
                     />
@@ -183,9 +209,7 @@ class Container extends Component {
                   <div className="col-md-6">
                     <input
                       className="form-control"
-                     
                       type="email"
-          
                       name="email"
                       defaultValue={userDataShow.email}
                       //value={email}
@@ -202,21 +226,21 @@ class Container extends Component {
                   <div className="col-md-6">
                     <div className="input-group js-parent-focus">
                       <input
-                      id="password"
+                        id="password"
                         className="form-control js-child-focus js-visible-password"
                         name="password"
-                      value={password}
-                      onChange={this.onChange}
+                        value={password}
+                        onChange={this.onChange}
                         type="password"
                         pattern=".{5,}"
                         required
                       />
-                      <span className="input-group-btn" >
+                      <span className="input-group-btn">
                         <button
                           className="btn"
                           type="button"
                           id="btnShow1"
-                          style={{background:"#a3a3a3"}}
+                          style={{ background: '#a3a3a3' }}
                         >
                           Show
                         </button>
@@ -232,7 +256,7 @@ class Container extends Component {
                   <div className="col-md-6">
                     <div className="input-group js-parent-focus">
                       <input
-                      id="newPassword"
+                        id="newPassword"
                         className="form-control js-child-focus js-visible-password"
                         name="newPassword"
                         value={newPassword}
@@ -245,16 +269,14 @@ class Container extends Component {
                           className="btn"
                           type="button"
                           id="btnShow2"
-                          style={{background:"#a3a3a3"}}
+                          style={{ background: '#a3a3a3' }}
                         >
                           Show
                         </button>
                       </span>
                     </div>
                   </div>
-                  <div className="col-md-3 form-control-comment">
-                    Optional
-                  </div>
+                  <div className="col-md-3 form-control-comment">Optional</div>
                 </div>
                 <div className="form-group row ">
                   <label className="col-md-3 form-control-label">
@@ -265,19 +287,16 @@ class Container extends Component {
                       className="form-control"
                       name="birthday"
                       defaultValue={userDataShow.birthday}
-                        //value={birthday}
-                        onChange={this.onChange}
+                      //value={birthday}
+                      onChange={this.onChange}
                       type="text"
-                     
                       placeholder="MM/DD/YYYY"
                     />
                     <span className="form-control-comment">
                       (E.g.: 05/31/1970)
                     </span>
                   </div>
-                  <div className="col-md-3 form-control-comment">
-                    Optional
-                  </div>
+                  <div className="col-md-3 form-control-comment">Optional</div>
                 </div>
                 <div className="form-group row ">
                   <label className="col-md-3 form-control-label required">
@@ -286,9 +305,7 @@ class Container extends Component {
                   <div className="col-md-6">
                     <input
                       className="form-control"
-                   
                       type="text"
-            
                       name="phonenumber"
                       defaultValue={userDataShow.phonenumber}
                       //value={phonenumber}
@@ -305,19 +322,16 @@ class Container extends Component {
                   <div className="col-md-6">
                     <input
                       className="form-control"
-                   
                       type="text"
-                 
                       name="address"
                       defaultValue={userDataShow.address}
-                     // value={address}
+                      // value={address}
                       onChange={this.onChange}
                       required
                     />
                   </div>
                   <div className="col-md-3 form-control-comment" />
                 </div>
-         
               </section>
               <footer className="form-footer clearfix">
                 <input type="hidden" name="submitCreate" defaultValue={1} />
@@ -347,9 +361,9 @@ class Container extends Component {
           </a>
         </section>
       </div>
-      
     );
   }
 }
 
+// export component
 export default Container;

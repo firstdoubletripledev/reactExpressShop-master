@@ -1,20 +1,29 @@
+// import Col, Layout, Row component from antd
 import { Col, Layout, Row } from 'antd';
+
+// import React module from react for JSX
 import React from 'react';
 
+// import RegisterForm component
 import RegisterForm from '../forms/RegisterForm';
+
+// import HeaderNav component
 import { HeaderNav } from '../navigations/Header/HeaderNav.jsx';
+
+// import TopTitle component
 import { TopTitle } from '../navigations/Header/TopTitle.jsx';
+
+// import themeLogo image
 import themeLogo from '../navigations/theme-logo.jpg';
 
-// import MenuNav from '../navigations/MenuNav.jsx';
+// create Content, Footer from Layout
 const { Content, Footer } = Layout;
-//Home page
-//cart page
-//cagory page
-//checkout page
-//detail product page
-//dash board page
 
+/**
+ *
+ *
+ * @returns
+ */
 const RegisterPage = () => {
   return (
     <Layout className="layout">
@@ -38,4 +47,5 @@ const RegisterPage = () => {
   );
 };
 
+// export component
 export default RegisterPage;

@@ -1,18 +1,41 @@
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
 
+/**
+ *
+ *
+ * @class NavPagination
+ * @extends {PureComponent}
+ */
 class NavPagination extends PureComponent {
+  /**
+   *
+   *
+   * @memberof NavPagination
+   */
   state = {
     isFist: true,
     isLast: true,
     current: 1,
     pages: 1,
   };
+
+  /**
+   *
+   *
+   */
   componentDidMount = () => {
     const { current } = this.props;
 
     this.checkPage(Number(current));
   };
 
+  /**
+   *
+   *
+   * @param {*} nextProps
+   * @memberof NavPagination
+   */
   componentWillReceiveProps(nextProps) {
     // You don't have to do this check first, but it can help prevent an unneeded render
     if (nextProps.current !== this.state.current) {
@@ -24,6 +47,11 @@ class NavPagination extends PureComponent {
     }
   }
 
+  /**
+   *
+   *
+   * @param {*} current
+   */
   checkPage = current => {
     const { pages } = this.state;
     let isFist = true;
@@ -42,6 +70,14 @@ class NavPagination extends PureComponent {
     });
   };
 
+  /**
+   *
+   *
+   * @param {*} current
+   * @param {*} pages
+   * @param {*} getData
+   * @returns
+   */
   renderNumber = (current, pages, getData) => {
     let indents = [];
 
@@ -76,6 +112,12 @@ class NavPagination extends PureComponent {
     return indents;
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof NavPagination
+   */
   render() {
     const { getData } = this.props;
     const { current, pages, isFist, isLast } = this.state;
@@ -130,4 +172,6 @@ class NavPagination extends PureComponent {
     );
   }
 }
+
+// export component
 export { NavPagination };

@@ -1,5 +1,13 @@
+// import React module from react for JSX
 import React from 'react';
 
+/**
+ *
+ *
+ * @export
+ * @param {*} { filterByClearAll }
+ * @returns
+ */
 export function FilterBy({ filterByClearAll }) {
   return (
     <>

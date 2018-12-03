@@ -1,20 +1,44 @@
+// import custom css
 import 'slick-carousel/slick/slick-theme.css';
+
+// import custom css
 import 'slick-carousel/slick/slick.css';
 
+// import Button, Card component from antd
 import { Button, Card } from 'antd';
+
+// import React, PureComponent module from react for JSX
 import React, { PureComponent } from 'react';
+
+// import connect function from react-redux
 import { connect } from 'react-redux';
 
-//import { Session } from "inspector";
-
+// create Meta from card
 const { Meta } = Card;
 
+/**
+ *
+ *
+ * @class ItemCard
+ * @extends {PureComponent}
+ */
 class ItemCard extends PureComponent {
+  /**
+   *
+   *
+   * @memberof ItemCard
+   */
   addItemToCart() {
     var { dispatch } = this.props;
     dispatch({ type: 'Add_Item_To_Cart' });
   }
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof ItemCard
+   */
   render() {
     return (
       <Card
@@ -46,8 +70,15 @@ class ItemCard extends PureComponent {
   }
 }
 
-const ItemCardRedux = connect(function(state) {
+/**
+ *
+ *
+ * @param {*} state
+ * @returns
+ */
+const ItemCardRedux = connect(state => {
   return { SLItemCart: state.SLItemCart.state, isLogin: state.isLogin };
 })(ItemCard);
 
+// export component
 export default ItemCardRedux;

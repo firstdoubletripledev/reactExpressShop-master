@@ -1,3 +1,4 @@
+// import type redux
 import {
   ADD_ITEM_CART,
   DECREASE_ITEM_CART,
@@ -5,6 +6,13 @@ import {
   REMOVE_ITEM_CART,
 } from '../actions/types';
 
+/**
+ *
+ *
+ * @param {*} [Cart={}]
+ * @param {*} action
+ * @returns
+ */
 const CartReducer = (Cart = {}, action) => {
   switch (action.type) {
     case ADD_ITEM_CART: {

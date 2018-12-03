@@ -1,26 +1,60 @@
+// import custom css
 import 'slick-carousel/slick/slick-theme.css';
+
+// import custom css
 import 'slick-carousel/slick/slick.css';
 
+// import Col, Row component from antd
 import { Col, Row } from 'antd';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
+
+// import Slider module from react-slick
 import Slider from 'react-slick';
 
+// import ItemCard component
 import ItemCard from '../Items/ItemCard';
 
-// const { Meta } = Card;
-
+/**
+ *
+ *
+ * @class MultipleItems
+ * @extends {PureComponent}
+ */
 class MultipleItems extends PureComponent {
+  /**
+   *Creates an instance of MultipleItems.
+   * @param {*} props
+   * @memberof MultipleItems
+   */
   constructor(props) {
     super(props);
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
   }
+  /**
+   *
+   *
+   * @memberof MultipleItems
+   */
   next() {
     this.slider.slickNext();
   }
+  /**
+   *
+   *
+   * @memberof MultipleItems
+   */
   previous() {
     this.slider.slickPrev();
   }
+  /**
+   *
+   *
+   * @returns
+   * @memberof MultipleItems
+   */
   render() {
     const settings = {
       dots: false,
@@ -73,4 +107,5 @@ class MultipleItems extends PureComponent {
   }
 }
 
+// export component
 export default MultipleItems;

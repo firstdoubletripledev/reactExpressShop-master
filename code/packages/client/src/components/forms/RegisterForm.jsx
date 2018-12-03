@@ -1,20 +1,45 @@
+// import Button, Checkbox, Form, Input component from antd
 import { Button, Checkbox, Form, Input } from 'antd';
+
+// import Axios module from axios for Promise based HTTP request
 import Axios from 'axios';
+
+// import React module from react for JSX
 import React from 'react';
+
+// import connect function from react-redux
 import { connect } from 'react-redux';
+
+// import Route module from react-router-dom for router in react
 import { withRouter } from 'react-router-dom';
+
+// import error, success message module
 import { errorMessage, successMessage } from '../pages/utils/Message';
 
+// create FormItem
 const FormItem = Form.Item;
-// const Option = Select.Option;
-// const AutoCompleteOption = AutoComplete.Option;
 
+/**
+ *
+ *
+ * @class RegistrationForm
+ * @extends {React.PureComponent}
+ */
 class RegistrationForm extends React.PureComponent {
+  /**
+   *
+   *
+   * @memberof RegistrationForm
+   */
   state = {
     confirmDirty: false,
     autoCompleteResult: [],
   };
 
+  /**
+   *
+   *
+   */
   componentDidMount = () => {
     const { isLogin = false } = this.props;
     if (isLogin !== false) {
@@ -23,6 +48,11 @@ class RegistrationForm extends React.PureComponent {
     }
   };
 
+  /**
+   *
+   *
+   * @param {*} e
+   */
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll(async (err, values) => {
@@ -57,11 +87,23 @@ class RegistrationForm extends React.PureComponent {
     });
   };
 
+  /**
+   *
+   *
+   * @param {*} e
+   */
   handleConfirmBlur = e => {
     const value = e.target.value;
     this.setState({ confirmDirty: this.state.confirmDirty || !!value });
   };
 
+  /**
+   *
+   *
+   * @param {*} rule
+   * @param {*} value
+   * @param {*} callback
+   */
   compareToFirstPassword = (rule, value, callback) => {
     const form = this.props.form;
     if (value && value !== form.getFieldValue('password')) {
@@ -71,6 +113,14 @@ class RegistrationForm extends React.PureComponent {
     }
   };
 
+  /**
+   *
+   *
+   * @param {*} rule
+   * @param {*} value
+   * @param {*} callback
+   * @returns
+   */
   validateToNextPassword = (rule, value, callback) => {
     const form = this.props.form;
     if (value && this.state.confirmDirty) {
@@ -95,6 +145,11 @@ class RegistrationForm extends React.PureComponent {
     return callback();
   };
 
+  /**
+   *
+   *
+   * @param {*} value
+   */
   handleWebsiteChange = value => {
     let autoCompleteResult;
     if (!value) {
@@ -107,6 +162,12 @@ class RegistrationForm extends React.PureComponent {
     this.setState({ autoCompleteResult });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof RegistrationForm
+   */
   render() {
     const { getFieldDecorator } = this.props.form;
     // const { autoCompleteResult } = this.state;
@@ -133,10 +194,6 @@ class RegistrationForm extends React.PureComponent {
         },
       },
     };
-
-    // const websiteOptions = autoCompleteResult.map(website => (
-    //   <AutoCompleteOption key={website}>{website}</AutoCompleteOption>
-    // ));
 
     return (
       <Form onSubmit={this.handleSubmit}>
@@ -213,10 +270,17 @@ class RegistrationForm extends React.PureComponent {
   }
 }
 
+// Wrapped component to antd function
 const WrappedRegistrationForm = Form.create()(RegistrationForm);
 
+/**
+ *
+ *
+ * @param {*} { isLogin }
+ */
 const mapStateToProps = ({ isLogin }) => ({
   isLogin,
 });
 
+// export component
 export default withRouter(connect(mapStateToProps)(WrappedRegistrationForm));

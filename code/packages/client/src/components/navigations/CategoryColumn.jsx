@@ -1,9 +1,18 @@
+// import Icon, Menu component from antd
 import { Icon, Menu } from 'antd';
+
+// import React module from react for JSX
 import React from 'react';
 
+// import MenuItemGroup, SubMenu component
 import { MenuItemGroup, SubMenu } from './MenuNav';
 
-export function CategoryColumn() {
+/**
+ *
+ *
+ * @returns
+ */
+function CategoryColumn() {
   return (
     <SubMenu
       title={
@@ -28,3 +37,6 @@ export function CategoryColumn() {
     </SubMenu>
   );
 }
+
+// export component
+export { CategoryColumn };

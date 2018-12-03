@@ -1,14 +1,31 @@
+// import custom css
 import 'slick-carousel/slick/slick-theme.css';
+
+// import custom css
 import 'slick-carousel/slick/slick.css';
 
+// import Button, Card component from antd
 import { Col, Row } from 'antd';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
 
+// import ItemCard component
 import ItemCard from '../Items/ItemCard';
 
-// const { Meta } = Card;
-
+/**
+ *
+ *
+ * @class MultipleItems
+ * @extends {PureComponent}
+ */
 class MultipleItems extends PureComponent {
+  /**
+   *
+   *
+   * @returns
+   * @memberof MultipleItems
+   */
   render() {
     var dataItem = [
       { id: 1, imagePath: 'images/example-slide-1.jpg' },
@@ -40,4 +57,5 @@ class MultipleItems extends PureComponent {
   }
 }
 
+// export component
 export default MultipleItems;

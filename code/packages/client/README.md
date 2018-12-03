@@ -388,7 +388,8 @@ For example:
 ### `Button.js`
 
 ```js
-import React, { Component } from 'react';
+// import React module from react for JSX 
+ import React, { Component } from 'react';
 
 class Button extends Component {
   render() {
@@ -403,7 +404,8 @@ export default Button; // Don’t forget to use export default!
 
 
 ```js
-import React, { Component } from 'react';
+// import React module from react for JSX 
+ import React, { Component } from 'react';
 import Button from './Button'; // Import a component from another file
 
 class DangerButton extends Component {
@@ -445,7 +447,8 @@ export { moduleA };
 ### `App.js`
 
 ```js
-import React, { Component } from 'react';
+// import React module from react for JSX 
+ import React, { Component } from 'react';
 
 class App extends Component {
   handleClick = () => {
@@ -495,7 +498,8 @@ This project setup uses [Webpack](https://webpack.js.org/) for handling all asse
 ### `Button.js`
 
 ```js
-import React, { Component } from 'react';
+// import React module from react for JSX 
+ import React, { Component } from 'react';
 import './Button.css'; // Tell Webpack that Button.js uses these styles
 
 class Button extends Component {
@@ -650,7 +654,8 @@ To reduce the number of requests to the server, importing images that are less t
 Here is an example:
 
 ```js
-import React from 'react';
+// import React module from react for JSX 
+ import React from 'react';
 import logo from './logo.png'; // Tell Webpack this JS file uses this image
 
 console.log(logo); // /logo.84287d09.png
@@ -1330,8 +1335,10 @@ There is a broad spectrum of component testing techniques. They range from a “
 Different projects choose different testing tradeoffs based on how often components change, and how much logic they contain. If you haven’t decided on a testing strategy yet, we recommend that you start with creating simple smoke tests for your components:
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom';
+// import React module from react for JSX 
+ import React from 'react';
+// import React module from react for JSX 
+ import ReactDOM from 'react-dom';
 import App from './App';
 
 it('renders without crashing', () => {
@@ -1373,7 +1380,8 @@ configure({ adapter: new Adapter() });
 Now you can write a smoke test with it:
 
 ```js
-import React from 'react';
+// import React module from react for JSX 
+ import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
 
@@ -1389,7 +1397,8 @@ You can read the [Enzyme documentation](http://airbnb.io/enzyme/) for more testi
 Here is an example from Enzyme documentation that asserts specific output, rewritten to use Jest matchers:
 
 ```js
-import React from 'react';
+// import React module from react for JSX 
+ import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
 
@@ -1458,7 +1467,8 @@ import 'jest-dom/extend-expect';
 Here's an example of using `react-testing-library` and `jest-dom` for testing that the `<App />` component renders "Welcome to React".
 
 ```js
-import React from 'react';
+// import React module from react for JSX 
+ import React from 'react';
 import { render } from 'react-testing-library';
 import App from './App';
 

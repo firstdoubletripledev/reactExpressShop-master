@@ -1,16 +1,36 @@
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
 
+/**
+ *
+ *
+ * @class AddToCard
+ * @extends {PureComponent}
+ */
 class AddToCard extends PureComponent {
+  /**
+   *
+   *
+   * @memberof AddToCard
+   */
   state = {
     quantity: 1,
   };
 
+  /**
+   *
+   *
+   */
   plusOne = () => {
     const { quantity: preQuantity } = this.state;
     this.setState({
       quantity: preQuantity + 1,
     });
   };
+  /**
+   *
+   *
+   */
   minusOne = () => {
     const { quantity: preQuantity } = this.state;
     if (preQuantity > 1) {
@@ -20,6 +40,12 @@ class AddToCard extends PureComponent {
     }
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof AddToCard
+   */
   render() {
     const { quantity = 1 } = this.state;
     return (
@@ -91,4 +117,5 @@ class AddToCard extends PureComponent {
   }
 }
 
+// export component
 export { AddToCard };

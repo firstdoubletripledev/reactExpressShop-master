@@ -1,7 +1,10 @@
+// import Menu component from antd
 import { Menu } from 'antd';
+
+// import React module from react for JSX
 import React from 'react';
 
-export function LogoColumn() {
+function LogoColumn() {
   return (
     <Menu.Item style={{}}>
       <a href="/">
@@ -10,3 +13,6 @@ export function LogoColumn() {
     </Menu.Item>
   );
 }
+
+// export component
+export { LogoColumn };

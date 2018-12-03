@@ -1,9 +1,24 @@
+// import Icon component from antd
 import { Icon } from 'antd';
+
+// import Axios module from axios for Promise based HTTP request
 import Axios from 'axios';
+
+// import React module from react for JSX
 import React from 'react';
+
+// import connect function from react-redux
 import { connect } from 'react-redux';
+
+// import Route module from react-router-dom for router in react
 import { Link } from 'react-router-dom';
 
+/**
+ *
+ *
+ * @param {*} { themeLogo, isLogin, LoginData = {} }
+ * @returns
+ */
 function HeaderNavContent({ themeLogo, isLogin, LoginData = {} }) {
   return (
     <div className="wrapper it_TUJDRTYXJALO header-nav container">
@@ -95,10 +110,16 @@ function HeaderNavContent({ themeLogo, isLogin, LoginData = {} }) {
   );
 }
 
+/**
+ *
+ *
+ * @param {*} { isLogin, LoginData }
+ */
 const mapStateToProps = ({ isLogin, LoginData }) => ({
   isLogin,
   LoginData,
 });
 const HeaderNav = connect(mapStateToProps)(HeaderNavContent);
 
+// export component
 export { HeaderNav };

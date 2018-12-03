@@ -1,7 +1,10 @@
+// import React module from react for JSX
 import React from 'react';
+
+// import Route module from react-router-dom for router in react
 import { Link } from 'react-router-dom';
 
-export function CustomModule() {
+function CustomModule() {
   return (
     <div className="row it_HBPBUKUHBVOG ">
       <div className="it_CZXAKZLEPVEY col-12">
@@ -62,3 +65,6 @@ export function CustomModule() {
     </div>
   );
 }
+
+// export component
+export { CustomModule };

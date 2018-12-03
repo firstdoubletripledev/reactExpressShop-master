@@ -1,13 +1,28 @@
-// import { PopularProducts } from "./PopularProducts";
+// import React module from react for JSX
 import React from 'react';
 
+// import Breadcrumb component
 import { Breadcrumb } from './Breadcrumb';
+
+// import CustomModule component
 import { CustomModule } from './CustomModule';
+
+// import SubmitNews component
 import { SubmitNews } from './SubmitNews';
+
+// import TopColumn component
 import { TopColumn } from './TopColumn';
+
+// import UniqueCompoent component
 import { UniqueCompoent } from './UniqueCompoent';
 
-export function Content({ history }) {
+/**
+ *
+ *
+ * @param {*} { history }
+ * @returns
+ */
+function Content({ history }) {
   return (
     <section id="wrapper">
       <Breadcrumb />
@@ -15,7 +30,6 @@ export function Content({ history }) {
         <section id="main">
           <TopColumn history={history} />
           <section id="content" className="page-home">
-            {/* <PopularProducts /> */}
             <CustomModule />
             <UniqueCompoent />
             <SubmitNews />
@@ -26,3 +40,6 @@ export function Content({ history }) {
     </section>
   );
 }
+
+// export component
+export { Content };

@@ -1,8 +1,18 @@
+// import React module from react for JSX
 import React from 'react';
 
+// import l10nUSD function
 import { l10nUSD } from '../../../l10nUSD';
+
+// import AddToCard component
 import { AddToCard } from './AddToCard';
 
+/**
+ *
+ *
+ * @param {*} { product: { category = [] } = {}, product = {} }
+ * @returns
+ */
 const ContentItem = ({ product: { category = [] } = {}, product = {} }) => {
   return (
     <>
@@ -119,4 +129,5 @@ const ContentItem = ({ product: { category = [] } = {}, product = {} }) => {
   );
 };
 
+// export component
 export { ContentItem };

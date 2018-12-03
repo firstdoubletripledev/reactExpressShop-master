@@ -1,17 +1,23 @@
+// import Layout component from antd
 import { Layout } from 'antd';
+
+// import React module from react for JSX
 import React from 'react';
 
+// import MenuNav component
 import MenuNav from '../navigations/MenuNav.jsx';
+
+// import CartTable component
 import CartTable from '../tables/CartTable';
 
+// create Content, Footer from Layout
 const { Content, Footer } = Layout;
-//Home page
-//cart page
-//cagory page
-//checkout page
-//detail product page
-//dash board page
 
+/**
+ *
+ *
+ * @returns
+ */
 const CartPage = () => {
   return (
     <Layout className="layout">
@@ -27,4 +33,5 @@ const CartPage = () => {
   );
 };
 
+// export component
 export default CartPage;

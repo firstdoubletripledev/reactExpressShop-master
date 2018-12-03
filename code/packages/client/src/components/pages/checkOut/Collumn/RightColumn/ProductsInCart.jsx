@@ -1,6 +1,13 @@
+// import React module from react for JSX
 import React from 'react';
 
-export function ProductsInCart({ products = [] }) {
+/**
+ *
+ *
+ * @param {*} { products = [] }
+ * @returns
+ */
+function ProductsInCart({ products = [] }) {
   return products.map((data, index) => {
     return (
       <li key={index} className="media">
@@ -30,3 +37,6 @@ export function ProductsInCart({ products = [] }) {
     );
   });
 }
+
+// export component
+export { ProductsInCart };

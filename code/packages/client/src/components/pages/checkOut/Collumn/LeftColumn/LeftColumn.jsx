@@ -1,8 +1,23 @@
-import axios from 'axios';
+// import Axios module from axios for Promise based HTTP request
+import Axios from 'axios';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
+
+// import successMessage module
 import { successMessage } from '../../../utils/Message';
 
+/**
+ *
+ *
+ * @class LeftColumn
+ * @extends {PureComponent}
+ */
 class LeftColumn extends PureComponent {
+  /**
+   *Creates an instance of LeftColumn.
+   * @memberof LeftColumn
+   */
   constructor() {
     super();
     this.state = {
@@ -13,20 +28,29 @@ class LeftColumn extends PureComponent {
       phoneNumberShip: '',
     };
   }
-  // state = {
-  //   user: "",
-  //   firstName: "",
-  //   lastName: "",
-  //   addressShip: "",
-  //   phoneNumberShip: ""
-  // };
+
+  /**
+   *
+   *
+   */
   componentDidMount = async () => {};
+
+  /**
+   *
+   *
+   * @param {*} e
+   */
   onChange = e => {
     const state = this.state;
     state[e.target.name] = e.target.value;
     this.setState(state);
   };
 
+  /**
+   *
+   *
+   * @param {*} e
+   */
   onSubmit = e => {
     e.preventDefault();
 
@@ -38,14 +62,13 @@ class LeftColumn extends PureComponent {
       phoneNumberShip,
     } = this.state;
 
-    axios
-      .post('/api/orders', {
-        user,
-        firstName,
-        lastName,
-        addressShip,
-        phoneNumberShip,
-      })
+    Axios.post('/api/orders', {
+      user,
+      firstName,
+      lastName,
+      addressShip,
+      phoneNumberShip,
+    })
       .then(result => {
         successMessage('đặt hàng thành công');
       })
@@ -54,6 +77,12 @@ class LeftColumn extends PureComponent {
       });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof LeftColumn
+   */
   render() {
     const { firstName, lastName, addressShip, phoneNumberShip } = this.state;
     return (
@@ -174,4 +203,5 @@ class LeftColumn extends PureComponent {
   }
 }
 
+// export component
 export default LeftColumn;

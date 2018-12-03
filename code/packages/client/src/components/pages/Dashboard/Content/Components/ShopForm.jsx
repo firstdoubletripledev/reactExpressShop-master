@@ -1,3 +1,4 @@
+// import Button, Form, Icon, InputNumber, Radio, Rate, Select, Slider, Switch, Upload component from antd
 import {
   Button,
   Form,
@@ -10,14 +11,34 @@ import {
   Switch,
   Upload,
 } from 'antd';
+
+// import React module from react for JSX
 import React from 'react';
 
+// create new FormItem from form
 const FormItem = Form.Item;
+
+// create Option from Select
 const Option = Select.Option;
+
+// create RadioButton from Radio
 const RadioButton = Radio.Button;
+
+// create RadioGroup from Radio
 const RadioGroup = Radio.Group;
 
+/**
+ *
+ *
+ * @class ShopFormWap
+ * @extends {React.PureComponent}
+ */
 class ShopFormWap extends React.PureComponent {
+  /**
+   *
+   *
+   * @param {*} e
+   */
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -27,6 +48,12 @@ class ShopFormWap extends React.PureComponent {
     });
   };
 
+  /**
+   *
+   *
+   * @param {*} e
+   * @returns
+   */
   normFile = e => {
     console.log('Upload event:', e);
     if (Array.isArray(e)) {
@@ -35,6 +62,12 @@ class ShopFormWap extends React.PureComponent {
     return e && e.fileList;
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof ShopFormWap
+   */
   render() {
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
@@ -173,6 +206,8 @@ class ShopFormWap extends React.PureComponent {
   }
 }
 
+// create new form by antd
 const ShopForm = Form.create()(ShopFormWap);
 
+// export component
 export { ShopForm };

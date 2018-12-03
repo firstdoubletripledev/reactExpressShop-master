@@ -1,9 +1,25 @@
+// import custom css
 import '../carousel.css';
 
+// import Carousel component from antd
 import { Carousel } from 'antd';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
 
+/**
+ *
+ *
+ * @class CaroselMain
+ * @extends {PureComponent}
+ */
 class CaroselMain extends PureComponent {
+  /**
+   *
+   *
+   * @returns
+   * @memberof CaroselMain
+   */
   render() {
     return (
       <Carousel autoplay speed="800" style={{ border: '1px solid #e8e8e8' }}>
@@ -40,4 +56,5 @@ class CaroselMain extends PureComponent {
   }
 }
 
+// export component
 export default CaroselMain;

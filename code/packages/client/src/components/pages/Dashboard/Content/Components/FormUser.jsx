@@ -1,17 +1,40 @@
+// import Form, Icon, Input, Button, Radio component from antd
 import { Form, Icon, Input, Button, Radio } from 'antd';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
+
+// import Axios module from axios for Promise based HTTP request
 import Axios from 'axios';
+
+// import successMessage, errorMessage module
 import { successMessage, errorMessage } from '../../../utils/Message';
 
+// create FormItem from Form
 const FormItem = Form.Item;
 
+// create RadioButton from Radio
 const RadioButton = Radio.Button;
+
+// create RadioGroup from Radio
 const RadioGroup = Radio.Group;
 
+/**
+ *
+ *
+ * @param {*} fieldsError
+ * @returns
+ */
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some(field => fieldsError[field]);
 }
 
+/**
+ *
+ *
+ * @param {*} value
+ * @returns
+ */
 function checkRequiredInput(value) {
   switch (value) {
     case 'email':
@@ -33,12 +56,28 @@ function checkRequiredInput(value) {
   }
 }
 
+/**
+ *
+ *
+ * @class FormAdd
+ * @extends {PureComponent}
+ */
 class FormAdd extends PureComponent {
+  /**
+   *
+   *
+   * @memberof FormAdd
+   */
   componentDidMount() {
     // To disabled submit button at the beginning.
     this.props.form.validateFields();
   }
 
+  /**
+   *
+   *
+   * @param {*} e
+   */
   handleSubmit = e => {
     try {
       e.preventDefault();
@@ -96,6 +135,12 @@ class FormAdd extends PureComponent {
     }
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof FormAdd
+   */
   render() {
     const {
       getFieldDecorator,
@@ -197,6 +242,8 @@ class FormAdd extends PureComponent {
   }
 }
 
+// Create Form using Form function antd
 const FormUser = Form.create()(FormAdd);
 
+// export component
 export { FormUser };

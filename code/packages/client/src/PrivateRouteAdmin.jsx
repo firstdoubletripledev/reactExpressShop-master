@@ -1,17 +1,40 @@
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
+
+// import Route module from react-router-dom for router in react
 import { Redirect, Route } from 'react-router-dom';
 
+// import get Auth function
 import getAuth from './components/getAuth';
+
+// import Loading Compoment
 import LoadingCompoment from './components/LoadingCompoment';
+
+// import warning Message module
 import { warningMessage } from './components/pages/utils/Message';
 
-// import { connect } from 'react-redux';
+/**
+ *
+ *
+ * @class PrivateRouteAdmin
+ * @extends {PureComponent}
+ */
 class PrivateRouteAdmin extends PureComponent {
+  /**
+   *
+   *
+   * @memberof PrivateRouteAdmin
+   */
   state = {
     loading: true,
     isAuth: false,
   };
 
+  /**
+   *
+   *
+   * @memberof PrivateRouteAdmin
+   */
   componentDidMount() {
     getAuth().then(data => {
       this.setState({
@@ -21,6 +44,12 @@ class PrivateRouteAdmin extends PureComponent {
     });
   }
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof PrivateRouteAdmin
+   */
   render() {
     const { component: Component = null, ...rest } = this.props;
     // const { isLogin = null } = rest;
@@ -53,9 +82,5 @@ class PrivateRouteAdmin extends PureComponent {
   }
 }
 
-// const mapStateToProps = ({ isLogin }) => ({
-//   isLogin,
-// });
-
-// export default connect(mapStateToProps)(PrivateRouteAdmin);
+// Export Component
 export default PrivateRouteAdmin;

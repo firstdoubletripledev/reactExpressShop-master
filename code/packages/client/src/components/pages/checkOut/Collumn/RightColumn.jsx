@@ -1,6 +1,11 @@
+// import React module from react for JSX
 import React from 'react';
 
-export const RightColumn = () => (
+/**
+ *
+ *
+ */
+const RightColumn = () => (
   <div className="col-md-4">
     <section
       id="js-checkout-summary"
@@ -72,3 +77,5 @@ export const RightColumn = () => (
     </section>
   </div>
 );
+
+export { RightColumn };

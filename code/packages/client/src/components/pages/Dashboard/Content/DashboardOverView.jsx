@@ -1,9 +1,19 @@
+// import Card, Col, Row component from antd
 import { Card, Col, Row } from 'antd';
+
+// import React module from react for JSX
 import React from 'react';
 
+// import NumberCard component
 import NumberCard from './Components/NumberCard';
+
+// import Quote component
 import Quote from './Components/Quote';
+
+// import SaleChart component
 import SaleChart from './Components/SaleChart';
+
+// import SimpleRadialBarChart component
 import SimpleRadialBarChart from './Components/SimpleRadialBarChart';
 
 const item1 = {
@@ -41,7 +51,11 @@ const item4 = {
   countUp: {},
 };
 
-export const DashboardOverView = () => (
+/**
+ *
+ *
+ */
+const DashboardOverView = () => (
   <div>
     <Row gutter={24}>
       <Col key="NumberCard1" lg={6} md={12}>
@@ -104,3 +118,6 @@ export const DashboardOverView = () => (
     </Row>
   </div>
 );
+
+// export component
+export { DashboardOverView };

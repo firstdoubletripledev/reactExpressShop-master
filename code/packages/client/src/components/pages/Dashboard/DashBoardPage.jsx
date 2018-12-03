@@ -1,8 +1,16 @@
+// import Icon, Layout, Menu component from antd
 import { Icon, Layout, Menu } from 'antd';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
+
+// import Route module from react-router-dom for router in react
 import { Link, Redirect } from 'react-router-dom';
 
+// import themeLogo image
 import themeLogo from '../../navigations/theme-logo.jpg';
+
+// import DashboardOverView, ItemContent, OrderContent, ShopContent, UserContent component
 import {
   DashboardOverView,
   ItemContent,
@@ -11,23 +19,50 @@ import {
   UserContent,
 } from './Content';
 
+// create Header, Sider, Content from layout
 const { Header, Sider, Content } = Layout;
 
+/**
+ *
+ *
+ * @class DashBoardPage
+ * @extends {PureComponent}
+ */
 class DashBoardPage extends PureComponent {
+  /**
+   *
+   *
+   * @memberof DashBoardPage
+   */
   state = {
     collapsed: false,
     menu: 1,
   };
+  /**
+   *
+   *
+   */
   toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed,
     });
   };
+  /**
+   *
+   *
+   * @param {*} data
+   */
   onClickMenuItem = async data => {
     await this.setState({
       menu: data,
     });
   };
+  /**
+   *
+   *
+   * @returns
+   * @memberof DashBoardPage
+   */
   render() {
     if (this.state.menu === 0) {
       return <Redirect push to="/" />;
@@ -134,4 +169,6 @@ class DashBoardPage extends PureComponent {
     );
   }
 }
+
+// export component
 export default DashBoardPage;

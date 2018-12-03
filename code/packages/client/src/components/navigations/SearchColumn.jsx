@@ -1,9 +1,18 @@
+// import Button, Form, Icon, Input, Menu component from antd
 import { Button, Form, Icon, Input, Menu } from 'antd';
+
+// import React module from react for JSX
 import React from 'react';
 
+// import FormItem compponent
 import { FormItem } from './MenuNav';
 
-export function SearchColumn() {
+/**
+ *
+ *
+ * @returns
+ */
+function SearchColumn() {
   return (
     <Menu.Item>
       <Form layout="inline" style={{ marginBottom: '3px' }}>
@@ -22,3 +31,6 @@ export function SearchColumn() {
     </Menu.Item>
   );
 }
+
+// export component
+export { SearchColumn };

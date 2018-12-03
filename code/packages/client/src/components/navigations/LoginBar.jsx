@@ -1,7 +1,15 @@
+// import Menu component from antd
 import { Menu } from 'antd';
+
+// import React module from react for JSX
 import React from 'react';
 
-export function LoginBar() {
+/**
+ *
+ *
+ * @returns
+ */
+function LoginBar() {
   return (
     <>
       <Menu.Item>
@@ -13,3 +21,6 @@ export function LoginBar() {
     </>
   );
 }
+
+// export component
+export { LoginBar };

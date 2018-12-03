@@ -1,28 +1,62 @@
+// import Form, Icon, Menu component from antd
 import { Form, Icon, Menu } from 'antd';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
+
+// import connect function from react-redux
 import { connect } from 'react-redux';
 
+// import CategoryColumn component
 import { CategoryColumn } from './CategoryColumn';
+
+// import ContactsColumn component
 import { ContactsColumn } from './ContactsColumn';
+
+// import DashboardBar component
 import { DashboardBar } from './DashboardBar';
+
+// import HomeColumn component
 import { HomeColumn } from './HomeColumn';
+
+// import LogoColumn component
 import { LogoColumn } from './LogoColumn';
+
+// import SearchColumn component
 import { SearchColumn } from './SearchColumn';
 
-// import { LoginBar } from "./LoginBar";
+// create and export SubMenu from Menu
 export const SubMenu = Menu.SubMenu;
+
+// create and export MenuItemGroup from Menu
 export const MenuItemGroup = Menu.ItemGroup;
+
+// create and export FormItem from Menu
 export const FormItem = Form.Item;
 
+/**
+ *
+ *
+ * @class MenuNav
+ * @extends {PureComponent}
+ */
 class MenuNav extends PureComponent {
-  //may cai key xem lai trong antd
-
+  /**
+   *
+   *
+   */
   componentDidMount = () => {
     var sl = 5;
     var { dispatch } = this.props;
     dispatch({ type: 'Get_SLItem_In_Session', item: sl });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof MenuNav
+   */
   render() {
     const { isLogin } = this.props;
     return (
@@ -67,8 +101,16 @@ class MenuNav extends PureComponent {
     );
   }
 }
+
+/**
+ *
+ *
+ * @param {*} state
+ * @returns
+ */
 const MenuNavRedux = connect(function(state) {
   return { SLItemCart: state.SLItemCart, isLogin: state.isLogin };
 })(MenuNav);
 
+// export component
 export default MenuNavRedux;

@@ -1,7 +1,15 @@
+// import React module from react for JSX
 import React from 'react';
+
+// import Route module from react-router-dom for router in react
 import { Link } from 'react-router-dom';
 
-export function TopLevelMenu() {
+/**
+ *
+ *
+ * @returns
+ */
+function TopLevelMenu() {
   return (
     <ul className="menu clearfix top-level-menu tmmegamenu_item sf-js-enabled sf-arrows">
       <li className="top-level-menu-li tmmegamenu_item it_30664364">
@@ -28,3 +36,6 @@ export function TopLevelMenu() {
     </ul>
   );
 }
+
+// export component
+export { TopLevelMenu };

@@ -1,15 +1,38 @@
+// import Button, Checkbox, Col, Form, Icon, Input, Row component from antd
 import { Button, Checkbox, Col, Form, Icon, Input, Row } from 'antd';
+
+// import Axios module from axios for Promise based HTTP request
 import Axios from 'axios';
+
+// import React module from react for JSX
 import React from 'react';
+
+// import connect function from react-redux
 import { connect } from 'react-redux';
+
+// import Route module from react-router-dom for router in react
 import { Link, withRouter } from 'react-router-dom';
 
+// import redux action
 import isLoginAction from '../../reduxx/actions/isLoginAction';
+
+// import error message module
 import { errorMessage } from '../pages/utils/Message';
 
+// create FormItem
 const FormItem = Form.Item;
 
+/**
+ *
+ *
+ * @class NormalLoginForm
+ * @extends {React.PureComponent}
+ */
 class NormalLoginForm extends React.PureComponent {
+  /**
+   *
+   *
+   */
   componentDidMount = () => {
     const { isLogin = false } = this.props;
     if (isLogin !== false) {
@@ -18,6 +41,11 @@ class NormalLoginForm extends React.PureComponent {
     }
   };
 
+  /**
+   *
+   *
+   * @param {*} e
+   */
   handleSubmit = async e => {
     e.preventDefault();
     this.props.form.validateFields(async (err, values) => {
@@ -62,6 +90,12 @@ class NormalLoginForm extends React.PureComponent {
     });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof NormalLoginForm
+   */
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
@@ -117,10 +151,17 @@ class NormalLoginForm extends React.PureComponent {
   }
 }
 
+// Wrapped component to antd function
 const WrappedNormalLoginForm = Form.create()(NormalLoginForm);
 
+/**
+ *
+ *
+ * @param {*} { isLogin }
+ */
 const mapStateToProps = ({ isLogin }) => ({
   isLogin,
 });
 
+// export component
 export default withRouter(connect(mapStateToProps)(WrappedNormalLoginForm));

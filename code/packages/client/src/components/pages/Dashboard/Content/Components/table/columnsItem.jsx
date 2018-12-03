@@ -1,7 +1,20 @@
+// import React module from react for JSX
 import React from 'react';
+
+// import Route module from react-router-dom for router in react
 import { Link } from 'react-router-dom';
+
+// import Popconfirm component from antd
 import { Popconfirm } from 'antd';
 
+/**
+ *
+ *
+ * @param {*} [onClickLink=() => null]
+ * @param {*} [handleDelete=() => null]
+ * @param {number} [dataSourceLength=0]
+ * @returns
+ */
 const columnsItem = (
   onClickLink = () => null,
   handleDelete = () => null,
@@ -95,6 +108,7 @@ const columnsItem = (
     },
   ];
 };
+
 const dataItem = [
   {
     _id: '1',
@@ -142,8 +156,17 @@ const dataItem = [
     price: 293,
   },
 ];
+
+/**
+ *
+ *
+ * @param {*} pagination
+ * @param {*} filters
+ * @param {*} sorter
+ */
 function onChangeItem(pagination, filters, sorter) {
   console.log('params', pagination, filters, sorter);
 }
 
+// export component
 export { columnsItem, dataItem, onChangeItem };

@@ -1,8 +1,16 @@
+// import React module from react for JSX
 import React from 'react';
 
+// import TopThreeCategory component
 import { TopThreeCategory } from './TopThreeCategory';
 
-export function TopColumn({ history }) {
+/**
+ *
+ *
+ * @param {*} { history }
+ * @returns
+ */
+function TopColumn({ history }) {
   return (
     <section id="top-column">
       <div className="row it_DPULEPFTQQIH ">
@@ -74,3 +82,6 @@ export function TopColumn({ history }) {
     </section>
   );
 }
+
+// export component
+export { TopColumn };

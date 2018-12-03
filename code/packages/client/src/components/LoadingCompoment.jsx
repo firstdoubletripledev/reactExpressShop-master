@@ -1,8 +1,15 @@
-import React from 'react';
+// import Icon component from antd
 import { Icon } from 'antd';
 
-/* import { Spin } from "antd"; */
+// import React module from react for JSX
+import React from 'react';
 
+/**
+ *
+ *
+ * @param {*} { isLoading, error }
+ * @returns
+ */
 const LoadingCompoment = ({ isLoading, error }) => {
   // Handle the loading state
   if (isLoading) {
@@ -31,4 +38,6 @@ const LoadingCompoment = ({ isLoading, error }) => {
     return null;
   }
 };
+
+// export component
 export default LoadingCompoment;

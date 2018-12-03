@@ -1,8 +1,21 @@
+// import React module from react for JSX
 import React from 'react';
+
+// import Route module from react-router-dom for router in react
 import { Link } from 'react-router-dom';
+
+// import Popconfirm component from antd
 import { Popconfirm } from 'antd';
 
-export const columnsUser = (
+export /**
+ *
+ *
+ * @param {*} [onClickLink=() => null]
+ * @param {*} [handleDelete=() => null]
+ * @param {number} [dataSourceLength=0]
+ * @returns
+ */
+const columnsUser = (
   onClickLink = () => null,
   handleDelete = () => null,
   dataSourceLength = 0
@@ -201,6 +214,14 @@ export const dataUser = [
   },
 ];
 
+/**
+ *
+ *
+ * @export
+ * @param {*} pagination
+ * @param {*} filters
+ * @param {*} sorter
+ */
 export function onChangeUser(pagination, filters, sorter) {
   console.log('params', pagination, filters, sorter);
 }

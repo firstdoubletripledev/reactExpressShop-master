@@ -1,4 +1,7 @@
+// import React module from react for JSX
 import React from 'react';
+
+// import CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, component from recharts
 import {
   CartesianGrid,
   Legend,
@@ -20,6 +23,11 @@ const data = [
   { name: '2019', Food: 3490, Clothes: 4300, Electronics: 2100 },
 ];
 
+/**
+ *
+ *
+ * @returns
+ */
 function SaleChart() {
   return (
     <ResponsiveContainer>
@@ -71,4 +79,5 @@ function SaleChart() {
   );
 }
 
+// export component
 export default SaleChart;

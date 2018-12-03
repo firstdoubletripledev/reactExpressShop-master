@@ -1,5 +1,11 @@
+// import React module from react for JSX
 import React from 'react';
 
+/**
+ *
+ *
+ * @returns
+ */
 const ModelItem = () => {
   return (
     <div className="modal-content">
@@ -439,4 +445,5 @@ const ModelItem = () => {
   );
 };
 
+// export component
 export default ModelItem;

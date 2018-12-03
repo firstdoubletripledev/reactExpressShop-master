@@ -1,10 +1,26 @@
+// import React module from react for JSX
 import React from 'react';
+
+// import Route module from react-router-dom for router in react
 import { Link } from 'react-router-dom';
 
+// import l10nUSD function
 import { l10nUSD } from '../../../../../l10nUSD';
 
-// var l10nEN = new Intl.NumberFormat("en-US")
-
+/**
+ *
+ *
+ * @export
+ * @param {*} {
+ *   pathImg: imageUrl = '',
+ *   galleryImage = [],
+ *   name = '',
+ *   discountPrice: newPrice = '',
+ *   price: regularPrice = '',
+ *   _id = null,
+ * }
+ * @returns
+ */
 export function ProductItem({
   pathImg: imageUrl = '',
   galleryImage = [],

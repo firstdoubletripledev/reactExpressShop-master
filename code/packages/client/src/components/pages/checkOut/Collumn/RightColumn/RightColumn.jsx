@@ -1,10 +1,29 @@
+// import $ module from jquery for style
 import $ from 'jquery';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
 
 import { ProductsInCart } from './ProductsInCart.jsx';
 
+/**
+ *
+ *
+ * @class RightColumn
+ * @extends {PureComponent}
+ */
 class RightColumn extends PureComponent {
+  /**
+   *
+   *
+   * @memberof RightColumn
+   */
   state = {};
+
+  /**
+   *
+   *
+   */
   componentDidMount = async () => {
     $('#showDetail').click(function() {
       $('#cart-summary-product-list').toggleClass(function() {
@@ -21,6 +40,12 @@ class RightColumn extends PureComponent {
     });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof RightColumn
+   */
   render() {
     return (
       <div className="col-md-4">
@@ -75,4 +100,5 @@ class RightColumn extends PureComponent {
   }
 }
 
+// export component
 export default RightColumn;

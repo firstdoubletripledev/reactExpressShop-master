@@ -1,8 +1,29 @@
+// import React module from react for JSX
 import React from 'react';
 
+// import AvailabilityFilter, Filter, FilterBy component
 import { AvailabilityFilter, Filter, FilterBy } from './SearchFilter';
+
+// import SearchFilterControler component
 import { SearchFilterControler } from './SearchFilterControler';
 
+/**
+ *
+ *
+ * @param {*} {
+ *   category: {
+ *     categoryColor = [],
+ *     categoryHeight = [],
+ *     categoryBrand = [],
+ *     Availability = {},
+ *   },
+ *   getDataByColor = () => null,
+ *   filterByClearAll = () => null,
+ *   filterByClick = () => null,
+ *   filterBy = '',
+ * }
+ * @returns
+ */
 const LeftColumn = ({
   category: {
     categoryColor = [],
@@ -80,4 +101,5 @@ const LeftColumn = ({
   );
 };
 
+// export component
 export { LeftColumn };

@@ -1,36 +1,75 @@
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
+
+// import connect function from react-redux for connect redux state
 import { connect } from 'react-redux';
 
+// import CartAction action from redux
 import CartAction from '../../../../../reduxx/actions/CartAction';
 
-//import axios from "axios";
+/**
+ *
+ *
+ * @class ProductsInCart
+ * @extends {PureComponent}
+ */
 class ProductsInCart extends PureComponent {
+  /**
+   *Creates an instance of ProductsInCart.
+   * @memberof ProductsInCart
+   */
   constructor() {
     super();
 
     this.state = {};
   }
+
+  /**
+   *
+   *
+   */
   componentDidMount = async () => {
     const { dispatch } = this.props;
     await dispatch(CartAction.getCartAction());
   };
 
+  /**
+   *
+   *
+   * @param {*} productId
+   */
   addItemCart = async productId => {
     const { dispatch } = this.props;
 
     await dispatch(CartAction.addItemCartAction(productId));
   };
+
+  /**
+   *
+   *
+   * @memberof ProductsInCart
+   */
   removeItemCart = async productId => {
     const { dispatch } = this.props;
-
     await dispatch(CartAction.removeItemCartAction(productId));
   };
 
+  /**
+   *
+   *
+   * @memberof ProductsInCart
+   */
   decreaseItemCart = async productId => {
     const { dispatch } = this.props;
     await dispatch(CartAction.decreaseItemCartAction(productId));
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof ProductsInCart
+   */
   render() {
     return this.props.products !== null
       ? this.props.products.map((data, index) => {
@@ -147,8 +186,16 @@ class ProductsInCart extends PureComponent {
       : null;
   }
 }
+
+/**
+ *
+ *
+ * @param {*} state
+ * @returns
+ */
 const ProductsInCartRedux = connect(function(state) {
   return { products: state.Cart.products || [] };
 })(ProductsInCart);
 
+// export component
 export default ProductsInCartRedux;

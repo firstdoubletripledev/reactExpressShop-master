@@ -1,5 +1,12 @@
+// import React module from react for JSX
 import React from 'react';
 
+/**
+ *
+ *
+ * @export
+ * @returns
+ */
 export function BrandFilter() {
   return (
     <section className="facet clearfix">

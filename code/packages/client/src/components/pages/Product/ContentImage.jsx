@@ -1,5 +1,18 @@
+// import React module from react for JSX
 import React from 'react';
 
+// import SocialSharing component
+import { SocialSharing } from './SocialSharing';
+
+/**
+ *
+ *
+ * @param {*} {
+ *   product: { galleryImage = [] } = {},
+ *   product = {},
+ * }
+ * @returns
+ */
 const ContentImage = ({
   product: { galleryImage = [] } = {},
   product = {},
@@ -77,65 +90,5 @@ const ContentImage = ({
   );
 };
 
+// export component
 export { ContentImage };
-const SocialSharing = ({ product = {} }) => {
-  return (
-    <div className="social-sharing">
-      <ul>
-        <li className="facebook">
-          <a
-            href={`http://www.facebook.com/sharer.php?u=http://localhost:3000/product/${
-              product._id
-            }#product-details`}
-            className="text-hide"
-            title="Share"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Share
-          </a>
-        </li>
-        <li className="twitter">
-          <a
-            href={`https://twitter.com/intent/tweet?text=Autumn Basket http://localhost:3000/product/${
-              product._id
-            }#product-details`}
-            className="text-hide"
-            title="Tweet"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tweet
-          </a>
-        </li>
-        <li className="googleplus">
-          <a
-            href={`https://plus.google.com/share?url=http://localhost:3000/product/${
-              product._id
-            }#product-details`}
-            className="text-hide"
-            title="Google+"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Google+
-          </a>
-        </li>
-        <li className="pinterest">
-          <a
-            href={`http://www.pinterest.com/pin/create/button/?media=${
-              product.pathImg
-            }&url=http://localhost:3000/product/${product._id}#product-details`}
-            className="text-hide"
-            title="Pinterest"
-            target="_blank"
-            data-pin-custom="true"
-            rel="noopener noreferrer"
-          >
-            Pinterest
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
-};

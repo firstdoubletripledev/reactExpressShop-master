@@ -1,12 +1,29 @@
+// import Button, Col, Input, Row, Table component from antd
 import { Button, Col, Input, Row, Table } from 'antd';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
 
-// import { connect } from "react-redux";
-
+/**
+ *
+ *
+ * @class CartTable
+ * @extends {PureComponent}
+ */
 class CartTable extends PureComponent {
+  /**
+   *
+   *
+   * @memberof CartTable
+   */
   state = {
     itemsInCart: [],
   };
+  /**
+   *
+   *
+   * @memberof CartTable
+   */
   componentDidMount() {
     //const res = await Axios.get("/api/books");
     /* const datasave =res.data.map(item => {
@@ -44,6 +61,12 @@ class CartTable extends PureComponent {
     this.setState({ itemsInCart: datasave });
   }
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof CartTable
+   */
   render() {
     const columns = [
       {
@@ -130,4 +153,5 @@ class CartTable extends PureComponent {
   }
 }
 
+// export component
 export default CartTable;

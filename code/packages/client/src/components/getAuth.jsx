@@ -1,9 +1,17 @@
+// import Axios module from axios for Promise based HTTP request
 import Axios from 'axios';
 
+// import redux action
 import { saveLoginDataAction } from '../reduxx/actions/isLoginAction';
+
+// import store from redux config
 import store from '../reduxx/storeConfig';
 
-// import { Subscribe } from "unstated";
+/**
+ *
+ *
+ * @returns
+ */
 async function getAuth() {
   const res = await Axios.get('/api/users/me', {
     headers: {
@@ -26,4 +34,5 @@ async function getAuth() {
   return code;
 }
 
+// export component
 export default getAuth;

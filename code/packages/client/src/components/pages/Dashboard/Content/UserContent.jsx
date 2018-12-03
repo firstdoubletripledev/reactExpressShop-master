@@ -1,17 +1,40 @@
+// import Axios module from axios for Promise based HTTP request
 import Axios from 'axios';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
 
+// import columnsUser, onChangeUser component
 import { columnsUser, onChangeUser } from './Components/table/columnsUser';
+
+// import TableDashboard component
 import { TableDashboard } from './Components/TableDashboard';
+
+// import errorMessage module
 import { errorMessage } from '../../utils/Message';
 
+/**
+ *
+ *
+ * @class UserContent
+ * @extends {PureComponent}
+ */
 class UserContent extends PureComponent {
+  /**
+   *
+   *
+   * @memberof UserContent
+   */
   state = {
     dataUser: [],
     loading: false,
     isActiveFormEdit: false,
     dataInput: {},
   };
+  /**
+   *
+   *
+   */
   componentDidMount = async () => {
     try {
       this.setState({
@@ -43,6 +66,12 @@ class UserContent extends PureComponent {
       errorMessage(error);
     }
   };
+  /**
+   *
+   *
+   * @param {*} _id
+   * @param {*} name
+   */
   onClickLink = async (_id, name) => {
     this.setState({
       loading: true,
@@ -62,6 +91,11 @@ class UserContent extends PureComponent {
       loading: false,
     });
   };
+  /**
+   *
+   *
+   * @returns
+   */
   checkLinkEdit = async () => {
     const { location: { pathname = '' } = {} } = this.props;
     const listPath = pathname.split('/');
@@ -99,6 +133,12 @@ class UserContent extends PureComponent {
     return false;
   };
 
+  /**
+   *
+   *
+   * @param {*} _id
+   * @returns
+   */
   handleDelete = async _id => {
     await Axios.delete(`/api/users/${_id}`);
     const { dataUser } = this.state;
@@ -128,4 +168,5 @@ class UserContent extends PureComponent {
   }
 }
 
+// export component
 export { UserContent };

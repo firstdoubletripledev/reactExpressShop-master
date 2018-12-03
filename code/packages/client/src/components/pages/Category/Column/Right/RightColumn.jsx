@@ -1,12 +1,31 @@
+// import React module from react for JSX
 import React from 'react';
 
+// import Description component
 import { Description } from './Description';
+
+// import NavPagination component
 import { NavPagination } from './NavPagination';
+
+// import ProductItem component
 import { ProductItem } from './ProductItem';
+
+// import TopProductNav component
 import { TopProductNav } from './TopProductNav';
 
-// import { data } from "./data";
-
+/**
+ *
+ *
+ * @param {*} {
+ *   data = [],
+ *   current,
+ *   pages,
+ *   getData,
+ *   loading = false,
+ *   onClickSortBy = () => null,
+ * }
+ * @returns
+ */
 const RightColumn = ({
   data = [],
   current,
@@ -49,4 +68,5 @@ const RightColumn = ({
   );
 };
 
+// export component
 export { RightColumn };

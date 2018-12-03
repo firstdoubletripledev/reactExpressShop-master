@@ -1,7 +1,18 @@
+// import Card, Icon component from antd
 import { Card, Icon } from 'antd';
+
+// import React module from react for JSX
 import React from 'react';
+
+// import CountUp function from react-countup
 import CountUp from 'react-countup';
 
+/**
+ *
+ *
+ * @param {*} { icon, color, title, number, countUp }
+ * @returns
+ */
 function NumberCard({ icon, color, title, number, countUp }) {
   return (
     <Card
@@ -58,4 +69,5 @@ function NumberCard({ icon, color, title, number, countUp }) {
   );
 }
 
+// export component
 export default NumberCard;

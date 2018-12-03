@@ -1,5 +1,18 @@
+// import React module from react for JSX
 import React from 'react';
 
+/**
+ *
+ *
+ * @export
+ * @param {*} {
+ *   category = [],
+ *   type = null,
+ *   getDataByColor,
+ *   filterByClick,
+ * }
+ * @returns
+ */
 export function Filter({
   category = [],
   type = null,

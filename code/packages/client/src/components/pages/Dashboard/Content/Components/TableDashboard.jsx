@@ -1,12 +1,13 @@
+// import Button, Table component from antd
 import { Button, Table } from 'antd';
+
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
 
-import {
-  columnsUser,
-  dataUser,
-  onChangeUser,
-  demoColumn,
-} from './table/columnsUser';
+// import dataUser, onChangeUser, demoColumn component
+import { dataUser, onChangeUser, demoColumn } from './table/columnsUser';
+
+// import FormUser component
 import { FormUser } from './FormUser';
 
 const ListInput = {
@@ -114,17 +115,38 @@ const ListInput = {
   ],
 };
 
+/**
+ *
+ *
+ * @class TableDashboard
+ * @extends {PureComponent}
+ */
 class TableDashboard extends PureComponent {
+  /**
+   *
+   *
+   * @memberof TableDashboard
+   */
   state = {
     isActiveForm: 0,
   };
 
+  /**
+   *
+   *
+   */
   onClickAddNew = () => {
     this.setState({
       isActiveForm: 1,
     });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof TableDashboard
+   */
   render() {
     const {
       columns = demoColumn,
@@ -181,4 +203,5 @@ class TableDashboard extends PureComponent {
   }
 }
 
+// export component
 export { TableDashboard };

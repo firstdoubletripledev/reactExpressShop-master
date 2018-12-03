@@ -1,11 +1,36 @@
+// import React module from react for JSX
 import React, { PureComponent } from 'react';
+
+// import connect function from react-redux for connect redux state
 import { connect } from 'react-redux';
 
-//import { ProductsInCart } from "./ProductsInCart.jsx";
+/**
+ *
+ *
+ * @class RightColumn
+ * @extends {PureComponent}
+ */
 class RightColumn extends PureComponent {
+  /**
+   *
+   *
+   * @memberof RightColumn
+   */
   state = {};
+
+  /**
+   *
+   *
+   * @memberof RightColumn
+   */
   componentDidMount = async () => {};
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof RightColumn
+   */
   render() {
     return (
       <div className="cart-grid-right col-12 col-lg-4">
@@ -51,8 +76,16 @@ class RightColumn extends PureComponent {
     );
   }
 }
+
+/**
+ *
+ *
+ * @param {*} state
+ * @returns
+ */
 const RightColumnRedux = connect(function(state) {
   return { Cart: state.Cart || { products: [], totalQty: '', totalPrice: '' } };
 })(RightColumn);
 
+// export component
 export default RightColumnRedux;
