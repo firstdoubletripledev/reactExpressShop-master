@@ -7,9 +7,6 @@ import mongoose from 'mongoose';
 // import createAdminUser function
 import { createAdminUser } from './createAdminUser';
 
-// Get DATABASE_URL from .env
-const { DATABASE_URL: DatabaseUrl } = process.env;
-
 // Create new mongoose connection
 const db = mongoose.connection;
 
@@ -20,6 +17,9 @@ const db = mongoose.connection;
 function ConnectDatabase() {
   // Use bluebird for Promise module in mongoose
   mongoose.Promise = Promise;
+
+  // Get DATABASE_URL from .env
+  const { DATABASE_URL: DatabaseUrl } = process.env;
 
   // Connect to DatabaseUrl
   mongoose.connect(

@@ -19,4 +19,4 @@ function removeUser(req, res) {
     return res.status(204).json(usersData);
   });
 }
-exports.removeUser = removeUser;
+export { removeUser };

@@ -18,4 +18,4 @@ function listUser(req, res) {
     return res.json(userss);
   });
 }
-exports.listUser = listUser;
+export { listUser };

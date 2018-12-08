@@ -1,5 +1,5 @@
 // import mongoose module
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // get Schema from  mongoose module
 const { Schema } = mongoose;

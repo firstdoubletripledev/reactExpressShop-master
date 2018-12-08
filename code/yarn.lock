@@ -12270,6 +12270,18 @@ svgo@^1.0.0, svgo@^1.0.5:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
+swagger-ui-dist@^3.18.1:
+  version "3.20.2"
+  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-3.20.2.tgz#8f53bb3bdc8ac14e3aa2ddd8ca5aad5442f58382"
+  integrity sha512-gIDjD7b9mnxZDGAgkAIYWxuMx+3fNerXHmD2544MBEKeeIQIHPcrkdIAoz4E2FLlv5tLqdgZPRqfybbTODSotA==
+
+swagger-ui-express@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/swagger-ui-express/-/swagger-ui-express-4.0.1.tgz#4c8a5a7799d6deb02bedbe032386ceb12fb23c91"
+  integrity sha512-KCwnxnn27Me9dBjD5nMjhfrw6WaC/Ad/AaZw6YgIICLirFKCeG23s2Vf0VP/Y3TNt/xmJRvg6rMXN9T7CXClHQ==
+  dependencies:
+    swagger-ui-dist "^3.18.1"
+
 symbol-observable@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
