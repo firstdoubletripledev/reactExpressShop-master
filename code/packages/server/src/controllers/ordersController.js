@@ -1,6 +1,6 @@
-const uniqid = require('uniqid');
-const OrdersModel = require('../models/ordersModel.js');
-const Cart = require('../models/cart.js');
+import uniqid from 'uniqid';
+import OrdersModel from '../models/ordersModel';
+import Cart from '../models/cart';
 
 /**
  * ordersController.js

@@ -19,6 +19,9 @@ import session from 'express-session';
 // import path module
 import path from 'path';
 
+// import swaggerUi module from swagger-ui-express
+import swaggerUi from 'swagger-ui-express';
+
 // import ConnectDatabase and db from folder Databases->Connect
 import { ConnectDatabase, db } from './Databases/Connect';
 
@@ -36,6 +39,9 @@ import shopRoutes from './routes/shopRoutes';
 
 // import submitNewRoutes for api
 import submitNewRoutes from './routes/submitNewRoutes';
+
+// import swaggerDocument for swagger document
+import swaggerDocument from './swagger.json';
 
 // import usersRoutes for api
 import usersRoutes from './routes/usersRoutes';
@@ -108,6 +114,8 @@ const startApp = () => {
 
   // Use submitNewRoutes for router /api/submitnews
   app.use('/api/submitnews', submitNewRoutes);
+
+  app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
   // Use /images router for static image in folder packages/server/src
   app.use('/images', express.static(path.resolve(__dirname, '../', 'build', 'images')));

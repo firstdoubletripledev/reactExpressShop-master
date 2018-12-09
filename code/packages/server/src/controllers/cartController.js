@@ -1,5 +1,5 @@
-const Cart = require('../models/cart.js');
-const Product = require('../models/productsModel.js');
+import Cart from '../models/cart';
+import Product from '../models/productsModel';
 
 /**
  * cartController.js

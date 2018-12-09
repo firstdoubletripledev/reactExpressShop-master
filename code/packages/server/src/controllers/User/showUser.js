@@ -33,4 +33,4 @@ function showUser(req, res) {
     return res.json(userData);
   });
 }
-exports.showUser = showUser;
+export { showUser };

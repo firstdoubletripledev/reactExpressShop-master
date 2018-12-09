@@ -1,4 +1,4 @@
-const CategoriesModel = require('../models/categoriesModel.js');
+import CategoriesModel from '../models/categoriesModel';
 
 /**
  * categoriesController.js

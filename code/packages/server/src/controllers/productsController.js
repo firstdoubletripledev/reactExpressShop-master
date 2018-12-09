@@ -1,5 +1,5 @@
-const ProductsModel = require('../models/productsModel.js');
-const CategoriesModel = require('../models/categoriesModel.js');
+import ProductsModel from '../models/productsModel';
+import CategoriesModel from '../models/categoriesModel';
 
 /**
  * productsController.js
