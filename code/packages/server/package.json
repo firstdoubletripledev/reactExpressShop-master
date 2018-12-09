@@ -24,6 +24,7 @@
     "ramda": "^0.25.0",
     "react-loadable": "^5.5.0",
     "react-router-dom": "^4.3.1",
+    "stripe": "^6.18.1",
     "uniqid": "^5.0.3"
   },
   "devDependencies": {

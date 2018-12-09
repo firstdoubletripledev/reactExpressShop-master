@@ -53,6 +53,10 @@ const AsyncCheckoutPage = Loadable({
   loader: () => import("./components/pages/checkOut/CheckoutPage"),
   loading: LoadingCompoment
 });
+const AsyncCheckoutStripePage = Loadable({
+  loader: () => import("./components/pages/checkOutStripe/CheckoutPage"),
+  loading: LoadingCompoment
+});
 const AsyncCategoryPage = Loadable({
   loader: () => import("./components/pages/Category/CategoryPage"),
   loading: LoadingCompoment
@@ -107,6 +111,14 @@ class App extends Component {
               path="/checkout"
               component={AsyncCheckoutPage}
             />
+             <Route
+              location={location} 
+              path="/checkoutStripe"//checkout stripe
+              component={AsyncCheckoutStripePage}
+            />
+            
+            
+
 
             <Route
               location={location}

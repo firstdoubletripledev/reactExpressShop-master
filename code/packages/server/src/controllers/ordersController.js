@@ -23,7 +23,7 @@ module.exports = {
 
   showuserorders(req, res) {
     const userid = req.session.userId;
-    console.log(userid);
+    //console.log(userid);
     ordersModel.find({user:userid}).populate({path:'user',select:'email'}).exec(function(err,orders){
       if (err) return next(err);
       res.json(orders);
@@ -110,7 +110,64 @@ module.exports = {
       return res.status(201).json(orders);
     });
   },
+  /**
+   * ordersController.create()
+   */
+  createStripe(req, res) {
 
+   
+    var cart = new Cart(req.session.cart)||{};
+    
+     var cart1 = {
+        products: cart.generateArray(), // do no co vai function trong doi tuong nay 
+        totalPrice: cart.totalPrice,
+        totalQty: cart.totalQty,
+
+    };
+
+    var date = new Date();
+    var code = uniqid();
+    var stripe = require("stripe")(
+      "sk_test_FpM7twaUNDOUSDayjhUk2PKt"
+    );
+    stripe.charges.create({
+      amount: cart1.totalPrice * 100,
+      currency: "usd",
+      source: req.body.stripeToken, // obtained with Stripe.js
+      description: "Test charge"
+    }, function (err, charge) {
+      // asynchronously called
+      if (err) {
+        console.log(err);
+        return res.json({code:0,msg:"checkout error!"}) // neu co loi thi tra lai code=0,con thanh cong thi code=1
+      }
+      const orders = new ordersModel({
+        code : charge.id,
+        createdate : `${date}`,
+        status : "have bought",
+        user : req.body.user, //user ở đây là id user.
+        firstName : req.body.firstName,
+        lastName : req.body.lastName,
+        addressShip  :  req.body.addressShip,
+        phoneNumberShip : req.body.phoneNumberShip,
+        cart:cart1
+       
+      });
+  
+      orders.save((err, orders) => {
+        if (err) {
+          return res.status(500).json({
+            message: 'Error when creating orders',
+            error: err,
+          });
+        }
+        return res.status(201).json({code:1,msg:"checkout success!"});
+      });
+
+  
+      
+    });
+  },
   /**
    * ordersController.update()
    */
