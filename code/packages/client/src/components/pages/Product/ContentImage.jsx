@@ -1,6 +1,9 @@
 // import React module from react for JSX
 import React from 'react';
 
+// import ImageZoom module from image zoom
+import ImageZoom from 'react-medium-image-zoom';
+
 // import SocialSharing component
 import { SocialSharing } from './SocialSharing';
 
@@ -25,25 +28,32 @@ const ContentImage = ({
             <li className="product-flag new">New</li>
             <li className="product-flag on-sale">-20%</li>
           </ul>
-          <img
-            className="js-qv-product-cover"
-            src={product.pathImg}
-            alt="Autumn Basket"
-            title="Autumn Basket"
-            style={{
-              width: '100%',
+          {/* <img /> */}
+          <ImageZoom
+            image={{
+              className: 'js-qv-product-cover',
+              src: product.pathImg || '/images/loading.svg',
+              alt: 'Autumn Basket',
+              title: 'Autumn Basket',
+              style: {
+                width: '100%',
+              },
+              itemProp: 'image',
             }}
-            itemProp="image"
+            zoomImage={{
+              src: product.pathImg || '/images/loading.svg',
+              alt: 'Autumn Basket',
+            }}
           />
-          <div
+          {/* <div
             className="layer hidden-sm-down"
             data-toggle="modal"
             data-target="#product-modal"
           >
             <i className="material-icons zoom-in"></i>
-          </div>
-          <span id="prev-img" />
-          <span id="next-img" />
+          </div> */}
+          {/* <span id="prev-img" />
+          <span id="next-img" /> */}
         </div>
         <div className="js-qv-mask mask">
           <div className="product-images js-qv-product-images slick-initialized slick-slider slick-vertical">
@@ -70,12 +80,28 @@ const ContentImage = ({
                         aria-describedby="slick-slide00"
                         style={{ width: 90 }}
                       >
-                        <img
+                        {/* <img
                           className="thumb js-thumb  selected  fancy"
                           src={data}
                           alt="Autumn Basket"
                           title="Autumn Basket"
                           itemProp="image"
+                        /> */}
+
+                        <ImageZoom
+                          image={{
+                            className: 'thumb js-thumb  selected  fancy',
+                            src: data || null,
+                            alt:
+                              'Little Duckling Watering Can Cream with Bailey Bear',
+                            title:
+                              'Little Duckling Watering Can Cream with Bailey Bear',
+                            itemProp: 'image',
+                          }}
+                          zoomImage={{
+                            src: data || null,
+                            alt: 'Golden Gate Bridge',
+                          }}
                         />
                       </div>
                     ))

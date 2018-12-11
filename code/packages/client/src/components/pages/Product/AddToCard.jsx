@@ -65,8 +65,9 @@ class AddToCard extends PureComponent {
                 type="text"
                 name="qty"
                 id="quantity_wanted"
-                defaultValue={1}
+                // defaultValue={1}
                 value={quantity}
+                onChange={() => null}
                 className="input-group form-control"
                 min={1}
                 aria-label="Quantity"

@@ -7,8 +7,6 @@ import jwt from 'jsonwebtoken';
 // import usersModel from model file
 import usersModel from '../../models/usersModel';
 
-const { SECRET_KEY: secretKey } = process.env;
-
 /**
  *
  * loginUser() find user in database and add to session and send token
@@ -17,6 +15,8 @@ const { SECRET_KEY: secretKey } = process.env;
  * @returns
  */
 async function loginUser(req, res) {
+  const { SECRET_KEY: secretKey } = process.env;
+
   const { email = '', password = '' } = req.body;
   const user = await usersModel.findOne({ email }).catch((error) => {
     res.json({ code: 0, msg: 'Error when get user in database' });

@@ -81,11 +81,11 @@ const ContentItem = ({ product: { category = [] } = {}, product = {} }) => {
               <div className="clearfix product-variants-item">
                 <span className="control-label">Color</span>
                 <ul id="group_3">
-                  {category.map(data => {
+                  {category.map((data, e) => {
                     if (data.name === 'Color') {
                       return (
                         <li
-                          key={`product-variants-${data._id}`}
+                          key={`product-variants-${data._id}-${e}`}
                           className="float-xs-left input-container"
                         >
                           <label>

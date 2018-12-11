@@ -44,21 +44,24 @@ function HeaderNavContent({ themeLogo, isLogin, LoginData = {} }) {
             </Link>
           </div>
         </div>
+
         <div className="it_RNWZTOTYHPYR col-lg-4 hidden-md-down">
-          <div className="module ">
-            <div id="_desktop_cart">
-              <div className="blockcart cart-preview inactive">
-                <div className="header">
-                  <Link to="/cart">
-                    <i className="fl-chapps-hand135 shopping-cart" />
-                    <span className="hidden-sm-down">Cart</span>
-                  </Link>
+          {(isLogin || LoginData.role) && LoginData.role !== 'admin' ? (
+            <div className="module ">
+              <div id="_desktop_cart">
+                <div className="blockcart cart-preview inactive">
+                  <div className="header">
+                    <Link to="/cart">
+                      <i className="fl-chapps-hand135 shopping-cart" />
+                      <span className="hidden-sm-down">Cart</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          ) : null}
 
-          {isLogin ? (
+          {isLogin || LoginData.role ? (
             <div className="module ">
               <div id="_desktop_user_info" style={{ marginLeft: '30px' }}>
                 <div className="header_user_info user-info current">
@@ -83,7 +86,7 @@ function HeaderNavContent({ themeLogo, isLogin, LoginData = {} }) {
           <div className="module ">
             <div id="_desktop_user_info">
               <div className="header_user_info user-info current">
-                {isLogin ? (
+                {isLogin || LoginData.role ? (
                   LoginData.role !== 'admin' ? (
                     <Link to="/account">
                       <i className="fl-chapps-user139" />

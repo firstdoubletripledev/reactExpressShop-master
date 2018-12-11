@@ -1,6 +1,9 @@
 // import React module from react for JSX
 import React from 'react';
 
+// import ImageZoom module from image zoom
+import ImageZoom from 'react-medium-image-zoom';
+
 /**
  *
  *
@@ -23,14 +26,23 @@ const ModelItem = () => {
                 <ul className="product-flags">
                   <li className="product-flag new">New</li>
                 </ul>
-                <img
-                  className="js-qv-product-cover"
-                  src="/images/73-large_default.jpg"
-                  alt="Little Duckling Watering Can Cream with Bailey Bear"
-                  title="Little Duckling Watering Can Cream with Bailey Bear"
-                  style={{ width: '100%' }}
-                  itemProp="image"
+                {/* <img /> */}
+                <ImageZoom
+                  image={{
+                    className: 'js-qv-product-cover',
+                    src: '/images/73-large_default.jpg',
+                    alt: 'Little Duckling Watering Can Cream with Bailey Bear',
+                    title:
+                      'Little Duckling Watering Can Cream with Bailey Bear',
+                    style: { width: '100%' },
+                    itemProp: 'image',
+                  }}
+                  zoomImage={{
+                    src: 'bridge-big.jpg',
+                    alt: 'Golden Gate Bridge',
+                  }}
                 />
+
                 <div
                   className="layer hidden-sm-down"
                   data-toggle="modal"
@@ -38,8 +50,8 @@ const ModelItem = () => {
                 >
                   <i className="material-icons zoom-in"></i>
                 </div>
-                <span id="prev-img" />
-                <span id="next-img" />
+                {/* <span id="prev-img" />
+                <span id="next-img" /> */}
               </div>
               <div className="js-qv-mask mask">
                 <div className="product-images js-qv-product-images slick-initialized slick-slider slick-vertical">

@@ -158,11 +158,12 @@ class DashBoardPage extends PureComponent {
               minHeight: 280,
             }}
           >
-            {menu === 1 ? <DashboardOverView /> : ''}
-            {menu === 2 ? <UserContent location={location} /> : ''}
-            {menu === 3 ? <ItemContent location={location} /> : ''}
-            {menu === 4 ? <OrderContent location={location} /> : ''}
-            {menu === 5 ? <ShopContent /> : ''}
+            {console.log(menu)}
+            {menu === 1 ? <DashboardOverView /> : null}
+            {menu === 2 ? <UserContent location={location} /> : null}
+            {menu === 3 ? <ItemContent location={location} /> : null}
+            {menu === 4 ? <OrderContent location={location} /> : null}
+            {menu === 5 ? <ShopContent /> : null}
           </Content>
         </Layout>
       </Layout>

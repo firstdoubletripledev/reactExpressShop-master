@@ -14738,7 +14738,9 @@ body#checkout #gift_message {
 }
 
 .images-container .product-images .thumb-container img.selected {
-    outline: 2px solid #141414
+    outline: 2px solid #141414;
+    outline: 0;
+    border: 0;
 }
 
 .product-images .arrow-down,

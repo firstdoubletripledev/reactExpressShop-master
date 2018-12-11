@@ -4,8 +4,6 @@ import jwt from 'jsonwebtoken';
 // import usersModel from model file
 import usersModel from '../../models/usersModel';
 
-const { SECRET_KEY: secretKey } = process.env;
-
 /**
  *
  * meUser() get User by session
@@ -14,6 +12,8 @@ const { SECRET_KEY: secretKey } = process.env;
  * @returns
  */
 async function meUser(req, res) {
+  const { SECRET_KEY: secretKey } = process.env;
+
   const { userId } = req.session;
   if (!userId) {
     if (
