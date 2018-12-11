@@ -1,5 +1,6 @@
 // import React module from react for JSX
 import React, { Component } from 'react';
+import Axios from 'axios';
 
 /**
  *
@@ -31,10 +32,11 @@ class Container extends Component {
    *
    */
   getData = async () => {
-    // var userData = await axios.get(`/api/users/${localStorage.getItem('userid')}`);
-    // this.setState({
-    //   userDataShow: userData.data
-    // });
+    var axiousData = await Axios.get(`/api/orders/userorders`);
+
+    this.setState({
+      orders: axiousData.data,
+    });
   };
 
   /**
@@ -104,42 +106,34 @@ class Container extends Component {
               <table className="table table-striped table-bordered table-labeled hidden-sm-down">
                 <thead className="thead-default">
                   <tr>
-                    <th>Order reference</th>
+                    <th>Code</th>
                     <th>Date</th>
                     <th>Total price</th>
-                    <th className="hidden-md-down">Payment</th>
-                    <th className="hidden-md-down">Status</th>
-                    <th>Invoice</th>
-                    <th>&nbsp;</th>
+                    <th>Status</th>
+                    <th>Products</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">GAIPJKBCX</th>
-                    <td>11/21/2018</td>
-                    <td className="text-xsright">$193.80</td>
-                    <td className="hidden-md-down">Payments by check</td>
-                    <td>
-                      <span
-                        className="label label-pill bright"
-                        style={{ backgroundColor: '#4169E1' }}
-                      >
-                        Awaiting check payment
-                      </span>
-                    </td>
-                    <td className="text-sm-center hidden-md-down">-</td>
-                    <td className="text-sm-center order-actions">
-                      <a
-                        href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=order-detail&id_order=21"
-                        data-link-action="view-order-details"
-                      >
-                        Details
-                      </a>
-                      <a href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=order&submitReorder=&id_order=21">
-                        Reorder
-                      </a>
-                    </td>
-                  </tr>
+                  {this.state.orders.map((data, index) => {
+                    return (
+                      <tr key={index}>
+                        <td>{data.code}</td>
+                        <td>{data.createdate}</td>
+                        <td>{data.cart.totalPrice}</td>
+                        <td>{data.status}</td>
+                        <td style={{}}>
+                          {data.cart.products.map((data, index) => {
+                            return (
+                              <li key={index}>
+                                {data.item.name} x {data.qty} = {data.price}{' '}
+                                <br />
+                              </li>
+                            );
+                          })}
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
               <div className="orders hidden-md-up">
@@ -158,25 +152,6 @@ class Container extends Component {
                         >
                           Awaiting check payment
                         </span>
-                      </div>
-                    </div>
-                    <div className="col-2 text-xsright">
-                      <div>
-                        <a
-                          href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=order-detail&id_order=21"
-                          data-link-action="view-order-details"
-                          title="Details"
-                        >
-                          <i className="material-icons"></i>
-                        </a>
-                      </div>
-                      <div>
-                        <a
-                          href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=order&submitReorder=&id_order=21"
-                          title="Reorder"
-                        >
-                          <i className="material-icons"></i>
-                        </a>
                       </div>
                     </div>
                   </div>

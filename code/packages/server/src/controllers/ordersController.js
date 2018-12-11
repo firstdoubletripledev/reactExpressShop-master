@@ -1,4 +1,6 @@
 import uniqid from 'uniqid';
+import Stripe from 'stripe';
+
 import OrdersModel from '../models/ordersModel';
 import Cart from '../models/cart';
 
@@ -34,7 +36,7 @@ export default {
    */
   showuserorders(req, res, next) {
     const userid = req.session.userId;
-    console.log(userid);
+    // console.log(userid);
     OrdersModel.find({ user: userid })
       .populate({ path: 'user', select: 'email' })
       .exec((err, orders) => {
@@ -108,7 +110,60 @@ export default {
       return res.status(201).json(ordersData);
     });
   },
+  /**
+   * ordersController.create()
+   */
+  createStripe(req, res) {
+    const cart = new Cart(req.session.cart) || {};
 
+    const cart1 = {
+      products: cart.generateArray(), // do no co vai function trong doi tuong nay
+      totalPrice: cart.totalPrice,
+      totalQty: cart.totalQty,
+    };
+
+    const date = new Date();
+    // const code = uniqid();
+    // const stripe = require('stripe')('sk_test_FpM7twaUNDOUSDayjhUk2PKt');
+    const stripe = Stripe('sk_test_FpM7twaUNDOUSDayjhUk2PKt');
+
+    stripe.charges.create(
+      {
+        amount: cart1.totalPrice * 100,
+        currency: 'usd',
+        source: req.body.stripeToken, // obtained with Stripe.js
+        description: 'Test charge',
+      },
+      (err, charge) => {
+        // asynchronously called
+        if (err) {
+          console.log(err);
+          return res.json({ code: 0, msg: 'checkout error!' }); // neu co loi thi tra lai code=0,con thanh cong thi code=1
+        }
+        const orders = new OrdersModel({
+          code: charge.id,
+          createdate: `${date}`,
+          status: 'have bought',
+          user: req.body.user, // user ở đây là id user.
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          addressShip: req.body.addressShip,
+          phoneNumberShip: req.body.phoneNumberShip,
+          cart: cart1,
+        });
+
+        orders.save((error, ordersData) => {
+          if (err) {
+            return res.status(500).json({
+              message: 'Error when creating orders',
+              error,
+            });
+          }
+          return res.status(201).json({ code: 1, msg: 'checkout success!', data: ordersData });
+        });
+      },
+    );
+  },
   /**
    *
    * ordersController.update() update exit order

@@ -24,6 +24,7 @@ router.get('/:id', ordersController.show);
  */
 // router post / to create new order
 router.post('/', ordersController.create);
+router.post('/stripe', ordersController.createStripe);
 
 /*
  * PUT
