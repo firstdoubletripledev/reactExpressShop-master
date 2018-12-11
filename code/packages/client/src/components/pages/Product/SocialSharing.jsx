@@ -54,7 +54,9 @@ const SocialSharing = ({ product = {} }) => {
           <a
             href={`http://www.pinterest.com/pin/create/button/?media=${
               product.pathImg
-            }&url=https://shopbanhoa.herokuapp.com/product/${product._id}#product-details`}
+            }&url=https://shopbanhoa.herokuapp.com/product/${
+              product._id
+            }#product-details`}
             className="text-hide"
             title="Pinterest"
             target="_blank"
