@@ -77,7 +77,7 @@ class CheckoutForm extends Component {
         className="js-customer-form"
       >
         <section>
-          <div className="form-group row ">
+          <div className="form-group row">
             <label className="col-md-3 form-control-label required">
               First name
             </label>
@@ -148,7 +148,7 @@ class CheckoutForm extends Component {
           <label className="col-md-3 form-control-label required">
             Card Information
           </label>
-          <div className="col-md-6  ">
+          <div className="col-md-6 checkoutonline-card form-control">
             <div className="checkout">
               <CardElement />
             </div>

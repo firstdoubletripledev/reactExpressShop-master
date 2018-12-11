@@ -33,6 +33,12 @@ const AsyncLoginPage = Loadable({
   loading: LoadingCompoment,
 });
 
+// Split LoginPageAdmin for lazy load
+const AsyncLoginPageAdmin = Loadable({
+  loader: () => import('./components/pages/LoginPageAdmin'),
+  loading: LoadingCompoment,
+});
+
 // Split AccountPage for lazy load
 const AsyncAccountPage = Loadable({
   loader: () => import('./components/pages/User/AccountPage/AccountPage'),
@@ -60,6 +66,12 @@ const AsyncRegisterPage = Loadable({
 // Split CartPage for lazy load
 const AsyncCartPage = Loadable({
   loader: () => import('./components/pages/CartPage/CartPage'),
+  loading: LoadingCompoment,
+});
+
+// Split CheckOutStripe for lazy load
+const AsyncCheckOutStripe = Loadable({
+  loader: () => import('./components/pages/checkOutStripe/CheckoutPage'),
   loading: LoadingCompoment,
 });
 
@@ -100,6 +112,13 @@ const AppRoutes = ({ location }) => (
     {' '}
     {/* Route for login */}
     <Route location={location} path="/login" exact component={AsyncLoginPage} />
+    {/* Route for login */}
+    <Route
+      location={location}
+      path="/admin"
+      exact
+      component={AsyncLoginPageAdmin}
+    />
     {/* Route for register */}
     <Route
       location={location}
@@ -111,6 +130,12 @@ const AppRoutes = ({ location }) => (
     <Route location={location} path="/cart" exact component={AsyncCartPage} />
     {/* Route for checkout */}
     <Route location={location} path="/checkout" component={AsyncCheckoutPage} />
+    {/* Route for checkout */}
+    <Route
+      location={location}
+      path="/checkoutonline"
+      component={AsyncCheckOutStripe}
+    />
     {/* Route for category */}
     <Route
       location={location}

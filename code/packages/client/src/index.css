@@ -143,3 +143,69 @@ a {
 .Link-blue {
     color: #1890ff;
 }
+
+.login-admin {
+    background-color: #333;
+    height: 100vh;
+}
+
+.login-admin>.ant-layout-content>.ant-row {
+    padding-top: 30vh;
+}
+
+.login-admin-card {
+    padding: 0px 30px;
+    padding-top: 5px;
+    border-radius: 4px;
+    background: white;
+}
+
+.dashboard-menu-item-coming {
+    align-items: normal !important;
+}
+
+.dashboard-order-item-card-image {
+    /* max-width: 200px; */
+    width: 100%;
+}
+
+/* line 3, ../sass/style.scss */
+
+#outer-box {
+    display: block;
+    position: relative;
+    opacity: .8;
+    transition: opacity .5s;
+}
+
+/* line 9, ../sass/style.scss */
+
+/* line 14, ../sass/style.scss */
+
+#outer-box #inner-box {
+    background: #FD8698;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding: 0;
+    transition: opacity .5s;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+/* line 25, ../sass/style.scss */
+
+#outer-box #inner-box p {
+    color: #fff;
+}
+
+/* line 34, ../sass/style.scss */
+
+#outer-box #inner-box {
+    opacity: .9;
+    transition: opacity .5s;
+}

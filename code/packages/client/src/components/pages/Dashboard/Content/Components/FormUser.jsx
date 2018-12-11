@@ -1,5 +1,5 @@
 // import Form, Icon, Input, Button, Radio component from antd
-import { Form, Icon, Input, Button, Radio } from 'antd';
+import { Form, Icon, Input, Button, Radio, List, Card } from 'antd';
 
 // import React module from react for JSX
 import React, { PureComponent } from 'react';
@@ -18,6 +18,9 @@ const RadioButton = Radio.Button;
 
 // create RadioGroup from Radio
 const RadioGroup = Radio.Group;
+
+// create TextArea from Input
+// const { TextArea } = Input;
 
 /**
  *
@@ -90,7 +93,7 @@ class FormAdd extends PureComponent {
               dataInput: { _id = '', galleryImage = null } = {},
               dataInput = {},
             } = this.props;
-            if (galleryImage !== null) {
+            if (galleryImage !== null && !Array.isArray(galleryImage)) {
               dataInput.galleryImage = JSON.parse(galleryImage);
             }
             let res = {};
@@ -102,8 +105,9 @@ class FormAdd extends PureComponent {
             }
 
             const { data: { _id: _idRes = null } = {} } = res;
+            console.log(_idRes);
             if (_idRes !== null) {
-              successMessage('success');
+              successMessage('Success');
             }
           } else {
             const { typeTable } = this.props;
@@ -181,46 +185,13 @@ class FormAdd extends PureComponent {
                     message: `Please input your ${data.label}!`,
                   },
                 ],
-                initialValue:
-                  typeInput === 'edit'
-                    ? data.value === 'category' || data.value === 'galleryImage'
-                      ? JSON.stringify(dataInput[data.value])
-                      : data.value === 'password'
-                      ? ''
-                      : dataInput[data.value]
-                    : data.value === 'role'
-                    ? 'user'
-                    : null,
+                initialValue: getDefaultValue(typeInput, data, dataInput),
               })(
-                data.value === 'role' ? (
-                  <RadioGroup>
-                    <RadioButton value="user">User</RadioButton>
-                    <RadioButton value="admin">Admin</RadioButton>
-                  </RadioGroup>
-                ) : (
-                  <Input
-                    prefix={
-                      <Icon
-                        type={
-                          data.value === 'email'
-                            ? 'mail'
-                            : data.value === 'password'
-                            ? 'lock'
-                            : 'minus'
-                        }
-                        style={{ color: 'rgba(0,0,0,.25)' }}
-                      />
-                    }
-                    type={
-                      typeInput === 'edit'
-                        ? data.value === 'password'
-                          ? 'text'
-                          : data.value
-                        : data.value
-                    }
-                    placeholder={data.label}
-                  />
-                )
+                data.value === 'role'
+                  ? renderRadio()
+                  : data.value === 'cart'
+                  ? renderCartCard(data, typeInput, dataInput)
+                  : renderDeaultInput(data, typeInput)
               )}
             </FormItem>
           );
@@ -247,3 +218,100 @@ const FormUser = Form.create()(FormAdd);
 
 // export component
 export { FormUser };
+
+function renderRadio() {
+  return (
+    <RadioGroup>
+      <RadioButton value="user">User</RadioButton>
+      <RadioButton value="admin">Admin</RadioButton>
+    </RadioGroup>
+  );
+}
+
+const columns = [
+  {
+    title: 'Name',
+    dataIndex: 'name',
+    key: 'name',
+  },
+  {
+    title: 'Age',
+    dataIndex: 'age',
+    key: 'age',
+  },
+  {
+    title: 'Address',
+    dataIndex: 'address',
+    key: 'address',
+  },
+];
+
+function renderCartCard(data, typeInput, dataInput = {}) {
+  return (
+    <List
+      grid={{ gutter: 16, column: 4 }}
+      dataSource={dataInput.cart.products}
+      renderItem={data => (
+        <List.Item>
+          <Card title={data.item.name}>
+            <img
+              className="dashboard-order-item-card-image"
+              alt="logo"
+              src={data.item.pathImg}
+            />
+            <p>Qty: {data.qty}</p>
+            <p>Total Price: {data.price}</p>
+          </Card>
+        </List.Item>
+      )}
+    />
+  );
+}
+
+function renderDeaultInput(data, typeInput) {
+  return (
+    <Input
+      prefix={
+        <Icon type={checkTypeIcon(data)} style={{ color: 'rgba(0,0,0,.25)' }} />
+      }
+      type={
+        typeInput === 'edit'
+          ? data.value === 'password'
+            ? 'text'
+            : data.value
+          : data.value
+      }
+      placeholder={data.label}
+    />
+  );
+}
+
+function getDefaultValue(typeInput, data, dataInput) {
+  return typeInput === 'edit'
+    ? checkValueObject(data, dataInput)
+    : checkValueRole(data);
+}
+
+function checkValueObject(data, dataInput) {
+  return data.value === 'category' ||
+    data.value === 'galleryImage' ||
+    data.value === 'cart'
+    ? JSON.stringify(dataInput[data.value], null, 2)
+    : checkValuePassword(data, dataInput);
+}
+
+function checkValuePassword(data, dataInput) {
+  return data.value === 'password' ? '' : dataInput[data.value];
+}
+
+function checkValueRole(data) {
+  return data.value === 'role' ? 'user' : null;
+}
+
+function checkTypeIcon(data) {
+  return data.value === 'email' ? 'mail' : checkPassword(data);
+}
+
+function checkPassword(data) {
+  return data.value === 'password' ? 'lock' : 'minus';
+}

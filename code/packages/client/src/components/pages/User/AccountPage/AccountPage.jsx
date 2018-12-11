@@ -1,5 +1,9 @@
+import Axios from 'axios';
+
 // import React module from react for JSX
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 
 // import Header component
 import Header from '../../../navigations/Header';
@@ -28,55 +32,72 @@ const AccountPage = () => {
               </aside>
               <div className="row">
                 <div className="links">
-                  <a
+                  <Link
                     className="col-lg-4 col-md-6 col-sm-6 col-12"
                     id="identity-link"
-                    href="/userinfo"
+                    to="/userinfo"
                   >
                     <span className="link-item">
                       <i className="material-icons"></i>
                       Information
                     </span>
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     className="col-lg-4 col-md-6 col-sm-6 col-12"
                     id="history-link"
-                    href="userorders"
+                    to="userorders"
                   >
                     <span className="link-item">
                       <i className="material-icons"></i>
                       Order history and details
                     </span>
-                  </a>
+                  </Link>
 
-                  <a
-                    href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?fc=module&module=tmheaderaccount&controller=facebooklink&id_lang=1"
+                  <Link
+                    to="#0"
                     title="Facebook Login Manager"
                     className="col-lg-4 col-md-6 col-sm-6 col-12"
                   >
-                    <span className="link-item">
-                      <i className="facebook" />
-                      Connect With Facebook{' '}
-                    </span>
-                  </a>
-                  <a
-                    href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?fc=module&module=tmheaderaccount&controller=googlelogin&id_lang=1"
+                    <div id="outer-box">
+                      <span className="link-item">
+                        <i className="facebook" />
+                        Connect With Facebook{' '}
+                      </span>
+                      <div id="inner-box">
+                        <p>Coming Soon!</p>
+                      </div>
+                    </div>
+                  </Link>
+                  <Link
+                    to="#0"
                     title="Google Login Manager"
                     className="col-lg-4 col-md-6 col-sm-6 col-12"
                   >
-                    <span className="link-item">
-                      <i className="googleplus" />
-                      Connect With Google{' '}
-                    </span>
-                  </a>
+                    <div id="outer-box">
+                      <span className="link-item">
+                        <i className="googleplus" />
+                        Connect With Google{' '}
+                      </span>{' '}
+                      <div id="inner-box">
+                        <p>Coming Soon!</p>
+                      </div>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </section>
             <div className="text-sm-center">
               <a
                 className="btn btn-sm btn-default"
-                href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?mylogout="
+                href="#0"
+                onClick={async () => {
+                  await Axios.get('/api/users/logout').catch(error => {
+                    return console.log(error.response);
+                  });
+                  localStorage.removeItem('token');
+                  window.location.href = '/';
+                }}
               >
                 Sign out
               </a>

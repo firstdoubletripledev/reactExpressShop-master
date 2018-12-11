@@ -25,13 +25,19 @@ async function getAuth() {
   }
   const { data: { role = null } = {}, code = 0 } = res.data;
   console.log(role);
-
-  if (code === 1) {
+  if (res === 'admin') {
     store.dispatch(saveLoginDataAction(res.data.data));
-    if (role === 'admin') {
-      return 2;
+
+    return 2;
+  } else {
+    if (code === 1) {
+      store.dispatch(saveLoginDataAction(res.data.data));
+      if (role === 'admin') {
+        return 2;
+      }
     }
   }
+
   return code;
 }
 

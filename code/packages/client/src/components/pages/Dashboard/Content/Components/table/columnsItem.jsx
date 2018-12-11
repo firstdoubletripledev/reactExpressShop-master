@@ -91,7 +91,7 @@ const columnsItem = (
       },
     },
     {
-      title: 'operation',
+      title: 'Option',
       dataIndex: 'operation',
       render: (text, record) => {
         return dataSourceLength >= 1 ? (

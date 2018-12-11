@@ -37,6 +37,7 @@ class PrivateRouteAdmin extends PureComponent {
    */
   componentDidMount = () => {
     getAuth().then(data => {
+      console.log(data);
       this.setState({
         loading: false,
         isAuth: data,
@@ -52,15 +53,16 @@ class PrivateRouteAdmin extends PureComponent {
    */
   render() {
     const { component: Component = null, ...rest } = this.props;
+    const { loading, isAuth } = this.state;
     // const { isLogin = null } = rest;
-    if (this.state.loading) {
+    if (loading) {
       return <LoadingCompoment />;
     } else {
       return (
         <Route
           {...rest}
           render={props =>
-            this.state.isAuth === 2 ? (
+            isAuth === 2 ? (
               <Component {...props} />
             ) : (
               <>

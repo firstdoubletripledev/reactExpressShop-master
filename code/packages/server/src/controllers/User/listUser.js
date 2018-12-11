@@ -8,7 +8,7 @@ import usersModel from '../../models/usersModel';
  * @param {*} res
  */
 function listUser(req, res) {
-  usersModel.find({ isDelete: false }, (err, userss) => {
+  usersModel.find({ isDelete: false, role: 'user' }, (err, userss) => {
     if (err) {
       return res.status(500).json({
         message: 'Error when getting users.',

@@ -87,7 +87,7 @@ const columnsUser = (
         addressA.length - addressB.length,
     },
     {
-      title: 'operation',
+      title: 'Option',
       dataIndex: 'operation',
       render: (text, record) => {
         return dataSourceLength >= 1 ? (

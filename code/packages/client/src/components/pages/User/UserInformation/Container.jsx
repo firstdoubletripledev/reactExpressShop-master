@@ -346,16 +346,17 @@ class Container extends Component {
             </form>
           </section>
           <a
-            href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=my-account"
+            href="#0"
+            onClick={() => {
+              window.history.go(-1);
+              return false;
+            }}
             className="account-link"
           >
             <i className="material-icons"></i>
             <span>Back to your account</span>
           </a>
-          <a
-            href="https://ld-prestashop.template-help.com/prestashop_13106/index.php"
-            className="account-link"
-          >
+          <a href="/" className="account-link">
             <i className="material-icons"></i>
             <span>Home</span>
           </a>

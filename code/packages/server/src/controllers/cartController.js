@@ -106,4 +106,7 @@ export default {
     console.log(cart1);
     return res.json(cart1);
   },
+  removeAll(req) {
+    req.session.cart = {};
+  },
 };

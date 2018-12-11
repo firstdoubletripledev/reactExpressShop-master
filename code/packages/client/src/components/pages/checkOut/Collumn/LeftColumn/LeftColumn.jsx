@@ -18,22 +18,19 @@ class LeftColumn extends PureComponent {
    *Creates an instance of LeftColumn.
    * @memberof LeftColumn
    */
-  constructor() {
-    super();
-    this.state = {
-      user: localStorage.getItem('userid'),
-      firstName: '',
-      lastName: '',
-      addressShip: '',
-      phoneNumberShip: '',
-    };
-  }
+  state = {
+    user: localStorage.getItem('userid'),
+    firstName: '',
+    lastName: '',
+    addressShip: '',
+    phoneNumberShip: '',
+  };
 
   /**
    *
    *
    */
-  componentDidMount = async () => {};
+  // componentDidMount = async () => {};
 
   /**
    *
@@ -41,9 +38,13 @@ class LeftColumn extends PureComponent {
    * @param {*} e
    */
   onChange = e => {
-    const state = this.state;
-    state[e.target.name] = e.target.value;
-    this.setState(state);
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+    });
   };
 
   /**
@@ -71,6 +72,7 @@ class LeftColumn extends PureComponent {
     })
       .then(result => {
         successMessage('đặt hàng thành công');
+        window.location.href = '/account';
       })
       .catch(error => {
         return console.log(error.response);

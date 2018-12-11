@@ -72,19 +72,29 @@ class NormalLoginForm extends React.PureComponent {
           data = {},
           token,
         } = res.data;
-        console.log(msg, data);
-
-        if (code === 1) {
+        console.log(msg, data, data.role);
+        if (data.role === 'admin') {
           localStorage.setItem('token', `JWT ${token}`);
           localStorage.setItem('userid', data.userId);
           const { dispatch } = this.props;
           await dispatch(isLoginAction(code));
-          if (data.role === 'admin') {
-            return this.props.history.push('/dashboard');
-          } else {
-            return this.props.history.push('/');
+
+          // return this.props.history.push('/dashboard');
+          window.location = '/dashboard';
+        } else {
+          if (code === 1) {
+            localStorage.setItem('token', `JWT ${token}`);
+            localStorage.setItem('userid', data.userId);
+            const { dispatch } = this.props;
+            await dispatch(isLoginAction(code));
+            if (data.role === 'admin') {
+              return this.props.history.push('/dashboard');
+            } else {
+              return this.props.history.push('/');
+            }
           }
         }
+
         return true;
       }
     });

@@ -3,6 +3,7 @@ import express from 'express';
 
 // import cartController for cartController
 import ordersController from '../controllers/ordersController';
+import cartController from '../controllers/cartController';
 
 const router = express.Router();
 
@@ -23,8 +24,8 @@ router.get('/:id', ordersController.show);
  * POST
  */
 // router post / to create new order
-router.post('/', ordersController.create);
-router.post('/stripe', ordersController.createStripe);
+router.post('/', ordersController.create, cartController.removeAll);
+router.post('/stripe', ordersController.createStripe, cartController.removeAll);
 
 /*
  * PUT

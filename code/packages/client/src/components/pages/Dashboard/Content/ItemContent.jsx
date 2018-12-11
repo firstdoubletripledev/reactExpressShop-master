@@ -35,37 +35,8 @@ class ItemContent extends PureComponent {
    *
    *
    */
-  componentDidMount = async () => {
-    try {
-      this.setState({
-        loading: true,
-      });
-      const checkLink = await this.checkLinkEdit();
-      if (!checkLink) {
-        const res = await Axios.get('/api/products');
-        const { data = [] } = res;
-        const fornmatData = data.map(data => {
-          const rfData = data;
-          rfData.customColumn = {
-            name: data.name,
-            pathImg: data.pathImg,
-            _id: data._id,
-          };
-          return rfData;
-        });
-
-        this.setState({
-          dataItem: fornmatData,
-        });
-      }
-
-      this.setState({
-        loading: false,
-      });
-    } catch (error) {
-      console.log(error);
-      errorMessage(error);
-    }
+  componentDidMount = () => {
+    this.getListItem();
   };
   /**
    *
@@ -146,6 +117,37 @@ class ItemContent extends PureComponent {
     return this.setState({
       dataItem: dataItem.filter(item => item._id !== _id),
     });
+  };
+
+  getListItem = async () => {
+    try {
+      this.setState({
+        loading: true,
+      });
+      const checkLink = await this.checkLinkEdit();
+      if (!checkLink) {
+        const res = await Axios.get('/api/products');
+        const { data = [] } = res;
+        const fornmatData = data.map(data => {
+          const rfData = data;
+          rfData.customColumn = {
+            name: data.name,
+            pathImg: data.pathImg,
+            _id: data._id,
+          };
+          return rfData;
+        });
+        this.setState({
+          dataItem: fornmatData,
+        });
+      }
+      this.setState({
+        loading: false,
+      });
+    } catch (error) {
+      console.log(error);
+      errorMessage(error);
+    }
   };
 
   /**

@@ -130,13 +130,16 @@ class DashBoardPage extends PureComponent {
               </div>
             </Menu.Item>
 
-            <Menu.Item key="5">
+            <Menu.Item key="5" id="outer-box" className="ant-menu-item">
               <div onClick={this.onClickMenuItem.bind(this, 5)}>
                 <Link to="/dashboard">
                   <div>
                     <Icon type="shop" /> <span>Shop</span>
                   </div>
                 </Link>
+              </div>
+              <div className="dashboard-menu-item-coming" id="inner-box">
+                <p>Coming Soon!</p>
               </div>
             </Menu.Item>
           </Menu>
