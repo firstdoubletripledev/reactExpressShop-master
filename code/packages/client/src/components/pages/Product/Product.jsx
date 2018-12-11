@@ -1,40 +1,80 @@
-import React, { Component } from "react";
-import Axios from "axios";
+// import Axios module from axios for Promise based HTTP request
+import Axios from 'axios';
 
-import Header from "../../navigations/Header";
-import Footer from "../../navigations/Footer";
-import { ContentImage } from "./ContentImage";
-import { ContentItem } from "./ContentItem";
-import { Description } from "./Description";
-import { SuggestProduct } from "./SuggestProduct";
+// import React module from react for JSX
+import React, { PureComponent } from 'react';
 
-class Product extends Component {
+// import Footer component
+import Footer from '../../navigations/Footer';
+
+// import Header component
+import Header from '../../navigations/Header';
+
+// import ContentImage component
+import { ContentImage } from './ContentImage';
+
+// import ContentItem component
+import { ContentItem } from './ContentItem';
+
+// import Description component
+import { Description } from './Description';
+
+// import SuggestProduct component
+import { SuggestProduct } from './SuggestProduct';
+
+/**
+ *
+ *
+ * @class Product
+ * @extends {PureComponent}
+ */
+class Product extends PureComponent {
+  /**
+   *
+   *
+   * @memberof Product
+   */
   state = {
     product: {},
-    productSuggest: []
+    productSuggest: [],
   };
 
+  /**
+   *
+   *
+   * @memberof Product
+   */
   async componentDidMount() {
     const {
       match: {
-        params: { id }
-      }
+        params: { id },
+      },
     } = this.props;
     const request1 = Axios.get(`/api/products/${id}`);
     const request2 = Axios.get(`/api/products/perpage/4`);
 
-    const [res1, res2] = await Promise.all([request1, request2]);
+    const [res1, res2] = await Promise.all([request1, request2]).catch(
+      error => {
+        return console.log(error.response);
+      }
+    );
     const { data = null } = res1;
     const { data: dataSuggest = null } = res2;
 
     if (data !== null && dataSuggest !== null) {
       this.setState({
         product: data,
-        productSuggest: dataSuggest.data_products
+        productSuggest: dataSuggest.data_products,
       });
     }
   }
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof Product
+   */
   render() {
     const { product, productSuggest } = this.state;
     return (
@@ -68,4 +108,5 @@ class Product extends Component {
   }
 }
 
+// export component
 export default Product;

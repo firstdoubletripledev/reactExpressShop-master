@@ -6,17 +6,20 @@
   "scripts": {
     "start": "node dist",
     "dev": " nodemon --exec babel-node src",
-    "build": "babel src --out-dir dist"
+    "build": "rm -rf dist && babel src --out-dir dist"
   },
   "author": "giang",
   "license": "MIT",
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "argon2": "^0.19.3",
     "bluebird": "^3.5.2",
     "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
     "concurrently": "^4.0.1",
     "connect-mongo": "^2.0.2",
     "cookie-parser": "^1.4.3",
+    "dotenv": "^6.1.0",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "jsonwebtoken": "^8.3.0",
@@ -25,6 +28,7 @@
     "react-loadable": "^5.5.0",
     "react-router-dom": "^4.3.1",
     "stripe": "^6.18.1",
+    "swagger-ui-express": "^4.0.1",
     "uniqid": "^5.0.3"
   },
   "devDependencies": {
@@ -35,6 +39,8 @@
     "eslint": "^5.8.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "prettier": "^1.15.2",
+    "pretty-quick": "^1.8.0"
   }
 }

@@ -1,5 +1,12 @@
-import React from "react";
+// import React module from react for JSX
+import React from 'react';
 
+/**
+ *
+ *
+ * @export
+ * @returns
+ */
 export function PopularProducts() {
   return (
     <div className="wrapper it_KHRBRDKHWIVY container">
@@ -16,7 +23,7 @@ export function PopularProducts() {
                   aria-label="Previous"
                   // role="button"
                   style={{
-                    display: "block"
+                    display: 'block',
                   }}
                 >
                   Previous
@@ -28,7 +35,7 @@ export function PopularProducts() {
                     style={{
                       opacity: 1,
                       width: 5024,
-                      transform: "translate3d(-1256px, 0px, 0px)"
+                      transform: 'translate3d(-1256px, 0px, 0px)',
                     }}
                   >
                     <article
@@ -40,7 +47,7 @@ export function PopularProducts() {
                       data-slick-index={-4}
                       aria-hidden="true"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                     >
@@ -53,7 +60,6 @@ export function PopularProducts() {
                           <img
                             src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/4/5/45-home_default.jpg"
                             alt="Happy Birthday Autumn Brights Globe"
-                            data-full-size-image-url="https://ld-prestashop.template-help.com/prestashop_13106/img/p/4/5/45-large_default.jpg"
                           />
                         </a>
                         <div className="gallery-wrapper">
@@ -61,7 +67,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -80,7 +86,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -99,7 +105,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -118,7 +124,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -137,7 +143,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -170,14 +176,11 @@ export function PopularProducts() {
                             </div>
                           </div>
                           <div className="right">
-                            <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
-                              method="post"
-                            >
+                            <form action="https://shopbanhoa.herokuapp.com" method="post">
                               <div
                                 className="product-quantity"
                                 style={{
-                                  display: "none"
+                                  display: 'none',
                                 }}
                               >
                                 <input
@@ -241,7 +244,7 @@ export function PopularProducts() {
                       data-slick-index={-3}
                       aria-hidden="true"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                     >
@@ -262,7 +265,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -281,7 +284,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -300,7 +303,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -319,7 +322,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -338,7 +341,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -371,14 +374,11 @@ export function PopularProducts() {
                             </div>
                           </div>
                           <div className="right">
-                            <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
-                              method="post"
-                            >
+                            <form action="https://shopbanhoa.herokuapp.com" method="post">
                               <div
                                 className="product-quantity"
                                 style={{
-                                  display: "none"
+                                  display: 'none',
                                 }}
                               >
                                 <input
@@ -429,7 +429,7 @@ export function PopularProducts() {
                           data-link-action="quickview"
                           tabIndex={-1}
                         >
-                          {null}{" "}
+                          {null}{' '}
                         </a>
                       </div>
                     </article>
@@ -442,7 +442,7 @@ export function PopularProducts() {
                       data-slick-index={-2}
                       aria-hidden="true"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                     >
@@ -463,7 +463,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -482,7 +482,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -501,7 +501,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -520,7 +520,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -539,7 +539,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -572,14 +572,11 @@ export function PopularProducts() {
                             </div>
                           </div>
                           <div className="right">
-                            <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
-                              method="post"
-                            >
+                            <form action="https://shopbanhoa.herokuapp.com" method="post">
                               <div
                                 className="product-quantity"
                                 style={{
-                                  display: "none"
+                                  display: 'none',
                                 }}
                               >
                                 <input
@@ -630,7 +627,7 @@ export function PopularProducts() {
                           data-link-action="quickview"
                           tabIndex={-1}
                         >
-                          {null}{" "}
+                          {null}{' '}
                         </a>
                       </div>
                     </article>
@@ -643,7 +640,7 @@ export function PopularProducts() {
                       data-slick-index={-1}
                       aria-hidden="true"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                     >
@@ -664,7 +661,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -683,7 +680,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -702,7 +699,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -721,7 +718,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -740,7 +737,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -773,14 +770,11 @@ export function PopularProducts() {
                             </div>
                           </div>
                           <div className="right">
-                            <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
-                              method="post"
-                            >
+                            <form action="https://shopbanhoa.herokuapp.com" method="post">
                               <div
                                 className="product-quantity"
                                 style={{
-                                  display: "none"
+                                  display: 'none',
                                 }}
                               >
                                 <input
@@ -831,7 +825,7 @@ export function PopularProducts() {
                           data-link-action="quickview"
                           tabIndex={-1}
                         >
-                          {null}{" "}
+                          {null}{' '}
                         </a>
                       </div>
                     </article>
@@ -844,7 +838,7 @@ export function PopularProducts() {
                       data-slick-index={0}
                       aria-hidden="false"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                       // role="option"
@@ -867,7 +861,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -886,7 +880,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -905,7 +899,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -924,7 +918,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -943,7 +937,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -981,14 +975,11 @@ export function PopularProducts() {
                             </div>
                           </div>
                           <div className="right">
-                            <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
-                              method="post"
-                            >
+                            <form action="https://shopbanhoa.herokuapp.com" method="post">
                               <div
                                 className="product-quantity"
                                 style={{
-                                  display: "none"
+                                  display: 'none',
                                 }}
                               >
                                 <input
@@ -1038,7 +1029,9 @@ export function PopularProducts() {
                           href="#0"
                           data-link-action="quickview"
                           tabIndex={0}
-                        />
+                        >
+                          {}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -1050,10 +1043,11 @@ export function PopularProducts() {
                       data-slick-index={1}
                       aria-hidden="false"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                       role="option"
+                      aria-selected="false"
                       aria-describedby="slick-slide11"
                     >
                       <div className="thumbnail-container">
@@ -1073,7 +1067,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1092,7 +1086,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1111,7 +1105,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1130,7 +1124,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1149,7 +1143,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1198,7 +1192,9 @@ export function PopularProducts() {
                           href="#0"
                           data-link-action="quickview"
                           tabIndex={0}
-                        />
+                        >
+                          {}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -1210,10 +1206,11 @@ export function PopularProducts() {
                       data-slick-index={2}
                       aria-hidden="false"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                       role="option"
+                      aria-selected="false"
                       aria-describedby="slick-slide12"
                     >
                       <div className="thumbnail-container">
@@ -1233,7 +1230,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1252,7 +1249,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1271,7 +1268,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1290,7 +1287,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1309,7 +1306,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1347,14 +1344,11 @@ export function PopularProducts() {
                             </div>
                           </div>
                           <div className="right">
-                            <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
-                              method="post"
-                            >
+                            <form action="https://shopbanhoa.herokuapp.com" method="post">
                               <div
                                 className="product-quantity"
                                 style={{
-                                  display: "none"
+                                  display: 'none',
                                 }}
                               >
                                 <input
@@ -1404,7 +1398,9 @@ export function PopularProducts() {
                           href="#0"
                           data-link-action="quickview"
                           tabIndex={0}
-                        />
+                        >
+                          {}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -1416,10 +1412,11 @@ export function PopularProducts() {
                       data-slick-index={3}
                       aria-hidden="false"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                       role="option"
+                      aria-selected="false"
                       aria-describedby="slick-slide13"
                     >
                       <div className="thumbnail-container">
@@ -1439,7 +1436,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1458,7 +1455,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1477,7 +1474,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1496,7 +1493,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1515,7 +1512,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1553,14 +1550,11 @@ export function PopularProducts() {
                             </div>
                           </div>
                           <div className="right">
-                            <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
-                              method="post"
-                            >
+                            <form action="https://shopbanhoa.herokuapp.com" method="post">
                               <div
                                 className="product-quantity"
                                 style={{
-                                  display: "none"
+                                  display: 'none',
                                 }}
                               >
                                 <input
@@ -1610,7 +1604,9 @@ export function PopularProducts() {
                           href="#0"
                           data-link-action="quickview"
                           tabIndex={0}
-                        />
+                        >
+                          {}
+                        </a>
                       </div>
                     </article>
                     <article
@@ -1622,10 +1618,11 @@ export function PopularProducts() {
                       data-slick-index={4}
                       aria-hidden="true"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                       role="option"
+                      aria-selected="false"
                       aria-describedby="slick-slide14"
                     >
                       <div className="thumbnail-container">
@@ -1645,7 +1642,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1664,7 +1661,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1683,7 +1680,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1702,7 +1699,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1721,7 +1718,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1754,14 +1751,11 @@ export function PopularProducts() {
                             </div>
                           </div>
                           <div className="right">
-                            <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
-                              method="post"
-                            >
+                            <form action="https://shopbanhoa.herokuapp.com" method="post">
                               <div
                                 className="product-quantity"
                                 style={{
-                                  display: "none"
+                                  display: 'none',
                                 }}
                               >
                                 <input
@@ -1812,7 +1806,7 @@ export function PopularProducts() {
                           data-link-action="quickview"
                           tabIndex={-1}
                         >
-                          {null}{" "}
+                          {null}{' '}
                         </a>
                       </div>
                     </article>
@@ -1825,10 +1819,11 @@ export function PopularProducts() {
                       data-slick-index={5}
                       aria-hidden="true"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                       role="option"
+                      aria-selected="false"
                       aria-describedby="slick-slide15"
                     >
                       <div className="thumbnail-container">
@@ -1848,7 +1843,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1867,7 +1862,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1886,7 +1881,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1905,7 +1900,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1924,7 +1919,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -1957,14 +1952,11 @@ export function PopularProducts() {
                             </div>
                           </div>
                           <div className="right">
-                            <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
-                              method="post"
-                            >
+                            <form action="https://shopbanhoa.herokuapp.com" method="post">
                               <div
                                 className="product-quantity"
                                 style={{
-                                  display: "none"
+                                  display: 'none',
                                 }}
                               >
                                 <input
@@ -2015,7 +2007,7 @@ export function PopularProducts() {
                           data-link-action="quickview"
                           tabIndex={-1}
                         >
-                          {null}{" "}
+                          {null}{' '}
                         </a>
                       </div>
                     </article>
@@ -2028,10 +2020,11 @@ export function PopularProducts() {
                       data-slick-index={6}
                       aria-hidden="true"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                       role="option"
+                      aria-selected="false"
                       aria-describedby="slick-slide16"
                     >
                       <div className="thumbnail-container">
@@ -2051,7 +2044,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2070,7 +2063,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2089,7 +2082,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2108,7 +2101,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2127,7 +2120,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2160,14 +2153,11 @@ export function PopularProducts() {
                             </div>
                           </div>
                           <div className="right">
-                            <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
-                              method="post"
-                            >
+                            <form action="https://shopbanhoa.herokuapp.com" method="post">
                               <div
                                 className="product-quantity"
                                 style={{
-                                  display: "none"
+                                  display: 'none',
                                 }}
                               >
                                 <input
@@ -2218,7 +2208,7 @@ export function PopularProducts() {
                           data-link-action="quickview"
                           tabIndex={-1}
                         >
-                          {null}{" "}
+                          {null}{' '}
                         </a>
                       </div>
                     </article>
@@ -2231,10 +2221,11 @@ export function PopularProducts() {
                       data-slick-index={7}
                       aria-hidden="true"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                       role="option"
+                      aria-selected="false"
                       aria-describedby="slick-slide17"
                     >
                       <div className="thumbnail-container">
@@ -2254,7 +2245,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2273,7 +2264,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2292,7 +2283,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2311,7 +2302,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2330,7 +2321,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2363,14 +2354,11 @@ export function PopularProducts() {
                             </div>
                           </div>
                           <div className="right">
-                            <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
-                              method="post"
-                            >
+                            <form action="https://shopbanhoa.herokuapp.com" method="post">
                               <div
                                 className="product-quantity"
                                 style={{
-                                  display: "none"
+                                  display: 'none',
                                 }}
                               >
                                 <input
@@ -2421,7 +2409,7 @@ export function PopularProducts() {
                           data-link-action="quickview"
                           tabIndex={-1}
                         >
-                          {null}{" "}
+                          {null}{' '}
                         </a>
                       </div>
                     </article>
@@ -2434,7 +2422,7 @@ export function PopularProducts() {
                       data-slick-index={8}
                       aria-hidden="true"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                     >
@@ -2455,7 +2443,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2474,7 +2462,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2493,7 +2481,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2512,7 +2500,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2531,7 +2519,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2569,14 +2557,11 @@ export function PopularProducts() {
                             </div>
                           </div>
                           <div className="right">
-                            <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
-                              method="post"
-                            >
+                            <form action="https://shopbanhoa.herokuapp.com" method="post">
                               <div
                                 className="product-quantity"
                                 style={{
-                                  display: "none"
+                                  display: 'none',
                                 }}
                               >
                                 <input
@@ -2627,7 +2612,7 @@ export function PopularProducts() {
                           data-link-action="quickview"
                           tabIndex={-1}
                         >
-                          {null}{" "}
+                          {null}{' '}
                         </a>
                       </div>
                     </article>
@@ -2640,7 +2625,7 @@ export function PopularProducts() {
                       data-slick-index={9}
                       aria-hidden="true"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                     >
@@ -2661,7 +2646,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2680,7 +2665,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2699,7 +2684,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2718,7 +2703,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2737,7 +2722,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2787,7 +2772,7 @@ export function PopularProducts() {
                           data-link-action="quickview"
                           tabIndex={-1}
                         >
-                          {null}{" "}
+                          {null}{' '}
                         </a>
                       </div>
                     </article>
@@ -2800,7 +2785,7 @@ export function PopularProducts() {
                       data-slick-index={10}
                       aria-hidden="true"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                     >
@@ -2821,7 +2806,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2840,7 +2825,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2859,7 +2844,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2878,7 +2863,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2897,7 +2882,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -2935,14 +2920,11 @@ export function PopularProducts() {
                             </div>
                           </div>
                           <div className="right">
-                            <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
-                              method="post"
-                            >
+                            <form action="https://shopbanhoa.herokuapp.com" method="post">
                               <div
                                 className="product-quantity"
                                 style={{
-                                  display: "none"
+                                  display: 'none',
                                 }}
                               >
                                 <input
@@ -2993,7 +2975,7 @@ export function PopularProducts() {
                           data-link-action="quickview"
                           tabIndex={-1}
                         >
-                          {null}{" "}
+                          {null}{' '}
                         </a>
                       </div>
                     </article>
@@ -3006,7 +2988,7 @@ export function PopularProducts() {
                       data-slick-index={11}
                       aria-hidden="true"
                       style={{
-                        width: 314
+                        width: 314,
                       }}
                       tabIndex={-1}
                     >
@@ -3027,7 +3009,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb active"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -3046,7 +3028,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -3065,7 +3047,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -3084,7 +3066,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -3103,7 +3085,7 @@ export function PopularProducts() {
                             <li
                               className="gallery-image-thumb"
                               style={{
-                                width: "20%"
+                                width: '20%',
                               }}
                             >
                               <span
@@ -3141,14 +3123,11 @@ export function PopularProducts() {
                             </div>
                           </div>
                           <div className="right">
-                            <form
-                              action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
-                              method="post"
-                            >
+                            <form action="https://shopbanhoa.herokuapp.com" method="post">
                               <div
                                 className="product-quantity"
                                 style={{
-                                  display: "none"
+                                  display: 'none',
                                 }}
                               >
                                 <input
@@ -3199,7 +3178,7 @@ export function PopularProducts() {
                           data-link-action="quickview"
                           tabIndex={-1}
                         >
-                          {null}{" "}
+                          {null}{' '}
                         </a>
                       </div>
                     </article>
@@ -3210,9 +3189,8 @@ export function PopularProducts() {
                   data-role="none"
                   className="slick-next slick-arrow"
                   aria-label="Next"
-                  role="button"
                   style={{
-                    display: "block"
+                    display: 'block',
                   }}
                 >
                   Next

@@ -1,28 +1,62 @@
-import React, { Component } from "react";
-import { Menu, Icon, Form } from "antd";
-import { connect } from "react-redux";
+// import Form, Icon, Menu component from antd
+import { Form, Icon, Menu } from 'antd';
 
-// import { LoginBar } from "./LoginBar";
-import { DashboardBar } from "./DashboardBar";
-import { ContactsColumn } from "./ContactsColumn";
-import { SearchColumn } from "./SearchColumn";
-import { CategoryColumn } from "./CategoryColumn";
-import { HomeColumn } from "./HomeColumn";
-import { LogoColumn } from "./LogoColumn";
+// import React module from react for JSX
+import React, { PureComponent } from 'react';
 
+// import connect function from react-redux
+import { connect } from 'react-redux';
+
+// import CategoryColumn component
+import { CategoryColumn } from './CategoryColumn';
+
+// import ContactsColumn component
+import { ContactsColumn } from './ContactsColumn';
+
+// import DashboardBar component
+import { DashboardBar } from './DashboardBar';
+
+// import HomeColumn component
+import { HomeColumn } from './HomeColumn';
+
+// import LogoColumn component
+import { LogoColumn } from './LogoColumn';
+
+// import SearchColumn component
+import { SearchColumn } from './SearchColumn';
+
+// create and export SubMenu from Menu
 export const SubMenu = Menu.SubMenu;
+
+// create and export MenuItemGroup from Menu
 export const MenuItemGroup = Menu.ItemGroup;
+
+// create and export FormItem from Menu
 export const FormItem = Form.Item;
 
-class MenuNav extends Component {
-  //may cai key xem lai trong antd
-
+/**
+ *
+ *
+ * @class MenuNav
+ * @extends {PureComponent}
+ */
+class MenuNav extends PureComponent {
+  /**
+   *
+   *
+   */
   componentDidMount = () => {
     var sl = 5;
     var { dispatch } = this.props;
-    dispatch({ type: "Get_SLItem_In_Session", item: sl });
+    dispatch({ type: 'Get_SLItem_In_Session', item: sl });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof MenuNav
+   */
   render() {
     const { isLogin } = this.props;
     return (
@@ -36,8 +70,8 @@ class MenuNav extends Component {
             <Icon
               type="shopping-cart"
               theme="outlined"
-              style={{ marginRight: "0px" }}
-            />{" "}
+              style={{ marginRight: '0px' }}
+            />{' '}
             {this.props.SLItemCart} items in cart
           </a>
         </Menu.Item>
@@ -67,8 +101,16 @@ class MenuNav extends Component {
     );
   }
 }
+
+/**
+ *
+ *
+ * @param {*} state
+ * @returns
+ */
 const MenuNavRedux = connect(function(state) {
   return { SLItemCart: state.SLItemCart, isLogin: state.isLogin };
 })(MenuNav);
 
+// export component
 export default MenuNavRedux;

@@ -1,18 +1,38 @@
-import React from "react";
+// import React module from react for JSX
+import React from 'react';
 
-import { NavPagination } from "./NavPagination";
-import { TopProductNav } from "./TopProductNav";
-import { Description } from "./Description";
-import { ProductItem } from "./ProductItem";
-// import { data } from "./data";
+// import Description component
+import { Description } from './Description';
 
+// import NavPagination component
+import { NavPagination } from './NavPagination';
+
+// import ProductItem component
+import { ProductItem } from './ProductItem';
+
+// import TopProductNav component
+import { TopProductNav } from './TopProductNav';
+
+/**
+ *
+ *
+ * @param {*} {
+ *   data = [],
+ *   current,
+ *   pages,
+ *   getData,
+ *   loading = false,
+ *   onClickSortBy = () => null,
+ * }
+ * @returns
+ */
 const RightColumn = ({
   data = [],
   current,
   pages,
   getData,
   loading = false,
-  onClickSortBy = () => null
+  onClickSortBy = () => null,
 }) => {
   return (
     <div id="content-wrapper" className="left-column col-12 col-md-9">
@@ -29,7 +49,7 @@ const RightColumn = ({
             <div id="js-product-list">
               <div className="products row">
                 {loading
-                  ? "loading..."
+                  ? 'loading...'
                   : data.map(dataItem => (
                       <ProductItem key={dataItem._id} {...dataItem} />
                     ))}
@@ -48,4 +68,5 @@ const RightColumn = ({
   );
 };
 
+// export component
 export { RightColumn };

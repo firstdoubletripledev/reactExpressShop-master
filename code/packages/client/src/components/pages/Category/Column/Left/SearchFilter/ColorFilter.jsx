@@ -1,5 +1,13 @@
-import React from "react";
+// import React module from react for JSX
+import React from 'react';
 
+/**
+ *
+ *
+ * @export
+ * @param {*} { categoryColor = [] }
+ * @returns
+ */
 export function ColorFilter({ categoryColor = [] }) {
   return (
     <section className="facet clearfix">
@@ -26,7 +34,7 @@ export function ColorFilter({ categoryColor = [] }) {
                     <span
                       className="color"
                       style={{
-                        backgroundColor: "#AAB2BD"
+                        backgroundColor: '#AAB2BD',
                       }}
                     />
                   </span>

@@ -1,5 +1,14 @@
-import React from "react";
+// import React module from react for JSX
+import React from 'react';
 
+// import ImageZoom module from image zoom
+import ImageZoom from 'react-medium-image-zoom';
+
+/**
+ *
+ *
+ * @returns
+ */
 const ModelItem = () => {
   return (
     <div className="modal-content">
@@ -17,14 +26,23 @@ const ModelItem = () => {
                 <ul className="product-flags">
                   <li className="product-flag new">New</li>
                 </ul>
-                <img
-                  className="js-qv-product-cover"
-                  src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/3/73-large_default.jpg"
-                  alt="Little Duckling Watering Can Cream with Bailey Bear"
-                  title="Little Duckling Watering Can Cream with Bailey Bear"
-                  style={{ width: "100%" }}
-                  itemProp="image"
+                {/* <img /> */}
+                <ImageZoom
+                  image={{
+                    className: 'js-qv-product-cover',
+                    src: '/images/73-large_default.jpg',
+                    alt: 'Little Duckling Watering Can Cream with Bailey Bear',
+                    title:
+                      'Little Duckling Watering Can Cream with Bailey Bear',
+                    style: { width: '100%' },
+                    itemProp: 'image',
+                  }}
+                  zoomImage={{
+                    src: 'bridge-big.jpg',
+                    alt: 'Golden Gate Bridge',
+                  }}
                 />
+
                 <div
                   className="layer hidden-sm-down"
                   data-toggle="modal"
@@ -32,23 +50,19 @@ const ModelItem = () => {
                 >
                   <i className="material-icons zoom-in"></i>
                 </div>
-                <span id="prev-img" />
-                <span id="next-img" />
+                {/* <span id="prev-img" />
+                <span id="next-img" /> */}
               </div>
               <div className="js-qv-mask mask">
                 <div className="product-images js-qv-product-images slick-initialized slick-slider slick-vertical">
-                  <div
-                    aria-live="polite"
-                    className="slick-list"
-                    style={{ height: "524.531px" }}
-                  >
+                  <div aria-live="polite" className="slick-list">
                     <div
                       className="slick-track"
                       role="listbox"
                       style={{
                         opacity: 1,
                         height: 630,
-                        transform: "translate3d(0px, 0px, 0px)"
+                        transform: 'translate3d(0px, 0px, 0px)',
                       }}
                     >
                       <div
@@ -57,14 +71,13 @@ const ModelItem = () => {
                         aria-hidden="false"
                         tabIndex={-1}
                         role="option"
+                        aria-selected="false"
                         aria-describedby="slick-slide00"
                         style={{ width: 86 }}
                       >
                         <img
                           className="thumb js-thumb  selected "
-                          data-image-medium-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/3/73-medium_default.jpg"
-                          data-image-large-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/3/73-large_default.jpg"
-                          src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/3/73-home_default.jpg"
+                          src="/images/73-home_default.jpg"
                           alt="Little Duckling Watering Can Cream with Bailey Bear"
                           title="Little Duckling Watering Can Cream with Bailey Bear"
                           itemProp="image"
@@ -76,14 +89,13 @@ const ModelItem = () => {
                         aria-hidden="false"
                         tabIndex={-1}
                         role="option"
+                        aria-selected="false"
                         aria-describedby="slick-slide01"
                         style={{ width: 86 }}
                       >
                         <img
                           className="thumb js-thumb "
-                          data-image-medium-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/4/74-medium_default.jpg"
-                          data-image-large-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/4/74-large_default.jpg"
-                          src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/4/74-home_default.jpg"
+                          src="/images/74-home_default.jpg"
                           alt="Little Duckling Watering Can Cream with Bailey Bear"
                           title="Little Duckling Watering Can Cream with Bailey Bear"
                           itemProp="image"
@@ -95,14 +107,13 @@ const ModelItem = () => {
                         aria-hidden="false"
                         tabIndex={-1}
                         role="option"
+                        aria-selected="false"
                         aria-describedby="slick-slide02"
                         style={{ width: 86 }}
                       >
                         <img
                           className="thumb js-thumb "
-                          data-image-medium-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/5/75-medium_default.jpg"
-                          data-image-large-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/5/75-large_default.jpg"
-                          src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/5/75-home_default.jpg"
+                          src="/images/75-home_default.jpg"
                           alt="Little Duckling Watering Can Cream with Bailey Bear"
                           title="Little Duckling Watering Can Cream with Bailey Bear"
                           itemProp="image"
@@ -114,14 +125,13 @@ const ModelItem = () => {
                         aria-hidden="false"
                         tabIndex={-1}
                         role="option"
+                        aria-selected="false"
                         aria-describedby="slick-slide03"
                         style={{ width: 86 }}
                       >
                         <img
                           className="thumb js-thumb "
-                          data-image-medium-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/6/76-medium_default.jpg"
-                          data-image-large-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/6/76-large_default.jpg"
-                          src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/6/76-home_default.jpg"
+                          src="/images/76-home_default.jpg"
                           alt="Little Duckling Watering Can Cream with Bailey Bear"
                           title="Little Duckling Watering Can Cream with Bailey Bear"
                           itemProp="image"
@@ -133,14 +143,13 @@ const ModelItem = () => {
                         aria-hidden="false"
                         tabIndex={-1}
                         role="option"
+                        aria-selected="false"
                         aria-describedby="slick-slide04"
                         style={{ width: 86 }}
                       >
                         <img
                           className="thumb js-thumb "
-                          data-image-medium-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/7/77-medium_default.jpg"
-                          data-image-large-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/7/77-large_default.jpg"
-                          src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/7/77-home_default.jpg"
+                          src="/images/77-home_default.jpg"
                           alt="Little Duckling Watering Can Cream with Bailey Bear"
                           title="Little Duckling Watering Can Cream with Bailey Bear"
                           itemProp="image"
@@ -152,18 +161,18 @@ const ModelItem = () => {
                         aria-hidden="true"
                         tabIndex={-1}
                         role="option"
+                        aria-selected="false"
                         aria-describedby="slick-slide05"
                         style={{ width: 86 }}
                       >
                         <img
                           className="thumb js-thumb "
-                          data-image-medium-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/8/78-medium_default.jpg"
-                          data-image-large-src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/8/78-large_default.jpg"
-                          src="https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/8/78-home_default.jpg"
+                          src="/images/78-home_default.jpg"
                           alt="Little Duckling Watering Can Cream with Bailey Bear"
                           title="Little Duckling Watering Can Cream with Bailey Bear"
                           itemProp="image"
                         />
+                        shopbanhoa
                       </div>
                     </div>
                   </div>
@@ -174,40 +183,44 @@ const ModelItem = () => {
               <ul>
                 <li className="facebook">
                   <a
-                    href="http://www.facebook.com/sharer.php?u=https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_product=17&id_product_attribute=0&rewrite=little-duckling-watering-can-cream-with-bailey-bear&controller=product&id_lang=1"
+                    href="http://www.facebook.com/sharer.php?u=https://shopbanhoa.herokuapp.com/category&rewrite=little-duckling-watering-can-cream-with-bailey-bear&controller=product&id_lang=1"
                     className="text-hide"
                     title="Share"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Share
                   </a>
                 </li>
                 <li className="twitter">
                   <a
-                    href="https://twitter.com/intent/tweet?text=Little Duckling Watering Can Cream with Bailey Bear https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_product=17&id_product_attribute=0&rewrite=little-duckling-watering-can-cream-with-bailey-bear&controller=product&id_lang=1"
+                    href="https://twitter.com/intent/tweet?text=Little Duckling Watering Can Cream with Bailey Bear https://shopbanhoa.herokuapp.com/category?id_product=17&id_product_attribute=0&rewrite=little-duckling-watering-can-cream-with-bailey-bear&controller=product&id_lang=1"
                     className="text-hide"
                     title="Tweet"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Tweet
                   </a>
                 </li>
                 <li className="googleplus">
                   <a
-                    href="https://plus.google.com/share?url=https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_product=17&id_product_attribute=0&rewrite=little-duckling-watering-can-cream-with-bailey-bear&controller=product&id_lang=1"
+                    href="https://plus.google.com/share?url=https://shopbanhoa.herokuapp.com/category?id_product=17&id_product_attribute=0&rewrite=little-duckling-watering-can-cream-with-bailey-bear&controller=product&id_lang=1"
                     className="text-hide"
                     title="Google+"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Google+
                   </a>
                 </li>
                 <li className="pinterest">
                   <a
-                    href="http://www.pinterest.com/pin/create/button/?media=https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/3/73.jpg&url=https://ld-prestashop.template-help.com/prestashop_13106/index.php?id_product=17&id_product_attribute=0&rewrite=little-duckling-watering-can-cream-with-bailey-bear&controller=product&id_lang=1"
+                    href="http://www.pinterest.com/pin/create/button/?media=https://ld-prestashop.template-help.com/prestashop_13106/img/p/7/3/73.jpg&url=https://shopbanhoa.herokuapp.com/category"
                     className="text-hide"
                     title="Pinterest"
                     target="_blank"
+                    rel="noopener noreferrer"
                     data-pin-custom="true"
                   >
                     Pinterest
@@ -251,7 +264,7 @@ const ModelItem = () => {
             <div className="product-information">
               <div className="product-actions">
                 <form
-                  action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+                  action="https://shopbanhoa.herokuapp.com/category/#0"
                   method="post"
                   id="add-to-cart-or-refresh"
                 >
@@ -288,7 +301,7 @@ const ModelItem = () => {
                             />
                             <span
                               className="color"
-                              style={{ backgroundColor: "#f5f5dc" }}
+                              style={{ backgroundColor: '#f5f5dc' }}
                             >
                               <span className="sr-only">Beige</span>
                             </span>
@@ -305,7 +318,7 @@ const ModelItem = () => {
                             />
                             <span
                               className="color"
-                              style={{ backgroundColor: "#ffffff" }}
+                              style={{ backgroundColor: '#ffffff' }}
                             >
                               <span className="sr-only">White</span>
                             </span>
@@ -382,7 +395,7 @@ const ModelItem = () => {
                         <div className="input-group bootstrap-touchspin">
                           <span
                             className="input-group-addon bootstrap-touchspin-prefix"
-                            style={{ display: "none" }}
+                            style={{ display: 'none' }}
                           />
                           <input
                             type="text"
@@ -392,11 +405,11 @@ const ModelItem = () => {
                             className="input-group form-control"
                             min={1}
                             aria-label="Quantity"
-                            style={{ display: "block" }}
+                            style={{ display: 'block' }}
                           />
                           <span
                             className="input-group-addon bootstrap-touchspin-postfix"
-                            style={{ display: "none" }}
+                            style={{ display: 'none' }}
                           />
                           <span className="input-group-btn-vertical">
                             <button
@@ -445,4 +458,5 @@ const ModelItem = () => {
   );
 };
 
+// export component
 export default ModelItem;

@@ -1,19 +1,21 @@
-const mongoose = require('mongoose');
+// import mongoose module
+import mongoose from 'mongoose';
 
+// get Schema from  mongoose module
 const { Schema } = mongoose;
 
+// create new schema
 const ordersSchema = new Schema({
-  code:String,
+  code: String,
   createdate: String,
   status: String,
-  user:{type:Schema.Types.ObjectId,ref:'users'},
-  firstName:String,
-  lastName:String,
-  addressShip:String,
-  phoneNumberShip:String,
-  cart: Object 
-
-
+  user: { type: Schema.Types.ObjectId, ref: 'users' },
+  firstName: String,
+  lastName: String,
+  addressShip: String,
+  phoneNumberShip: String,
+  cart: Object,
 });
 
-module.exports = mongoose.model('orders', ordersSchema);
+// export model
+export default mongoose.model('orders', ordersSchema);

@@ -1,11 +1,20 @@
-import React from "react";
+// import React module from react for JSX
+import React from 'react';
 
-// import MenuNav from "../../navigations/MenuNav.jsx";
+// import Footer component
+import Footer from '../../navigations/Footer.jsx';
 
-import Header from "../../navigations/Header.jsx";
-import Footer from "../../navigations/Footer.jsx";
-import Container from "./Container.jsx";
+// import Header component
+import Header from '../../navigations/Header.jsx';
 
+// import Container component
+import Container from './Container.jsx';
+
+/**
+ *
+ *
+ * @returns
+ */
 const CheckoutPage = () => {
   return (
     <>
@@ -16,4 +25,5 @@ const CheckoutPage = () => {
   );
 };
 
+// export component
 export default CheckoutPage;

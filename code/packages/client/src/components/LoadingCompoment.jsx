@@ -1,19 +1,27 @@
-import React from "react";
-/* import { Spin } from "antd"; */
+// import Icon component from antd
+import { Icon } from 'antd';
 
+// import React module from react for JSX
+import React from 'react';
+
+/**
+ *
+ *
+ * @param {*} { isLoading, error }
+ * @returns
+ */
 const LoadingCompoment = ({ isLoading, error }) => {
   // Handle the loading state
   if (isLoading) {
     return (
       <div
         style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%"
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
         }}
       >
-        {" "}
-        Đang load ...
+        <Icon type="loading" style={{ fontSize: 48, color: '#85e9e2' }} spin />
         {/*<Spin
           style={{
             margin: 0
@@ -30,4 +38,6 @@ const LoadingCompoment = ({ isLoading, error }) => {
     return null;
   }
 };
+
+// export component
 export default LoadingCompoment;

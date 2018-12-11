@@ -1,29 +1,37 @@
-import React from "react";
-import { Layout } from "antd";
-import MenuNav from "../navigations/MenuNav.jsx";
-import CartTable from "../tables/CartTable";
+// import Layout component from antd
+import { Layout } from 'antd';
 
+// import React module from react for JSX
+import React from 'react';
+
+// import MenuNav component
+import MenuNav from '../navigations/MenuNav.jsx';
+
+// import CartTable component
+import CartTable from '../tables/CartTable';
+
+// create Content, Footer from Layout
 const { Content, Footer } = Layout;
-//Home page
-//cart page
-//cagory page
-//checkout page
-//detail product page
-//dash board page
 
+/**
+ *
+ *
+ * @returns
+ */
 const CartPage = () => {
   return (
     <Layout className="layout">
       <MenuNav />
 
-      <Content style={{ paddingTop: "10px" }}>
+      <Content style={{ paddingTop: '10px' }}>
         <CartTable />
       </Content>
-      <Footer style={{ textAlign: "center" }}>
+      <Footer style={{ textAlign: 'center' }}>
         Ant Design ©2018 Created by Ant UED
       </Footer>
     </Layout>
   );
 };
 
+// export component
 export default CartPage;

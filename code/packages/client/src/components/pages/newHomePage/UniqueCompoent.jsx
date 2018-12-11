@@ -1,14 +1,20 @@
-import React from "react";
+// import React module from react for JSX
+import React from 'react';
 
-export function UniqueCompoent() {
+/**
+ *
+ *
+ * @returns
+ */
+function UniqueCompoent() {
   return (
     <div
       className="rd-parallax rd-parallax-2"
       style={{
-        position: "relative",
-        overflow: "hidden",
+        position: 'relative',
+        overflow: 'hidden',
         zIndex: 0,
-        background: "#a9e7e2 center center"
+        background: '#a9e7e2 center center',
       }}
     >
       <div
@@ -19,7 +25,7 @@ export function UniqueCompoent() {
         data-fade="false"
         data-direction="normal"
         style={{
-          transform: "translate3d(0px, 0px, 0px)"
+          transform: 'translate3d(0px, 0px, 0px)',
         }}
       >
         <div className="wrapper it_HWIGGOQNQSPB home-parallax" />
@@ -33,3 +39,6 @@ export function UniqueCompoent() {
     </div>
   );
 }
+
+// export component
+export { UniqueCompoent };

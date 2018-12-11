@@ -1,30 +1,61 @@
-import React, { Component } from "react";
-import Axios from "axios";
-import { Link } from "react-router-dom";
+// import Axios module from axios for Promise based HTTP request
+import Axios from 'axios';
+
+// import React module from react for JSX
+import React, { PureComponent } from 'react';
+
+// import Route module from react-router-dom for router in react
+import { Link } from 'react-router-dom';
 
 const linkImage = [
-  "https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/7fd2279725df0e252f7a621a780dea60ef67aade_top-banner-1.jpg",
-  "https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/68cd47e008afd9a9fa1d3024f8bc9780fa513466_top-banner-2.jpg",
-  "https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/0c1b2755fa48a10764dc2ec243cbd29ec62500e7_top-banner-3.jpg"
+  'https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/7fd2279725df0e252f7a621a780dea60ef67aade_top-banner-1.jpg',
+  'https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/68cd47e008afd9a9fa1d3024f8bc9780fa513466_top-banner-2.jpg',
+  'https://ld-prestashop.template-help.com/prestashop_13106/modules/tmhtmlcontent/img/0c1b2755fa48a10764dc2ec243cbd29ec62500e7_top-banner-3.jpg',
 ];
 
-class TopThreeCategory extends Component {
+/**
+ *
+ *
+ * @class TopThreeCategory
+ * @extends {PureComponent}
+ */
+class TopThreeCategory extends PureComponent {
+  /**
+   *
+   *
+   * @memberof TopThreeCategory
+   */
   state = {
-    category: []
+    category: [],
   };
-  async componentDidMount() {
+  /**
+   *
+   *
+   * @memberof TopThreeCategory
+   */
+  componentDidMount = async () => {
     try {
-      const { data = null } = await Axios.get("/api/categories/topthree");
+      const { data = null } = await Axios.get('/api/categories/topthree').catch(
+        error => {
+          return console.log(error.response);
+        }
+      );
       if (data !== null) {
         this.setState({
-          category: data
+          category: data,
         });
       }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof TopThreeCategory
+   */
   render() {
     const { category } = this.state;
     return (
@@ -32,7 +63,7 @@ class TopThreeCategory extends Component {
         <div className="row it_QZOWDVFIGJLN ">
           <div className="it_QVIPIXAXPCPH col-12     ">
             <div className="module ">
-              {" "}
+              {' '}
               <div id="tmhtmlcontent_topColumn">
                 <ul className="tmhtmlcontent-topColumn row">
                   {category.map((data, i) => (
@@ -71,4 +102,5 @@ class TopThreeCategory extends Component {
   }
 }
 
+// export component
 export { TopThreeCategory };

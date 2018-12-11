@@ -1,26 +1,49 @@
-import { LOGIN_CHANCE, LOGIN_DATA } from "./types";
+import { LOGIN_CHANCE, LOGIN_DATA } from './types';
 
+/**
+ *
+ *
+ * @param {*} isLogin
+ */
 const ChanceLogin = isLogin => ({
   type: LOGIN_CHANCE,
-  isLogin
+  isLogin,
 });
 
-const isLoginAction = email => async (dispatch, getState) => {
+/**
+ *
+ *
+ * @param {*} dispatch
+ * @param {*} getState
+ */
+const isLoginAction = code => async (dispatch, getState) => {
   let isLogin = false;
-  if (email) {
+  if (code) {
     isLogin = true;
   }
   dispatch(ChanceLogin(isLogin));
 };
 
+/**
+ *
+ *
+ * @param {*} data
+ */
 const ChanceLoginData = data => ({
   type: LOGIN_DATA,
-  data
+  data,
 });
 
+/**
+ *
+ *
+ * @param {*} dispatch
+ * @param {*} getState
+ */
 const saveLoginDataAction = data => (dispatch, getState) => {
   dispatch(ChanceLoginData(data));
 };
 
+// export module, function
 export default isLoginAction;
 export { saveLoginDataAction };

@@ -1,5 +1,12 @@
-const usersModel = require('../../models/usersModel.js');
+// import usersModel from model file
+import usersModel from '../../models/usersModel';
 
+/**
+ *
+ * listUser() get list all user
+ * @param {*} req
+ * @param {*} res
+ */
 function listUser(req, res) {
   usersModel.find((err, userss) => {
     if (err) {
@@ -11,4 +18,4 @@ function listUser(req, res) {
     return res.json(userss);
   });
 }
-exports.listUser = listUser;
+export { listUser };

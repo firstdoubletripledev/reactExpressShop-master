@@ -1,15 +1,33 @@
-import React from "react";
-import { l10nUSD } from "../../../../../l10nUSD";
+// import React module from react for JSX
+import React from 'react';
 
-// var l10nEN = new Intl.NumberFormat("en-US")
+// import Route module from react-router-dom for router in react
+import { Link } from 'react-router-dom';
 
+// import l10nUSD function
+import { l10nUSD } from '../../../../../l10nUSD';
+
+/**
+ *
+ *
+ * @export
+ * @param {*} {
+ *   pathImg: imageUrl = '',
+ *   galleryImage = [],
+ *   name = '',
+ *   discountPrice: newPrice = '',
+ *   price: regularPrice = '',
+ *   _id = null,
+ * }
+ * @returns
+ */
 export function ProductItem({
-  pathImg: imageUrl = "",
+  pathImg: imageUrl = '',
   galleryImage = [],
-  name = "",
-  discountPrice: newPrice = "",
-  price: regularPrice = "",
-  _id = null
+  name = '',
+  discountPrice: newPrice = '',
+  price: regularPrice = '',
+  _id = null,
 }) {
   return (
     <article
@@ -19,42 +37,41 @@ export function ProductItem({
       itemScope
     >
       <div className="thumbnail-container">
-        <a
-          href={_id === null ? "#0" : `/product/${_id}`}
-          className="thumbnail product-thumbnail"
-        >
+        <Link to={`/product/${_id}`} className="thumbnail product-thumbnail">
           <img src={imageUrl} alt="Autumn Shades Perfect Gift" />
-        </a>
+        </Link>
         <div className="gallery-wrapper">
           <ul className="gallery-thumb-list">
-            {galleryImage.map((imageGalleryUrl, i) => (
-              <li
-                key={`gallery-thumb-list-${i}`}
-                className="gallery-image-thumb active"
-                style={{ width: "20%" }}
-                id={imageGalleryUrl}
-              >
-                <span
-                  data-href={imageGalleryUrl}
-                  data-title="Autumn Shades Perfect Gift"
-                  data-alt="Autumn Shades Perfect Gift"
-                >
-                  <img
-                    className="img-fluid"
-                    src={imageGalleryUrl}
-                    alt="Autumn Shades Perfect Gift"
-                    title="Autumn Shades Perfect Gift"
-                    itemProp="image"
-                  />
-                </span>
-              </li>
-            ))}
+            {galleryImage !== null
+              ? galleryImage.map((imageGalleryUrl, i) => (
+                  <li
+                    key={`gallery-thumb-list-${i}`}
+                    className="gallery-image-thumb active"
+                    style={{ width: '20%' }}
+                    id={imageGalleryUrl}
+                  >
+                    <span
+                      data-href={imageGalleryUrl}
+                      data-title="Autumn Shades Perfect Gift"
+                      data-alt="Autumn Shades Perfect Gift"
+                    >
+                      <img
+                        className="img-fluid"
+                        src={imageGalleryUrl}
+                        alt="Autumn Shades Perfect Gift"
+                        title="Autumn Shades Perfect Gift"
+                        itemProp="image"
+                      />
+                    </span>
+                  </li>
+                ))
+              : null}
           </ul>
         </div>
         <div className="product-description">
           <div className="left">
             <h3 className="product-title" itemProp="name">
-              <a href={_id === null ? "#0" : `/product/${_id}`}>{name}</a>
+              <a href={_id === null ? '#0' : `/product/${_id}`}>{name}</a>
             </h3>
             <div className="product-price-and-shipping">
               <span className="sr-only">Price</span>

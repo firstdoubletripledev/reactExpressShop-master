@@ -1,5 +1,11 @@
-import React from "react";
+// import React module from react for JSX
+import React from 'react';
 
+/**
+ *
+ *
+ * @returns
+ */
 const Footer = () => {
   return (
     <footer id="footer">
@@ -208,7 +214,7 @@ const Footer = () => {
                       </li>
                       <li className="twitter">
                         <a href="#0" target="_blank">
-                          {" "}
+                          {' '}
                           Twitter
                         </a>
                       </li>
@@ -244,7 +250,7 @@ const Footer = () => {
             <div className="it_UFPWQXYPVJCC col-12     ">
               <div className="bottom-footer">
                 <a className="_blank" href="#0">
-                  {" "}
+                  {' '}
                   © 2018 - Flower shop by T&G
                 </a>
               </div>
@@ -256,4 +262,5 @@ const Footer = () => {
   );
 };
 
+// export component
 export default Footer;

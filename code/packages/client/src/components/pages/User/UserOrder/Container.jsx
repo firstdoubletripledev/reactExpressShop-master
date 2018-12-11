@@ -1,22 +1,35 @@
-import React, { Component } from "react";
-import axios from "axios";
-import $ from "jquery";
+// import React module from react for JSX
+import React, { Component } from 'react';
 
+/**
+ *
+ *
+ * @class Container
+ * @extends {Component}
+ */
 class Container extends Component {
-  state = {
-  orders:[]
-  };
+  /**
+   *
+   *
+   * @memberof Container
+   */
+  state = {};
+  /**
+   *
+   *
+   */
   componentDidMount = async () => {
     try {
       await this.getData();
-    //  alert(this.state.orders[0].code);
-     
     } catch (error) {
       console.log(error);
     }
-
   };
 
+  /**
+   *
+   *
+   */
   getData = async () => {
     var axiousData = await axios.get(`/api/orders/userorders`);
 
@@ -25,19 +38,21 @@ class Container extends Component {
     });
   };
 
-  
-
-  
-
+  /**
+   *
+   *
+   * @returns
+   * @memberof Container
+   */
   render() {
-//    const {userDataShow,
-//     email,
-//     address,
-//     phonenumber,
-//     firstName,
-//     lastName,
-//     birthday,password,newPassword
-//   } = this.state ;
+    //    const {userDataShow,
+    //     email,
+    //     address,
+    //     phonenumber,
+    //     firstName,
+    //     lastName,
+    //     birthday,password,newPassword
+    //   } = this.state ;
     return (
         <section id="wrapper">
   <nav data-depth={2} className="breadcrumb container">
@@ -143,50 +158,27 @@ class Container extends Component {
                   </span>
                 </div>
               </div>
-              <div className="col-2 text-xsright">
-                <div>
-                  <a
-                    href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=order-detail&id_order=21"
-                    data-link-action="view-order-details"
-                    title="Details"
-                  >
-                    <i className="material-icons"></i>
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=order&submitReorder=&id_order=21"
-                    title="Reorder"
-                  >
-                    <i className="material-icons"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+            </section>
+            <a
+              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=my-account"
+              className="account-link"
+            >
+              <i className="material-icons"></i>
+              <span>Back to your account</span>
+            </a>
+            <a
+              href="https://ld-prestashop.template-help.com/prestashop_13106/index.php"
+              className="account-link"
+            >
+              <i className="material-icons"></i>
+              <span>Home</span>
+            </a>
+          </section>
         </div>
       </section>
-      <a
-        href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=my-account"
-        className="account-link"
-      >
-        <i className="material-icons"></i>
-        <span>Back to your account</span>
-      </a>
-      <a
-        href="https://ld-prestashop.template-help.com/prestashop_13106/index.php"
-        className="account-link"
-      >
-        <i className="material-icons"></i>
-        <span>Home</span>
-      </a>
-    </section>
-  </div>
-</section>
-
-      
     );
   }
 }
 
+// export component
 export default Container;

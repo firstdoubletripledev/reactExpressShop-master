@@ -1,20 +1,48 @@
-import React from "react";
-import { Container } from "unstated";
+import { Container } from 'unstated';
 
 class StateContainer extends Container {
+  /**
+   *
+   *
+   * @memberof StateContainer
+   */
   state = {
-    email: ""
+    email: '',
   };
 
-  setEmail = async (email = "") => {
+  /**
+   *
+   *
+   * @param {string} [email='']
+   * @returns
+   */
+  setEmail = async (email = '') => {
     return await this.setState({ email: email });
   };
 }
+
 class CounterContainer extends Container {
-  state = { email: "" };
+  /**
+   *
+   *
+   * @memberof CounterContainer
+   */
+  /**
+   *
+   *
+   * @memberof CounterContainer
+   */
+  state = { email: '' };
+  /**
+   *
+   *
+   * @param {*} email
+   * @memberof CounterContainer
+   */
   setEmail(email) {
     this.setState({ email });
   }
 }
 
+// export Component
 export { StateContainer, CounterContainer };

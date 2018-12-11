@@ -1,26 +1,51 @@
-import React, { Component } from "react";
-import Axios from "axios";
-import { ProductsInCart } from "./ProductsInCart.jsx";
-import $ from "jquery";
+// import $ module from jquery for style
+import $ from 'jquery';
 
-class RightColumn extends Component {
+// import React module from react for JSX
+import React, { PureComponent } from 'react';
+
+import { ProductsInCart } from './ProductsInCart.jsx';
+
+/**
+ *
+ *
+ * @class RightColumn
+ * @extends {PureComponent}
+ */
+class RightColumn extends PureComponent {
+  /**
+   *
+   *
+   * @memberof RightColumn
+   */
   state = {};
+
+  /**
+   *
+   *
+   */
   componentDidMount = async () => {
-    $("#showDetail").click(function() {
-      $("#cart-summary-product-list").toggleClass(function() {
+    $('#showDetail').click(function() {
+      $('#cart-summary-product-list').toggleClass(function() {
         if (
-          $("#cart-summary-product-list")
+          $('#cart-summary-product-list')
             .parent()
-            .is(".collapse")
+            .is('.collapse')
         ) {
-          return "showdetailCheckout";
+          return 'showdetailCheckout';
         } else {
-          return "collapse";
+          return 'collapse';
         }
       });
     });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof RightColumn
+   */
   render() {
     return (
       <div className="col-md-4">
@@ -33,7 +58,9 @@ class RightColumn extends Component {
             <div className="cart-summary-products">
               <p>{this.props.cart.totalQty} items</p>
               <p>
-                <a id="showDetail">show details</a>
+                <a href="#0" id="showDetail">
+                  show details
+                </a>
               </p>
               <div id="cart-summary-product-list" className="collapse">
                 <ul className="media-list">
@@ -73,4 +100,5 @@ class RightColumn extends Component {
   }
 }
 
+// export component
 export default RightColumn;

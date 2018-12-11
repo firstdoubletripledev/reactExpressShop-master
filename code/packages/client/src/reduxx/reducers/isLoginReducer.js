@@ -1,5 +1,13 @@
-import { LOGIN_CHANCE } from "../actions/types";
+// import type redux
+import { LOGIN_CHANCE } from '../actions/types';
 
+/**
+ *
+ *
+ * @param {boolean} [state=false]
+ * @param {*} action
+ * @returns
+ */
 const isLoginReducer = (state = false, action) => {
   switch (action.type) {
     case LOGIN_CHANCE:

@@ -1,12 +1,13 @@
-import React from "react";
-// khong dung file nay
-export const RightColumn = () => (
+// import React module from react for JSX
+import React from 'react';
+
+/**
+ *
+ *
+ */
+const RightColumn = () => (
   <div className="col-md-4">
-    <section
-      id="js-checkout-summary"
-      className="card js-cart"
-      data-refresh-url="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart?ajax=1&action=refresh"
-    >
+    <section id="js-checkout-summary" className="card js-cart">
       <div className="card-block">
         <div className="cart-summary-products">
           <p>1 item</p>
@@ -72,3 +73,5 @@ export const RightColumn = () => (
     </section>
   </div>
 );
+
+export { RightColumn };

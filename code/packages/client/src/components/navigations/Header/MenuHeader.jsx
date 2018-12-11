@@ -1,16 +1,41 @@
-import React, { Component } from "react";
+// import React module from react for JSX
+import React, { PureComponent } from 'react';
 
-import { TopLevelMenu } from "./TopLevelMenu";
+// import TopLevelMenu component
+import { TopLevelMenu } from './TopLevelMenu';
 
-export class MenuHeader extends Component {
+/**
+ *
+ *
+ * @export
+ * @class MenuHeader
+ * @extends {PureComponent}
+ */
+class MenuHeader extends PureComponent {
+  /**
+   *
+   *
+   * @memberof MenuHeader
+   */
   state = {
-    searchValue: ""
+    searchValue: '',
   };
 
+  /**
+   *
+   *
+   * @param {*} event
+   */
   handleChange = event => {
     this.setState({ searchValue: event.target.value });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof MenuHeader
+   */
   render() {
     const { searchValue } = this.state;
 
@@ -33,7 +58,7 @@ export class MenuHeader extends Component {
                     <div id="tmsearchblock">
                       <span
                         className="search-toggle"
-                        style={{ display: "none" }}
+                        style={{ display: 'none' }}
                         data-toggle="dropdown"
                       >
                         <i className="fl-chapps-search70" />
@@ -44,7 +69,7 @@ export class MenuHeader extends Component {
                         // id="tm_search_query"
                         // name="search_query"
                         onChange={this.handleChange}
-                        value={searchValue ? searchValue : ""}
+                        value={searchValue ? searchValue : ''}
                         placeholder="Search"
                         autoComplete="off"
                       />
@@ -52,8 +77,8 @@ export class MenuHeader extends Component {
                         href={`/category/search/${searchValue}`}
                         type="submit"
                         style={{
-                          background: "#fff",
-                          color: "#141414"
+                          background: '#fff',
+                          color: '#141414',
                         }}
                         // name="tm_submit_search"
                         className="btn btn-default button-search"
@@ -71,3 +96,6 @@ export class MenuHeader extends Component {
     );
   }
 }
+
+// export component
+export { MenuHeader };

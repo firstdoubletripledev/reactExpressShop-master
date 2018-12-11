@@ -1,5 +1,12 @@
-const usersModel = require('../../models/usersModel.js');
+// import usersModel from model file
+import usersModel from '../../models/usersModel';
 
+/**
+ *
+ * showUser() get User data by id
+ * @param {*} req
+ * @param {*} res
+ */
 function showUser(req, res) {
   const { id } = req.params;
   usersModel.findOne({ _id: id }, (err, users) => {
@@ -14,16 +21,16 @@ function showUser(req, res) {
         message: 'No such users',
       });
     }
-    //return res.json(users);
+    // return res.json(users);
     const userData = {
-      email:users.email,
-      address:users.address,
-      phonenumber:users.phonenumber,
-      firstName:users.firstName,
-      lastName:users.lastName,
-      birthday:users.birthday  
-    }
+      email: users.email,
+      address: users.address,
+      phonenumber: users.phonenumber,
+      firstName: users.firstName,
+      lastName: users.lastName,
+      birthday: users.birthday,
+    };
     return res.json(userData);
   });
 }
-exports.showUser = showUser;
+export { showUser };

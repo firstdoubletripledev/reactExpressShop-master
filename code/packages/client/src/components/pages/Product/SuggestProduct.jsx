@@ -1,6 +1,15 @@
-import React from "react";
-import { ProductItem } from "../Category/Column/Right/ProductItem";
+// import React module from react for JSX
+import React from 'react';
 
+// import ProductItem component
+import { ProductItem } from '../Category/Column/Right/ProductItem';
+
+/**
+ *
+ *
+ * @param {*} { productSuggest = [] }
+ * @returns
+ */
 const SuggestProduct = ({ productSuggest = [] }) => {
   return (
     <section className="featured-products products-carousel clearfix">
@@ -12,7 +21,7 @@ const SuggestProduct = ({ productSuggest = [] }) => {
           className="slick-prev slick-arrow"
           aria-label="Previous"
           // role="button"
-          style={{ display: "block" }}
+          style={{ display: 'block' }}
         >
           Previous
         </button>
@@ -25,7 +34,7 @@ const SuggestProduct = ({ productSuggest = [] }) => {
           className="slick-next slick-arrow"
           aria-label="Next"
           // role="button"
-          style={{ display: "block" }}
+          style={{ display: 'block' }}
         >
           Next
         </button>
@@ -34,4 +43,5 @@ const SuggestProduct = ({ productSuggest = [] }) => {
   );
 };
 
+// export component
 export { SuggestProduct };

@@ -1,18 +1,41 @@
-import React, { Component } from "react";
+// import React module from react for JSX
+import React, { PureComponent } from 'react';
 
-class NavPagination extends Component {
+/**
+ *
+ *
+ * @class NavPagination
+ * @extends {PureComponent}
+ */
+class NavPagination extends PureComponent {
+  /**
+   *
+   *
+   * @memberof NavPagination
+   */
   state = {
     isFist: true,
     isLast: true,
     current: 1,
-    pages: 1
+    pages: 1,
   };
+
+  /**
+   *
+   *
+   */
   componentDidMount = () => {
     const { current } = this.props;
 
     this.checkPage(Number(current));
   };
 
+  /**
+   *
+   *
+   * @param {*} nextProps
+   * @memberof NavPagination
+   */
   componentWillReceiveProps(nextProps) {
     // You don't have to do this check first, but it can help prevent an unneeded render
     if (nextProps.current !== this.state.current) {
@@ -24,6 +47,11 @@ class NavPagination extends Component {
     }
   }
 
+  /**
+   *
+   *
+   * @param {*} current
+   */
   checkPage = current => {
     const { pages } = this.state;
     let isFist = true;
@@ -38,10 +66,18 @@ class NavPagination extends Component {
 
     this.setState({
       isFist,
-      isLast
+      isLast,
     });
   };
 
+  /**
+   *
+   *
+   * @param {*} current
+   * @param {*} pages
+   * @param {*} getData
+   * @returns
+   */
   renderNumber = (current, pages, getData) => {
     let indents = [];
 
@@ -63,7 +99,7 @@ class NavPagination extends Component {
             <button
               className="js-search-link"
               onClick={() => {
-                document.getElementById("content-wrapper").scrollIntoView();
+                document.getElementById('content-wrapper').scrollIntoView();
                 getData(i);
               }}
             >
@@ -76,6 +112,12 @@ class NavPagination extends Component {
     return indents;
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof NavPagination
+   */
   render() {
     const { getData } = this.props;
     const { current, pages, isFist, isLast } = this.state;
@@ -88,12 +130,12 @@ class NavPagination extends Component {
               <button
                 refs="previous"
                 className={`previous ${
-                  isFist ? "disabled" : ""
+                  isFist ? 'disabled' : ''
                 } js-search-link`}
                 disabled={isFist}
                 // href={`/category/${Number(current) - 1}`}
                 onClick={() => {
-                  document.getElementById("content-wrapper").scrollIntoView();
+                  document.getElementById('content-wrapper').scrollIntoView();
 
                   this.checkPage(Number(current) - 1);
                   getData(Number(current) - 1);
@@ -107,11 +149,11 @@ class NavPagination extends Component {
             <li>
               <button
                 refs="next"
-                className={`next ${isLast ? "disabled" : ""} js-search-link`}
+                className={`next ${isLast ? 'disabled' : ''} js-search-link`}
                 // href={`/category/${Number(current) + 1}`}
                 disabled={isLast}
                 onClick={() => {
-                  document.getElementById("content-wrapper").scrollIntoView();
+                  document.getElementById('content-wrapper').scrollIntoView();
 
                   this.checkPage(Number(current) + 1);
 
@@ -130,4 +172,6 @@ class NavPagination extends Component {
     );
   }
 }
+
+// export component
 export { NavPagination };

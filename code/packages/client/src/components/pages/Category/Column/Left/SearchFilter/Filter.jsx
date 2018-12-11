@@ -1,10 +1,23 @@
-import React from "react";
+// import React module from react for JSX
+import React from 'react';
 
+/**
+ *
+ *
+ * @export
+ * @param {*} {
+ *   category = [],
+ *   type = null,
+ *   getDataByColor,
+ *   filterByClick,
+ * }
+ * @returns
+ */
 export function Filter({
   category = [],
   type = null,
   getDataByColor,
-  filterByClick
+  filterByClick,
 }) {
   if (type === null) {
     return null;
@@ -30,13 +43,13 @@ export function Filter({
               <li key={`facet_21941-${data.value}-${i}`}>
                 <label className="facet-label" htmlFor="facet_input_21941_0">
                   <span className="custom-checkbox">
-                    {type === "Color" ? (
+                    {type === 'Color' ? (
                       <>
                         <input id="facet_input_21941_0" type="checkbox" />
                         <span
                           className="color"
                           style={{
-                            backgroundColor: data.value
+                            backgroundColor: data.value,
                           }}
                         />
                       </>

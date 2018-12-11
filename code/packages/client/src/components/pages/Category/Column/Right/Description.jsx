@@ -1,5 +1,12 @@
-import React from "react";
+// import React module from react for JSX
+import React from 'react';
 
+/**
+ *
+ *
+ * @export
+ * @returns
+ */
 export function Description() {
   return (
     <div className="block-category">

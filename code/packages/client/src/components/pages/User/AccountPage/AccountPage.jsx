@@ -1,8 +1,17 @@
-import React from "react";
+// import React module from react for JSX
+import React from 'react';
 
-import Header from "../../../navigations/Header.jsx";
-import Footer from "../../../navigations/Footer.jsx";
+// import Header component
+import Header from '../../../navigations/Header.jsx';
 
+// import Footer component
+import Footer from '../../../navigations/Footer.jsx';
+
+/**
+ *
+ *
+ * @returns
+ */
 const AccountPage = () => {
   return (
     <>
@@ -29,7 +38,7 @@ const AccountPage = () => {
                       Information
                     </span>
                   </a>
-            
+
                   <a
                     className="col-lg-4 col-md-6 col-sm-6 col-12"
                     id="history-link"
@@ -40,7 +49,7 @@ const AccountPage = () => {
                       Order history and details
                     </span>
                   </a>
-                 
+
                   <a
                     href="https://ld-prestashop.template-help.com/prestashop_13106/index.php?fc=module&module=tmheaderaccount&controller=facebooklink&id_lang=1"
                     title="Facebook Login Manager"
@@ -48,7 +57,7 @@ const AccountPage = () => {
                   >
                     <span className="link-item">
                       <i className="facebook" />
-                      Connect With Facebook{" "}
+                      Connect With Facebook{' '}
                     </span>
                   </a>
                   <a
@@ -58,7 +67,7 @@ const AccountPage = () => {
                   >
                     <span className="link-item">
                       <i className="googleplus" />
-                      Connect With Google{" "}
+                      Connect With Google{' '}
                     </span>
                   </a>
                 </div>
@@ -81,4 +90,5 @@ const AccountPage = () => {
   );
 };
 
+// export component
 export default AccountPage;

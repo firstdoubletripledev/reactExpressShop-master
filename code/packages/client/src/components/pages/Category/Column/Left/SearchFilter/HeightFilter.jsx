@@ -1,5 +1,13 @@
-import React from "react";
+// import React module from react for JSX
+import React from 'react';
 
+/**
+ *
+ *
+ * @export
+ * @param {*} { categoryHeight = [] }
+ * @returns
+ */
 export function HeightFilter({ categoryHeight = [] }) {
   return (
     <section className="facet clearfix">

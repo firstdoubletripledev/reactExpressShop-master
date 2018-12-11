@@ -1,11 +1,27 @@
-import React, { Component } from "react";
-import Axios from "axios";
-// import { mergeAll, concat, mergeDeepWithKey } from "ramda";
+// import React module from react for JSX
+import React, { PureComponent } from 'react';
 
-import { LeftColumn } from "./Column/Left/LeftColumn";
-import { RightColumn } from "./Column/Right/RightColumn";
+// import Axios module from axios for Promise based HTTP request
+import Axios from 'axios';
 
-class Container extends Component {
+// import LeftColumn component
+import { LeftColumn } from './Column/Left/LeftColumn';
+
+// import RightColumn component
+import { RightColumn } from './Column/Right/RightColumn';
+
+/**
+ *
+ *
+ * @class Container
+ * @extends {PureComponent}
+ */
+class Container extends PureComponent {
+  /**
+   *
+   *
+   * @memberof Container
+   */
   state = {
     data: [],
     categoryColor: [],
@@ -16,11 +32,16 @@ class Container extends Component {
     loading: false,
     Availability: {
       notAvl: 0,
-      avl: 0
+      avl: 0,
     },
     filterBy: [],
-    typeSort: null
+    typeSort: null,
   };
+
+  /**
+   *
+   *
+   */
   componentDidMount = async () => {
     try {
       const { page = 1 } = this.props;
@@ -33,18 +54,34 @@ class Container extends Component {
     }
   };
 
+  /**
+   *
+   *
+   * @param {*} name
+   */
   onClickSortBy = async name => {
     await this.setTypeSort(name);
     const { page = 1 } = this.props;
     await this.getData(page);
   };
 
+  /**
+   *
+   *
+   * @param {*} name
+   */
   setTypeSort = async name => {
     this.setState({
-      typeSort: name
+      typeSort: name,
     });
   };
 
+  /**
+   *
+   *
+   * @param {*} page
+   * @returns
+   */
   getData = async page => {
     if (this.state.loading === false) {
       this.setState({ loading: true });
@@ -53,16 +90,26 @@ class Container extends Component {
     const { searchvalue } = this.props;
     let responseProducts = [];
     if (searchvalue !== null) {
-      responseProducts = await Axios.get(`/api/products/search/${searchvalue}`);
+      responseProducts = await Axios.get(
+        `/api/products/search/${searchvalue}`
+      ).catch(error => {
+        return console.log(error.response);
+      });
+      if (!responseProducts) {
+        return null;
+      }
     } else {
       responseProducts = await getDataByType(typeSort, page);
+      if (!responseProducts) {
+        return null;
+      }
     }
     const {
-      data: { data_products = [], current, pages } = []
+      data: { data_products = [], current, pages } = [],
     } = responseProducts;
     const stockState = {
       notAvl: 0,
-      avl: 0
+      avl: 0,
     };
     const category = data_products.map(({ category, stock }) => {
       if (Number(stock) > 0) {
@@ -78,9 +125,9 @@ class Container extends Component {
     });
     if (category !== null) {
       const categoryMerge = [].concat.apply([], category);
-      const Color = MergeDeepByTag(categoryMerge, "Color");
-      const Height = MergeDeepByTag(categoryMerge, "Height");
-      const Brand = MergeDeepByTag(categoryMerge, "Brand");
+      const Color = MergeDeepByTag(categoryMerge, 'Color');
+      const Height = MergeDeepByTag(categoryMerge, 'Height');
+      const Brand = MergeDeepByTag(categoryMerge, 'Brand');
 
       this.setState({
         data: data_products,
@@ -90,32 +137,57 @@ class Container extends Component {
         current,
         pages,
         loading: false,
-        Availability: stockState
+        Availability: stockState,
       });
     }
   };
 
+  /**
+   *
+   *
+   * @param {*} name
+   * @param {*} value
+   * @returns
+   */
   getDataByColor = async (name, value) => {
     try {
-      const res = await Axios.get(`/api/categories/search/${name}/${value}/1`);
+      const res = await Axios.get(
+        `/api/categories/search/${name}/${value}/1`
+      ).catch(error => {
+        return console.log(error.response);
+      });
+      if (!res) {
+        return null;
+      }
+
       if (!res.data || !res.data.products) {
         return;
       }
       this.setState({
-        data: res.data.products
+        data: res.data.products,
       });
     } catch (error) {
       console.log(error);
     }
   };
 
+  /**
+   *
+   *
+   * @param {*} event
+   */
   filterByClearAll = async event => {
     this.setState({
-      filterBy: []
+      filterBy: [],
     });
     await this.componentDidMount();
   };
 
+  /**
+   *
+   *
+   * @param {*} [data={}]
+   */
   filterByClick = async (data = {}) => {
     const { filterBy = [] } = this.state;
     const check = filterBy.findIndex(function(dataFilterBy) {
@@ -127,10 +199,16 @@ class Container extends Component {
       filterBy[check].value = data.value;
     }
     await this.setState({
-      filterBy
+      filterBy,
     });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof Container
+   */
   render() {
     const {
       data,
@@ -141,7 +219,7 @@ class Container extends Component {
       pages,
       loading,
       Availability,
-      filterBy
+      filterBy,
     } = this.state;
 
     return (
@@ -156,7 +234,7 @@ class Container extends Component {
               categoryColor,
               categoryHeight,
               categoryBrand,
-              Availability
+              Availability,
             }}
           />
           <RightColumn
@@ -174,22 +252,41 @@ class Container extends Component {
 }
 
 export default Container;
+
+/**
+ *
+ *
+ * @param {*} type
+ * @param {*} page
+ * @returns
+ */
 async function getDataByType(type, page) {
   console.log(type, page);
-  if (type === null) {
-    return await Axios.get(`/api/products/page/${page}`);
-  } else if (type === "Name, A to Z") {
-    return await Axios.get(`/api/products/sortname/${page}`);
-  } else if (type === "Name, Z to A") {
-    return await Axios.get(`/api/products/sortnamedesc/${page}`);
-  } else if (type === "Price, low to high") {
-    return await Axios.get(`/api/products/price/${page}`);
-  } else if (type === "Price, high to low") {
-    return await Axios.get(`/api/products/pricedesc/${page}`);
+  try {
+    if (type === null) {
+      return await Axios.get(`/api/products/page/${page}`);
+    } else if (type === 'Name, A to Z') {
+      return await Axios.get(`/api/products/sortname/${page}`);
+    } else if (type === 'Name, Z to A') {
+      return await Axios.get(`/api/products/sortnamedesc/${page}`);
+    } else if (type === 'Price, low to high') {
+      return await Axios.get(`/api/products/price/${page}`);
+    } else if (type === 'Price, high to low') {
+      return await Axios.get(`/api/products/pricedesc/${page}`);
+    }
+    return null;
+  } catch (error) {
+    console.log(error);
   }
-  return null;
 }
 
+/**
+ *
+ *
+ * @param {*} categoryMerge
+ * @param {*} typeName
+ * @returns
+ */
 function MergeDeepByTag(categoryMerge, typeName) {
   const categoryColor = categoryMerge.map(({ name, value }) => {
     if (name === typeName) {

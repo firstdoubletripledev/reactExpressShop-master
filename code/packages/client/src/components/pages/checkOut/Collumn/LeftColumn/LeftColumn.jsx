@@ -1,31 +1,56 @@
-import React, { Component } from "react";
-import axios from "axios";
+// import Axios module from axios for Promise based HTTP request
+import Axios from 'axios';
 
-class LeftColumn extends Component {
+// import React module from react for JSX
+import React, { PureComponent } from 'react';
+
+// import successMessage module
+import { successMessage } from '../../../utils/Message';
+
+/**
+ *
+ *
+ * @class LeftColumn
+ * @extends {PureComponent}
+ */
+class LeftColumn extends PureComponent {
+  /**
+   *Creates an instance of LeftColumn.
+   * @memberof LeftColumn
+   */
   constructor() {
     super();
     this.state = {
-      user: localStorage.getItem("userid"),
-      firstName: "",
-      lastName: "",
-      addressShip: "",
-      phoneNumberShip: ""
+      user: localStorage.getItem('userid'),
+      firstName: '',
+      lastName: '',
+      addressShip: '',
+      phoneNumberShip: '',
     };
   }
-  // state = {
-  //   user: "",
-  //   firstName: "",
-  //   lastName: "",
-  //   addressShip: "",
-  //   phoneNumberShip: ""
-  // };
+
+  /**
+   *
+   *
+   */
   componentDidMount = async () => {};
+
+  /**
+   *
+   *
+   * @param {*} e
+   */
   onChange = e => {
     const state = this.state;
     state[e.target.name] = e.target.value;
     this.setState(state);
   };
 
+  /**
+   *
+   *
+   * @param {*} e
+   */
   onSubmit = e => {
     e.preventDefault();
 
@@ -34,22 +59,30 @@ class LeftColumn extends Component {
       firstName,
       lastName,
       addressShip,
-      phoneNumberShip
+      phoneNumberShip,
     } = this.state;
 
-    axios
-      .post("/api/orders", {
-        user,
-        firstName,
-        lastName,
-        addressShip,
-        phoneNumberShip
-      })
+    Axios.post('/api/orders', {
+      user,
+      firstName,
+      lastName,
+      addressShip,
+      phoneNumberShip,
+    })
       .then(result => {
-        alert("đặt hàng thành công");
+        successMessage('đặt hàng thành công');
+      })
+      .catch(error => {
+        return console.log(error.response);
       });
   };
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof LeftColumn
+   */
   render() {
     const { firstName, lastName, addressShip, phoneNumberShip } = this.state;
     return (
@@ -58,8 +91,8 @@ class LeftColumn extends Component {
           id="checkout-personal-information-step"
           className="checkout-step -reachable -complete -current js-current-step"
           style={{
-            border: "1px solid #a3a3a3",
-            padding: "15px"
+            border: '1px solid #a3a3a3',
+            padding: '15px',
           }}
         >
           <h1 className="step-title h3">
@@ -122,7 +155,6 @@ class LeftColumn extends Component {
                       <div className="col-md-6">
                         <input
                           className="form-control"
-                          name="lastname"
                           type="text"
                           required
                           name="addressShip"
@@ -151,14 +183,14 @@ class LeftColumn extends Component {
                   </section>
                   <footer
                     className="form-footer clearfix"
-                    style={{ textAlign: "center" }}
+                    style={{ textAlign: 'center' }}
                   >
                     <button
                       className="continue btn btn-primary float-xs-right"
                       name="submit"
                       type="submit"
                     >
-                      Checkout{" "}
+                      Checkout{' '}
                     </button>
                   </footer>
                 </form>
@@ -171,4 +203,5 @@ class LeftColumn extends Component {
   }
 }
 
+// export component
 export default LeftColumn;

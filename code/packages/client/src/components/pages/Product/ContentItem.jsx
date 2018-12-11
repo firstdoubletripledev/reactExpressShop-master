@@ -1,7 +1,18 @@
-import React from "react";
-import { l10nUSD } from "../../../l10nUSD";
-import { AddToCard } from "./AddToCard";
+// import React module from react for JSX
+import React from 'react';
 
+// import l10nUSD function
+import { l10nUSD } from '../../../l10nUSD';
+
+// import AddToCard component
+import { AddToCard } from './AddToCard';
+
+/**
+ *
+ *
+ * @param {*} { product: { category = [] } = {}, product = {} }
+ * @returns
+ */
 const ContentItem = ({ product: { category = [] } = {}, product = {} }) => {
   return (
     <>
@@ -45,7 +56,7 @@ const ContentItem = ({ product: { category = [] } = {}, product = {} }) => {
         </div>
         <div className="product-actions">
           <form
-            action="https://ld-prestashop.template-help.com/prestashop_13106/index.php?controller=cart"
+            action="https://shopbanhoa.herokuapp.com"
             method="post"
             id="add-to-cart-or-refresh"
           >
@@ -70,11 +81,11 @@ const ContentItem = ({ product: { category = [] } = {}, product = {} }) => {
               <div className="clearfix product-variants-item">
                 <span className="control-label">Color</span>
                 <ul id="group_3">
-                  {category.map(data => {
-                    if (data.name === "Color") {
+                  {category.map((data, e) => {
+                    if (data.name === 'Color') {
                       return (
                         <li
-                          key={`product-variants-${data._id}`}
+                          key={`product-variants-${data._id}-${e}`}
                           className="float-xs-left input-container"
                         >
                           <label>
@@ -108,7 +119,7 @@ const ContentItem = ({ product: { category = [] } = {}, product = {} }) => {
               name="refresh"
               type="submit"
               defaultValue="Refresh"
-              style={{ display: "none" }}
+              style={{ display: 'none' }}
             />
           </form>
         </div>
@@ -118,4 +129,5 @@ const ContentItem = ({ product: { category = [] } = {}, product = {} }) => {
   );
 };
 
+// export component
 export { ContentItem };

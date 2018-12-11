@@ -1,3 +1,7 @@
+/*
+ * Custom Style for web
+ */
+
 body {
     margin: 0;
     padding: 0;
@@ -7,6 +11,11 @@ body {
 
 a {
     color: rgba(0, 0, 0, 0.85);
+}
+
+.center-flex {
+    display: flex;
+    align-items: center;
 }
 
 .js-search-link {
@@ -35,4 +44,102 @@ a {
 
 .layout {
     background: none;
+}
+
+.slick-list {
+    margin-top: 100px;
+}
+
+.logo-dashboard {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.Sider-dashboard>.ant-layout-sider-children {
+    border-right: 1px solid #e8e8e8;
+}
+
+.Sider-dashboard>.ant-layout-sider-children>.ant-menu-inline {
+    border: none;
+}
+
+.recharts-legend-wrapper {
+    bottom: -20px !important;
+}
+
+.Quote-quote {
+    background-color: rgb(247, 151, 214);
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    padding: 24px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.Quote-inner {
+    text-overflow: ellipsis;
+    word-wrap: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    text-indent: 24px;
+}
+
+.Quote-footer {
+    position: relative;
+    margin-top: 14px;
+}
+
+.Quote-description {
+    width: 100%;
+}
+
+.Quote-avatar {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.dashboard-item-collum-image {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin-right: 10px;
+}
+
+.dashboard-item-collum-image>img {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.dashboard-item-collum-title {
+    color: #1890ff;
+}
+
+#components-form-demo-validate-other .dropbox {
+    height: 180px;
+    line-height: 1.5;
+}
+
+.dashboard-table>.ant-spin-nested-loading>.ant-spin-container>.ant-table {
+    border: 1px solid #f6f6f6;
+    border-bottom: none;
+}
+
+.Link-blue {
+    color: #1890ff;
 }

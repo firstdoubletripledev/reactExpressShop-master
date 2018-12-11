@@ -1,7 +1,16 @@
-import React from "react";
-import { TopThreeCategory } from "./TopThreeCategory";
+// import React module from react for JSX
+import React from 'react';
 
-export function TopColumn({ history }) {
+// import TopThreeCategory component
+import { TopThreeCategory } from './TopThreeCategory';
+
+/**
+ *
+ *
+ * @param {*} { history }
+ * @returns
+ */
+function TopColumn({ history }) {
   return (
     <section id="top-column">
       <div className="row it_DPULEPFTQQIH ">
@@ -10,14 +19,14 @@ export function TopColumn({ history }) {
             <div className="homeslider-container">
               <div
                 className="homeslider slick-initialized slick-slider"
-                data-slick="{&quot;infinite&quot;: true, &quot;autoplaySpeed&quot;: 5000}"
+                data-slick='{"infinite": true, "autoplaySpeed": 5000}'
               >
                 <div aria-live="polite" className="slick-list draggable">
                   <div
                     className="slick-track"
                     role="listbox"
                     style={{
-                      opacity: 1
+                      opacity: 1,
                     }}
                   >
                     <div
@@ -28,19 +37,19 @@ export function TopColumn({ history }) {
                       // role="option"
                       aria-describedby="slick-slide01"
                       onClick={() => {
-                        history.push("/category");
+                        history.push('/category');
                       }}
                       style={{
-                        position: "relative",
+                        position: 'relative',
                         top: 0,
                         zIndex: 998,
                         opacity: 1,
-                        transition: "opacity 500ms linear 0s"
+                        transition: 'opacity 500ms linear 0s',
                       }}
                     >
                       <a href="#0" tabIndex={-1}>
                         <img
-                          src="https://ld-prestashop.template-help.com/prestashop_13106/modules/ps_imageslider/images/cab37099ed646386ddabfb16402e0e89f97602ce_slide-2.jpg"
+                          src="/images/homepage-slide-0.jpg"
                           alt="sample-2"
                         />
                         <div className="caption">
@@ -51,7 +60,7 @@ export function TopColumn({ history }) {
                                 <h2>
                                   <span className="big">Best</span>
                                   <br />
-                                  <span>Gifts</span>{" "}
+                                  <span>Gifts</span>{' '}
                                   <span className="h3">
                                     Exclusive Designs by Best Florists
                                   </span>
@@ -73,3 +82,6 @@ export function TopColumn({ history }) {
     </section>
   );
 }
+
+// export component
+export { TopColumn };

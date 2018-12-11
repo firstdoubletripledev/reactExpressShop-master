@@ -1,75 +1,95 @@
-import React, { Component } from "react";
+// import Button, Col, Input, Row, Table component from antd
+import { Button, Col, Input, Row, Table } from 'antd';
 
-import { Row, Col } from "antd";
-import { Table, Button, Input } from "antd";
+// import React module from react for JSX
+import React, { PureComponent } from 'react';
 
-// import { connect } from "react-redux";
-
-class CartTable extends Component {
+/**
+ *
+ *
+ * @class CartTable
+ * @extends {PureComponent}
+ */
+class CartTable extends PureComponent {
+  /**
+   *
+   *
+   * @memberof CartTable
+   */
   state = {
-    itemsInCart: []
+    itemsInCart: [],
   };
+  /**
+   *
+   *
+   * @memberof CartTable
+   */
   componentDidMount() {
     //const res = await Axios.get("/api/books");
     /* const datasave =res.data.map(item => {
         const dataItem = {
-         
         };
         return dataItem;
       });
       */
     const datasave = [
       {
-        key: "1",
-        image: "John Brown",
+        key: '1',
+        image: 'John Brown',
         productName: 32,
-        unitPrice: "New York No. 1 Lake Park",
-        qty: ["nice", "developer"],
-        subtotal: "4000"
+        unitPrice: 'New York No. 1 Lake Park',
+        qty: ['nice', 'developer'],
+        subtotal: '4000',
       },
       {
-        key: "2",
-        image: "John Brown",
+        key: '2',
+        image: 'John Brown',
         productName: 32,
-        unitPrice: "New York No. 1 Lake Park",
-        qty: ["nice", "developer"],
-        subtotal: "4000"
+        unitPrice: 'New York No. 1 Lake Park',
+        qty: ['nice', 'developer'],
+        subtotal: '4000',
       },
       {
-        key: "3",
-        image: "John Brown",
+        key: '3',
+        image: 'John Brown',
         productName: 32,
-        unitPrice: "New York No. 1 Lake Park",
-        qty: ["nice", "developer"],
-        subtotal: "4000"
-      }
+        unitPrice: 'New York No. 1 Lake Park',
+        qty: ['nice', 'developer'],
+        subtotal: '4000',
+      },
     ];
     this.setState({ itemsInCart: datasave });
   }
 
+  /**
+   *
+   *
+   * @returns
+   * @memberof CartTable
+   */
   render() {
     const columns = [
       {
-        title: "Image",
-        dataIndex: "image",
-        key: "image",
-        render: text => <a href="#0">{text}</a>
+        title: 'Image',
+        dataIndex: 'image',
+        key: 'image',
+        render: text => <a href="#0">{text}</a>,
       },
       {
-        title: "PRODUCT NAME",
-        dataIndex: "productName",
-        key: "productName",
-        render: text => <a href="#0">{text}</a>
+        title: 'PRODUCT NAME',
+        dataIndex: 'productName',
+        key: 'productName',
+        render: text => <a href="#0">{text}</a>,
       },
       {
-        title: "UNIT PRICE",
-        dataIndex: "unitPrice",
-        key: "unitPrice"
+        title: 'UNIT PRICE',
+        dataIndex: 'unitPrice',
+        key: 'unitPrice',
       },
       {
-        title: "QTY",
-        dataIndex: "qty",
-        key: "qty",
+        title: 'QTY',
+        dataIndex: 'qty',
+        key: 'qty',
         render: dataIndex => (
           <span>
             <Button type="primary" size="small">
@@ -80,22 +100,22 @@ class CartTable extends Component {
               +
             </Button>
           </span>
-        )
+        ),
       },
       {
-        title: "SUBTOTAL",
-        key: "subtotal",
-        dataIndex: "subtotal"
+        title: 'SUBTOTAL',
+        key: 'subtotal',
+        dataIndex: 'subtotal',
       },
       {
-        title: "Action",
-        key: "action",
+        title: 'Action',
+        key: 'action',
         render: (text, record) => (
           <span>
             <a href="#0">Delete</a>
           </span>
-        )
-      }
+        ),
+      },
     ];
 
     const { itemsInCart } = this.state;
@@ -123,8 +143,8 @@ class CartTable extends Component {
             <p>Shipping: 200</p>
             <p>Total: 10200</p>
             <Button>
-              {" "}
-              <a href="/checkout"> PROCEED TO CHECKOUT </a>{" "}
+              {' '}
+              <a href="/checkout"> PROCEED TO CHECKOUT </a>{' '}
             </Button>
           </Col>
         </Row>
@@ -133,4 +153,5 @@ class CartTable extends Component {
   }
 }
 
+// export component
 export default CartTable;
