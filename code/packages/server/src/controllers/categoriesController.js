@@ -13,7 +13,7 @@ export default {
    * @param {*} res
    */
   list(req, res) {
-    CategoriesModel.find()
+    CategoriesModel.find({ isDelete: false })
       .populate('products')
       .exec((err, categoriess) => {
         if (err) {
@@ -33,7 +33,7 @@ export default {
    * @param {*} res
    */
   topThree(req, res) {
-    CategoriesModel.find()
+    CategoriesModel.find({ isDelete: false })
       .limit(3)
       .populate('products')
       .exec((err, categoriess) => {
@@ -58,7 +58,7 @@ export default {
 
     const { page = 1 } = req.params;
 
-    CategoriesModel.find()
+    CategoriesModel.find({ isDelete: false })
       .populate({
         path: 'products',
         options: {
@@ -198,14 +198,34 @@ export default {
    */
   remove(req, res) {
     const { id = null } = req.params;
-    CategoriesModel.findByIdAndRemove(id, (err) => {
+
+    CategoriesModel.findOne({ _id: id }, (err, category) => {
       if (err) {
         return res.status(500).json({
-          message: 'Error when deleting the categories.',
+          message: 'Error when getting category',
           error: err,
         });
       }
-      return res.status(204).json();
+      category.isDelete = true;
+      category.save((errorSave, data) => {
+        if (errorSave) {
+          return res.status(500).json({
+            message: 'Error when update category',
+            error: errorSave,
+          });
+        }
+        return res.status(204).json(data);
+      });
     });
+
+    // CategoriesModel.findByIdAndRemove(id, (err) => {
+    //   if (err) {
+    //     return res.status(500).json({
+    //       message: 'Error when deleting the categories.',
+    //       error: err,
+    //     });
+    //   }
+    //   return res.status(204).json();
+    // });
   },
 };

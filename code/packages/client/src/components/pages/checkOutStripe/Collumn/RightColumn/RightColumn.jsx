@@ -1,21 +1,21 @@
-import React, { Component } from "react";
-import Axios from "axios";
-import { ProductsInCart } from "./ProductsInCart.jsx";
-import $ from "jquery";
+import React, { Component } from 'react';
+// import Axios from 'axios';
+import { ProductsInCart } from './ProductsInCart';
+import $ from 'jquery';
 
 class RightColumn extends Component {
   state = {};
   componentDidMount = async () => {
-    $("#showDetail").click(function() {
-      $("#cart-summary-product-list").toggleClass(function() {
+    $('#showDetail').click(function() {
+      $('#cart-summary-product-list').toggleClass(function() {
         if (
-          $("#cart-summary-product-list")
+          $('#cart-summary-product-list')
             .parent()
-            .is(".collapse")
+            .is('.collapse')
         ) {
-          return "showdetailCheckout";
+          return 'showdetailCheckout';
         } else {
-          return "collapse";
+          return 'collapse';
         }
       });
     });

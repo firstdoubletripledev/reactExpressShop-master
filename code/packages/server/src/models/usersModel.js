@@ -15,6 +15,7 @@ const usersSchema = new Schema({
   firstName: String,
   lastName: String,
   birthday: String,
+  isDelete: { type: Boolean, default: false },
 });
 
 // export model

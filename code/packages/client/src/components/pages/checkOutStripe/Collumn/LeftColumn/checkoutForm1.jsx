@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import { CardElement, injectStripe } from "react-stripe-elements";
-import axios from "axios";
+import React, { Component } from 'react';
+import { CardElement, injectStripe } from 'react-stripe-elements';
+import axios from 'axios';
 
 class CheckoutForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: localStorage.getItem("userid"),
-      firstName: "",
-      lastName: "",
-      addressShip: "",
-      phoneNumberShip: "",
-      complete: false
+      user: localStorage.getItem('userid'),
+      firstName: '',
+      lastName: '',
+      addressShip: '',
+      phoneNumberShip: '',
+      complete: false,
     };
     this.submit = this.submit.bind(this);
   }
@@ -31,37 +31,34 @@ class CheckoutForm extends Component {
     //   body: token.id
     // });
     //if (response.ok) console.log("Purchase Complete!")
-    
-   
-    let {token} = await this.props.stripe.createToken({name: "Name"});
+
+    let { token } = await this.props.stripe.createToken({ name: 'Name' });
     const {
-        user,
-        firstName,
-        lastName,
-        addressShip,
-        phoneNumberShip
-      } = this.state;
-     axios.post("/api/orders/stripe", {
+      user,
+      firstName,
+      lastName,
+      addressShip,
+      phoneNumberShip,
+    } = this.state;
+    axios
+      .post('/api/orders/stripe', {
         user,
         firstName,
         lastName,
         addressShip,
         phoneNumberShip,
-        stripeToken : token.id,
-        
+        stripeToken: token.id,
       })
       .then(result => {
-        if(result.data.code==1){
-            const state = this.state;
-            state["complete"] = true;
-            this.setState(state);
-        }
-        else{
-            alert(result.data.msg);
+        if (result.data.code == 1) {
+          const state = this.state;
+          state['complete'] = true;
+          this.setState(state);
+        } else {
+          alert(result.data.msg);
         }
         //đưa về trang chủ.
       });
-
   }
   // ben duoi co mot cai form va phai onclick, va cai nut submit thi de la type = "submit", khong nen de nut thuc thi cai ham
   render() {
@@ -71,7 +68,7 @@ class CheckoutForm extends Component {
       lastName,
       addressShip,
       phoneNumberShip,
-      user
+      user,
     } = this.state;
     return (
       <form
@@ -160,14 +157,14 @@ class CheckoutForm extends Component {
         </div>
         <footer
           className="form-footer clearfix"
-          style={{ textAlign: "center" }}
+          style={{ textAlign: 'center' }}
         >
           <button
             className="continue btn btn-primary float-xs-right"
             name="submit"
             type="submit"
           >
-            Checkout{" "}
+            Checkout{' '}
           </button>
         </footer>
       </form>

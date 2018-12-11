@@ -5,7 +5,7 @@ import { Layout } from 'antd';
 import React from 'react';
 
 // import MenuNav component
-import MenuNav from '../navigations/MenuNav.jsx';
+import MenuNav from '../navigations/MenuNav';
 
 // import CartTable component
 import CartTable from '../tables/CartTable';

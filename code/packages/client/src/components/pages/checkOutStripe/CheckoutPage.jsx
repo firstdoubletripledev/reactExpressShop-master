@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-// import MenuNav from "../../navigations/MenuNav.jsx";
+// import MenuNav from "../../navigations/MenuNav";
 
-import Header from "../../navigations/Header.jsx";
-import Footer from "../../navigations/Footer.jsx";
-import Container from "./Container.jsx";
+import Header from '../../navigations/Header';
+import Footer from '../../navigations/Footer';
+import Container from './Container';
 
 const CheckoutPage = () => {
   return (

@@ -14,7 +14,7 @@ function Cart(oldCart) {
     let storeItem = this.items[id]; // storeItem chính là đối tượng sản phẩm
     if (!storeItem) {
       storeItem = { item, qty: 0, price: 0 };
-      this.items[id] = { item, qty: 0, price: 0 };
+      this.items[id] = { item, qty: 1, price: 0 };
       // nếu item chưa có trong cart thì bắt đầu tạo mới item này trong cart ...
       // price trong đối tượng storeItem là tổng giá của storeItem
     }
@@ -44,12 +44,14 @@ function Cart(oldCart) {
 
   this.generateArray = function generateArray() {
     const arr = [];
-    this.items.map((data) => {
+
+    Object.values(this.items).map((data) => {
       if (data) {
         arr.push(data);
       }
       return null;
     });
+
     // for (const id in this.items) {
     //   arr.push(this.items[id]);
     // }

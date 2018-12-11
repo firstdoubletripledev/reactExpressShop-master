@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Elements, StripeProvider } from "react-stripe-elements";
-import CheckoutForm from "./checkoutForm1.jsx";
+import React, { Component } from 'react';
+import { Elements, StripeProvider } from 'react-stripe-elements';
+import CheckoutForm from './checkoutForm1';
 
 class LeftColumn extends Component {
   constructor() {
@@ -15,8 +15,8 @@ class LeftColumn extends Component {
           id="checkout-personal-information-step"
           className="checkout-step -reachable -complete -current js-current-step"
           style={{
-            border: "1px solid #a3a3a3",
-            padding: "15px"
+            border: '1px solid #a3a3a3',
+            padding: '15px',
           }}
         >
           <h1 className="step-title h3">

@@ -19,6 +19,7 @@ const productsSchema = new Schema({
   status: String,
   galleryImage: [String],
   discountPrice: String,
+  isDelete: { type: Boolean, default: false },
 });
 productsSchema.index({ name: 'text', code: 'text' });
 

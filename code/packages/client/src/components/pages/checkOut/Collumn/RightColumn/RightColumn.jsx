@@ -4,7 +4,7 @@ import $ from 'jquery';
 // import React module from react for JSX
 import React, { PureComponent } from 'react';
 
-import { ProductsInCart } from './ProductsInCart.jsx';
+import { ProductsInCart } from './ProductsInCart';
 
 /**
  *

@@ -15,6 +15,7 @@ const ordersSchema = new Schema({
   addressShip: String,
   phoneNumberShip: String,
   cart: Object,
+  isDelete: { type: Boolean, default: false },
 });
 
 // export model

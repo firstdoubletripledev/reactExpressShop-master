@@ -18,7 +18,7 @@ export default {
    * @param {*} next
    */
   list(req, res, next) {
-    OrdersModel.find()
+    OrdersModel.find({ isDelete: false })
       .populate({ path: 'user', select: 'email' })
       .exec((err, orders) => {
         if (err) return next(err);
@@ -37,7 +37,7 @@ export default {
   showuserorders(req, res, next) {
     const userid = req.session.userId;
     // console.log(userid);
-    OrdersModel.find({ user: userid })
+    OrdersModel.find({ user: userid, isDelete: false })
       .populate({ path: 'user', select: 'email' })
       .exec((err, orders) => {
         if (err) return next(err);
@@ -214,14 +214,34 @@ export default {
    */
   remove(req, res) {
     const { id } = req.params;
-    OrdersModel.findByIdAndRemove(id, (err) => {
+
+    OrdersModel.findOne({ _id: id }, (err, order) => {
       if (err) {
         return res.status(500).json({
-          message: 'Error when deleting the orders.',
+          message: 'Error when getting order',
           error: err,
         });
       }
-      return res.status(204).json();
+      order.isDelete = true;
+      order.save((errorSave, data) => {
+        if (errorSave) {
+          return res.status(500).json({
+            message: 'Error when update order',
+            error: errorSave,
+          });
+        }
+        return res.status(204).json(data);
+      });
     });
+
+    // OrdersModel.findByIdAndRemove(id, (err) => {
+    //   if (err) {
+    //     return res.status(500).json({
+    //       message: 'Error when deleting the orders.',
+    //       error: err,
+    //     });
+    //   }
+    //   return res.status(204).json();
+    // });
   },
 };

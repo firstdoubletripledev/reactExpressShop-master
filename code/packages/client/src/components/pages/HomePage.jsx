@@ -5,19 +5,19 @@ import { Col, Layout, Row } from 'antd';
 import React from 'react';
 
 // import CarouselMain component
-import CarouselMain from '../carousel.jsx';
+import CarouselMain from '../carousel';
 
 // import ListItemsHomePage component
 import ListItemsHomePage from '../Items/listItemsHomePage';
 
 // import ModelItem component
-import ModelItem from '../Items/ModelItem.jsx';
+import ModelItem from '../Items/ModelItem';
 
 // import MultipleItemsHomePage component
 import MultipleItemsHomePage from '../Items/MultipleItemsHomePage';
 
 // import MenuNav component
-import MenuNav from '../navigations/MenuNav.jsx';
+import MenuNav from '../navigations/MenuNav';
 
 // create Content, Footer from Layout
 const { Content, Footer } = Layout;

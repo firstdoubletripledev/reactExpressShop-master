@@ -2,10 +2,10 @@
 import React from 'react';
 
 // import Header component
-import Header from '../../../navigations/Header.jsx';
+import Header from '../../../navigations/Header';
 
 // import Footer component
-import Footer from '../../../navigations/Footer.jsx';
+import Footer from '../../../navigations/Footer';
 
 /**
  *

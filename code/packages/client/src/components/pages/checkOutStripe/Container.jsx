@@ -1,43 +1,37 @@
-import React, { Component } from "react";
-import LeftColumn  from "./Collumn/LeftColumn/LeftColumn1";
-import  RightColumn  from "./Collumn/RightColumn/RightColumn";
-import Axios from "axios";
+import React, { Component } from 'react';
+import LeftColumn from './Collumn/LeftColumn/LeftColumn1';
+import RightColumn from './Collumn/RightColumn/RightColumn';
+import Axios from 'axios';
 
 class Container extends Component {
   state = {
-  cart:{}
+    cart: {},
   };
   componentDidMount = async () => {
     try {
-      
       await this.getData();
-     //console.log(this.cart);
+      //console.log(this.cart);
     } catch (error) {
       console.log(error);
     }
   };
 
-  getData = async ()  => {
+  getData = async () => {
     var cartData = await Axios.get(`/api/cart/`);
-    
+
     this.setState({
-      cart : cartData.data
+      cart: cartData.data,
     });
   };
 
   render() {
-    const {
-    cart
-    } = this.state;
-   
+    const { cart } = this.state;
 
     return (
       <div className="container">
         <div className="row">
-          <LeftColumn/>
-          <RightColumn
-          cart={cart}
-          />
+          <LeftColumn />
+          <RightColumn cart={cart} />
         </div>
       </div>
     );

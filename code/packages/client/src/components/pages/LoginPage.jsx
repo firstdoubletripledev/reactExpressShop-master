@@ -8,10 +8,10 @@ import React from 'react';
 import LoginForm from '../forms/LoginForm';
 
 // import HeaderNav component
-import { HeaderNav } from '../navigations/Header/HeaderNav.jsx';
+import { HeaderNav } from '../navigations/Header/HeaderNav';
 
 // import TopTitle component
-import { TopTitle } from '../navigations/Header/TopTitle.jsx';
+import { TopTitle } from '../navigations/Header/TopTitle';
 
 // import themeLogo image
 import themeLogo from '../navigations/theme-logo.jpg';

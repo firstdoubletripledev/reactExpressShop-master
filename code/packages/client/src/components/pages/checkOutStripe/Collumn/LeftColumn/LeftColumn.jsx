@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import axios from "axios";
-import { Elements, StripeProvider } from "react-stripe-elements";
-import CheckoutForm from "./checkOutForm";
+import React, { Component } from 'react';
+// import axios from 'axios';
+import { Elements, StripeProvider } from 'react-stripe-elements';
+import CheckoutForm from './checkOutForm';
 
 class LeftColumn extends Component {
   constructor() {
     super();
     this.state = {
-      user: localStorage.getItem("userid"),
-      firstName: "",
-      lastName: "",
-      addressShip: "",
-      phoneNumberShip: ""
+      user: localStorage.getItem('userid'),
+      firstName: '',
+      lastName: '',
+      addressShip: '',
+      phoneNumberShip: '',
     };
   }
   // state = {
@@ -30,7 +30,6 @@ class LeftColumn extends Component {
 
   onSubmit = e => {
     // e.preventDefault();
-
     // const {
     //   user,
     //   firstName,
@@ -38,7 +37,6 @@ class LeftColumn extends Component {
     //   addressShip,
     //   phoneNumberShip
     // } = this.state;
-
     // axios
     //   .post("/api/orders", {
     //     user,
@@ -53,15 +51,21 @@ class LeftColumn extends Component {
   };
 
   render() {
-    const { firstName, lastName, addressShip, phoneNumberShip,user } = this.state;
+    const {
+      firstName,
+      lastName,
+      addressShip,
+      phoneNumberShip,
+      user,
+    } = this.state;
     return (
       <div className="col-md-8">
         <section
           id="checkout-personal-information-step"
           className="checkout-step -reachable -complete -current js-current-step"
           style={{
-            border: "1px solid #a3a3a3",
-            padding: "15px"
+            border: '1px solid #a3a3a3',
+            padding: '15px',
           }}
         >
           <h1 className="step-title h3">
@@ -77,12 +81,7 @@ class LeftColumn extends Component {
                 id="checkout-guest-form"
                 role="tabpanel"
               >
-                <form
-                
-                  id="customer-form"
-                  className="js-customer-form"
-                
-                >
+                <form id="customer-form" className="js-customer-form">
                   <section>
                     <div className="form-group row ">
                       <label className="col-md-3 form-control-label required">
@@ -155,20 +154,23 @@ class LeftColumn extends Component {
                         Card Information
                       </label>
                       <div className="col-md-6  ">
-                      <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
-                      <div className="example">
-                        
-                        <Elements>
-                          <CheckoutForm user={user} firstName={firstName} lastName={lastName} addressShip={addressShip} phoneNumberShip={phoneNumberShip}/>
-                        </Elements>
-                      </div>
-                    </StripeProvider >
+                        <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
+                          <div className="example">
+                            <Elements>
+                              <CheckoutForm
+                                user={user}
+                                firstName={firstName}
+                                lastName={lastName}
+                                addressShip={addressShip}
+                                phoneNumberShip={phoneNumberShip}
+                              />
+                            </Elements>
+                          </div>
+                        </StripeProvider>
                       </div>
                       <div className="col-md-3 form-control-comment" />
                     </div>
-                   
                   </section>
-            
                 </form>
               </div>
             </div>

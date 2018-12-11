@@ -1,4 +1,4 @@
-import React from "react"; // khong dung file nay
+import React from 'react'; // khong dung file nay
 
 export const RightColumn = () => (
   <div className="col-md-4">

@@ -28,12 +28,19 @@ class TopThreeCategory extends PureComponent {
   state = {
     category: [],
   };
+  _isMounted = false;
+
   /**
    *
    *
    * @memberof TopThreeCategory
    */
-  componentDidMount = async () => {
+  componentDidMount = () => {
+    this._isMounted = true;
+    this.getTopThreeProduct();
+  };
+
+  getTopThreeProduct = async () => {
     try {
       const { data = null } = await Axios.get('/api/categories/topthree').catch(
         error => {
@@ -50,6 +57,10 @@ class TopThreeCategory extends PureComponent {
     }
   };
 
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
   /**
    *
    *
@@ -57,7 +68,7 @@ class TopThreeCategory extends PureComponent {
    * @memberof TopThreeCategory
    */
   render() {
-    const { category } = this.state;
+    const { category = [] } = this.state;
     return (
       <div className="wrapper it_YZMTHKOFREBE container">
         <div className="row it_QZOWDVFIGJLN ">

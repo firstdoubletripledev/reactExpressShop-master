@@ -13,7 +13,7 @@ export default {
    * @param {*} res
    */
   list(req, res) {
-    ProductsModel.find()
+    ProductsModel.find({ isDelete: false })
       .populate('category')
       .exec((err, productss) => {
         if (err) {
@@ -40,7 +40,7 @@ export default {
 
       const perPage = Number(perpage);
 
-      ProductsModel.find({ $text: { $search: searchvalue } })
+      ProductsModel.find({ $text: { $search: searchvalue }, isDelete: false })
         .skip(perPage * page - perPage)
         .limit(perPage)
         .populate('category')
@@ -82,7 +82,7 @@ export default {
   listPartition(req, res) {
     const { perpage = 20, page = 1 } = req.params;
     const perPage = Number(perpage);
-    ProductsModel.find()
+    ProductsModel.find({ isDelete: false })
       .skip(perPage * page - perPage)
       .limit(perPage)
       .populate('category')
@@ -121,7 +121,7 @@ export default {
     const perPage = 20;
     const { page = 1 } = req.params;
 
-    ProductsModel.find()
+    ProductsModel.find({ isDelete: false })
       .sort({
         name: 1,
       })
@@ -163,7 +163,7 @@ export default {
     const perPage = 20;
     const { page = 1 } = req.params;
 
-    ProductsModel.find()
+    ProductsModel.find({ isDelete: false })
       .sort({
         name: -1,
       })
@@ -205,7 +205,7 @@ export default {
     const perPage = 20;
     const { page = 1 } = req.params;
 
-    ProductsModel.find()
+    ProductsModel.find({ isDelete: false })
       .sort({
         price: 1,
       })
@@ -247,7 +247,7 @@ export default {
     const perPage = 20;
     const { page = 1 } = req.params;
 
-    ProductsModel.find()
+    ProductsModel.find({ isDelete: false })
       .sort({
         price: -1,
       })
@@ -518,14 +518,34 @@ export default {
    */
   remove(req, res) {
     const { id } = req.params;
-    ProductsModel.findByIdAndRemove(id, (err) => {
+
+    ProductsModel.findOne({ _id: id }, (err, products) => {
       if (err) {
         return res.status(500).json({
-          message: 'Error when deleting the products.',
+          message: 'Error when getting products',
           error: err,
         });
       }
-      return res.status(204).json();
+      products.isDelete = true;
+      products.save((errorSave, data) => {
+        if (errorSave) {
+          return res.status(500).json({
+            message: 'Error when update products',
+            error: errorSave,
+          });
+        }
+        return res.status(204).json(data);
+      });
     });
+
+    // ProductsModel.findByIdAndRemove(id, (err) => {
+    //   if (err) {
+    //     return res.status(500).json({
+    //       message: 'Error when deleting the products.',
+    //       error: err,
+    //     });
+    //   }
+    //   return res.status(204).json();
+    // });
   },
 };
