@@ -89,13 +89,12 @@ class FormAdd extends PureComponent {
           console.log('Received values of form: ', values);
           const { typeInput, typeTable } = this.props;
           if (typeInput === 'edit') {
-            const {
-              dataInput: { _id = '', galleryImage = null } = {},
-              dataInput = {},
-            } = this.props;
-            if (galleryImage !== null && !Array.isArray(galleryImage)) {
-              dataInput.galleryImage = JSON.parse(galleryImage);
+            const { dataInput: { _id = '' } = {} } = this.props;
+            const { galleryImage = null } = values;
+            if (galleryImage !== null) {
+              values.galleryImage = JSON.parse(galleryImage);
             }
+
             let res = {};
             if (typeTable === 'User') {
               res = await Axios.put(`/api/users/${_id}`, values);
