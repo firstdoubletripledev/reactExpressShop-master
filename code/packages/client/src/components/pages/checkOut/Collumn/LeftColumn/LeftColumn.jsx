@@ -72,6 +72,10 @@ class LeftColumn extends PureComponent {
     })
       .then(result => {
         successMessage('đặt hàng thành công');
+        Axios.get('/api/cart/remove/all').then(res => {
+          console.log(res);
+        });
+
         window.location.href = '/account';
       })
       .catch(error => {

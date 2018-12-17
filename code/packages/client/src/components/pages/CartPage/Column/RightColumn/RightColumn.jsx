@@ -69,6 +69,11 @@ class RightColumn extends PureComponent {
               <a href="/checkout" className="btn btn-primary">
                 Proceed to checkout
               </a>
+              <br />
+              <br />
+              <a href="/checkoutonline" className="btn btn-primary">
+                Proceed to checkout online
+              </a>
             </div>
           </div>
         </div>

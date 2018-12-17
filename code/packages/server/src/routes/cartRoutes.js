@@ -21,6 +21,9 @@ router.get('/reduce/:id', cartController.reduce);
 // Router get /remove/:id to remove cart in session
 router.get('/remove/:id', cartController.remove);
 
+// Router get /remove/:id to remove cart in session
+router.get('/remove/all', cartController.removeAll);
+
 /*
  * POST
  */
