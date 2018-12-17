@@ -54,6 +54,9 @@ class CheckoutForm extends Component {
           const state = this.state;
           state['complete'] = true;
           this.setState(state);
+          axios.get('/api/cart/remove/all').then(res => {
+            console.log(res);
+          })
         } else {
           alert(result.data.msg);
         }

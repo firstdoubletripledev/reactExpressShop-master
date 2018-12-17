@@ -129,9 +129,13 @@ const AppRoutes = ({ location }) => (
     {/* Route for cart */}
     <Route location={location} path="/cart" exact component={AsyncCartPage} />
     {/* Route for checkout */}
-    <Route location={location} path="/checkout" component={AsyncCheckoutPage} />
+    <PrivateRoute
+      location={location}
+      path="/checkout"
+      component={AsyncCheckoutPage}
+    />
     {/* Route for checkout */}
-    <Route
+    <PrivateRoute
       location={location}
       path="/checkoutonline"
       component={AsyncCheckOutStripe}

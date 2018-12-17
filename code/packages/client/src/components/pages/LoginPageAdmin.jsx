@@ -37,7 +37,7 @@ const LoginPageAdmin = () => {
           <Col xs={{ span: 8 }} lg={{ span: 8 }} />
           <Col xs={{ span: 8 }} lg={{ span: 8 }}>
             <div className="login-admin-card">
-              <LoginForm />
+              <LoginForm isAdmin={true} />
             </div>
           </Col>
           <Col xs={{ span: 8 }} lg={{ span: 8 }} />

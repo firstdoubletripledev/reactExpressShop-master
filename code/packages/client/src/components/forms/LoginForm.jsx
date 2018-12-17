@@ -90,7 +90,8 @@ class NormalLoginForm extends React.PureComponent {
             if (data.role === 'admin') {
               return this.props.history.push('/dashboard');
             } else {
-              return this.props.history.push('/');
+              return (window.location.href = '/account');
+              // return this.props.history.push('/');
             }
           }
         }
@@ -108,6 +109,7 @@ class NormalLoginForm extends React.PureComponent {
    */
   render() {
     const { getFieldDecorator } = this.props.form;
+    const { isAdmin = false } = this.props;
     return (
       <Form onSubmit={this.handleSubmit} className="login-form">
         <FormItem>
@@ -132,11 +134,24 @@ class NormalLoginForm extends React.PureComponent {
           )}
         </FormItem>
         <FormItem>
+          {isAdmin ? (
+            <>
+              <p>user:'admin@admin.com' password:'admin@admin.com'</p>
+            </>
+          ) : null}
           {getFieldDecorator('remember', {
             valuePropName: 'checked',
             initialValue: true,
-          })(<Checkbox>Remember me</Checkbox>)}
-          <a className="login-form-forgot" href="#0">
+          })(
+            <Checkbox style={isAdmin ? { display: 'none' } : {}}>
+              Remember me
+            </Checkbox>
+          )}
+          <a
+            className="login-form-forgot"
+            href="#0"
+            style={isAdmin ? { display: 'none' } : {}}
+          >
             Forgot password
           </a>
           <Row>
@@ -151,8 +166,11 @@ class NormalLoginForm extends React.PureComponent {
               </Button>
             </Col>
           </Row>
-          Or{' '}
-          <Link to="/register" style={{ color: 'blue' }}>
+          {isAdmin ? null : 'Or'}{' '}
+          <Link
+            to="/register"
+            style={isAdmin ? { display: 'none' } : { color: 'blue' }}
+          >
             Register now!
           </Link>
         </FormItem>
